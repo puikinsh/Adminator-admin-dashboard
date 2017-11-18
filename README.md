@@ -29,7 +29,7 @@ In order to run **Adminator** on your local machine all what you need to do is t
 Start by typing the following commands in your terminal in order to get **Adminator** full package on your machine and starting a local development server with live reload feature.
 
 ```
-> git clone [LINK HERE]
+> git clone https://github.com:puikinsh/Adminator-admin-dashboard.git
 > cd adminator
 > npm install
 > npm run dev
