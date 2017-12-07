@@ -3,7 +3,11 @@
 
 # Preview
 
+### Screenshot
+
 ![Adminator admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/adminator-free-admin-dashboard-template.jpg)
+
+### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ### TOC
 - [Getting Started](#getting-started)
