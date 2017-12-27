@@ -28,7 +28,7 @@ export default (function () {
   // Open external links in new window
   $('a')
     .filter('[href^="http"], [href^="//"]')
-    .not(`[href*="${window.location.host}"`)
+    .not(`[href*="${window.location.host}"]`)
     .attr('rel', 'noopener noreferrer')
     .attr('target', '_blank');
 
