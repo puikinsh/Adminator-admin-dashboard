@@ -108,7 +108,7 @@ Here is a brief explanation of the template folder structure and some of its mai
 In deployment process, you have two commands:
 
 1. Build command
-Used to generate the final result of compiling src files into build folder. This can e achieved by running the following command:
+Used to generate the final result of compiling src files into build folder. This can be achieved by running the following command:
 ```
 > npm run build
 ```
