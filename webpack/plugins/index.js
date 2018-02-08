@@ -8,10 +8,12 @@ plugins.push(
   ...(require('./htmlPlugin')),
   ...(require('./internal')),
   require('./caseSensitivePlugin'),
-  require('./dashboardPlugin'),
   require('./extractPlugin')
 );
 
+if (manifest.IS_DEVELOPMENT) {
+  plugins.push(require('./dashboardPlugin'));
+}
 
 if (manifest.IS_PRODUCTION) {
   plugins.push(require('./copyPlugin'));
