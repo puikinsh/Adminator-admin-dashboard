@@ -56,7 +56,7 @@ module.exports = {
   entry,
   output: {
     path: manifest.paths.build,
-    publicPath: '/',
+    publicPath: '',
     filename: manifest.outputFiles.bundle,
   },
   module: {
