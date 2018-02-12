@@ -5,6 +5,7 @@ const
 
 const titles = {
   'index': 'Dashboard',
+  'blank': 'Blank',
   'buttons': 'Buttons',
   'calendar': 'Calendar',
   'charts': 'Charts',
