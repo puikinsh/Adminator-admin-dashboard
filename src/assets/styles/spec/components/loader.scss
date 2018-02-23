@@ -1,12 +1,12 @@
 #loader {
   transition: all 0.3s ease-in-out;
   opacity: 1;
-  visibility: visible;
+  display: default;
 }
 
 #loader.fadeOut {
   opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 
