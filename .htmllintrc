@@ -1,0 +1,8 @@
+{
+    "id-no-dup": true,
+    "class-no-dup": true,
+    "attr-quote-style": "double",
+    "tag-close": true,
+    "id-class-style": "dash",
+    "indent-style": "tab"
+}
