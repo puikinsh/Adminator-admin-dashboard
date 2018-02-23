@@ -12,7 +12,6 @@
   background-color: $default-white;
   border-bottom: 1px solid $border-color;
   display: block;
-  height: $header-height;
   margin-bottom: 0;
   padding: 0;
   position: fixed;
@@ -30,6 +29,8 @@
 
   .header-container {
     @include clearfix;
+
+    height: $header-height;
 
     .nav-left,
     .nav-right {
