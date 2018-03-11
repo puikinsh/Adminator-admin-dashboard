@@ -8,8 +8,10 @@ PLEASE SEARCH GITHUB FOR A SIMILAR ISSUE OR PR BEFORE SUBMITTING
 <!-- DON'T FORGET REMOVE UNNECESSARY -->
 <h1>Bug report</h1>
 <h1>Feature request</h1>
-<h1>Documentation issue</h1>
 <h1>Support request</h1>
+<h1>Documentation issue</h1>
+
+<!-- Optionally describe the motivation or the concrete use case -->
 
 # Current behavior
 <!-- Describe how the issue manifests -->
