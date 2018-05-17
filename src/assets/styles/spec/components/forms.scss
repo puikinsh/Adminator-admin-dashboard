@@ -51,7 +51,7 @@
 }
 
 .checkbox input[type="checkbox"]:checked + label::after {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome\ 5 Solid';
   content: "\f00c";
   font-size: 13px;
 }
