@@ -18,6 +18,7 @@
   transition: all 0.2s ease;
   width: calc(100% - #{$offscreen-size});
   z-index: 800;
+  top: 0;
 
   @include to($breakpoint-md) {
     width: 100%;
