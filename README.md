@@ -12,8 +12,8 @@
 ### TOC
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installing & Local Development](#installing-local-development)
-- [Files/Folder Structure](#filesfolder-structure)
+  - [Installing & Local Development](#installing--local-development)
+- [Files/Folder Structure](#filesfolders-structure)
 - [Deployment](#deployment)
 - [Built With](#built-with)
 - [Changelog](#changelog)
