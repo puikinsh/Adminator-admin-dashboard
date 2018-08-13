@@ -39,6 +39,14 @@ Start by typing the following commands in your terminal in order to get **Admina
 > npm run dev
 ```
 
+#### Running with Docker
+```
+> git clone https://github.com/puikinsh/Adminator-admin-dashboard.git adminator
+> cd adminator
+> docker-compose up --build
+```
+browse [http://localhost:3000/](http://localhost:3000/) , we are good to go
+
 
 ### Files/Folders Structure
 Here is a brief explanation of the template folder structure and some of its main files usage:

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "dev": "webpack-dashboard -t 'Project' -- webpack-dev-server",
+    "docker-dev": "webpack-dev-server",
     "clean": "shx rm -rf ./build",
     "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
     "preview": "cross-env NODE_ENV=\"production\" webpack-dev-server",

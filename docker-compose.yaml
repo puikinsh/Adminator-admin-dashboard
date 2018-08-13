@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ui:
+    build:  
+      context: .
+      dockerfile: Dockerfile  
+    command: "sh init.sh"    
+    working_dir: /home/node/app
+    volumes:
+      - ${PWD}/:/home/node/app
+    container_name: ui
+    ports:
+      - 3000:3000
