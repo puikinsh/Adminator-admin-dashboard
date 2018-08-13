@@ -45,7 +45,7 @@ Here is a brief explanation of the template folder structure and some of its mai
 
 ```
 └── src                         # Contains all template source files.
-│   └── assets                  # Contains JS, CSS, images and icon fonts.
+│   └── assets                  # Contains JS, CSS, HTML templates, images and icon fonts.
 │   │   └── scripts             # Contains all JavaScript files.
 │   │   │   └── charts          # Chart.js, Sparkline & Pie Chart plugins init.
 │   │   │   └── chat            # All chat app JS code.
@@ -70,17 +70,19 @@ Here is a brief explanation of the template folder structure and some of its mai
 │   │   │   └── images          # Contains all template images/svg.
 │   │   │
 │   │   └── styles              # Contains all SCSS files.
-│   │       └── spec            # Contains custom SCSS files.
-│   │       │   └── components  # Contains all template components.
-│   │       │   └── generic     # Contains basic scaffolding styles.
-│   │       │   └── screens     # Contains views specific styles.
-│   │       │   └── settings    # Contains all template variables.
-│   │       │   └── tools       # Contains all mixins.
-│   │       │   └── utils       # Contains helper classes.
-│   │       │   └── index.scss  # Indicator file.
-│   │       │
-│   │       └── vendor          # Contains all plugin files & custom styles.
-│   │       └── index.scss      # Indicator file.
+│   │   │   └── spec            # Contains custom SCSS files.
+│   │   │   │   └── components  # Contains all template components.
+│   │   │   │   └── generic     # Contains basic scaffolding styles.
+│   │   │   │   └── screens     # Contains views specific styles.
+│   │   │   │   └── settings    # Contains all template variables.
+│   │   │   │   └── tools       # Contains all mixins.
+│   │   │   │   └── utils       # Contains helper classes.
+│   │   │   │   └── index.scss  # Indicator file.
+│   │   │   │
+│   │   │   └── vendor          # Contains all plugin files & custom styles.
+│   │   │   └── index.scss      # Indicator file.
+│   │   │
+│   │   └── templates           # Contains all common HTML files.
 │   │
 │   └── *.html                  # All HTML pages files .
 └── webpack                     # Contains Webpack init code.
@@ -126,6 +128,7 @@ Used to create a local dev server in order to preview the final output of build 
 - [Sass](http://sass-lang.com/)
 - [Postcss](http://postcss.org/)
 - [Stylelint](https://stylelint.io/)
+- [EJS](http://ejs.co/)
 - [Bootstrap](http://getbootstrap.com/)
 - [Chart.js](http://www.chartjs.org/)
 - [Datatables](https://datatables.net/)

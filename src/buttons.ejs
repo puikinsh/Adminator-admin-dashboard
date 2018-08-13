@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Buttons</title>
+    <%= require('./assets/templates/style.ejs')() %>
+  </head>
+  <body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <%= require('./assets/templates/loader.ejs')() %>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+      <!-- #Left Sidebar ==================== -->
+      <%= require('./assets/templates/left-sidebar.ejs')() %>
+
+      <!-- #Main ============================ -->
+      <div class="page-container">
+        <!-- ### $Topbar ### -->
+        <%= require('./assets/templates/topbar.ejs')() %>
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-100'>
+          <div id='mainContent'></div>
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+        <%= require('./assets/templates/footer.ejs')() %>
+      </div>
+    </div>
+  </body>
+</html>

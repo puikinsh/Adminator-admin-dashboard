@@ -26,7 +26,7 @@ const titles = {
 
 module.exports = Object.keys(titles).map(title => {
   return new HtmlWebpackPlugin({
-    template: path.join(manifest.paths.src, `${title}.html`),
+    template: path.join(manifest.paths.src, `${title}.ejs`),
     path: manifest.paths.build,
     filename: `${title}.html`,
     inject: true,
