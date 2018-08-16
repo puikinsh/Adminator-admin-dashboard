@@ -25,6 +25,18 @@ const devServer = {
   host               : '0.0.0.0',
   disableHostCheck   : true, // [1]
   overlay            : true,
+  proxy: {
+    '/admin/*': {
+      target: 'http://localhost:1313',
+      changeOrigin: true,
+      secure: false
+    },
+    '/auth/*': {
+      target: 'http://localhost:1313',
+      changeOrigin: true,
+      secure: false
+    }
+  },
   stats: {
     assets     : true,
     children   : false,

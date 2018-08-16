@@ -1,6 +1,6 @@
 @import 'spec/settings/index';
 @import 'spec/tools/index';
-@import "~bootstrap/scss/bootstrap";
+// "~"指node_modules文件夹（webpack-resolve-alias）
+@import "~bootstrap/dist/css/bootstrap";
 @import 'spec/index';
 @import 'vendor/index';
-

@@ -17,15 +17,18 @@
         </div>
       </div>
       <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style='min-width: 320px;'>
-        <h4 class="fw-300 c-grey-900 mB-40">Login</h4>
-        <form>
+        <h4 class="fw-300 c-grey-900 mB-40">登录</h4>
+        <form id="signin-form">
           <div class="form-group">
-            <label class="text-normal text-dark">Username</label>
-            <input type="email" class="form-control" placeholder="John Doe">
+            <label class="text-normal text-dark">用户名</label>
+            <input id="user" type="text" class="form-control" placeholder="张三">
           </div>
           <div class="form-group">
-            <label class="text-normal text-dark">Password</label>
-            <input type="password" class="form-control" placeholder="Password">
+            <label class="text-normal text-dark">密码</label>
+            <input id="pwd" type="password" class="form-control" placeholder="123456">
+          </div>
+          <div class="form-group">
+            <label id="msg" class="text-normal text-danger" style="display: hide">msg</label>
           </div>
           <div class="form-group">
             <div class="peers ai-c jc-sb fxw-nw">
@@ -33,12 +36,12 @@
                 <div class="checkbox checkbox-circle checkbox-info peers ai-c">
                   <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">
                   <label for="inputCall1" class=" peers peer-greed js-sb ai-c">
-                    <span class="peer peer-greed">Remember Me</span>
+                    <span class="peer peer-greed">记住我</span>
                   </label>
                 </div>
               </div>
               <div class="peer">
-                <button class="btn btn-primary">Login</button>
+                <a id="signin" class="btn btn-primary">登录</a>
               </div>
             </div>
           </div>

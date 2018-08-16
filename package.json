@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "blueimp-md5": "^2.10.0",
     "bootstrap": "^4.0.0",
     "bootstrap-datepicker": "^1.7.1",
     "chart.js": "^2.7.1",
@@ -57,6 +58,7 @@
     "fullcalendar": "^3.6.2",
     "jquery": "^3.2.1",
     "jquery-sparkline": "^2.4.0",
+    "jquery.cookie": "^1.4.1",
     "jvectormap": "^2.0.4",
     "load-google-maps-api": "^1.0.0",
     "lodash": "^4.17.4",
