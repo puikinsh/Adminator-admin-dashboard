@@ -377,5 +377,8 @@ html[dir="rtl"] {
     direction: unset !important;
     right: unset !important;
   }
+  .form-group .peer {
+    min-width: 150px;
+  }
 }
 
