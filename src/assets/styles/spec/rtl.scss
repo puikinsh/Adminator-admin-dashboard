@@ -353,5 +353,11 @@ html[dir="rtl"] {
     border-right: 0px;
     border-left: 1px solid rgba(0, 0, 0, .0625);
   }
+  .fc-toolbar .fc-left {
+    float: right;
+  }
+  .fc-toolbar .fc-right {
+    float: left;
+  }
 }
 
