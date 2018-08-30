@@ -82,15 +82,15 @@ html[dir="rtl"] {
     float: right;
   }
   .pR-10 {
-    padding-right: unset;
+    padding-right: unset !important;
     padding-left: 10px;
   }
   .mR-15 {
-    margin-right: unset;
+    margin-right: unset !important;
     margin-left: 15px;
   }
   .mL-10 {
-    margin-left: unset;
+    margin-left: unset !important;
     margin-right: 10px;
   }
   .header .header-container .nav-right .dropdown-menu li i.ti-angle-right {
@@ -325,7 +325,7 @@ html[dir="rtl"] {
     right: 0;
   }
   .mR-20 {
-    margin-right: unset;
+    margin-right: unset !important;
     margin-left: 20px;
   }
   .r-1 {
@@ -334,7 +334,7 @@ html[dir="rtl"] {
   }
   .mL-20 {
     margin-right: 20px;
-    margin-left: unset;
+    margin-left: unset !important;
   }
   .full-container {
     right: 280px;
@@ -358,6 +358,21 @@ html[dir="rtl"] {
   }
   .fc-toolbar .fc-right {
     float: left;
+  }
+  .mR-30 {
+    margin-right: unset !important;
+    margin-left: 30px;
+  }
+  .pL-20 {
+    padding-left: unset !important;
+    padding-right: 20px;
+  }
+  .bdR {
+    border-left: 1px solid rgba(0, 0, 0, .0625) !important;
+  }
+  .header .header-container .nav-left .notifications .counter, .header .header-container .nav-right .notifications .counter {
+    right: unset !important;
+    left: 6px;
   }
 }
 
