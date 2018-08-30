@@ -1,0 +1,103 @@
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  .paginate-next {
+    float: left !important;
+  }
+  .paginate-prev {
+    float: right !important;
+  }
+  .sidebar-menu {
+    border-right: 0px;
+    border-left: 1px solid rgba(0, 0, 0, .0625);
+  }
+  .page-container {
+    padding-right: 280px !important;
+    padding-left: 0px !important;
+  }
+  .sidebar-logo {
+    border-left: 1px solid rgba(0, 0, 0, .0625);
+    border-right: none;
+  }
+  .sidebar-menu > li > a .icon-holder {
+    margin-right: 0px !important;
+    left: unset;
+    right: 0;
+
+  }
+  .sidebar-menu li.dropdown .arrow {
+    right: unset;
+    left: 30px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .nav-item, .sidebar-link {
+    text-align: right;
+  }
+  .sidebar-menu > li.dropdown ul.dropdown-menu {
+    padding-left: unset;
+    padding-right: 50px;
+    text-align: right;
+  }
+  .sidebar-menu .sidebar-link.active:before {
+    right: 5px;
+    left: unset;
+  }
+  .header .header-container .nav-left {
+    float: right;
+    padding-right: 10px;
+  }
+  .header .header-container .nav-right {
+    float: left;
+  }
+  .mR-10 {
+    margin-right: unset;
+    margin-left: 10px !important;
+  }
+  .header .header-container .nav-left > li, .header .header-container .nav-right > li {
+    float: right;
+  }
+  .header .header-container .nav-right .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+
+  .header .header-container .dropdown-menu {
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -ms-transform-origin: top left;
+  }
+  .is-collapsed .page-container {
+    padding-right: 70px !important;
+  }
+  .header .header-container .nav-right .dropdown-menu li {
+    text-align: right;
+  }
+  .header .header-container .nav-right .dropdown-menu li i {
+    float: right;
+  }
+  .pR-10 {
+    padding-right: unset;
+    padding-left: 10px;
+  }
+  .mR-15 {
+    margin-right: unset;
+    margin-left: 15px;
+  }
+  .mL-10 {
+    margin-left: unset;
+    margin-right: 10px;
+  }
+  .header .header-container .nav-right .dropdown-menu li i.ti-angle-right {
+    float: left;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
