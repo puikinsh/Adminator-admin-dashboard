@@ -338,7 +338,7 @@ html[dir="rtl"] {
   }
   .full-container {
     right: 280px;
-    left: unset;
+    left: 0;
   }
   @media screen and (min-width: 992px) {
     .email-app .email-wrapper {
@@ -348,6 +348,10 @@ html[dir="rtl"] {
   }
   .email-side-nav i {
     float: right;
+  }
+  .email-app .email-side-nav {
+    border-right: 0px;
+    border-left: 1px solid rgba(0, 0, 0, .0625);
   }
 }
 
