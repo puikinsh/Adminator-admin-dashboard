@@ -374,5 +374,9 @@ html[dir="rtl"] {
     right: unset !important;
     left: 6px;
   }
+  .datepicker-dropdown {
+    direction: unset !important;
+    right: unset !important;
+  }
 }
 
