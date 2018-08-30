@@ -1,0 +1,384 @@
+html[dir="rtl"] {
+  body {
+    text-align: right;
+    direction: rtl;
+  }
+  .paginate-next {
+    float: left !important;
+  }
+  .paginate-prev {
+    float: right !important;
+  }
+  .sidebar-menu {
+    border-right: 0px;
+    border-left: 1px solid rgba(0, 0, 0, .0625);
+  }
+  .page-container {
+    padding-right: 280px !important;
+    padding-left: 0px !important;
+  }
+  .sidebar-logo {
+    border-left: 1px solid rgba(0, 0, 0, .0625);
+    border-right: none;
+  }
+  .sidebar-menu > li > a .icon-holder {
+    margin-right: 0px !important;
+    left: unset;
+    right: 0;
+
+  }
+  .sidebar-menu li.dropdown .arrow {
+    right: unset;
+    left: 30px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .nav-item, .sidebar-link {
+    text-align: right;
+  }
+  .sidebar-menu > li.dropdown ul.dropdown-menu {
+    padding-left: unset;
+    padding-right: 50px;
+    text-align: right;
+  }
+  .sidebar-menu .sidebar-link.active:before {
+    right: 5px;
+    left: unset;
+  }
+  .header .header-container .nav-left {
+    float: right;
+    padding-right: 10px;
+  }
+  .header .header-container .nav-right {
+    float: left;
+  }
+  .mR-10 {
+    margin-right: unset;
+    margin-left: 10px !important;
+  }
+  .header .header-container .nav-left > li, .header .header-container .nav-right > li {
+    float: right;
+  }
+  .header .header-container .nav-right .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+
+  .header .header-container .dropdown-menu {
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -ms-transform-origin: top left;
+  }
+  .is-collapsed .page-container {
+    padding-right: 70px !important;
+  }
+  .header .header-container .nav-right .dropdown-menu li {
+    text-align: right;
+  }
+  .header .header-container .nav-right .dropdown-menu li i {
+    float: right;
+  }
+  .pR-10 {
+    padding-right: unset !important;
+    padding-left: 10px;
+  }
+  .mR-15 {
+    margin-right: unset !important;
+    margin-left: 15px;
+  }
+  .mL-10 {
+    margin-left: unset !important;
+    margin-right: 10px;
+  }
+  .header .header-container .nav-right .dropdown-menu li i.ti-angle-right {
+    float: left;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .pull-right {
+    float: left;
+  }
+
+  .nav {
+    padding-right: 0;
+  }
+
+  .navbar-nav .nav-item {
+    float: right;
+  }
+
+  .navbar-nav .nav-item + .nav-item {
+    margin-right: 1rem;
+    margin-left: inherit;
+  }
+
+  th {
+    text-align: right;
+  }
+
+  .alert-dismissible {
+    padding-right: 1.25rem;
+    padding-left: 4rem;
+  }
+
+  .dropdown-menu {
+    text-align: right;
+  }
+
+  .checkbox label {
+    padding-right: 1.25rem;
+    padding-left: inherit;
+  }
+
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
+  .btn-group > .btn:last-child:not(:first-child),
+  .btn-group > .dropdown-toggle:not(:first-child) {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .custom-control-label::after,
+  .custom-control-label::before {
+    right: 0;
+    left: inherit;
+  }
+
+  .custom-select {
+    padding: $custom-select-padding-y $custom-select-padding-x $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding);
+    background: $custom-select-bg $custom-select-indicator no-repeat left $custom-select-padding-x center;
+    background-size: $custom-select-bg-size;
+  }
+
+  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+  .input-group > .input-group-append:not(:last-child) > .btn,
+  .input-group > .input-group-append:not(:last-child) > .input-group-text,
+  .input-group > .input-group-prepend > .btn,
+  .input-group > .input-group-prepend > .input-group-text {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
+  .input-group > .input-group-append > .btn,
+  .input-group > .input-group-append > .input-group-text,
+  .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
+  .input-group > .input-group-prepend:not(:first-child) > .btn,
+  .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .input-group > .custom-select:not(:first-child),
+  .input-group > .form-control:not(:first-child) {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .input-group > .custom-select:not(:last-child),
+  .input-group > .form-control:not(:last-child) {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
+  .input-group > .custom-select:not(:last-child):not(:first-child),
+  .input-group > .form-control:not(:last-child):not(:first-child) {
+    border-radius: 0;
+  }
+
+  .custom-control {
+    padding-right: 1.5rem;
+    padding-left: inherit;
+    margin-right: inherit;
+    margin-left: 1rem;
+  }
+  .custom-control-indicator {
+    right: 0;
+    left: inherit;
+  }
+
+  .custom-file-label::after {
+    right: initial;
+    left: -1px;
+    border-radius: .25rem 0 0 .25rem;
+  }
+
+  .radio input,
+  .radio-inline,
+  .checkbox input,
+  .checkbox-inline input {
+    margin-right: -1.25rem;
+    margin-left: inherit;
+  }
+
+  .list-group {
+    padding-right: 0;
+    padding-left: 40px;
+  }
+
+  .close {
+    float: left;
+  }
+
+  .modal-header .close {
+    margin: -15px auto -15px -15px;
+  }
+
+  .modal-footer > :not(:first-child) {
+    margin-right: .25rem;
+  }
+
+  .alert-dismissible .close {
+    right: inherit;
+    left: 0;
+  }
+
+  .dropdown-toggle::after {
+    margin-right: .255em;
+    margin-left: 0;
+  }
+
+  .form-check-input {
+    margin-right: -1.25rem;
+    margin-left: inherit;
+  }
+
+  .form-check-label {
+    padding-right: 1.25rem;
+    padding-left: inherit;
+  }
+
+  @mixin make-col-offset($size, $columns: $grid-columns) {
+    $num: $size / $columns;
+    margin-right: if($num == 0, 0, percentage($num));
+    margin-left: 0;
+  }
+
+  @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $breakpoints);
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == "" and $i == 0) {
+            .offset#{$infix}-#{$i} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+    }
+  }
+  @if $enable-grid-classes {
+    @include make-grid-columns();
+  }
+
+  // stylelint-disable declaration-no-important
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      @each $prop, $abbrev in (margin: m, padding: p) {
+        @each $size, $length in $spacers {
+
+          .#{$abbrev}r#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: 0 !important;
+            #{$prop}-left: $length !important;
+          }
+          .#{$abbrev}l#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-left: 0 !important;
+            #{$prop}-right: $length !important;
+          }
+        }
+      }
+
+      .mr#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+      }
+      .ml#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+  .checkbox-inline input, .checkbox input, .radio-inline, .radio input {
+    margin-right: unset;
+    margin-left: -20px;
+    margin-left: -1.25rem;
+  }
+  .checkbox label:after, .checkbox label:before {
+    left: unset;
+    right: 0;
+  }
+  .mR-20 {
+    margin-right: unset !important;
+    margin-left: 20px;
+  }
+  .r-1 {
+    right: unset;
+    left: 1px;
+  }
+  .mL-20 {
+    margin-right: 20px;
+    margin-left: unset !important;
+  }
+  .full-container {
+    right: 280px;
+    left: 0;
+  }
+  @media screen and (min-width: 992px) {
+    .email-app .email-wrapper {
+      margin-left: unset;
+      margin-right: 250px;
+    }
+  }
+  .email-side-nav i {
+    float: right;
+  }
+  .email-app .email-side-nav {
+    border-right: 0px;
+    border-left: 1px solid rgba(0, 0, 0, .0625);
+  }
+  .fc-toolbar .fc-left {
+    float: right;
+  }
+  .fc-toolbar .fc-right {
+    float: left;
+  }
+  .mR-30 {
+    margin-right: unset !important;
+    margin-left: 30px;
+  }
+  .pL-20 {
+    padding-left: unset !important;
+    padding-right: 20px;
+  }
+  .bdR {
+    border-left: 1px solid rgba(0, 0, 0, .0625) !important;
+  }
+  .header .header-container .nav-left .notifications .counter, .header .header-container .nav-right .notifications .counter {
+    right: unset !important;
+    left: 6px;
+  }
+  .datepicker-dropdown {
+    direction: unset !important;
+    right: unset !important;
+  }
+  .form-group .peer {
+    min-width: 150px;
+  }
+}
+
