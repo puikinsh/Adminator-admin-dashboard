@@ -315,8 +315,8 @@ html[dir="rtl"] {
       }
     }
   }
-  .checkbox-inline input, .checkbox input, .radio-inline, .radio input{
-    margin-right:unset;
+  .checkbox-inline input, .checkbox input, .radio-inline, .radio input {
+    margin-right: unset;
     margin-left: -20px;
     margin-left: -1.25rem;
   }
@@ -324,7 +324,7 @@ html[dir="rtl"] {
     left: unset;
     right: 0;
   }
-  .mR-20{
+  .mR-20 {
     margin-right: unset;
     margin-left: 20px;
   }
@@ -335,6 +335,19 @@ html[dir="rtl"] {
   .mL-20 {
     margin-right: 20px;
     margin-left: unset;
+  }
+  .full-container {
+    right: 280px;
+    left: unset;
+  }
+  @media screen and (min-width: 992px) {
+    .email-app .email-wrapper {
+      margin-left: unset;
+      margin-right: 250px;
+    }
+  }
+  .email-side-nav i {
+    float: right;
   }
 }
 
