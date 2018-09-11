@@ -28,6 +28,7 @@ In order to run **Adminator** on your local machine all what you need to do is t
   - Node.js
   - Yarn or NPM
   - Git
+  - libpng-dev *linux only*
 
 #### Installing & Local Development
 Start by typing the following commands in your terminal in order to get **Adminator** full package on your machine and starting a local development server with live reload feature.
