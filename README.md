@@ -9,7 +9,7 @@
 
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
-### TOC
+## TOC
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
@@ -21,7 +21,7 @@
 - [License](#license)
 
 
-### Getting Started
+## Getting Started
 In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below.
 
 #### Prerequisites
@@ -41,7 +41,7 @@ Start by typing the following commands in your terminal in order to get **Admina
 ```
 
 
-### Files/Folders Structure
+## Files/Folders Structure
 Here is a brief explanation of the template folder structure and some of its main files usage:
 
 ```
@@ -105,7 +105,7 @@ Here is a brief explanation of the template folder structure and some of its mai
 └── yarn.lock                   # Yarn metadata.
 ```
 
-### Deployment
+## Deployment
 In deployment process, you have two commands:
 
 1. Build command
@@ -120,7 +120,7 @@ Used to create a local dev server in order to preview the final output of build 
 > npm run preview
 ```
 
-### Built With
+## Built With
 - [Babel](https://babeljs.io/)
 - [Webpack](https://webpack.js.org/)
 - [Eslint](https://eslint.org/)
@@ -146,11 +146,22 @@ Used to create a local dev server in order to preview the final output of build 
 - [Roboto Font](https://fonts.google.com/specimen/Roboto)
 - [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
 
-### Changelog
+## Changelog
 #### V 1.0.0
 Initial Release
-### Authors
+
+## Authors
 [Colorlib](https://colorlib.com)
-### License
+
+## More info
+- [Boostrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
+- [Bootstrap Templates](https://colorlib.com/wp/free-bootstrap-templates/)
+- [HTML Templates](https://colorlib.com/wp/free-html-website-templates/)
+- [Free Admin Dashboards](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)
+- [Website Templates](https://colorlib.com/wp/templates/)
+- [Free CSS Templates](https://colorlib.com/wp/free-css-website-templates/)
+- [WordPress Themes](https://colorlib.com/wp/free-wordpress-themes/)
+
+## License
 
 Adminator is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. But you always need to state that Colorlib is the original author of this template.
