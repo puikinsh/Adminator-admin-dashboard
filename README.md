@@ -154,7 +154,7 @@ Initial Release
 [Colorlib](https://colorlib.com)
 
 ## More info
-- [Boostrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
+- [Bootstrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
 - [Bootstrap Templates](https://colorlib.com/wp/free-bootstrap-templates/)
 - [HTML Templates](https://colorlib.com/wp/free-html-website-templates/)
 - [Free Admin Dashboards](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)
