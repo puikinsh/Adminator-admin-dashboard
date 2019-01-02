@@ -14,6 +14,8 @@
     "lint": "npm run lint:js && npm run lint:scss"
   },
   "devDependencies": {
+  },
+  "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
@@ -43,9 +45,7 @@
     "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.8.1",
     "webpack-dashboard": "^1.0.0",
-    "webpack-dev-server": "^2.9.3"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.9.3",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
     "bootstrap-datepicker": "^1.7.1",
