@@ -4,7 +4,7 @@
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "npm run build && node server.js",
     "dev": "webpack-dashboard -t 'Project' -- webpack-dev-server",
     "clean": "shx rm -rf ./build",
     "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
