@@ -9,6 +9,7 @@
 // + @Others
 // + @Header Themes
 // + @Social Networks Colors
+// + @Nomit WISP Color System
 
 // ---------------------------------------------------------
 // @Greyscale Colors
@@ -98,3 +99,16 @@ $theme-dark           : lighten($side-nav-dark, 10%);
 $theme-info           : $default-info;
 $theme-primary        : $default-primary;
 $theme-success        : desaturate($default-success, 5%);
+
+// ---------------------------------------------------------
+// @Nomit WISP Color System
+// ---------------------------------------------------------
+
+$nomit-purple         : #501DB9;
+$nomit-pink           : #EE38A4;
+$nomit-gradient       : linear-gradient(-45deg, #501DB9, #EE38A4);
+$grey-dark            : #454545;
+$grey-light           : #888888;
+$bkg                  : #F4F4F4;
+
+
