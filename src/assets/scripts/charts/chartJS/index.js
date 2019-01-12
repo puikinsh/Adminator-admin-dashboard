@@ -15,19 +15,19 @@ export default (function () {
     new Chart(lineCtx, {
       type: 'line',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
           label                : 'Series A',
           backgroundColor      : 'rgba(237, 231, 246, 0.5)',
           borderColor          : COLORS['deep-purple-500'],
-          pointBackgroundColor : COLORS['deep-purple-700'],
+          pointBackgroundColor : COLORS['white'],
           borderWidth          : 2,
-          data                 : [60, 50, 70, 60, 50, 70, 60],
+          data                 : [60, 50, 70, 85, 50, 70, 60],
         }, {
           label                : 'Series B',
-          backgroundColor      : 'rgba(232, 245, 233, 0.5)',
-          borderColor          : COLORS['blue-500'],
-          pointBackgroundColor : COLORS['blue-700'],
+          backgroundColor      : 'rgba(189, 225, 242, 0.5)',
+          borderColor          : COLORS['cyan-200'],
+          pointBackgroundColor : COLORS['white'],
           borderWidth          : 2,
           data                 : [70, 75, 85, 70, 75, 85, 70],
         }],

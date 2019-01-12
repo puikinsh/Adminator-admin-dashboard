@@ -67,6 +67,9 @@ $default-text-color   : #72777a;
 $default-warning      : #fc0;
 $default-white        : #fff;
 
+$default-dark-wisp    : #501db9;
+$default-light-wisp   : #ee38a4;
+
 // ---------------------------------------------------------
 // @Inverted Colors
 // ---------------------------------------------------------
@@ -83,7 +86,7 @@ $inverse-warning      : lighten($default-warning, 45%);
 
 $border-color         : #e6ecf5;
 $collapsed-size       : 70px;
-$header-height        : 65px;
+$header-height        : 80px;
 $offscreen-size       : 280px;
 $side-nav-dark        : #313644;
 $side-nav-dark-border : rgba(120, 130, 140, 0.3);
