@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
 
-    <style>
-      #loader {
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard</title>
+
+  <style>
+    #loader {
         transition: all 0.3s ease-in-out;
         opacity: 1;
         visibility: visible;
@@ -53,11 +54,12 @@
         }
       }
     </style>
-  </head>
-  <body class="app">
-    <!-- @TOC -->
-    <!-- =================================================== -->
-    <!--
+</head>
+
+<body class="app">
+  <!-- @TOC -->
+  <!-- =================================================== -->
+  <!--
       + @Page Loader
       + @App Content
           - #Left Sidebar
@@ -69,665 +71,271 @@
               > $App Screen Content
     -->
 
-    <!-- @Page Loader -->
-    <!-- =================================================== -->
-    <div id='loader'>
-      <div class="spinner"></div>
-    </div>
+  <!-- @Page Loader -->
+  <!-- =================================================== -->
+  <div id='loader'>
+    <div class="spinner"></div>
+  </div>
 
-    <script>
-      window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
-        setTimeout(() => {
-          loader.classList.add('fadeOut');
-        }, 300);
-      });
-    </script>
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+  </script>
 
-    <!-- @App Content -->
-    <!-- =================================================== -->
-    <div>
+  <!-- @App Content -->
+  <!-- =================================================== -->
+  <div>
 
+        ${require('html-loader!./_sidebar.html')}
 
+    <!-- #Main ============================ -->
+    <div class="page-container">
+      
+      ${require('html-loader!./_topbar.html')}
 
-
-
-
-
-
-
-
-
-
-
-      <!-- #Left Sidebar ==================== -->
-      <div class="sidebar">
-        <div class="sidebar-inner">
-          <!-- ### $Sidebar Header ### -->
-          <div class="sidebar-logo">
-            <div class="peers ai-c fxw-nw">
-              <div class="peer peer-greed">
-                <a class="sidebar-link td-n" href="index.html">
-                  <div class="peers ai-c fxw-nw">
-                    <div class="peer">
-                      <div class="logo">
-                        <img src="assets/static/images/wisp_logo_white_vertical.svg" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="peer">
-                <div class="mobile-toggle sidebar-toggle">
-                  <a href="" class="td-n">
-                    <i class="ti-arrow-circle-left"></i>
-                  </a>
-                </div>
-              </div>
+      <!-- ### $App Screen Content ### -->
+      <main class='main-content bgc-grey-300' style="padding-left: 80px; padding-right: 80px;">
+        <div id='mainContent row'>
+          <div class="row content-title mT-60">
+            <div class="col-8 ml-1 mb-3">
+              Dashboard
             </div>
           </div>
-
-          <!-- ### $Sidebar Menu ### -->
-          <ul class="sidebar-menu scrollable pos-r">
-            <li class="nav-item mT-30 active">
-              <a class="sidebar-link" href="index.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 ti-bar-chart"></i>
-                </span>
-                <span class="title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 ti-receipt"></i>
-                </span>
-                <span class="title">Ads</span>
-              </a>
-            </li>
-              <li class="nav-item">
-              <a class='sidebar-link' href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 ti-home"></i>
-                </span>
-                <span class="title">Profile</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 fa fa-users"></i>
-                </span>
-                <span class="title">Users</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link'  href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 fa fa-building"></i>
-                </span>
-                <span class="title">Companies</span>
-              </a>
-            </li>
-			<li class="nav-item">
-              <a class='sidebar-link'  href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 fa fa-crosshairs"></i>
-                </span>
-                <span class="title">Referees</span>
-              </a>
-            </li>
-			<li class="nav-item">
-              <a class='sidebar-link' href="forms.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 ti-comments"></i>
-                </span>
-                <span class="title">Reviews</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="charts.html">
-                <span class="icon-holder">
-                  <i class="c-white-500 ti-calendar"></i>
-                </span>
-                <span class="title">Reports</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="calendar.html" >
-                <span class="icon-holder">
-                  <i class="c-white-500 fa fa-history"></i>
-                </span>
-                <span class="title">History</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="sidebar-link" href="ui.html">
-                <span class="icon-holder">
-                    <i class="c-white-500 fa fa-cogs"></i>
-                  </span>
-                <span class="title">Settings</span>
-              </a>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- #Main ============================ -->
-      <div class="page-container">
-        <!-- ### $Topbar ### -->
-        <div class="header navbar">
-          <div class="header-container">
-               <!-- #LEFT ============================ -->
-            <ul class="nav-left">
-              <li>
-                <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
-                  <i class="ti-menu"></i>
-                </a>
-              </li>
-              <li class="search-box">
-                <a class="search-toggle no-pdd-right" href="javascript:void(0);">
-                  <i class="search-icon ti-search pdd-right-10"></i>
-                  <i class="search-icon-close ti-close pdd-right-10"></i>
-                </a>
-              </li>
-              <li class="search-input">
-                <input class="form-control" type="text" placeholder="Search users, companies, or anything..">
-              </li>
-              <li class="">
-                <button type="button" class="btn btn-gradient ">
-                    <i class="fa fa-plus pdd-right-5"></i>
-                    Add new user
-                </button>
-              </li>
-            </ul>
-            <ul class="nav-right">
-                <!-- #RIGHT ============================ -->
-              <!-- #email ============================ -->
-              <li class="notifications dropdown">
-                <span class="counter bgc-blue">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                  <i class="ti-email top-notification"></i>
-                </a>
-
-                <ul class="dropdown-menu">
-                  <li class="pX-20 pY-15 bdB">
-                    <i class="ti-email pR-10"></i>
-                    <span class="fsz-sm fw-600 c-grey-900">Emails</span>
-                  </li>
-                  <li>
-                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">John Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">5 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">Moo Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">15 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">Lee Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">25 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pX-20 pY-15 ta-c bdT">
-                    <span>
-                      <a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i class="fs-xs ti-angle-right mL-10"></i></a>
-                    </span>
-                  </li>
-                </ul>
-              </li>
-                <!-- #notifications bell ============================ -->
-              <li class="notifications dropdown">
-                <span class="counter bgc-red">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                  <i class="ti-bell"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="pX-20 pY-15 bdB">
-                    <i class="ti-bell pR-10"></i>
-                    <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
-                  </li>
-                  <li>
-                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">John Doe</span>
-                              <span class="c-grey-600">liked your <span class="text-dark">post</span>
-                              </span>
-                            </span>
-                            <p class="m-0">
-                              <small class="fsz-xs">5 mins ago</small>
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">Moo Doe</span>
-                              <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
-                              </span>
-                            </span>
-                            <p class="m-0">
-                              <small class="fsz-xs">7 mins ago</small>
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
-                            <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
-                          </div>
-                          <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">Lee Doe</span>
-                              <span class="c-grey-600">commented on your <span class="text-dark">video</span>
-                              </span>
-                            </span>
-                            <p class="m-0">
-                              <small class="fsz-xs">10 mins ago</small>
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pX-20 pY-15 ta-c bdT">
-                    <span>
-                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
-                    </span>
-                  </li>
-                </ul>
-              </li>
-               <li>
-                   <!-- #vertical line ============================ -->
-                    <div class="verticalLine"> </div>
-                </li>              
-                <!-- #account ============================ -->
-                
-              <li class="dropdown">
-                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
-                  <div class="peer">
-                    <span class="fsz-sm c-grey-900">Nomit Admin</span>
-                  </div>
-                  <div class="peer mR-10">
-                    <img class=" w-2r bdrs-50p mL-10 nomit-logo-top" src="assets/static/images/nomit-logo.png" alt="">
-                  </div>
-                  
-                </a>
-                <ul class="dropdown-menu fsz-sm">
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-settings mR-10"></i>
-                      <span>Setting</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-user mR-10"></i>
-                      <span>Profile</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-email mR-10"></i>
-                      <span>Messages</span>
-                    </a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-power-off mR-10"></i>
-                      <span>Logout</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-              <!-- #vertical line ============================ -->
-                <div class="verticalLine"> </div>
-              </li> 
-              <li>
-                <!-- #logo wisp ============================ -->
-                <div class="peer logo-top-bar">
-                    <img class="" src="assets/static/images/wisp_logo_horizontal.svg" alt="">
-                </div>
-              </li>  
-            </ul>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- ### $App Screen Content ### -->
-        <main class='main-content bgc-grey-300' style="padding-left: 80px; padding-right: 80px;">
-          <div id='mainContent row'>
-            <div class="row content-title mT-60">
-              <div class="col-8 ml-1 mb-3">
-                Dashboard
-              </div>              
-            </div>
-            <div class=" gap-20 masonry pos-r"> <!-- #content container ===== -->
-              <div class="masonry-sizer col-md-6"></div>
-              <div class="masonry-item  w-100"> <!-- #First line ========= -->
-                <div class="row gap-20">
-                  <!-- #Total Ads Views ==================== -->
-                  <div class='col-md-4'>
-                    <div class="layers bd bgc-white p-20">
-                      <div class="layer w-100 mB-10">
-                        <h6 class="lh-1">Total Ads Views</h6>
-                      </div>
-                      <div class="layer w-100">
-                        <div class="peers ai-sb fxw-nw">
-                            <div class="peer peer-greed">
-                                <span id="sparklinedash"></span>
-                              </div>
-                          <div class="peer">
-                              <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">24K</span>
-                          </div>
+          <div class=" gap-20 masonry pos-r">
+            <!-- #content container ===== -->
+            <div class="masonry-sizer col-md-6"></div>
+            <div class="masonry-item  w-100">
+              <!-- #First line ========= -->
+              <div class="row gap-20">
+                <!-- #Total Ads Views ==================== -->
+                <div class='col-md-4'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Total Ads Views</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span id="sparklinedash"></span>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- #Successful Matches ==================== -->
-                  <div class='col-md-4'>
-                    <div class="layers bd bgc-white p-20">
-                      <div class="layer w-100 mB-10">
-                        <h6 class="lh-1">Successful Matches</h6>
-                      </div>
-                      <div class="layer w-100">
-                        <div class="peers ai-sb fxw-nw">
-                          <div class="peer peer-greed">
-                            <span id="sparklinedash2"></span>
-                          </div>
-                          <div class="peer">
-                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">127</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- #New Ads ==================== -->
-                  <div class='col-md-4'>
-                    <div class="layers bd bgc-white p-20">
-                      <div class="layer w-100 mB-10">
-                        <h6 class="lh-1">New Ads (last month)</h6>
-                      </div>
-                      <div class="layer w-100">
-                        <div class="peers ai-sb fxw-nw">
-                          <div class="peer peer-greed">
-                            <span id="sparklinedash3"></span>
-                          </div>
-                          <div class="peer">
-                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">79</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="masonry-item col-12">
-                <!-- #New Registered Users ==================== -->
-                <div class="bd bgc-white">
-                  <div class="layers">
-                    <div class="layer w-100 pX-20 pT-20">
-                      <h6 class="lh-1">New Registered Users</h6>
-                    </div>
-                    <div class="layer w-100 p-20">
-                      <canvas id="line-chart" height="220"></canvas>
-                    </div>
-                    <div class="layer bdT p-20 w-100">
-                      <div class="peers ai-c jc-c gapX-20">
                         <div class="peer">
-                          <span class="fsz-def fw-600 mR-10 c-grey-800">10% <i class="fa fa-level-up c-green-500"></i></span>
-                          <small class="c-grey-500 fw-600">APPL</small>
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">24K</span>
                         </div>
-                        <div class="peer fw-600">
-                          <span class="fsz-def fw-600 mR-10 c-grey-800">2% <i class="fa fa-level-down c-red-500"></i></span>
-                          <small class="c-grey-500 fw-600">Average</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- #Successful Matches ==================== -->
+                <div class='col-md-4'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Successful Matches</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span id="sparklinedash2"></span>
                         </div>
-                        <div class="peer fw-600">
-                          <span class="fsz-def fw-600 mR-10 c-grey-800">15% <i class="fa fa-level-up c-green-500"></i></span>
-                          <small class="c-grey-500 fw-600">Sales</small>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">127</span>
                         </div>
-                        <div class="peer fw-600">
-                          <span class="fsz-def fw-600 mR-10 c-grey-800">8% <i class="fa fa-level-down c-red-500"></i></span>
-                          <small class="c-grey-500 fw-600">Profit</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- #New Ads ==================== -->
+                <div class='col-md-4'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">New Ads (last month)</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span id="sparklinedash3"></span>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">79</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            
-              <div class="masonry-item w-100">
-                <div class="row gap-20">
-                  <div class="col-3">
-                    <!-- #Successful Mathches ==================== -->
-                    <div class="bd bgc-white p-20 peer peer-greed"  style="height: 400px">
+            </div>
+            <div class="masonry-item col-12">
+              <!-- #New Registered Users ==================== -->
+              <div class="bd bgc-white">
+                <div class="layers">
+                  <div class="layer w-100 pX-20 pT-20">
+                    <h6 class="lh-1">New Registered Users</h6>
+                  </div>
+                  <div class="layer w-100 p-20">
+                    <canvas id="line-chart" height="220"></canvas>
+                  </div>
+                  <div class="layer bdT p-20 w-100">
+                    <div class="peers ai-c jc-c gapX-20">
+                      <div class="peer">
+                        <span class="fsz-def fw-600 mR-10 c-grey-800">10% <i class="fa fa-level-up c-green-500"></i></span>
+                        <small class="c-grey-500 fw-600">APPL</small>
+                      </div>
+                      <div class="peer fw-600">
+                        <span class="fsz-def fw-600 mR-10 c-grey-800">2% <i class="fa fa-level-down c-red-500"></i></span>
+                        <small class="c-grey-500 fw-600">Average</small>
+                      </div>
+                      <div class="peer fw-600">
+                        <span class="fsz-def fw-600 mR-10 c-grey-800">15% <i class="fa fa-level-up c-green-500"></i></span>
+                        <small class="c-grey-500 fw-600">Sales</small>
+                      </div>
+                      <div class="peer fw-600">
+                        <span class="fsz-def fw-600 mR-10 c-grey-800">8% <i class="fa fa-level-down c-red-500"></i></span>
+                        <small class="c-grey-500 fw-600">Profit</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="masonry-item w-100">
+              <div class="row gap-20">
+                <div class="col-3">
+                  <!-- #Successful Mathches ==================== -->
+                  <div class="bd bgc-white p-20 peer peer-greed" style="height: 400px">
+                    <div class="layers">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Successful Mathches</h6>
+                      </div>
+                      <!-- Pie Charts -->
+                      <div class="peers pT-50 mT-20 bdT fxw-nw@lg+ jc-sb ta-c gap-10">
+                        <div class="peer">
+                          <div class="easy-pie-chart" data-size='130' data-percent="75" data-bar-color='#a19ff8'>
+                            <span></span>
+                          </div>
+                          <h6 class="fsz-sm">Matched</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-9">
+                  <!-- #Nationality ==================== -->
+                  <div class="bd bgc-white" style="height: 400px">
+                    <div class="peers fxw-nw@lg+ ai-s">
+                      <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
                         <div class="layers">
                           <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Successful Mathches</h6>
+                            <h6 class="lh-1">Nationality</h6>
                           </div>
-                          <!-- Pie Charts -->
-                          <div class="peers pT-50 mT-20 bdT fxw-nw@lg+ jc-sb ta-c gap-10">
-                              <div class="peer">
-                                <div class="easy-pie-chart" data-size='130' data-percent="75" data-bar-color='#a19ff8'>
-                                  <span></span>
+                          <div class="layer w-100">
+                            <div id="world-map-marker"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="peer bdL p-20 w-30p@lg+ w-100p@lg-">
+                        <div class="layers">
+                          <div class="layer w-100">
+                            <!-- Progress Bars -->
+                            <div class="layers">
+                              <div class="layer w-100">
+                                <h5 class="mB-5">100k</h5>
+                                <small class="fw-600 c-grey-700">Visitors From USA</small>
+                                <span class="pull-right c-grey-600 fsz-sm">50%</span>
+                                <div class="progress mT-10">
+                                  <div class="progress-bar bgc-deep-purple-500" role="progressbar" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100" style="width:50%;"> <span class="sr-only">50%
+                                      Complete</span></div>
                                 </div>
-                                <h6 class="fsz-sm">Matched</h6>
                               </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-9"  >
-                    <!-- #Nationality ==================== -->
-                    <div class="bd bgc-white" style="height: 400px">
-                        <div class="peers fxw-nw@lg+ ai-s">
-                          <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
-                            <div class="layers">
-                              <div class="layer w-100 mB-10">
-                                <h6 class="lh-1">Nationality</h6>
+                              <div class="layer w-100 mT-15">
+                                <h5 class="mB-5">1M</h5>
+                                <small class="fw-600 c-grey-700">Visitors From Europe</small>
+                                <span class="pull-right c-grey-600 fsz-sm">80%</span>
+                                <div class="progress mT-10">
+                                  <div class="progress-bar bgc-green-500" role="progressbar" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">80%
+                                      Complete</span></div>
+                                </div>
                               </div>
-                              <div class="layer w-100">
-                                <div id="world-map-marker"></div>
+                              <div class="layer w-100 mT-15">
+                                <h5 class="mB-5">450k</h5>
+                                <small class="fw-600 c-grey-700">Visitors From Australia</small>
+                                <span class="pull-right c-grey-600 fsz-sm">40%</span>
+                                <div class="progress mT-10">
+                                  <div class="progress-bar bgc-light-blue-500" role="progressbar" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100" style="width:40%;"> <span class="sr-only">40%
+                                      Complete</span></div>
+                                </div>
                               </div>
-                            </div>
-                          </div>
-                          <div class="peer bdL p-20 w-30p@lg+ w-100p@lg-">
-                            <div class="layers">
-                              <div class="layer w-100">
-                                <!-- Progress Bars -->
-                                <div class="layers">
-                                  <div class="layer w-100">
-                                    <h5 class="mB-5">100k</h5>
-                                    <small class="fw-600 c-grey-700">Visitors From USA</small>
-                                    <span class="pull-right c-grey-600 fsz-sm">50%</span>
-                                    <div class="progress mT-10">
-                                      <div class="progress-bar bgc-deep-purple-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%;"> <span class="sr-only">50% Complete</span></div>
-                                    </div>
-                                  </div>
-                                  <div class="layer w-100 mT-15">
-                                    <h5 class="mB-5">1M</h5>
-                                    <small class="fw-600 c-grey-700">Visitors From Europe</small>
-                                    <span class="pull-right c-grey-600 fsz-sm">80%</span>
-                                    <div class="progress mT-10">
-                                      <div class="progress-bar bgc-green-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">80% Complete</span></div>
-                                    </div>
-                                  </div>
-                                  <div class="layer w-100 mT-15">
-                                    <h5 class="mB-5">450k</h5>
-                                    <small class="fw-600 c-grey-700">Visitors From Australia</small>
-                                    <span class="pull-right c-grey-600 fsz-sm">40%</span>
-                                    <div class="progress mT-10">
-                                      <div class="progress-bar bgc-light-blue-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%;"> <span class="sr-only">40% Complete</span></div>
-                                    </div>
-                                  </div>
-                                  <div class="layer w-100 mT-15">
-                                    <h5 class="mB-5">1B</h5>
-                                    <small class="fw-600 c-grey-700">Visitors From India</small>
-                                    <span class="pull-right c-grey-600 fsz-sm">90%</span>
-                                    <div class="progress mT-10">
-                                      <div class="progress-bar bgc-blue-grey-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:90%;"> <span class="sr-only">90% Complete</span></div>
-                                    </div>
-                                  </div>
-                                </div>                            
+                              <div class="layer w-100 mT-15">
+                                <h5 class="mB-5">1B</h5>
+                                <small class="fw-600 c-grey-700">Visitors From India</small>
+                                <span class="pull-right c-grey-600 fsz-sm">90%</span>
+                                <div class="progress mT-10">
+                                  <div class="progress-bar bgc-blue-grey-500" role="progressbar" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100" style="width:90%;"> <span class="sr-only">90%
+                                      Complete</span></div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="masonry-item w-100">
-                <div class="row gap-20">
-                  <!-- #Visitors ==================== -->
-                  <div class="col-9">
-                      <div class="bgc-white p-20 bd"  style="height: 350px">
-                        <h6 class="c-grey-900">Visitors</h6>
-                        <div class="mT-30">
-                          <canvas id="bar-chart" height="90"></canvas>
+            <div class="masonry-item w-100">
+              <div class="row gap-20">
+                <!-- #Visitors ==================== -->
+                <div class="col-9">
+                  <div class="bgc-white p-20 bd" style="height: 350px">
+                    <h6 class="c-grey-900">Visitors</h6>
+                    <div class="mT-30">
+                      <canvas id="bar-chart" height="90"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-3">
+                  <!-- #Visa Types ==================== -->
+                  <div class="bd bgc-white p-20 peer peer-greed" style="height: 350px">
+                    <div class="layers">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Visa Types</h6>
+                      </div>
+                      <!-- Pie Chart -->
+                      <div class="peers pT-20 mT-20 bdT fxw-nw@lg+ jc-sb ta-c gap-10">
+                        <div class="peer">
+
+                          <div class="easy-pie-chart" data-size='130' data-percent="75" data-bar-color='#a19ff8'>
+                            <span></span>
+                          </div>
+                          <h6 class="fsz-sm">Matched</h6>
                         </div>
                       </div>
-                  </div>
-
-                  <div class="col-3">
-                        <!-- #Visa Types ==================== -->
-                        <div class="bd bgc-white p-20 peer peer-greed" style="height: 350px" >
-                            <div class="layers">
-                              <div class="layer w-100 mB-10">
-                                <h6 class="lh-1">Visa Types</h6>
-                              </div>
-                              <!-- Pie Chart -->
-                              <div class="peers pT-20 mT-20 bdT fxw-nw@lg+ jc-sb ta-c gap-10">
-                                  <div class="peer">
-                                    
-                                    <div class="easy-pie-chart" data-size='130' data-percent="75" data-bar-color='#a19ff8'>
-                                      <span></span>
-                                    </div>
-                                    <h6 class="fsz-sm">Matched</h6>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+    </div>
 
 
-    </div>
-    </div>
   </div>
-</main>
+  </div>
+  </div>
+  </main>
 
 
 
@@ -741,12 +349,13 @@
 
 
 
-        <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
-        </footer>
-      </div>
-    </div>
-  </body>
-  
+  <!-- ### $App Screen Footer ### -->
+  <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+    <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>.
+      All rights reserved.</span>
+  </footer>
+  </div>
+  </div>
+</body>
+
 </html>
