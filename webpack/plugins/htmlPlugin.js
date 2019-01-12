@@ -9,6 +9,7 @@ const titles = {
   'buttons': 'Buttons',
   'calendar': 'Calendar',
   'charts': 'Charts',
+  'ads': 'ads',
   'chat': 'Chat',
   'compose': 'Compose',
   'datatable': 'Datatable',
