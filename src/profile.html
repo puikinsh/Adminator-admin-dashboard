@@ -56,26 +56,7 @@
   </head>
 
 
-
-
-
   <body class="app">
-    <!-- @TOC -->
-    <!-- =================================================== -->
-    <!--
-      + @Page Loader
-      + @App Content
-          - #Left Sidebar
-              > $Sidebar Header
-              > $Sidebar Menu
-
-          - #Main
-              > $Topbar
-              > $App Screen Content
-    -->
-
-    <!-- @Page Loader -->
-    <!-- =================================================== -->
     <div id='loader'>
       <div class="spinner"></div>
     </div> 
@@ -102,61 +83,157 @@
 
 
         <!-- ### $App Screen Content ### -->
-        <main class='main-content bgc-grey-300' style="padding-left: 80px; padding-right: 80px;">
+        <main class='main-content bgc-grey-300'>
           <div id='mainContent row'>
             <div class="content-title mT-60">
               <div class="ml-1 mb-3">
                 Profile
               </div> 
             </div>  
-              <div class="ml-1 mb-3" style=" font-weight: bolder; color: black ">
-                Sign out with WISP now to get yourself connected.
+              <div class="ml-1 mb-3 text-black-bold">
+                Sign up with WISP now to get yourself connected.
               </div> 
-              <div class="ml-1 mb-3" style="font-size:11px;">
+              <div class="ml-1 mb-3 text-size-11">
                 Please, tell us more about your information so we could find the perfect oportunities for you.
               </div>   
 
-            <div class=" gap-20 masonry pos-r"> <!-- #content container ===== -->
+            <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
               <div class="masonry-sizer col-md-6"></div>
 
 
               
                 <div class="masonry-item  w-100"> <!-- #your profile ========= -->
-                  <div class="bd bgc-white">
-                      <div class="layers">
-                          <img class="" style="width: 80px; float: left;" src="assets/static/images/nomit-logo.png" alt="">
-                          <p> ciao</p>
-                         
+
+                      <div class="card item-box" >
+                        <div class="user-data-title">
+                            <img class="user-update-img"  src="assets/static/images/user-update.png" alt="">
+                            <div class="testo"> <h5>Francesca Sperati</h5> Bla Bla, this is your bio or whatever!</div>
+                        </div>
+                        <div class="card-body-profile">
+                          <div class="profile-forms">
+                            <h5 class="card-title d-flex text-black-bold"> Your Profile</h5> 
+
+                            <div class="row ">
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">First Name</h9>
+                                <input type="text" class="form-control" id="" placeholder="First name" value="Francesca" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Last Name</h9>
+                                <input type="text" class="form-control" id="" placeholder="Last name" value="Sperati" required>
+                              </div>
+                              <div class="col-4 profile-form-row"></div>
+                            </div>
+
+                            <div class="row ">
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Email Address</h9>
+                                <input type="text" class="form-control" id="" placeholder="Email" value="test@test.au" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Phone Number</h9>
+                                <input type="text" class="form-control" id="" placeholder="Phone" value="0414098765" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">State</h9>
+                                <select id="inputState" class="form-control">
+                                  <option selected>VIC</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="row ">  
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Nationality</h9>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Italian</option>
+                                    <option>...</option>
+                                  </select>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Visa Type</h9>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Student</option>
+                                    <option>...</option>
+                                  </select>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Language (Select one or more)</h9>
+                                <select id="inputState" class="form-control">
+                                  <option selected>English</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="row ">  
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
+                                  <select id="inputState" class="form-control">
+                                      <option selected>Software Engineering</option>
+                                      <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
+                                  <select id="inputState" class="form-control">
+                                      <option selected>Project Management</option>
+                                      <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 profile-form-row"> </div>
+                              </div>
+                          <button type="button" class="btn btn-gradient ">UPDATE</button>
+                          <button type="button" class="btn btn-cancel ">CANCEL</button>
+                           
+                          </div>
+                        </div>
                       </div>
-                      <div class="layers">
-                          ciao
+                </div>
+
+
+
+                <div class="masonry-item  w-100">  <!-- #change password ========= -->
+
+                  <div class="card item-box" >
+                    
+                    <div class="card-body-profile">
+                      <div class="profile-forms">
+                        <h5 class="card-title d-flex text-black-bold"> Change Password</h5> 
+                        <div class="row ">
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Current Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">New Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Confirm New urrent Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                        </div>
+
+                      <button type="button" class="btn btn-gradient ">UPDATE</button>
+                      <button type="button" class="btn btn-cancel ">CANCEL</button>
+                       
                       </div>
-
-
-
-                
+                    </div>
                   </div>
-                </div>
-                <div class="masonry-item  w-100"> <!-- #change password ========= -->
-                  ciao
-                </div>
+            </div>
+                
               
             </div><!--content container-->
           </div><!--page container-->
-          </main>
-        </div><!-- page-container -->
-        </div>  <!-- App Content -->
-
-
-
-
-
-
+          
+        </main>
 
         <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
-        </footer>
+        ${require('html-loader!./_footer.html')}
+        </div><!-- page-container -->
+        </div>  <!-- App Content -->
   </body>
   
 </html>
