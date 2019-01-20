@@ -68,6 +68,7 @@
 
       .notifications {
         position: relative;
+        font-size: 20px;
 
         .counter {
           background-color: $default-danger;
@@ -77,8 +78,14 @@
           line-height: 1;
           padding: 3px 5.5px;
           position: absolute;
-          right: 6px;
-          top: 12px;
+          right: 2px;
+          top: 20px;
+          z-index: 1;
+        }
+        .top-notification{
+          z-index: 4;
+          position: relative;
+          background-color: $default-white;
         }
 
         .dropdown-menu {
@@ -144,6 +151,8 @@
   }
 
   .search-box {
+
+    
     .search-icon-close {
       display: none;
     }
@@ -168,13 +177,16 @@
 
     input {
       background-color: transparent;
-      border: 0;
+      border: 1;
+      border-color: #501db9;
+      border-radius: 50px;
       box-shadow: none;
-      font-size: 18px;
+      font-size: 13px;
       height: 40px;
-      margin-top: 12px;
+      width: 350px;
+      margin-top: calc((#{$header-height} - 40px)/2);
       outline: none;
-      padding: 5px;
+      padding: 10px;
 
       @include to($breakpoint-sm) {
         width: 85px;
@@ -185,6 +197,38 @@
         font-style: italic;
       }
     }
+  }
+  .btn-gradient {
+    color: #fff;
+    background-image: linear-gradient(to right,#ee38a4, #501db9);
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    width: 180px;
+    margin-top: calc((#{$header-height} - 40px)/2);
+    margin-left: 15px;
+    outline: none;
+    padding: 5px;
+  }
+
+  .nomit-logo-top{
+    width: 60px ;
+    margin-right: 0px;
+  }
+
+  .verticalLine{
+      border-left:1.5px solid $grey-400;
+      height:30px;
+      margin-top: calc((#{$header-height} - 30px)/2);
+      margin-left: 12px; 
+      margin-right: 12px; 
+  }
+
+  .logo-top-bar{
+    width: 70px;
+    margin-top: calc((#{$header-height} - 20px)/2);
+    margin-right: 55px; 
+    margin-left: 16px;  
   }
 }
 

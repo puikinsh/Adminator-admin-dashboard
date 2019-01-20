@@ -13,7 +13,8 @@
 // ---------------------------------------------------------
 
 .sidebar {
-  background-color: $default-white;
+                //background-color: $default-white;
+background-image: linear-gradient(#fe4cb8, #793fcc);
   bottom: 0;
   overflow: hidden;
   position: fixed;
@@ -75,7 +76,7 @@
       .sidebar-inner {
         .sidebar-logo {
           border-bottom: 1px solid $border-color;
-          padding: 0 20px;
+          padding: 0 40px;
         }
 
         .sidebar-menu {
@@ -125,10 +126,10 @@
 // ---------------------------------------------------------
 
 .sidebar-logo {
-  border-bottom: 1px solid $border-color;
   border-right: 1px solid $border-color;
   line-height: 0;
-  padding: 0 20px;
+
+  padding: 0 35%;
   transition: all 0.2s ease;
 
   a {
@@ -136,12 +137,13 @@
     width: 100%;
 
     .logo {
-      background-position: center left;
+						background-position: center;
+						margin-top: 30px;
       background-repeat: no-repeat;
-      display: inline-block;
+      display: block;
       min-height: calc(#{$header-height} - 1px);
       width: 100%;
-      width: 70px;
+      width: 80px;
     }
 
     .logo-text {
@@ -178,18 +180,20 @@
   border-right: 1px solid $border-color;
   height: calc(100vh - #{$header-height});
   list-style: none;
-  margin: 0;
+  margin: 0px;
   overflow: auto;
-  padding: 0;
+  padding: 10px;
   position: relative;
 
   .dropdown-toggle::after {
     display: none;
   }
 
+    //cerchietto vicino la voce selezionata
   .sidebar-link {
     &.active::before {
       background: $md-blue-500;
+        background: white;
       border-radius: 50%;
       content: '';
       display: block;
@@ -245,16 +249,18 @@
     }
 
     a {
-      color: $default-text-color;
+      color: $default-white;
       transition: all 0.3s ease;
-
+        font-weight: normal;
       &:hover,
       &:focus {
-        color: $default-dark;
+        color: $default-white;
         text-decoration: none;
-
+          font-weight: bold;
+          
         .icon-holder {
           color: $default-info;
+            font-weight: bold;
         }
       }
     }
@@ -334,6 +340,9 @@
         .sidebar-logo {
           border-bottom: 1px solid transparent;
           padding: 0;
+          margin-left: auto;
+          margin-right: auto;
+
         }
 
         .sidebar-menu {
@@ -370,6 +379,8 @@
           .sidebar-logo {
             border-bottom: 1px solid $border-color;
             padding: 0 20px;
+            margin-left: auto;
+            margin-right: auto;
           }
 
           .sidebar-menu {

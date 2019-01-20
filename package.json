@@ -4,7 +4,7 @@
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "npm run build && node server.js",
     "dev": "webpack-dashboard -t 'Project' -- webpack-dev-server",
     "clean": "shx rm -rf ./build",
     "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
@@ -13,7 +13,8 @@
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
     "lint": "npm run lint:js && npm run lint:scss"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
@@ -32,6 +33,8 @@
     "eslint-plugin-import": "2.7.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
+    "html-includes": "^4.0.0",
+    "html-loader": "^0.5.5",
     "imagemin-webpack-plugin": "^1.5.2",
     "node-sass": "^4.5.3",
     "postcss-cssnext": "^3.0.2",
@@ -43,9 +46,7 @@
     "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.8.1",
     "webpack-dashboard": "^1.0.0",
-    "webpack-dev-server": "^2.9.3"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.9.3",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
     "bootstrap-datepicker": "^1.7.1",
