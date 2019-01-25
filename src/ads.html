@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title>Ads</title>
 
     <style>
       #loader {
@@ -102,7 +102,7 @@
 
 
         <!-- ### $App Screen Content ### -->
-        <main class='main-content bgc-grey-300' style="padding-left: 80px; padding-right: 80px;">
+        <main class='main-content bgc-grey-300'>
           <div id='mainContent row'>
             <div class="row content-title mT-60">
               <div class="col-8 ml-1 mb-3">
@@ -113,64 +113,84 @@
               <div class="masonry-sizer col-md-6"></div>
 
               <div class="masonry-item  w-100"> <!-- #First line ========= -->
-                <div class="row gap-20">
+                <div class="row gap-30">
+
                   <!-- # ad n 1 ==================== -->
                   <div class='col-md-4'>
-                      <div class="card" >
+                      <div class="card item-box" >
                           <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
                           <div class="card-body">
-                            <h5 class="card-title">Adv title</h5>
+                            <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
+                              <div>Adv title </div>
+                              <div>
+                                  <a class='' href="" > <span class="icon-holder"><i class=" ti-heart" style="color:#EE38A4"></i></span></a>
+                              </div>
+                            </h5>
+                            <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                           </div>
+                          <a href="ads_1.html">
+                            <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                              VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i> 
+                            </div>
+                          </a>
                         </div>
                   </div>
 
                   <!-- # ad n 2 ==================== -->
                   <div class='col-md-4'>
-                      <div class="card" >
+                      <div class="card item-box" >
                           <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
+                              <div>Adv title </div>
+                              <div>
+                                  <a class='' href="" > <span class="icon-holder"><i class=" ti-heart" style="color:#EE38A4"></i></span></a>
+                              </div>
+                            </h5>
+                            <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                           </div>
+                          <a href="ads_1.html">
+                            <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                              VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i> 
+                            </div>
+                          </a>
                         </div>
                   </div>
-
                   <!-- # ad n 3 ==================== -->
                   <div class='col-md-4'>
-                      <div class="card" >
+                      <div class="card item-box" >
                           <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
+                              <div>Adv title </div>
+                              <div>
+                                  <a class='' href="" > <span class="icon-holder"><i class=" ti-heart" style="color:#EE38A4"></i></span></a>
+                              </div>
+                            </h5>
+                            <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                           </div>
+                          <a href="ads_1.html">
+                            <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                              VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i> 
+                            </div>
+                          </a>
                         </div>
                   </div>
-
 
 
                 </div>
               </div>
               
-            </div><!--content container-->
-          </div><!--page container-->
+            </div><!--content container -->
+          </div><!--maincontent row -->
           </main>
-        </div><!-- page-container -->
-        </div>  <!-- App Content -->
-
-
-
-
-
-
 
         <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
-        </footer>
+        ${require('html-loader!./_footer.html')}
+        </div><!-- page-container -->
+        </div>  <!-- App Content -->
   </body>
-  
 </html>

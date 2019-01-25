@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile</title>
+
+    <style>
+      #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+
+  <body class="app">
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div> 
+
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+          loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+
+      ${require('html-loader!./_sidebar.html')}
+
+      <div class="page-container">
+
+
+          ${require('html-loader!./_topbar.html')}
+
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-300'>
+          <div id='mainContent row'>
+            <div class="content-title mT-60">
+              <div class="ml-1 mb-3">
+                Profile
+              </div> 
+            </div>  
+              <div class="ml-1 mb-3 text-black-bold">
+                Sign up with WISP now to get yourself connected.
+              </div> 
+              <div class="ml-1 mb-3 text-size-11">
+                Please, tell us more about your information so we could find the perfect oportunities for you.
+              </div>   
+
+            <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
+              <div class="masonry-sizer col-md-6"></div>
+
+
+              
+                <div class="masonry-item  w-100"> <!-- #your profile ========= -->
+
+                      <div class="card item-box" >
+                        <div class="user-data-title">
+                            <img class="user-update-img"  src="assets/static/images/user-update.png" alt="">
+                            <div class="testo"> <h5>Francesca Sperati</h5> Bla Bla, this is your bio or whatever!</div>
+                        </div>
+                        <div class="card-body-profile">
+                          <div class="profile-forms">
+                            <h5 class="card-title d-flex text-black-bold"> Your Profile</h5> 
+
+                            <div class="row ">
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">First Name</h9>
+                                <input type="text" class="form-control" id="" placeholder="First name" value="Francesca" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Last Name</h9>
+                                <input type="text" class="form-control" id="" placeholder="Last name" value="Sperati" required>
+                              </div>
+                              <div class="col-4 profile-form-row"></div>
+                            </div>
+
+                            <div class="row ">
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Email Address</h9>
+                                <input type="text" class="form-control" id="" placeholder="Email" value="test@test.au" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Phone Number</h9>
+                                <input type="text" class="form-control" id="" placeholder="Phone" value="0414098765" required>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">State</h9>
+                                <select id="inputState" class="form-control">
+                                  <option selected>VIC</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="row ">  
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Nationality</h9>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Italian</option>
+                                    <option>...</option>
+                                  </select>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Visa Type</h9>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Student</option>
+                                    <option>...</option>
+                                  </select>
+                              </div>
+                              <div class="col-4 profile-form-row">
+                                <h9 class="">Language (Select one or more)</h9>
+                                <select id="inputState" class="form-control">
+                                  <option selected>English</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="row ">  
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
+                                  <select id="inputState" class="form-control">
+                                      <option selected>Software Engineering</option>
+                                      <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
+                                  <select id="inputState" class="form-control">
+                                      <option selected>Project Management</option>
+                                      <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 profile-form-row"> </div>
+                              </div>
+                          <button type="button" class="btn btn-gradient ">UPDATE</button>
+                          <button type="button" class="btn btn-cancel ">CANCEL</button>
+                           
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+
+
+                <div class="masonry-item  w-100">  <!-- #change password ========= -->
+
+                  <div class="card item-box" >
+                    
+                    <div class="card-body-profile">
+                      <div class="profile-forms">
+                        <h5 class="card-title d-flex text-black-bold"> Change Password</h5> 
+                        <div class="row ">
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Current Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">New Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Confirm New urrent Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                        </div>
+
+                      <button type="button" class="btn btn-gradient ">UPDATE</button>
+                      <button type="button" class="btn btn-cancel ">CANCEL</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+            </div>
+                
+              
+            </div><!--content container-->
+          </div><!--page container-->
+          
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+        ${require('html-loader!./_footer.html')}
+        </div><!-- page-container -->
+        </div>  <!-- App Content -->
+  </body>
+  
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Referees</title>
+
+    <style>
+      #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+
+
+
+
+  <body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div> 
+
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+          loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+
+      ${require('html-loader!./_sidebar.html')}
+
+      <div class="page-container">
+
+
+          ${require('html-loader!./_topbar.html')}
+
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-300'>
+          <div id='mainContent row'>
+            <div class="content-title mT-60">
+              <div class="ml-1 mb-3">
+                Referees
+              </div> 
+            </div>  
+
+            <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
+              <div class="masonry-sizer col-md-6"></div>
+
+
+                <div class="masonry-item  w-50"> <!-- #first referee ========= -->
+                      <div class="card item-box" >
+                        <div class="referee-data-title">
+                            <img class="referee-update-img"  src="assets/static/images/nomit-logo.png" alt="">
+                            <div class="testo"><h5 class=" text-black-bold">David James</h5>
+                                <div class=" text-size-11">Victoria</div> 
+                                <div class=" text-size-11">Mobile: 0414987654</div>  
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="card-body-referee row">
+                                <div class="referee-icons">
+                                    <a href="" ><i class="ti-instagram "></i></a>
+                                    <a href="" ><i class="ti-twitter "></i></a>
+                                    <a href="" ><i class="ti-facebook   "></i></a>
+                                    <a href="" ><i class="ti-email"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="masonry-item  w-50"> <!-- #second company ========= -->
+                    <div class="card item-box" >
+                      <div class="referee-data-title">
+                          <img class="referee-update-img"  src="assets/static/images/nomit-logo.png" alt="">
+                          <div class="testo"><h5 class=" text-black-bold">David James</h5>
+                              <div class=" text-size-11">Victoria</div> 
+                              <div class=" text-size-11">Mobile: 0414987654</div>  
+                          </div>
+                      </div>
+                      <div class="card-body p-0">
+                          <div class="card-body-referee row">
+                              <div class="referee-icons">
+                                  <a href="" ><i class="ti-instagram "></i></a>
+                                  <a href="" ><i class="ti-twitter "></i></a>
+                                  <a href="" ><i class="ti-facebook   "></i></a>
+                                  <a href="" ><i class="ti-email"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+
+  
+
+
+
+            </div>
+                
+              
+            </div><!--content container-->
+          
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+        ${require('html-loader!./_footer.html')}
+        </div><!-- page-container -->
+        </div>  <!-- App Content -->
+  </body>
+  
+</html>
