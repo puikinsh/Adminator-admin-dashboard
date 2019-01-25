@@ -48,6 +48,10 @@
 .text-size-11{
     font-size:11px;
 }
+
+.text-size-20{
+    font-size:20px;
+}
 //index
 .succ-match-perc{
     height: 400px;
@@ -149,16 +153,22 @@
     top: -20px;
     right: -50px;
     border: 2px solid transparent;
-    border-top-left-radius: 132px;
+    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 67px;
+    border-bottom-left-radius: 10px;
     margin-left: auto;
     padding: 100px;
+    text-align: center;
 }
 .logo-wisp-right{
-    width: 130px;
-    margin: auto;
+    width: 174px;
+}
+.modal-username{
+    margin-top: 10px;;
+    border-radius: 50px;
+    border-color: #501db9;
+    width: 180px;
 }
 .btn-signup{
     color: #fff;
@@ -176,8 +186,60 @@
     text-align: -webkit-center;
     margin-top: 20px;
 }
-.modal-username{
-    background-image:url(../images/icons/dollar.png); 
-    background-repeat: no-repeat; 
-    background-position: 2px 3px;
+//companies
+.card-body-companies{
+    border-top: 1px solid #9c9fa0;
+    margin: 0;
+}
+.companies-icons{
+    margin-left: 150px;
+    padding: 5px;
+    padding-left: 0;
+}
+.companies-icons i{
+    font-size: 20px;
+    margin-right: 15px;
+    color: #9c9fa0;
+}
+.companies-update-img{
+    width: 80px; 
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+//referees
+.card-body-referee{
+    border-top: 1px solid #9c9fa0;
+    margin: 0;
+}
+.referee-icons{
+    margin-left: 150px;
+    padding: 5px;
+    padding-left: 0;
+}
+.referee-icons i{
+    font-size: 20px;
+    margin-right: 15px;
+    color: #9c9fa0;
+}
+.referee-update-img{
+    width: 80px; 
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+//ads_1
+.companies-update-title{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-centered{
+    margin-top: 0;
+    margin-left: 0;
+}
+.btn-centered-container{
+    text-align:center;
 }
