@@ -13,7 +13,9 @@
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
     "lint": "npm run lint:js && npm run lint:scss"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "html-loader": "^0.5.5"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -34,7 +36,6 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "html-includes": "^4.0.0",
-    "html-loader": "^0.5.5",
     "imagemin-webpack-plugin": "^1.5.2",
     "node-sass": "^4.5.3",
     "postcss-cssnext": "^3.0.2",
