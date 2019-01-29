@@ -147,22 +147,23 @@
 
 <!-- ### $Sidebar Menu ### -->
 <ul class="sidebar-menu scrollable pos-r">
-  <li class="nav-item mT-30 active">
-    <a class="sidebar-link" href="index.html">
-      <span class="icon-holder">
-        <i class="c-white-500 ti-bar-chart"></i>
-      </span>
-      <span class="title">Dashboard</span>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="ads.html">
-      <span class="icon-holder">
-        <i class="c-white-500 ti-receipt"></i>
-      </span>
-      <span class="title">Ads</span>
-    </a>
-  </li>
+      <li class="nav-item mT-30 active visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class="sidebar-link" href="index.html">
+          <span class="icon-holder">
+            <i class="c-white-500 ti-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class='sidebar-link' href="ads.html">
+          <span class="icon-holder">
+            <i class="c-white-500 ti-receipt"></i>
+          </span>
+          <span class="title">Ads</span>
+        </a>
+      </li>
+
   <li class="nav-item">
     <a class='sidebar-link' href="profile.html">
       <span class="icon-holder">
@@ -171,30 +172,31 @@
       <span class="title">Profile</span>
     </a>
   </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="users.html">
-      <span class="icon-holder">
-        <i class="c-white-500 fa fa-users"></i>
-      </span>
-      <span class="title">Users</span>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="companies.html">
-      <span class="icon-holder">
-        <i class="c-white-500 fa fa-building"></i>
-      </span>
-      <span class="title">Companies</span>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="referees.html">
-      <span class="icon-holder">
-        <i class="c-white-500 fa fa-crosshairs"></i>
-      </span>
-      <span class="title">Referees</span>
-    </a>
-  </li>
+      <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class='sidebar-link' href="users.html">
+          <span class="icon-holder">
+            <i class="c-white-500 fa fa-users"></i>
+          </span>
+          <span class="title">Users</span>
+        </a>
+      </li>
+      <li class="nav-item visible-nomit visible-referee" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class='sidebar-link' href="companies.html">
+          <span class="icon-holder">
+            <i class="c-white-500 fa fa-building"></i>
+          </span>
+          <span class="title">Companies</span>
+        </a>
+      </li>
+      <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class='sidebar-link' href="referees.html">
+          <span class="icon-holder">
+            <i class="c-white-500 fa fa-crosshairs"></i>
+          </span>
+          <span class="title">Referees</span>
+        </a>
+      </li>
+  <!--
   <li class="nav-item">
     <a class='sidebar-link' href="#">
       <span class="icon-holder">
@@ -203,31 +205,24 @@
       <span class="title">Reviews</span>
     </a>
   </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="#">
-      <span class="icon-holder">
-        <i class="c-white-500 ti-calendar"></i>
-      </span>
-      <span class="title">Reports</span>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class='sidebar-link' href="#">
-      <span class="icon-holder">
-        <i class="c-white-500 fa fa-history"></i>
-      </span>
-      <span class="title">History</span>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="sidebar-link" href="#">
-      <span class="icon-holder">
-        <i class="c-white-500 fa fa-cogs"></i>
-      </span>
-      <span class="title">Settings</span>
-    </a>
-  </li>
+  -->
+      <li class="nav-item visible-nomit visible-referee" ng-show="user.role=='nomit' || user.role == ‘referee’">
+        <a class='sidebar-link' href="#">
+          <span class="icon-holder">
+            <i class="c-white-500 ti-calendar"></i>
+          </span>
+          <span class="title">Reports</span>
+        </a>
+      </li>
 
+      <li class="nav-item visible-user visible-company" ng-show="user.role==‘user’ || user.role == ‘company’">
+        <a class='sidebar-link' href="#">
+          <span class="icon-holder">
+            <i class="c-white-500 fa fa-history"></i>
+          </span>
+          <span class="title">History</span>
+        </a>
+      </li>
 </ul>
 
 
