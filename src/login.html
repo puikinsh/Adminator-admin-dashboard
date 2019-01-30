@@ -55,7 +55,7 @@
     </style>
   </head>
 
-  <body class="app">
+  <body class="app" ng-app="NomitWisp-Login">
 
     <div id='loader'>
       <div class="spinner"></div>
@@ -209,10 +209,22 @@
                        </svg>
 
                     </div> <!--logo-->
-                    <h4 class=""><strong>Sign In </strong></p>
-                    <input class="modal-username" type="text" placeholder="Username">
-                    <input class="modal-username" type="password" placeholder="Password">
-                    <button type="button" class="btn btn-gradient btn-centered mt-20">SIGN IN</button> 
+                    <div ng-controller="LoginController">
+                      <h4 class=""><strong>Sign In </strong>
+                      <form ng-submit="userLogin()" name="LoginForm">
+                        <input class="modal-username" ng-model="user.email" type="text" placeholder="Email" required>
+                        <input class="modal-username" type="password" ng-model="user.password" placeholder="Password" required>
+                        <button type="submit" class="btn btn-gradient btn-centered mt-2" ng-disabled="LoginForm.$invalid">SIGN IN</button>
+                      </form> 
+                      <div ng-show="userLogged">
+                        <h2>Welcome {{user.fullname}}!</h2>
+                        <p ng-show="user.role == 'user'">This text is only visible to Users</p>
+                        <p ng-show="user.role == 'company'">This text is only visible to Companies</p>
+                        <p ng-show="user.role == 'nomit' || user.role == 'admin'">This text is visible to both Nomit and Admin</p>
+                        <p ng-show="user.role == 'nomit'">This text is only visible to Nomit</p>
+                        <p ng-show="user.role == 'admin'">This text is only visible to Admin</p>
+                      </div>
+                    </div>
                   </div>
                   </div>
                 
