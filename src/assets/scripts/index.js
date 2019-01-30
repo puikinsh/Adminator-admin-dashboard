@@ -17,4 +17,3 @@ import './googleMaps';
 import './utils';
 import './user-form';
 import './login';
-import './app';
