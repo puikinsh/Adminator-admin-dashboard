@@ -6,7 +6,6 @@ const LoginController = ($scope, LoginService, $cookies) => {
 		$scope.userLogged = true;
 		$scope.user = parseJwt( $cookies.get('access_token') );
     }
-	console.log("BEFORE FUNC ");
 	$scope.userLogin = async () => {
 		
 		let result = await LoginService.loginUserService($scope.user); 
