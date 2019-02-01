@@ -13,7 +13,9 @@
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
     "lint": "npm run lint:js && npm run lint:scss"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "html-loader": "^0.5.5"
+  },
   "dependencies": {
     "angular": "^1.6.4",
     "angular-cookies": "^1.6.4",

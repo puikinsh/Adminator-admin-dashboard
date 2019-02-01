@@ -1,6 +1,6 @@
     <!-- #Left Sidebar ==================== -->
     <div class="sidebar">
-      <div class="sidebar-inner">
+      <div class="sidebar-inner ">
         <!-- ### $Sidebar Header ### -->
         <div class="sidebar-logo">
           <div class="peers ai-c fxw-nw">
@@ -147,31 +147,66 @@
 
 <!-- ### $Sidebar Menu ### -->
 <ul class="sidebar-menu scrollable pos-r">
-      <li class="nav-item mT-30 active visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == 'referee'">
-        <a class="sidebar-link" href="index.html">
-          <span class="icon-holder">
-            <i class="c-white-500 ti-bar-chart"></i>
-          </span>
-          <span class="title">Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == 'referee'">
-        <a class='sidebar-link' href="ads.html">
-          <span class="icon-holder">
-            <i class="c-white-500 ti-receipt"></i>
-          </span>
-          <span class="title">Ads</span>
-        </a>
-      </li>
+
+<li class="nav-item mT-30 active visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == 'referee'">
+  <a class="sidebar-link" href="index.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-bar-chart text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">Dashboard</span>
+    </a>
+  </li>
+  <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == 'referee'">
+    <a class='sidebar-link' href="ads.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-briefcase text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">My Ads</span>
+    </a>
+  </li>
 
   <li class="nav-item">
     <a class='sidebar-link' href="profile.html">
       <span class="icon-holder">
-        <i class="c-white-500 ti-home"></i>
+        <i class="c-white-500 fa fa-user-circle-o text-white"></i>
       </span>
-      <span class="title">Profile</span>
+      <span class="title text-white font-weight-bold">Profile</span>
     </a>
   </li>
+
+  <li class="nav-item">
+    <a class='sidebar-link' href="users.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-users text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">Users</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class='sidebar-link' href="companies.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-building text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">Companies</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class='sidebar-link' href="referees.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-anchor text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">Referees</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class='sidebar-link' href="reports.html">
+      <span class="icon-holder">
+        <i class="c-white-500 fa fa-calendar-check-o text-white"></i>
+      </span>
+      <span class="title text-white font-weight-bold">Reports</span>
+    </a>
+  </li>
+<<<<<<< HEAD
       <li class="nav-item visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == 'referee'">
         <a class='sidebar-link' href="users.html">
           <span class="icon-holder">
@@ -200,9 +235,9 @@
   <li class="nav-item">
     <a class='sidebar-link' href="#">
       <span class="icon-holder">
-        <i class="c-white-500 ti-comments"></i>
+        <i class="c-white-500 fa fa-history text-white"></i>
       </span>
-      <span class="title">Reviews</span>
+      <span class="title text-white font-weight-bold">History</span>
     </a>
   </li>
   -->
@@ -223,7 +258,17 @@
           <span class="title">History</span>
         </a>
       </li>
+
+  <div class="mx-auto" style="width: 40px;">
+      <br>
+  <input type="checkbox" class="switch">
+  
+  </div>
+
 </ul>
+
+
+
 
 
 </div>
