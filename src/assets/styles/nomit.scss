@@ -1,39 +1,9 @@
-//generic
+// ***** GENERIC ***** //
 .sidebar{
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
-.btn-gradient {
-    box-shadow: 0 8px 7px 0 rgba(192, 192, 192, 0.521), 0 6px 20px 0 rgba(0,0,0,0.19); 
-    color: #fff;
-    background-image: linear-gradient(to right,#ee38a4, #501db9);
-    border-radius: 50px;
-    border: none;
-    height: 40px;
-    width: 180px;
-    margin-top: calc((#{$header-height} - 40px)/2);
-    margin-left: 15px;
-    outline: none;
-    padding: 5px;
-  }
-.btn-gradient:hover {
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.btn-cancel {
-    box-shadow: 0 8px 7px 0 rgba(192, 192, 192, 0.521), 0 6px 20px 0 rgba(0,0,0,0.19); 
-    color: #501db9;
-    background-color: transparent;
-    border: 1px solid #501db9;
-    border-radius: 50px;
-    height: 40px;
-    width: 180px;
-    margin-top: calc((#{$header-height} - 40px)/2);
-    margin-left: 15px;
-    outline: none;
-    padding: 5px;
-  }
-.btn-cancel:hover {
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
+
 .item-box{
     box-shadow: 0 0 15px rgba(192, 192, 192, 0.521); 
 }
@@ -41,9 +11,16 @@
     padding-left: 80px; 
     padding-right: 80px;
 }
-.text-black-bold{
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+   }
+
+// ***** FONT SETTINGS ***** //
+.form-title{
     font-weight: bolder; 
-    color: rgb(49, 48, 48);
+    color: #000000;
 }
 .text-size-11{
     font-size:11px;
@@ -52,6 +29,210 @@
 .text-size-20{
     font-size:20px;
 }
+
+body{
+    background-color: #F4F4F4;
+    }
+  
+  *{
+      font-family: 'Roboto', sans-serif;
+      color: #454545;
+      font-size: 14px;
+  }  
+
+
+h1{
+    font-family: 'Fredoka One', cursive;
+    color: #501D89;
+    font-size: 28px;
+  }
+  
+  h2{
+    font-family: 'Fredoka One', cursive;
+    color: #454545;
+    font-size: 24px;
+  }
+  
+  h3{
+    font-family: 'Roboto', sans-serif;
+    color: #454545;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  h4{
+    font-family: 'Fredoka One', cursive;
+    color: #501D89;
+    font-size: 22px;  
+  }
+  
+  h5{
+    font-family: 'Roboto', sans-serif;
+    color: #454545;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  h6{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #888888;
+  }
+  
+  // ***** BUTTONS ***** //
+  .btn-gradient {
+    box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
+    background-image: linear-gradient(to right,#ee38a4, #501db9);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    margin-top: calc((#{$header-height} - 40px)/2);
+    outline: none;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .5s ease;
+  }
+.btn-gradient:hover {
+    background-image: linear-gradient(to left,#ee38a4, #501db9);
+    font-weight: bold;
+    color: #fff;
+}
+.btn-border {
+    box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
+    color: #501db9;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background-color: transparent;
+    border: 2px solid #501db9;
+    border-radius: 50px;
+    height: 40px;
+    width: 200px;
+    margin-top: calc((#{$header-height} - 40px)/2);
+    margin-left: 15px;
+    outline: none;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .5s ease;
+  }
+.btn-border:hover {
+    box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
+    background-image: linear-gradient(to right,#ee38a4, #501db9);
+    border: none;
+    color: #fff;
+}
+
+.btn-skills{
+    color: #501db9;
+    background-color: transparent;
+    border: 1px solid #501db9;
+    border-radius: 30px;
+    align-items: center;
+    outline: none;
+    padding: 5px;
+    display: inline;
+    justify-content: flex-start;
+}
+
+// ***** TOGGLE BTN ***** //
+  
+  input[type="checkbox"].switch{
+    appearance: none;
+    width: 3.5em;
+    height: 1.5em;
+    background: #ddd;
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch:checked{
+    background: #EE38A4;
+  }
+  
+  input[type="checkbox"].switch:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    transform: scale(.7);
+    left: 0;
+    transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch:checked:after{
+    left: calc(100% - 1.5em);
+  }
+
+// ***** STAR RATING ***** /
+body{
+    font-size: 5em;
+  }
+  
+  .star-rating-display {
+      unicode-bidi: bidi-override;
+      color: #c5c5c5;
+      display: inline-block;
+      position: relative;
+  
+      &:before, &:after{
+          content: "★★★★★";
+          display: block;
+          white-space: nowrap;
+      }
+  
+      &:before{
+          color: gold;
+          position: absolute;
+          z-index: 1;
+          left: 0px;
+          overflow: hidden;
+      }
+  
+      &:after{
+          z-index: 0;
+      }
+  
+      &[data-rating="1"]:before {
+          width: 20%;
+      }
+      &[data-rating="2"]:before {
+          width: 40%;
+      }
+      &[data-rating="3"]:before {
+          width: 60%;
+      }
+      &[data-rating="4"]:before {
+          width: 80%;
+      }
+      &[data-rating="5"]:before {
+          width: 100%;
+      }
+  }
+  
+  /* Completely remove from the flow but leave available to screen readers. */
+  .is-vishidden {
+      position: absolute !important;
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+  }
+
+// ***** PAGES ***** //
+
 //index
 .succ-match-perc{
     height: 400px;
@@ -230,7 +411,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-//ads_1
+//ad-details
 .companies-update-title{
     margin-left: 50px;
     margin-top: 20px;
@@ -243,3 +424,15 @@
 .btn-centered-container{
     text-align:center;
 }
+
+/* REPORTS PAGE */
+.table .thead-purple-border th{
+    border-top: transparent;
+    border-bottom-color: #8B00B1;
+    border-width: 3px;
+  } 
+  
+  .table {
+    background-color: #FFFFFF;
+    }
+  

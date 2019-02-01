@@ -86,16 +86,14 @@
         <main class='main-content bgc-grey-300'>
           <div id='mainContent row'>
             <div class="content-title mT-60">
-              <div class="ml-1 mb-3">
-                Profile
-              </div> 
+              <h1 class="ml-1 mb-3">My Profile</h1>
             </div>  
-              <div class="ml-1 mb-3 text-black-bold">
+              <h5 class="ml-1 mb-3">
                 Sign up with WISP now to get yourself connected.
-              </div> 
-              <div class="ml-1 mb-3 text-size-11">
+              </h3> 
+              <h6 class="ml-1 mb-3">
                 Please, tell us more about your information so we could find the perfect oportunities for you.
-              </div>   
+              </h6>   
 
             <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
               <div class="masonry-sizer col-md-6"></div>
@@ -107,17 +105,21 @@
                       <div class="card item-box" >
                         <div class="user-data-title">
                             <img class="user-update-img"  src="assets/static/images/user-update.png" alt="">
-                            <div class="testo"> <h5>Francesca Sperati</h5> Bla Bla, this is your bio or whatever!</div>
+                            <div class="testo"> <h3>Francesca Sperati</h3> Bla Bla, this is your bio or whatever!</div>
                         </div>
                         <div class="card-body-profile">
                           <div class="profile-forms">
-                            <h5 class="card-title d-flex text-black-bold"> Your Profile</h5> 
+                            <h5 class="card-title d-flex form-title"> Your Profile</h5> 
 
                             <div class="row ">
                               <div class="col-4 profile-form-row">
                                 <h9 class="">First Name</h9>
                                 <input type="text" class="form-control" id="" placeholder="First name" value="Francesca" required>
                               </div>
+                              <div class="col-4 profile-form-row">
+                                  <h9 class="">Middle Name (Optional)</h9>
+                                  <input type="text" class="form-control" id="" placeholder="Middle name" value="">
+                                </div>
                               <div class="col-4 profile-form-row">
                                 <h9 class="">Last Name</h9>
                                 <input type="text" class="form-control" id="" placeholder="Last name" value="Sperati" required>
@@ -135,13 +137,26 @@
                                 <input type="text" class="form-control" id="" placeholder="Phone" value="0414098765" required>
                               </div>
                               <div class="col-4 profile-form-row">
-                                <h9 class="">State</h9>
-                                <select id="inputState" class="form-control">
-                                  <option selected>VIC</option>
-                                  <option>...</option>
+                                <h9 class="">Date of Birth</h9>
+                                <input type="date" class="form-control" name="dob" required>
                                 </select>
                               </div>
                             </div>
+
+                            <div class="row ">
+                                <div class="col-4 profile-form-row">
+                                    <h9 class="">State</h9>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>VIC</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">City</h9>
+                                  <input type="text" class="form-control" id="" placeholder="" value="Ringwood" required>
+                                </div>
+                                
+                              </div>
 
                             <div class="row ">  
                               <div class="col-4 profile-form-row">
@@ -166,41 +181,85 @@
                                 </select>
                               </div>
                             </div>
-
-                            <div class="row ">  
-                                <div class="col-4 profile-form-row">
-                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
-                                  <select id="inputState" class="form-control">
-                                      <option selected>Software Engineering</option>
-                                      <option>...</option>
-                                    </select>
-                                </div>
-                                <div class="col-4 profile-form-row">
-                                  <h9 class="">Expertiece / Fields (Select one or more)</h9>
-                                  <select id="inputState" class="form-control">
-                                      <option selected>Project Management</option>
-                                      <option>...</option>
-                                    </select>
-                                </div>
-                                <div class="col-4 profile-form-row"> </div>
-                              </div>
                           <button type="button" class="btn btn-gradient ">UPDATE</button>
-                          <button type="button" class="btn btn-cancel ">CANCEL</button>
+                          <button type="button" class="btn btn-border ">CANCEL</button>
                            
                           </div>
                         </div>
                       </div>
                 </div>
 
-
-
-                <div class="masonry-item  w-100">  <!-- #change password ========= -->
+                <div class="masonry-item  w-100">  <!-- Skills Section ========= -->
 
                   <div class="card item-box" >
                     
                     <div class="card-body-profile">
                       <div class="profile-forms">
-                        <h5 class="card-title d-flex text-black-bold"> Change Password</h5> 
+                        <h5 class="card-title d-flex form-title">Your Skills</h5> 
+                              <div class="row ">
+                                  <div class="col-4 profile-form-row">
+                                      <h9 class="">Education</h9>
+                                      <select id="inputState" class="form-control">
+                                          <option selected>Bachelor Degree</option>
+                                          <option>Associate Degree / Advanced Diploma</option>
+                                          <option>Diploma</option>
+                                          <option>College</option>
+                                          <option>Others</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Experience / Fields (Select one or more)</h9>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Software Engineering</option>
+                                        <option>...</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Skills (Select one or more)</h9>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Project Management</option>
+                                        <option>...</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-4 profile-form-row"> </div>
+                                </div>
+
+                                <div class="row ">
+                                    <div class="col-4 profile-form-row">
+                                      <h9 class="">Desired Work Location (Optional)</h9>
+                                      <input type="text" class="form-control" id="" placeholder="" value="Ringwood" required>
+                                    </div>
+                                    <div class="col-4 profile-form-row">
+                                      <h9 class="">Work Type</h9>
+                                      <select id="inputState" class="form-control">
+                                          <option selected>Full Time</option>
+                                          <option>Part Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 profile-form-row">
+                                        <h9 class="">Availability</h9>
+                                        <input type="date" class="form-control" name="dob" required>
+                                        </select>
+                                      </div>
+                                  </div>
+
+                              
+
+                      <button type="button" class="btn btn-gradient ">UPDATE</button>
+                      <button type="button" class="btn btn-border ">CANCEL</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+                <div class="masonry-item  w-100">  <!-- share more with us ========= -->
+
+                  <div class="card item-box" >
+                    
+                    <div class="card-body-profile">
+                      <div class="profile-forms">
+                        <h5 class="card-title d-flex form-title">Share More with Us</h5> 
                         <div class="row ">
                           <div class="col-4 profile-form-row">
                             <h9 class="">Current Password</h9>
@@ -217,7 +276,37 @@
                         </div>
 
                       <button type="button" class="btn btn-gradient ">UPDATE</button>
-                      <button type="button" class="btn btn-cancel ">CANCEL</button>
+                      <button type="button" class="btn btn-border ">CANCEL</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+                <div class="masonry-item  w-100">  <!-- #change password ========= -->
+
+                  <div class="card item-box" >
+                    
+                    <div class="card-body-profile">
+                      <div class="profile-forms">
+                        <h5 class="card-title d-flex form-title"> Change Password</h5> 
+                        <div class="row ">
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Current Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">New Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                          <div class="col-4 profile-form-row">
+                            <h9 class="">Confirm New urrent Password</h9>
+                            <input type="password" class="form-control" id="" placeholder="New Password" required>
+                          </div>
+                        </div>
+
+                      <button type="button" class="btn btn-gradient ">UPDATE</button>
+                      <button type="button" class="btn btn-border ">CANCEL</button>
                        
                       </div>
                     </div>
