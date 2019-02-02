@@ -1,5 +1,6 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
+import UserService from './shared.service';
 
 angular.module('NomitWisp', 
     [
@@ -14,9 +15,9 @@ angular.module('NomitWisp',
         ngRoute
         
     ])
+    .factory(UserService.name, UserService)
     .config(function ($routeProvider, $httpProvider) { 
         $httpProvider.defaults.withCredentials = true;
-
         $routeProvider 
         .when('/', { 
             controller: 'DashboardController', 
