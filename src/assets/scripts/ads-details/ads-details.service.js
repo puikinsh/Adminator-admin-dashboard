@@ -1,11 +1,11 @@
 const AdsDetailsService = ($http) => {
     let serv = {};
 
-    serv.fetchAdsService = () =>{
-        return $http.get('https://nomitwisp-restapi.herokuapp.com/api/ads')
+    serv.fetchAdDetails = (route) =>{
+        return $http.get('https://nomitwisp-restapi.herokuapp.com/api/ads/'+route.id)
         .then( (result) => {
-                console.log(result);
-                return result;              
+                console.log(route.id);
+                return result.data;              
         }, (error) => {
                 console.log(error);
                 return error;

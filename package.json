@@ -55,7 +55,7 @@
     "load-google-maps-api": "^1.0.0",
     "lodash": "^4.17.4",
     "masonry-layout": "^4.2.0",
-    "moment": "^2.19.1",
+    "moment": "^2.24.0",
     "ng-tags-input": "^3.2.0",
     "node-sass": "^4.5.3",
     "perfect-scrollbar": "^1.1.0",
