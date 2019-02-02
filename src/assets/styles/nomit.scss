@@ -503,3 +503,11 @@ textarea {
     background-color: #FFFFFF;
     }
 
+/* Modal */
+body.modal-open .blurra{
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
+}

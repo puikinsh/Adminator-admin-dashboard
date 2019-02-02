@@ -16,7 +16,8 @@ angular.module('NomitWisp',
         
     ])
     .factory(UserService.name, UserService)
-    .config(function ($routeProvider) { 
+    .config(function ($routeProvider, $httpProvider) { 
+        $httpProvider.defaults.withCredentials = true;
         $routeProvider 
         .when('/', { 
             controller: 'DashboardController', 
