@@ -4,9 +4,14 @@ import LoginController from './controller';
 import LoginService from './service';
 
 angular.module('NomitWisp-Login', [ngCookies])
-    .config(['$httpProvider', function($httpProvider) {
-        $httpProvider.defaults.withCredentials = true;
-    }])
+    .directive('nwLogin', nwLogin)
     .controller(LoginController.name, LoginController)
     .factory(LoginService.name, LoginService);
-    
+
+/** @ngInject */
+function nwLogin(){
+    return {
+        restrict: 'E',
+        templateUrl: 'assets/scripts/nwLogin/nwLogin.html'
+    };
+}
