@@ -18,6 +18,7 @@ import './googleMaps';
 import './utils';
 import './user-form';
 import './login';
+import './logout';
 import './nwFooter';
 import './nwSidebar';
 import './nwTopbar';
