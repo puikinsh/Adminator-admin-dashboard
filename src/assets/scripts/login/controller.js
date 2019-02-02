@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 const LoginController = ($scope, LoginService, $cookies) => {
 	$scope.userLogged = false;		
 	
