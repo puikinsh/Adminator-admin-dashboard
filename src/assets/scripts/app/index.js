@@ -8,6 +8,7 @@ angular.module('NomitWisp',
         'NomitWisp-Sidebar',
         'NomitWisp-Footer',
         'nwDashboard',
+        'nwLogout',
         ngRoute
         
     ])
@@ -16,7 +17,7 @@ angular.module('NomitWisp',
         .when('/', { 
             controller: 'DashboardController', 
             templateUrl: 'assets/scripts/dashboard/dashboard.html' 
-        }) 
+        })
         .otherwise({ 
             redirectTo: '/' 
         }); 
