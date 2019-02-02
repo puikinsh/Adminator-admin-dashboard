@@ -1,5 +1,6 @@
 import '../styles/index.scss';
 
+import 'babel-polyfill';
 import './masonry';
 import './charts';
 import './popover';
@@ -17,3 +18,8 @@ import './googleMaps';
 import './utils';
 import './user-form';
 import './login';
+import './nwFooter';
+import './nwSidebar';
+import './nwTopbar';
+import './dashboard'
+import './app';
