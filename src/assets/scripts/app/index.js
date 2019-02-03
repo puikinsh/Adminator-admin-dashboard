@@ -12,6 +12,7 @@ angular.module('NomitWisp',
         'nwLogout',
         'nwAds',
         'nwAdsDetails',
+        'nwProfile',
         ngRoute
         
     ])
@@ -31,10 +32,10 @@ angular.module('NomitWisp',
             controller: 'AdsDetailsController',
             templateUrl: 'assets/scripts/ads-details/ads-details.html'
         })
-        // .when('/profile', { 
-        //     controller: 'ProfileController', 
-        //     templateUrl: '' 
-        // })
+        .when('/profile', { 
+            controller: 'ProfileController', 
+            templateUrl: 'assets/scripts/profile/profile.html' 
+        })
         // .when('/users', { 
         //     controller: 'UsersController', 
         //     templateUrl: '' 

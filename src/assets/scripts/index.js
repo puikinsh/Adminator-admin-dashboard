@@ -25,5 +25,6 @@ import './nwTopbar';
 import './dashboard'
 import './ads';
 import './ads-details';
+import './profile';
 
 import './app';

@@ -142,11 +142,11 @@
                   </form> 
                   <div ng-show="userLogged">
                     <h2>Welcome {{user.fullname}}!</h2>
-                    <p ng-show="user.role == 'user'">This text is only visible to Users</p>
-                    <p ng-show="user.role == 'company'">This text is only visible to Companies</p>
-                    <p ng-show="user.role == 'nomit' || user.role == 'admin'">This text is visible to both Nomit and Admin</p>
-                    <p ng-show="user.role == 'nomit'">This text is only visible to Nomit</p>
-                    <p ng-show="user.role == 'admin'">This text is only visible to Admin</p>
+                    <p ng-show="{{user.role}} == 'user'">This text is only visible to Users</p>
+                    <p ng-show="{{user.role}} == 'company'">This text is only visible to Companies</p>
+                    <p ng-show="{{user.role}} == 'nomit' || {{user.role}} == 'admin'">This text is visible to both Nomit and Admin</p>
+                    <p ng-show="{{user.role}} == 'nomit'">This text is only visible to Nomit</p>
+                    <p ng-show="{{user.role}} == 'admin'">This text is only visible to Admin</p>
                   </div>
                 </div>
               </div>
