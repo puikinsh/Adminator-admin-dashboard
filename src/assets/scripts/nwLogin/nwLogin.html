@@ -7,7 +7,7 @@
               <div class="modal-left" >
                     <p class="mo-title">Let's start with getting connected.</p>
                     <div class="subtitle-modal">Sign up and join the WISP. </div>
-                    <button type="button" class="btn btn-signup ">SIGNUP</button>
+                    <a class="btn btn-signup" href="#!signup" role="button">SIGNUP</a>
               </div>
               <div class="modal-right ">
                   <div class="logo-wisp-right"> 
@@ -135,19 +135,15 @@
                 </div> <!--logo-->
                 <div>
                   <h4 class=""><strong>Sign In </strong>
-                  <form ng-submit="userLogin()" name="LoginForm">
-                    <input class="modal-username" ng-model="user.email" type="text" placeholder="Email" required>
-                    <input class="modal-username" type="password" ng-model="user.password" placeholder="Password" required>
-                    <button type="submit" class="btn btn-gradient btn-centered mt-2" ng-disabled="LoginForm.$invalid">SIGN IN</button>
-                  </form> 
-                  <div ng-show="userLogged">
-                    <h2>Welcome {{user.fullname}}!</h2>
-                    <p ng-show="{{user.role}} == 'user'">This text is only visible to Users</p>
-                    <p ng-show="{{user.role}} == 'company'">This text is only visible to Companies</p>
-                    <p ng-show="{{user.role}} == 'nomit' || {{user.role}} == 'admin'">This text is visible to both Nomit and Admin</p>
-                    <p ng-show="{{user.role}} == 'nomit'">This text is only visible to Nomit</p>
-                    <p ng-show="{{user.role}} == 'admin'">This text is only visible to Admin</p>
-                  </div>
+                  <form ng-submit="userLogin(LoginForm.$valid)" name="LoginForm" novalidate>
+                    <input name="email" class="modal-username form-control" ng-model="user.email" type="email" placeholder="Email" required />
+                    <p ng-show="LoginForm.email.$error.required">This field is required.</p>
+                    <p ng-show="LoginForm.email.$error.email">Invalid email.</p>
+                    
+                    <input name="pwd" class="modal-username" type="password" ng-model="user.password" placeholder="Password" ng-minlength=5 required />
+                    <p ng-show="LoginForm.pwd.$error.minlength">Min 5 characters.</p>
+                    <button type="submit" class="btn btn-gradient btn-centered mt-2">SIGN IN</button>
+                  </form>
                 </div>
               </div>
               </div>
