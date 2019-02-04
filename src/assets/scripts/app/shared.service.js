@@ -6,7 +6,7 @@ function parseJwt(token) {
     return JSON.parse(window.atob(base64));
 };
 
-const UserService = ($cookies, $rootScope) => {
+const UserService = ($cookies, $rootScope, $location) => {
 
 	let serv = {};
 
@@ -16,7 +16,8 @@ const UserService = ($cookies, $rootScope) => {
 			$rootScope.$broadcast('loadUserSuccess', parseJwt( $cookies.get('access_token') ));
 			$('#modalLoginForm').modal('hide');
 		} else {
-			$('#modalLoginForm').modal({backdrop: 'static', keyboard: false});
+			if($location.path() === '/signup') { $('#modalLoginForm').modal('hide'); }
+			else { $('#modalLoginForm').modal({backdrop: 'static', keyboard: false}); }
 		}
 	}
 	

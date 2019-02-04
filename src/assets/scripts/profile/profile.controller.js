@@ -1,3 +1,4 @@
+import visas from './visa.type';
 /** @ngInject */
 const ProfileController = ($scope, ProfileService, UserService) => {
     $scope.$on('loadUserSuccess', function (event, user) {
@@ -5,16 +6,11 @@ const ProfileController = ($scope, ProfileService, UserService) => {
     });
     UserService.loadUser();
     
-    // Call service to fetch user data
     ProfileService.fetchProfileService($scope.user.id)
-      .then(function (result) {
-        $scope.profile = result;
-        
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-    
+      .then((result) => { $scope.profile = result; })
+      .catch((error) => { console.log(error); })
+
+    $scope.visas = visas;
     UserService.loadUser();
 }
 

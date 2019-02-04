@@ -78,9 +78,8 @@
                 </div>
                 <div class="col-4 profile-form-row">
                   <h9 class="">Visa Type</h9>
-                  <select id="inputVisa" class="form-control">
-                    <option selected>Student</option>
-                    <option>...</option>
+                  <select id="inputVisa" class="form-control" ng-model="user.role" ng-options="visa.name group by visa.type for visa in visas">
+                    <option value="" selected>Choose visa...</option>
                   </select>
                 </div>
                 <div class="col-4 profile-form-row">
