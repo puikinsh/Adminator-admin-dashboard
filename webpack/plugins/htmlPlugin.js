@@ -14,6 +14,7 @@ const titles = {
   'new-ad':'new-ad',
   'ad-details':'ad-details',
   'reports':'reports',
+  'history':'history',
   'chat': 'Chat',
   'compose': 'Compose',
   'datatable': 'Datatable',
