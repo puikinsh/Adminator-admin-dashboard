@@ -13,6 +13,7 @@ const titles = {
   'ads_1':'ads_1',
   'ad-details':'ad-details',
   'reports':'reports',
+  'history':'history',
   'chat': 'Chat',
   'compose': 'Compose',
   'datatable': 'Datatable',

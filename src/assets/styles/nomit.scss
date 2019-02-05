@@ -175,10 +175,6 @@ h1{
   }
 
 // ***** STAR RATING ***** /
-body{
-    font-size: 5em;
-  }
-  
   .star-rating-display {
       unicode-bidi: bidi-override;
       color: #c5c5c5;
@@ -220,7 +216,6 @@ body{
       }
   }
   
-  /* Completely remove from the flow but leave available to screen readers. */
   .is-vishidden {
       position: absolute !important;
       overflow: hidden;
@@ -320,21 +315,38 @@ textarea {
 }
 
 .card-body-users {
-  border-top: 1px solid #9c9fa0;
+  border-top: 0.03125em solid #DDDDDD;
   margin: 0;
 }
 
 .users-icons {
-  margin-left: 150px;
-  padding: 5px;
+  margin-left: 160px;
+  padding: 8px;
   padding-left: 0;
 }
 
 .users-icons i {
-  font-size: 20px;
-  margin-right: 15px;
-  color: #9c9fa0;
+  font-size: 17px;
+  margin-right: 20px;
+  color: #DDDDDD;
 }
+
+.users-col {
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+.users-action-btn {
+  padding-left: 2;
+  margin-top: 10px;
+}
+
+.users-action-btn i {
+  font-size: 17px;
+  margin-right: 5px;
+  color: #DDDDDD;
+}
+
 
 //login
 .modal-dialog {
@@ -424,7 +436,7 @@ textarea {
   border-top: 1px solid #9c9fa0;
   margin: 0;
 }
-
+f
 .companies-icons {
   margin-left: 150px;
   padding: 5px;
@@ -501,3 +513,61 @@ textarea {
     background-color: #FFFFFF;
     }
 
+/* FOOTER */
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 1.875rem;
+  height: 1.8755rem;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin {
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  background: #888888;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  background: #888888;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  background: #888888;
+}
