@@ -221,7 +221,7 @@
       </li>
       <!-- Ads - Admin & Nomit see all, Company their own, Users see matches and saved -->
       <li class="nav-item">
-        <a class='sidebar-link' href="#!ads" ng-show="">
+        <a class='sidebar-link' href="#!ads">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-briefcase text-white"></i>
           </span>
@@ -229,7 +229,7 @@
         </a>
       </li>
       <!-- Admin no, everyone sees their own -->
-      <li class="nav-item">
+      <li class="nav-item" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company'">
         <a class='sidebar-link' href="#!profile">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-user-circle-o text-white"></i>
@@ -238,7 +238,7 @@
         </a>
       </li>
       <!-- Admin, Referee and Nomit see everything -->
-      <li class="nav-item">
+      <li class="nav-item" ng-show="'{{user.role}}'!='user'">
         <a class='sidebar-link' href="#!users">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-users text-white"></i>
@@ -246,7 +246,8 @@
           <span class="title text-white font-weight-bold">Users</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- Admin, Nomit & referee see all companies  -->
+      <li class="nav-item" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
         <a class='sidebar-link' href="#!companies">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-building text-white"></i>
@@ -254,6 +255,7 @@
           <span class="title text-white font-weight-bold">Companies</span>
         </a>
       </li>
+      <!-- Everyone have access -->
       <li class="nav-item">
         <a class='sidebar-link' href="#!referees">
           <span class="icon-holder">
@@ -262,7 +264,8 @@
           <span class="title text-white font-weight-bold">Referees</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- Admin, Nomit and Referee have access -->
+      <li class="nav-item" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
         <a class='sidebar-link' href="#!reports">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-calendar-check-o text-white"></i>
@@ -270,7 +273,8 @@
           <span class="title text-white font-weight-bold">Reports</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- Everybody besides Admin have access -->
+      <li class="nav-item" ng-show="'{{user.role}}'!='admin'">
         <a class='sidebar-link' href="#">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-history text-white"></i>
