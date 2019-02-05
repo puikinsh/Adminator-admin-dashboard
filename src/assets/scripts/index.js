@@ -1,5 +1,6 @@
 import '../styles/index.scss';
 
+import 'babel-polyfill';
 import './masonry';
 import './charts';
 import './popover';
@@ -16,4 +17,15 @@ import './fullcalendar';
 import './googleMaps';
 import './utils';
 import './user-form';
-import './login';
+import './logout';
+import './nwLogin';
+import './nwFooter';
+import './nwSidebar';
+import './nwTopbar';
+import './dashboard'
+import './ads';
+import './ads-details';
+import './profile';
+import './signup';
+
+import './app';
