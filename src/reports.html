@@ -54,6 +54,12 @@
         }
       }
     </style>
+
+    <script>
+      function myFunction() {
+        window.print();
+      }
+    </script>
 </head>
 
 <body class="app">
@@ -92,8 +98,9 @@
               Reports
             </h1>
           </div>
-          <!-- ### Table ### -->
-          <table class="table table-hover">
+          <!-- ### Table 1 ### -->
+          <h5>All Applications (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
               <thead class="thead-purple-border">
                 <tr>
                   <th scope="col">#</th>
@@ -159,11 +166,279 @@
                         </td>
                       </tr>
                   </tbody>
-            </table>
+            </table> <!-- End of table-->
+
+          <!-- ### Table 2 ### -->
+          <h5>New Registered Users (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
+              <thead class="thead-purple-border">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">Member Since</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table> <!-- End of table-->
+
+          <!-- ### Table 3 ### -->
+          <h5>New Ads (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
+              <thead class="thead-purple-border">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">Posted Date</th>
+                  <th scope="col">Application Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Graphic Design Intern</a></td>
+                      <td>Sierra Delta Creative</td>
+                      <td>Design</td>
+                      <td>07 Jan 2019</td>
+                      <td>
+                        <div class="btn btn-outline-success btn-sm" data-toggle="tooltip" data-placement="right" title="Application is still open">
+                            ON
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Barista Intern</a></td>
+                      <td>Brunetti</td>
+                      <td>Hospitality</td>
+                      <td>21 Jan 2019</td>
+                      <td>
+                          <div class="btn btn-outline-secondary btn-sm" data-toggle="tooltip" data-placement="right" title="Application has expired">
+                              OFF
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Web Developer Intern</a></td>
+                      <td>Agile Talent</td>
+                      <td>IT / Software Engineering</td>
+                      <td>23 Jan 2019</td>
+                      <td>
+                          <div class="btn btn-outline-info btn-sm" data-toggle="tooltip" data-placement="right" title="Application is closed">
+                              CLOSED
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td style="text-decoration:underline"><a href="ads_1.html">Kitchen Hand Intern</a></td>
+                        <td>Yarra River Grill</td>
+                        <td>Hospitality</td>
+                        <td>25 Jan 2019</td>
+                        <td>
+                            <div class="btn btn-outline-danger btn-sm" data-toggle="tooltip" data-placement="right" title="This job listing is removed">
+                                CANCELLED
+                            </div>
+                        </td>
+                      </tr>
+                  </tbody>
+            </table> <!-- End of table-->
+
+            <!-- ### Table 4 ### -->
+          <h5>Successful Matches (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
+              <thead class="thead-purple-border">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">Matched User(ID)</th>
+                  <th scope="col">Matched Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Graphic Design Intern</a></td>
+                      <td>Sierra Delta Creative</td>
+                      <td>Design</td>
+                      <td>davidchan</td>
+                      <td>07 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Barista Intern</a></td>
+                      <td>Brunetti</td>
+                      <td>Hospitality</td>
+                      <td>jenniferbrown</td>
+                      <td>21 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Web Developer Intern</a></td>
+                      <td>Agile Talent</td>
+                      <td>IT / Software Engineering</td>
+                      <td>christhomson</td>
+                      <td>23 Jan 2019</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td style="text-decoration:underline"><a href="ads_1.html">Kitchen Hand Intern</a></td>
+                        <td>Yarra River Grill</td>
+                        <td>Hospitality</td>
+                        <td>johndoe</td>
+                        <td>25 Jan 2019</td>
+                      </tr>
+                  </tbody>
+            </table> <!-- End of table-->
+
+            <!-- ### Table 5 ### -->
+          <h5>Unmatched Users (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
+              <thead class="thead-purple-border">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">Member Since</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>David</td>
+                      <td>Chan</td>
+                      <td>davidchan</td>
+                      <td>Design(Graphic, digital, textile, UX/UI)</td>
+                      <td>21 Jan 2019</td>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table> <!-- End of table-->
+
+            <!-- ### Table 6 ### -->
+          <h5>Unmatched Ads (Last month)</h5>
+          <table class="table table-hover mb-30 ml-1">
+              <thead class="thead-purple-border">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">Posted Date</th>
+                  <th scope="col">Application Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Graphic Design Intern</a></td>
+                      <td>Sierra Delta Creative</td>
+                      <td>Design</td>
+                      <td>07 Jan 2019</td>
+                      <td>
+                        <div class="btn btn-outline-success btn-sm" data-toggle="tooltip" data-placement="right" title="Application is still open">
+                            ON
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Barista Intern</a></td>
+                      <td>Brunetti</td>
+                      <td>Hospitality</td>
+                      <td>21 Jan 2019</td>
+                      <td>
+                          <div class="btn btn-outline-secondary btn-sm" data-toggle="tooltip" data-placement="right" title="Application has expired">
+                              OFF
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td style="text-decoration:underline"><a href="ads_1.html">Web Developer Intern</a></td>
+                      <td>Agile Talent</td>
+                      <td>IT / Software Engineering</td>
+                      <td>23 Jan 2019</td>
+                      <td>
+                          <div class="btn btn-outline-secondary btn-sm" data-toggle="tooltip" data-placement="right" title="Application has expired">
+                              OFF
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td style="text-decoration:underline"><a href="ads_1.html">Kitchen Hand Intern</a></td>
+                        <td>Yarra River Grill</td>
+                        <td>Hospitality</td>
+                        <td>25 Jan 2019</td>
+                        <td>
+                            <div class="btn btn-outline-success btn-sm" data-toggle="tooltip" data-placement="right" title="Application is still open">
+                                ON
+                            </div>
+                        </td>
+                      </tr>
+                  </tbody>
+            </table> <!-- End of table-->
+
+      <!-- ### Buttons ### -->
+      <div class="masonry-item  w-50 m-auto btn-centered-container ">
+          <button type="button" href="src/assets/scripts/dashboard/dashboard.html" class="col-5 mr-1 btn btn-gradient btn-centered">Go to Dashboard</button>
+          <button type="button" class="col-5 ml-1 btn btn-border  btn-centered" onclick="myFunction()">Print Report</button>
+      </div>
+
         </div>
     </div>
-
-
   </div>
   </div>
   </div>
