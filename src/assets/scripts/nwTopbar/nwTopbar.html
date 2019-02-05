@@ -8,7 +8,7 @@
           <i class="ti-menu"></i>
         </a>
       </li>
-      <li class="search-box visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}' == 'referee'">
+      <li class="search-box visible-nomit visible-referee" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit' || '{{user.role}}' == 'referee'">
         <a class="search-toggle no-pdd-right" href="javascript:void(0);">
           <i class="search-icon ti-search pdd-right-10"></i>
           <i class="search-icon-close ti-close pdd-right-10"></i>
@@ -17,13 +17,13 @@
       <li class="search-input visible-referee visible-nomit" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}' == 'referee'">
         <input class="form-control" type="text" placeholder="Search users, companies, or anything..">
       </li>
-      <li class="visible-nomit ml-2" ng-show="'{{user.role}}'=='nomit'">
+      <li class="visible-nomit ml-2" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='admin'">
         <button type="button" class="btn btn-gradient ">
           <i class="fa fa-plus pdd-right-5 text-white"></i>
           ADD NEW USER
         </button>
       </li>
-      <li class="visible-referee visible-nomit visible-company ml-2" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}' == 'referee' || '{{user.role}}' == 'company'">
+      <li class="visible-referee visible-nomit visible-company ml-2" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}' == 'referee' || '{{user.role}}' == 'company' || '{{user.role}}'=='admin'">
         <button type="button" class="btn btn-gradient">
           <i class="fa fa-plus pdd-right-5 text-white"></i>
           CREATE NEW AD
@@ -38,9 +38,8 @@
       <li class="dropdown">
         <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
           <div class="peer">
-            <span class="fsz-sm c-grey-900  visible-nomit" ng-show="'{{user.role}}'=='nomit'">Nomit Admin</span>
-            <span class="fsz-sm c-grey-900  visible-referee" ng-show="'{{user.role}}'=='referee'">Referee Admin</span>
-            <span class="fsz-sm c-grey-900  visible-user visible-company" ng-show="'{{user.role}}'=='user' || '{{user.role}}' == 'company'">Username</span>
+              <span class="fsz-sm c-grey-900  visible-{{user.role}} text-capitalize" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit'">{{user.role}}</span>
+              <span class="fsz-sm c-grey-900  visible-{{user.role}}" ng-show="'{{user.role}}'=='company' || '{{user.role}}'=='user'">{{user.fullname}}</span>
           </div>
           <div class="peer mR-10 visible-nomit" ng-show="'{{user.role}}'=='nomit'">
             <img class=" w-2r bdrs-50p mL-10 nomit-logo-top" src="assets/static/images/nomit-logo.png" alt="">
@@ -52,7 +51,7 @@
         </a>
         <ul class="dropdown-menu fsz-sm">
           <li>
-            <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+            <a href="#!profile" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
               <i class="ti-user mR-10"></i>
               <span>Profile</span>
             </a>
