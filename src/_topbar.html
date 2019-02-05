@@ -17,12 +17,18 @@
         <li class="search-input visible-referee visible-nomit" ng-show="user.role=='nomit' || user.role == ‘referee’">
           <input class="form-control" type="text" placeholder="Search users, companies, or anything..">
         </li>
-        <li class="visible-nomit" ng-show="user.role=='nomit'">
+        <li class="visible-nomit ml-2" ng-show="user.role=='nomit'">
           <button type="button" class="btn btn-gradient ">
             <i class="fa fa-plus pdd-right-5 text-white"></i>
-            Add new user
+            ADD NEW USER
           </button>
-        </li>
+				</li>
+				<li class="visible-referee visible-nomit visible-company ml-2" ng-show="user.role=='nomit' || user.role == 'referee' || user.role == 'company'">
+						<button type="button" onclick="window.location.href = 'new-ad.html'" class="btn btn-gradient" >
+							<i class="fa fa-plus pdd-right-5 text-white"></i>
+								CREATE NEW AD
+						</button>
+				</li>
       </ul>
       <ul class="nav-right">
         <!-- #RIGHT ============================ -->
