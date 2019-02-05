@@ -140,6 +140,17 @@ h1{
     display: inline;
     justify-content: flex-start;
 }
+.btn-industry{
+  color: #ee38a4;
+  background-color: transparent;
+  border: 1px solid #ee38a4;
+  border-radius: 30px;
+  align-items: center;
+  outline: none;
+  padding: 5px;
+  display: inline;
+  justify-content: flex-start;
+}
 
 // ***** TOGGLE BTN ***** //
   
@@ -292,7 +303,6 @@ textarea {
     width: 100%;
   }
   
-
 .btn-cv {
   box-shadow: 0 8px 7px 0 rgba(192, 192, 192, 0.521), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #fff;
@@ -502,6 +512,14 @@ textarea {
   .table {
     background-color: #FFFFFF;
     }
+
+//new-ad page
+
+.form-h2{
+  font-family: 'Roboto', sans-serif;
+    color: #454545;
+    font-size: 20px;
+    font-weight: bold;
 
 /* Modal */
 body.modal-open .blurra{
