@@ -1,7 +1,7 @@
 const LoginService = ($http) => {
     let serv = {};
 
-    serv.loginUserService = (user) =>{
+    serv.loginUserService = (user) => {
         return $http({
 			method: 'POST',
 			url: 'https://nomitwisp-restapi.herokuapp.com/login',
@@ -9,11 +9,11 @@ const LoginService = ($http) => {
 			headers: { 'Content-Type': 'application/json' }
 		})
         .then( (result) => {
-                console.log(result.data.token);
-                return result.data.token;              
+            console.log(result);
+            return result.data;              
         }, (err) => {
-                console.log(err.data);
-                return err.data;
+            console.log(err);
+            return err.data;
         });
     }
     return serv;

@@ -11,6 +11,7 @@ const titles = {
   'charts': 'Charts',
   'ads': 'ads',
   'ads_1':'ads_1',
+  'new-ad':'new-ad',
   'ad-details':'ad-details',
   'reports':'reports',
   'history':'history',
