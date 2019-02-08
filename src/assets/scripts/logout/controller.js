@@ -6,6 +6,7 @@ const LogoutController = ($scope, $location, LogoutService, $cookies, UserServic
         $cookies.remove('access_token');
 		UserService.loadUser();
 		$location.path('/');
+		window.location.reload(false);
 	}
 };
 

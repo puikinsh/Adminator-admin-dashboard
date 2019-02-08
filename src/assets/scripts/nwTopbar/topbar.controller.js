@@ -13,6 +13,11 @@ const TopbarController = ($scope, UserService) => {
         'initials': 'CC',
       });
 
+    $scope.$on('needReload', function(event){
+        console.log("NEED RELOAD!");
+        // Refresh topbar...
+    })
+
     UserService.loadUser();
     functionSearch();
 }
