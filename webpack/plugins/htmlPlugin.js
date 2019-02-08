@@ -21,6 +21,7 @@ const titles = {
   'email': 'Email',
   'forms': 'Forms',
   'profile': 'profile',
+  'new-user': 'new-user',
   'users': 'users',
   'companies': 'companies',
   'referees': 'referees',

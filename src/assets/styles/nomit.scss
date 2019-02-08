@@ -130,6 +130,7 @@ h1{
 }
 
 .btn-skills{
+    cursor: default !important;
     color: #501db9;
     background-color: transparent;
     border: 1px solid #501db9;
@@ -602,4 +603,22 @@ body.modal-open .blurra{
   -o-filter: blur(6px);
   -ms-filter: blur(6px);
   filter: blur(6px);
+}
+
+//new user
+.create-new-user-tab{
+  background-color: #fff;
+}
+
+.tab-new-user{
+  margin: auto;
+  width: 100%;
+}
+
+.card-new-user{
+  border: none;
+}
+
+.ciao{
+  border-color: #fff !important;
 }

@@ -42,8 +42,8 @@
             <p class="card-text ml-4 mr-4">14th March 2019 (Friday)</p>
 
             <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-            <div ng-repeat="skill in ad.skills">
-              <span class="ml-4 mb-4 btn btn-skills">{{ skill }}</span>
+            <div class="ml-4 mb-3">
+              <span ng-repeat="skill in ad.skills" class="mr-2 mb-2 btn btn-skills">{{ skill }}</span>
             </div>
             <p class="card-text  ml-4 my-4"></p><small class="text-muted">{{ daysAgo(ad.timestamp) }}</small></p>
           </div>

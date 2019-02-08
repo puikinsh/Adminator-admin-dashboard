@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Add a new User</title>
+
+  <style>
+    #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+</head>
+
+
+<body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div> 
+
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+          loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+
+      ${require('html-loader!./_sidebar.html')}
+
+      <div class="page-container">
+
+
+          ${require('html-loader!./_topbar.html')}
+
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-300'>
+          <div id='mainContent row'>
+            <div class="content-title mT-60">
+              <div class="ml-1 mb-3">
+                Add a new User / Company
+              </div> 
+            </div>  
+
+            <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
+              <div class="masonry-sizer "></div>
+
+              <div class="masonry-item  w-100"> 
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active ciao" data-toggle="tab" href="#newuser">Regular User</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#newreferee">Company</a>
+                    </li>
+                  </ul>
+                  
+                  <!-- Tab panes -->
+                  <div class="tab-content create-new-user-tab">
+                    <div class="tab-pane tab-new-user container active" id="newuser">
+                      <div class="create-new-user-tab">
+                        <!--Regular user-->
+                        <div class="card card-new-user">
+                            <div class="user-data-title">
+                              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+                              <div class="testo">
+                                <h5>New User</h5> 
+                              </div>
+                            </div>
+                            <div class="card-body-profile">
+                              <div class="profile-forms">
+                                <div class="row ">
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">First Name</h9>
+                                    <input type="text" class="form-control" id="" placeholder="First name" value="Francesca"
+                                      required>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Middle Name</h9>
+                                    <input type="text" class="form-control" id="" placeholder="Middle name" value="" required>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Last Name</h9>
+                                    <input type="text" class="form-control" id="" placeholder="Last name" value="Sperati" required>
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Email Address</h9>
+                                    <input type="text" class="form-control" id="" placeholder="Email" value="test@test.au" required>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Phone Number</h9>
+                                    <input type="text" class="form-control" id="" placeholder="Phone" value="0414098765" required>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">State</h9>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>VIC</option>
+                                      <option>SA</option>
+                                      <option>WA</option>
+                                      <option>NSW</option>
+                                      <option>QLD</option>
+                                      <option>TAS</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Nationality</h9>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>Italian</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Visa Type</h9>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>Student</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Language (Select one or more)</h9>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>English</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="col-4 profile-form-row">
+                                    <h9 class="">Education</h9>
+                                    <select id="" class="form-control">
+                                      <option selected>Diploma</option>
+                                      <option>Degree</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                </div>  
+
+                                <div class="row ">
+                                  
+                                  <div class="col-4 profile-form-row">
+                                      <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
+                                      <input type="text" class="form-control" id="" placeholder="Industry" required>
+                                  </div>
+                                  <div class="col-4 profile-form-row">
+                                      <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                                      <input type="text" class="form-control" id="" placeholder="Preofessions" value="" >
+                                  </div>
+                                </div>
+                                <div class="row profile-form-row">
+                                    <div class="mt-4">
+                                      <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
+                                      <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
+                                      <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                                    </div>
+                                  </div>
+
+                                <div class="row ">
+                                  <div class="col-5 profile-form-row">
+                                    <button type="button" class="btn btn-gradient ">UPDATE</button>
+                                    <button type="button" class="btn btn-cancel ">CANCEL</button>
+                                  </div>
+                                  <div class="col-7 profile-form-row">
+
+                                    <form action="upload.asp" method="post" enctype="multipart/form-data">
+                                      <h9 class="cv">Curriculum </h9>
+                                      <input class="cv" type="file" name="file1" multiple>
+                                      <input type="submit" class="btn btn-cv" value="Upload">
+                                    </form>
+                                  </div>
+
+                                </div>
+
+
+
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane container fade" id="newreferee">
+                        <div class="create-new-user-tab">
+                            <!--Referee-->
+                            <div class="card card-new-user">
+                                <div class="user-data-title">
+                                  <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+                                  <div class="testo">
+                                    <h5>New Referee</h5> 
+                                  </div>
+                                </div>
+                                <div class="card-body-profile">
+                                    <div class="profile-forms">                    
+                                        <div class="row ">
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">Name</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Leonardo" value="" required>
+                                          </div>
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">Business Type</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Technological Innovation" value=""
+                                              required>
+                                          </div>
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">ABN</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Last name" value="66 942 977 659"
+                                              required>
+                                          </div>
+                                        </div>
+                    
+                                        <div class="row ">
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">Email Address</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Email" value="ir@leonardocompany"
+                                              required>
+                                          </div>
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">Phone Number</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Phone" value="+39 06.324731"
+                                              required>
+                                          </div>
+                                          <div class="col-4 profile-form-row">
+                                            <h9 class="">Website</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Phone" value="https://www.leonardocompany.com"
+                                              required>
+                                          </div>
+                                        </div>
+                    
+                    
+                                        <div class="row">
+                                          <div class="form-group col-md-4 profile-form-row">
+                                            <h9 class="">Address</h9>
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="Piazza Monte Grappa, 4"
+                                              required>
+                                          </div>
+                                          <div class="form-group col-md-4 profile-form-row">
+                                            <h9 class="">City</h9>
+                                            <input type="text" class="form-control" id="inputCity" placeholder="Roma" required>
+                                          </div>
+                                          <div class="form-group col-md-2 profile-form-row">
+                                            <h9 class="">State</h9>
+                                            <input type="text" class="form-control" id="validationCustom04" placeholder="Italia" required>
+                                          </div>
+                                          <div class="form-group col-md-2 profile-form-row">
+                                            <h9 class="">Zip</h9>
+                                            <input type="text" class="form-control" id="inputZip" placeholder="00195" required>
+                                          </div>
+                                        </div>
+                    
+                                        <div class="row">
+                                            <div class="col-12 profile-form-row">
+                                                <h9 class="">Description</h9>
+                                                <textarea id="description" class="company-description" name="story" rows="5">We constantly explore new ideas to turn them into new technologies that improve our world and design the future one. We invest in research and development to provide sustainable and competitive solutions. Wherever defence and security are needed:  land, sea, sky, Space and cyberspace.
+                                                </textarea>
+                                              </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-3 profile-form-row">
+                                                <h9 class="">Twitter</h9>
+                                                <input type="text" class="form-control" id="" placeholder="Facebook" value="https://twitter.com/leonardo_it">
+                                              </div>   
+                                            <div class="col-3 profile-form-row">
+                                                <h9 class="">Facebook</h9>
+                                                <input type="text" class="form-control" id="" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/">
+                                              </div>                        
+                                          <div class="col-3 profile-form-row">
+                                            <h9 class="">Instagram</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it">
+                                          </div>
+                                          <div class="col-3 profile-form-row">
+                                            <h9 class="">Linkedin</h9>
+                                            <input type="text" class="form-control" id="" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
+                                          </div>
+                                        </div>
+                    
+                                        <button type="button" class="btn btn-gradient ">UPDATE</button>
+                                        <button type="button" class="btn btn-cancel ">CANCEL</button>
+                    
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+                
+              
+          </div><!--content container-->
+        
+      </main>
+
+      <!-- ### $App Screen Footer ### -->
+      </div><!-- page-container -->
+      </div>  <!-- App Content -->
+</body>
+
+</html>
