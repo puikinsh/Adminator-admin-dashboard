@@ -4,6 +4,11 @@ const TopbarController = ($scope, UserService) => {
         $scope.user = user;
     });
 
+    $scope.$on('needReload', function(event){
+        console.log("NEED RELOAD!");
+        // Refresh topbar...
+    })
+
     UserService.loadUser();
 }
 
