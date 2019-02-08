@@ -1,7 +1,7 @@
 import functionSearch from '../search';
+import Avatar from 'avatar-initials';
 
 /** @ngInject */
-import Avatar from 'avatar-initials';
 
 const TopbarController = ($scope, UserService) => {
     $scope.$on('loadUserSuccess', function (event, user) {
@@ -12,6 +12,11 @@ const TopbarController = ($scope, UserService) => {
         'useGravatar': false,
         'initials': 'CC',
       });
+
+    $scope.$on('needReload', function(event){
+        console.log("NEED RELOAD!");
+        // Refresh topbar...
+    })
 
     UserService.loadUser();
     functionSearch();

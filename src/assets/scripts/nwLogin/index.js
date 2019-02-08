@@ -12,6 +12,6 @@ angular.module('NomitWisp-Login', [ngCookies])
 function nwLogin(){
     return {
         restrict: 'E',
-        templateUrl: 'assets/scripts/nwLogin/nwLogin.html'
+        templateUrl: 'assets/scripts/nwLogin/nwLogin.html',
     };
 }

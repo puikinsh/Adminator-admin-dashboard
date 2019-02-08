@@ -229,7 +229,7 @@
         </a>
       </li>
       <!-- Admin no, everyone sees their own -->
-      <li class="nav-item" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company'">
+      <li class="nav-item" ng-show="'{{user.role}}'==='nomit' || '{{user.role}}'==='referee' || '{{user.role}}'==='company'">
         <a class='sidebar-link' href="#!profile">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-user-circle-o text-white"></i>
@@ -247,7 +247,7 @@
         </a>
       </li>
       <!-- Admin, Nomit & referee see all companies  -->
-      <li class="nav-item" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
+      <li class="nav-item" ng-show="'{{user.role}}'==='admin' || '{{user.role}}'==='nomit' || '{{user.role}}'==='referee'">
         <a class='sidebar-link' href="#!companies">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-building text-white"></i>
@@ -265,7 +265,7 @@
         </a>
       </li>
       <!-- Admin, Nomit and Referee have access -->
-      <li class="nav-item" ng-show="'{{user.role}}'=='admin' || '{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
+      <li class="nav-item" ng-show="'{{user.role}}'==='admin' || '{{user.role}}'==='nomit' || '{{user.role}}'==='referee'">
         <a class='sidebar-link' href="#!reports">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-calendar-check-o text-white"></i>
