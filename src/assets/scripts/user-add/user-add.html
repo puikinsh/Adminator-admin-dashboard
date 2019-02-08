@@ -2,7 +2,7 @@
         <div id='mainContent row'>
           <div class="content-title mT-60">
             <div class="ml-1 mb-3">
-              Add a new User / Company
+              Add a new User / Referee
             </div> 
           </div>  
 
@@ -13,17 +13,17 @@
 
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link active ciao" data-toggle="tab" href="#newuser">Regular User</a>
+                  <li ng-class="{active: isSet(1)} ">
+                    <a href class="nav-link active" role="button" ng-click="setTab(1)" data-toggle="tab">Regular User</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#newreferee">Company</a>
+                  <li ng-class="{active: isSet(2)} ">
+                    <a href class="nav-link"  role="button" ng-click="setTab(2)" data-toggle="tab">Referee</a>
                   </li>
                 </ul>
                 
                 <!-- Tab panes -->
-                <div class="tab-content create-new-user-tab">
-                  <div class="tab-pane tab-new-user container active" id="newuser">
+                <div class="tab-content create-new-user-tab" >
+                  <div class="tab tab-pane tab-new-user container active" ng-show="isSet(1)">
                     <div class="create-new-user-tab">
                       <!--Regular user-->
                       <div class="card card-new-user">
@@ -108,37 +108,39 @@
                                 </div>
                               </div>  
 
-                              <div class="row ">
+                              <div class="row mT-6">
                                 
                                 <div class="col-4 profile-form-row">
-                                    <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
+                                    <h9 class="card-title mt-6 mr-4">Main Classification:</h9>
                                     <input type="text" class="form-control" placeholder="Industry" required>
                                 </div>
                                 <div class="col-4 profile-form-row">
-                                    <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                                    <h9 class="card-title mt-6 mr-4">Skills:</h9>
                                     <input type="text" class="form-control" placeholder="Preofessions" value="" >
                                 </div>
                               </div>
-                              <div class="row profile-form-row">
-                                  <div class="mt-4">
-                                    <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
-                                    <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
-                                    <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                              <div class="row profile-form-row mt-0 ">
+                                  <div class="mt-3 mb-4">
+                                    <div class="ml-4  btn btn-industry mt-4">Graphic Design</div>
+                                    <div class="ml-1 btn btn-skills">Adobe Creaetive CC</div>
+                                    <div class="ml-1btn btn-skills">Illustration</div>
                                   </div>
-                                </div>
+                              </div>
+                              <div class="row mT-6">
+                                  <div class="col-4  profile-form-row">
+                                      <h9 class="card-title mt-6 mr-4">Password:</h9>
+                                      <input type="password" class="form-control" placeholder="****" value="" >
+                                  </div>
+                                  <div class="col-4  profile-form-row">
+                                      <h9 class="card-title mt-6 mr-4">Confirm Password</h9>
+                                      <input type="password" class="form-control" placeholder="Repete password" value="" >
+                                  </div>
+                              </div>
 
                               <div class="row ">
-                                <div class="col-5 profile-form-row">
+                                <div class=" profile-form-row">
                                   <button type="button" class="btn btn-gradient ">UPDATE</button>
                                   <button type="button" class="btn btn-border ">CANCEL</button>
-                                </div>
-                                <div class="col-7 profile-form-row">
-
-                                  <form action="upload.asp" method="post" enctype="multipart/form-data">
-                                    <h9 class="cv">Curriculum </h9>
-                                    <input class="cv" type="file" name="file1" multiple>
-                                    <input type="submit" class="btn btn-cv" value="Upload">
-                                  </form>
                                 </div>
 
                               </div>
@@ -150,7 +152,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="tab-pane container fade" id="newreferee">
+                  <div class="tab tab-pane container active" ng-show="isSet(2)">
                       <div class="create-new-user-tab">
                           <!--Referee-->
                           <div class="card card-new-user">
@@ -242,6 +244,17 @@
                                           <h9 class="">Linkedin</h9>
                                           <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
                                         </div>
+                                      </div>
+
+                                      <div class="row mT-6">
+                                          <div class="col-4  profile-form-row">
+                                              <h9 class="card-title mt-6 mr-4">Password:</h9>
+                                              <input type="password" class="form-control" placeholder="****" value="" >
+                                          </div>
+                                          <div class="col-4  profile-form-row">
+                                              <h9 class="card-title mt-6 mr-4">Confirm Password</h9>
+                                              <input type="password" class="form-control" placeholder="Repete password" value="" >
+                                          </div>
                                       </div>
                   
                                       <button type="button" class="btn btn-gradient ">UPDATE</button>
