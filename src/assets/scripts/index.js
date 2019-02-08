@@ -5,7 +5,6 @@ import './masonry';
 import './charts';
 import './popover';
 import './scrollbar';
-import './search';
 import './sidebar';
 import './skycons';
 import './vectorMaps';
@@ -25,8 +24,10 @@ import './nwTopbar';
 import './dashboard'
 import './ads';
 import './ads-details';
+import './ads-add';
 import './profile';
 import './signup';
 import './history';
+import './trumbowyg';
 
 import './app';

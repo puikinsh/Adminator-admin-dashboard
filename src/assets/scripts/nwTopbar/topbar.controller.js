@@ -1,3 +1,5 @@
+import functionSearch from '../search';
+
 /** @ngInject */
 import Avatar from 'avatar-initials';
 
@@ -12,6 +14,7 @@ const TopbarController = ($scope, UserService) => {
       });
 
     UserService.loadUser();
+    functionSearch();
 }
 
 export default TopbarController;

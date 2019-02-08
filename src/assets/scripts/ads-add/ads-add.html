@@ -1,0 +1,88 @@
+<main class='main-content bgc-grey-300'>
+        <div id='mainContent row'>
+
+            <div class="row content-title mT-60">
+              <h1 class="col-8 ml-1 mb-4">Create a new Internship Ad</h1>            
+            </div>
+
+            <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
+            <div class="masonry-sizer col-md-6 "></div>
+
+              <!-- ### Job Details Card ### -->
+
+            <form>
+              <div class="masonry-item  w-50">
+                  <div class="card item-box">
+                      <div class="row">
+                         <div class="col-2">
+                           <img class="img-fluid ml-4 mb-4 companies-update-img" src="assets/static/images/nomit-logo.png" alt="company" class="avatar">
+                         </div>
+                         <div class="col-9 card-body">
+                          <input class="form-h2 ard-text" name="adv.title" required placeholder="Job Name" />
+                          <h6 class="card-title mr-4">{{user.company.name}}</h6>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card">
+                     <div class="card-body">
+                          <h5 class="card-title mt-4 ml-4 mr-4">About the business:</h5>
+                          <textarea id="description2" class=" col-11 company-description ard-text ml-4 mr-10" name="story" ng-model="ads.companyinfo" rows="5" required>{{user.companyinfo}}</textarea>
+                          <h5 class="card-title mt-4 ml-4 mr-4">About the role: </h5>
+                          <textarea id="description3" class="wysiwyg-editor col-11 company-description ard-text ml-4 mr-10" ng-model="ads.description" name="story" rows="5" required>Please, include here a briefh description of the role, summarizeing the essential responsibilities, activities, qualifications and skills for a role.  </textarea>
+                     </div>
+                   </div>
+              </div>
+                      
+              <!-- ### Other Info Card ### -->   
+              <div class="masonry-item  w-50 "> 
+                  <div class="card item-box">
+                      <div class="card-body">
+                        <h5 class="card-title mt-4 ml-4 mr-4">Location:</h5>
+                        <label class="">Address</label>
+                        <input type="text" class="form-control" placeholder="Melbourne, CBD & Inner Suburbs" required>
+                        <div class="form-row">
+                              <div class="mt-2 form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity" required>
+                              </div>
+                              <div class="mt-2 form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control" required>
+                                  <option selected>Choose...</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                              <div class="mt-2 form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip" required>
+                              </div>
+                        </div>
+                        <h5 class="card-title mt-4 ml-4 mr-4">Application close:</h5>
+                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Application Closing Data" data-provide="datepicker">
+
+                        <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
+                        <input type="text" class="form-control" placeholder="Industry" required>
+
+                        <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                        <input type="text" class="form-control" placeholder="Preofessions" value="" >
+                        <div class="mt-4">
+                          <div class=" ml-4 mb-4 btn btn-industry mt-4" ng-repeat="classification in classifications">{{classification}}</div>
+                          <div class="ml-1 mb-4 btn btn-skills" ng-repeat="skill in skills">{{skill}}</div>
+                        </div>
+                        <p class="card-text  ml-4 my-4"><small class="text-muted">Posted 3 days ago</small></p>
+                      </div>
+                    </div>
+              </div>
+        
+              <!-- ### Buttons ### --> 
+              <div class="masonry-item  w-50 m-auto btn-centered-container "> 
+                  <button type="submit" href="#" class="col-5 mr-1 btn btn-gradient btn-centered mt-6">Create</button>
+                  <button type="button" href="#" class="col-5 ml-1 btn btn-border  btn-centered mt-6">Save</button>
+              </div>
+            </form>
+          </div>
+              
+            
+          </div><!--content row-->
+        
+      </main>
