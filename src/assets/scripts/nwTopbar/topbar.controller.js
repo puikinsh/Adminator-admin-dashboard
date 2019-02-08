@@ -8,9 +8,10 @@ const TopbarController = ($scope, UserService) => {
         $scope.user = user;
     });
     
-    const avatar = new Avatar(document.getElementById('avatar'), {
+    $scope.avatar = new Avatar(document.getElementById('avatar'), {
         'useGravatar': false,
-        'initials': 'CC',
+        'initials': 'AD', // it will be`${$scope.user.first_name[0]}${$scope.user.last_name[1]}`
+        'initial_weight': 300,
       });
 
     $scope.$on('needReload', function(event){
