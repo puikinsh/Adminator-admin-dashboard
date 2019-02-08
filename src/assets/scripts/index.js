@@ -29,5 +29,6 @@ import './profile';
 import './signup';
 import './history';
 import './trumbowyg';
+import './user-add';
 
 import './app';

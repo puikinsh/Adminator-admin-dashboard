@@ -5,7 +5,6 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
-
 .bg-img{
   background-image: url('/assets/static/images/sidebar-bkg.jpg');
   background-size: cover;
@@ -92,12 +91,15 @@ h1{
   .btn-gradient {
     box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
     background-image: linear-gradient(to right,#ee38a4, #501db9);
-    color: #fff;
+    color: #fff !important;
     font-weight: bold;
     letter-spacing: 0.05em;
     border-radius: 50px;
     border: none;
-    height: 40px;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 40px !important; 
+    max-height: 40px; 
     width: 200px;
     margin-top: calc((#{$header-height} - 40px)/2);
     outline: none;
@@ -727,6 +729,3 @@ body.modal-open .blurra{
   border: none;
 }
 
-.ciao{
-  border-color: #fff !important;
-}
