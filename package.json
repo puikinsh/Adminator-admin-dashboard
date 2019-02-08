@@ -19,9 +19,9 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-cookies": "^1.6.4",
-    "avatar-initials": "^4.1.0",
     "angular-filter": "^0.5.17",
     "angular-route": "^1.6.4",
+    "avatar-initials": "^4.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
