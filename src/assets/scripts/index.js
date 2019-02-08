@@ -31,5 +31,7 @@ import './history';
 import './trumbowyg';
 import './user-add';
 import './users';
+import './companies';
+import './referees';
 
 import './app';

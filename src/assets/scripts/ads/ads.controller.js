@@ -1,8 +1,8 @@
 /** @ngInject */
 const AdsController = ($scope, AdsService, UserService) => {
-  $scope.$on('loadUserSuccess', function (event, user) {
+  $scope.$on('loadUserSuccess', async (event, user) => {
     $scope.user = user;
-    AdsService.fetchAdsService()
+    await AdsService.fetchAdsService()
       .then( (result) => { $scope.ads = result; })
       .catch( (error) => { console.log(error); })
   });

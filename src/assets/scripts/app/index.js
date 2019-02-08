@@ -18,8 +18,9 @@ angular.module('NomitWisp',
         'nwHistory',
         'nwUserAdd',
         'nwUsers',
+        'nwCompanies',
+        'nwReferees',
         ngRoute
-        
     ])
     .factory(UserService.name, UserService)
     .config(function ($routeProvider, $httpProvider) { 
@@ -65,14 +66,14 @@ angular.module('NomitWisp',
             controller: 'UserDetailsController',
             templateUrl: 'assets/scripts/user-details/user-details.html'
         })
-        // .when('/companies', { 
-        //     controller: 'CompaniesController', 
-        //     templateUrl: '' 
-        // })
-        // .when('/referees', { 
-        //     controller: 'RefereesController', 
-        //     templateUrl: '' 
-        // })
+        .when('/companies', { 
+            controller: 'CompaniesController', 
+            templateUrl: 'assets/scripts/companies/companies.html' 
+        })
+        .when('/referees', { 
+            controller: 'RefereesController', 
+            templateUrl: 'assets/scripts/referees/referees.html' 
+        })
         // .when('/reports', { 
         //     controller: 'ReportsController', 
         //     templateUrl: '' 
