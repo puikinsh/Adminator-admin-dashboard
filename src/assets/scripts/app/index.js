@@ -16,6 +16,7 @@ angular.module('NomitWisp',
         'nwProfile',
         'nwSignup',
         'nwHistory',
+        'nwUsers',
         ngRoute
         
     ])
@@ -51,10 +52,14 @@ angular.module('NomitWisp',
             controller: 'HistoryController', 
             templateUrl: 'assets/scripts/history/history.html' 
         })
-        // .when('/users', { 
-        //     controller: 'UsersController', 
-        //     templateUrl: '' 
-        // })
+        .when('/users', { 
+            controller: 'UsersController', 
+            templateUrl: 'assets/scripts/users/users.html' 
+        })
+        .when('/users/:id',{
+            controller: 'UserDetailsController',
+            templateUrl: 'assets/scripts/user-details/user-details.html'
+        })
         // .when('/companies', { 
         //     controller: 'CompaniesController', 
         //     templateUrl: '' 
