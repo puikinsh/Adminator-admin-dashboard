@@ -1,0 +1,263 @@
+<main class='main-content bgc-grey-300'>
+        <div id='mainContent row'>
+          <div class="content-title mT-60">
+            <div class="ml-1 mb-3">
+              Add a new User / Company
+            </div> 
+          </div>  
+
+          <div class=" gap-30 masonry pos-r"> <!-- #content container ===== -->
+            <div class="masonry-sizer "></div>
+
+            <div class="masonry-item  w-100"> 
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active ciao" data-toggle="tab" href="#newuser">Regular User</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#newreferee">Company</a>
+                  </li>
+                </ul>
+                
+                <!-- Tab panes -->
+                <div class="tab-content create-new-user-tab">
+                  <div class="tab-pane tab-new-user container active" id="newuser">
+                    <div class="create-new-user-tab">
+                      <!--Regular user-->
+                      <div class="card card-new-user">
+                          <div class="user-data-title">
+                            <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+                            <div class="testo">
+                              <h5>New User</h5> 
+                            </div>
+                          </div>
+                          <div class="card-body-profile">
+                            <div class="profile-forms">
+                              <div class="row ">
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">First Name</h9>
+                                  <input type="text" class="form-control"  placeholder="First name" value="Francesca"
+                                    required>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Middle Name</h9>
+                                  <input type="text" class="form-control" placeholder="Middle name" required>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Last Name</h9>
+                                  <input type="text" class="form-control"  placeholder="Last name" value="Sperati" required>
+                                </div>
+                              </div>
+
+                              <div class="row ">
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Email Address</h9>
+                                  <input type="text" class="form-control" placeholder="Email" value="test@test.au" required>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Phone Number</h9>
+                                  <input type="text" class="form-control" placeholder="Phone" value="0414098765" required>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">State</h9>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>VIC</option>
+                                    <option>SA</option>
+                                    <option>WA</option>
+                                    <option>NSW</option>
+                                    <option>QLD</option>
+                                    <option>TAS</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="row ">
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Nationality</h9>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>Italian</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Visa Type</h9>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>Student</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Language (Select one or more)</h9>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>English</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="row ">
+                                <div class="col-4 profile-form-row">
+                                  <h9 class="">Education</h9>
+                                  <select class="form-control">
+                                    <option selected>Diploma</option>
+                                    <option>Degree</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                              </div>  
+
+                              <div class="row ">
+                                
+                                <div class="col-4 profile-form-row">
+                                    <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
+                                    <input type="text" class="form-control" placeholder="Industry" required>
+                                </div>
+                                <div class="col-4 profile-form-row">
+                                    <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                                    <input type="text" class="form-control" placeholder="Preofessions" value="" >
+                                </div>
+                              </div>
+                              <div class="row profile-form-row">
+                                  <div class="mt-4">
+                                    <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
+                                    <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
+                                    <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                                  </div>
+                                </div>
+
+                              <div class="row ">
+                                <div class="col-5 profile-form-row">
+                                  <button type="button" class="btn btn-gradient ">UPDATE</button>
+                                  <button type="button" class="btn btn-border ">CANCEL</button>
+                                </div>
+                                <div class="col-7 profile-form-row">
+
+                                  <form action="upload.asp" method="post" enctype="multipart/form-data">
+                                    <h9 class="cv">Curriculum </h9>
+                                    <input class="cv" type="file" name="file1" multiple>
+                                    <input type="submit" class="btn btn-cv" value="Upload">
+                                  </form>
+                                </div>
+
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane container fade" id="newreferee">
+                      <div class="create-new-user-tab">
+                          <!--Referee-->
+                          <div class="card card-new-user">
+                              <div class="user-data-title">
+                                <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+                                <div class="testo">
+                                  <h5>New Referee</h5> 
+                                </div>
+                              </div>
+                              <div class="card-body-profile">
+                                  <div class="profile-forms">                    
+                                      <div class="row ">
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">Name</h9>
+                                          <input type="text" class="form-control" ng-model="user.name" placeholder="Leonardo" value="" required>
+                                        </div>
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">Business Type</h9>
+                                          <input type="text" class="form-control"  placeholder="Technological Innovation" value=""
+                                            required>
+                                        </div>
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">ABN</h9>
+                                          <input type="text" class="form-control" placeholder="Last name" value="66 942 977 659"
+                                            required>
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row ">
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">Email Address</h9>
+                                          <input type="text" class="form-control"  placeholder="Email" value="ir@leonardocompany"
+                                            required>
+                                        </div>
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">Phone Number</h9>
+                                          <input type="text" class="form-control" placeholder="Phone" value="+39 06.324731"
+                                            required>
+                                        </div>
+                                        <div class="col-4 profile-form-row">
+                                          <h9 class="">Website</h9>
+                                          <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com"
+                                            required>
+                                        </div>
+                                      </div>
+                  
+                  
+                                      <div class="row">
+                                        <div class="form-group col-md-4 profile-form-row">
+                                          <h9 class="">Address</h9>
+                                          <input type="text" class="form-control" id="inputAddress" placeholder="Piazza Monte Grappa, 4"
+                                            required>
+                                        </div>
+                                        <div class="form-group col-md-4 profile-form-row">
+                                          <h9 class="">City</h9>
+                                          <input type="text" class="form-control" id="inputCity" placeholder="Roma" required>
+                                        </div>
+                                        <div class="form-group col-md-2 profile-form-row">
+                                          <h9 class="">State</h9>
+                                          <input type="text" class="form-control" id="validationCustom04" placeholder="Italia" required>
+                                        </div>
+                                        <div class="form-group col-md-2 profile-form-row">
+                                          <h9 class="">Zip</h9>
+                                          <input type="text" class="form-control" id="inputZip" placeholder="00195" required>
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row">
+                                          <div class="col-12 profile-form-row">
+                                              <h9 class="">Description</h9>
+                                              <textarea id="description" class="company-description" name="story" rows="5">We constantly explore new ideas to turn them into new technologies that improve our world and design the future one. We invest in research and development to provide sustainable and competitive solutions. Wherever defence and security are needed:  land, sea, sky, Space and cyberspace.
+                                              </textarea>
+                                            </div>
+                                      </div>
+                                      <div class="row ">
+                                          <div class="col-3 profile-form-row">
+                                              <h9 class="">Twitter</h9>
+                                              <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/leonardo_it">
+                                            </div>   
+                                          <div class="col-3 profile-form-row">
+                                              <h9 class="">Facebook</h9>
+                                              <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/">
+                                            </div>                        
+                                        <div class="col-3 profile-form-row">
+                                          <h9 class="">Instagram</h9>
+                                          <input type="text" class="form-control" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it">
+                                        </div>
+                                        <div class="col-3 profile-form-row">
+                                          <h9 class="">Linkedin</h9>
+                                          <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
+                                        </div>
+                                      </div>
+                  
+                                      <button type="button" class="btn btn-gradient ">UPDATE</button>
+                                      <button type="button" class="btn btn-border ">CANCEL</button>
+                  
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+              
+            
+        </div><!--content container-->
+      
+    </main>

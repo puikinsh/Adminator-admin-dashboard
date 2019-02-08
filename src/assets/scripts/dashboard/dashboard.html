@@ -1,15 +1,15 @@
 <main class='main-content bgc-grey-300' ng-controller="DashboardController">
   <div id='mainContent row'>
     <div class="row content-title mT-60">
-      <div class="col-8 ml-1 mb-3">
-        Welcome {{ user.fullname }}
+      <div class="col-8 ml-1 mb-4">
+        Welcome {{ user.name }}
       </div>
     </div>
     <div class=" gap-20 masonry pos-r">
       <!-- #content container ===== -->
       <div class="masonry-sizer col-md-6"></div>
       <!-- #NOMIT & REFEREE ===== -->
-      <div class="masonry-item  w-100  visible-nomit visible-referee">
+      <div class="masonry-item  w-100  visible-nomit visible-referee"  ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
         <!-- #First line ========= -->
 
         <div class="row gap-20">
@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      <div class="masonry-item col-12 visible-nomit visible-referee">
+      <div class="masonry-item col-12 visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
         <!-- #New Registered Users ==================== -->
         <div class="bd bgc-white item-box">
           <div class="layers">
@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="masonry-item w-100 visible-nomit visible-referee">
+      <div class="masonry-item w-100 visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee'">
         <!-- #Successful Mathches & #Nationality ==================== -->
         <div class="row gap-20">
           <div class="col-3 ">
@@ -189,12 +189,12 @@
       </div>
 
       <!-- #COMPANY / REFEREE / NOMIT ===== -->
-      <div class="masonry-item content-title w-100 visible-company visible-nomit visible-referee">
+      <div class="masonry-item content-title w-100 visible-company visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company'">
         <div class="col-8 ml-1 mb-3">
           Your Ads
         </div>
       </div>
-      <div class="masonry-item col-12 visible-company visible-nomit visible-referee">
+      <div class="masonry-item col-12 visible-company visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company'">
         <!-- #suggested ads ==================== -->
         <div class="row gap-30">
 
@@ -258,13 +258,10 @@
           </div>
         </div>
       </div>
-      <div class="masonry-item  w-100">
-        <button type="button" class="btn btn-gradient "><i class="fa fa-plus pdd-right-5"></i>CREATE NEW AD</button>
-      </div>
 
 
       <!-- #USERS ===== -->
-      <div class="masonry-item col-12 visible-user">
+      <div class="masonry-item col-12 visible-user" ng-show="'{{user.role}}'=='user'">
         <!-- #suggested ads ==================== -->
         <div class="row gap-30">
 
