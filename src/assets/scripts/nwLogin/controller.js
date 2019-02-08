@@ -1,4 +1,4 @@
-const LoginController = ($scope, $cookies, LoginService, UserService) => {
+const LoginController = ($scope, $cookies, $location, LoginService, UserService) => {
 
 	// load the user if already logged in, for all controllers
 	UserService.loadUser();
@@ -11,7 +11,8 @@ const LoginController = ($scope, $cookies, LoginService, UserService) => {
 				// save the cookie and reload the user for all controllers
 				$cookies.put('access_token', result.token);
 				UserService.loadUser();
-
+				$location.path('/');
+				$scope.$apply();
 			} else {
 				alert(result);
 			}
