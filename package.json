@@ -4,7 +4,7 @@
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
-    "start": "webpack-dashboard -t 'Project' -- webpack-dev-server",
+    "start": "webpack-dev-server",
     "dev": "webpack-dashboard -t 'Project' -- webpack-dev-server",
     "clean": "shx rm -rf ./build",
     "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
@@ -40,6 +40,7 @@
     "cross-env": "^5.1.0",
     "css-loader": "^0.28.7",
     "datatables": "^1.10.13",
+    "dotenv-webpack": "^1.7.0",
     "easy-pie-chart": "^2.1.7",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -72,6 +73,6 @@
     "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.8.1",
     "webpack-dashboard": "^1.0.0",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.11.3"
   }
 }

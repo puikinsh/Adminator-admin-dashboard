@@ -3,7 +3,7 @@ const AdsService = ($http) => {
     let serv = {};
     
     serv.fetchAdsService = () =>{
-        return $http.get('https://nomitwisp-restapi.herokuapp.com/api/ads', { withCredentials: true })
+        return $http.get(`${process.env.RESTAPI_URL}/api/ads`, { withCredentials: true })
         .then( (result) => { return result.data; })
         .catch( (error) => { return error; });
     }
