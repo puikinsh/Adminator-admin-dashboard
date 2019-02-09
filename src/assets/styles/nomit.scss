@@ -98,7 +98,8 @@ h1{
     border: none;
     height: 40px !important;
     min-height: 40px !important;
-    line-height: 40px !important; 
+    //line-height: 40px !important; 
+    vertical-align: 0;
     max-height: 40px; 
     width: 200px;
     margin-top: calc((#{$header-height} - 40px)/2);
@@ -120,6 +121,8 @@ h1{
     letter-spacing: 0.05em;
     background-color: transparent;
     border: 2px solid #501db9;
+    //line-height: 40px !important; 
+    vertical-align: 0;
     border-radius: 50px;
     height: 40px;
     width: 200px;
@@ -357,7 +360,7 @@ textarea {
   height: 40px;
   width: 100px;
   margin-top: calc((#{$header-height} - 40px)/2);
-  margin-left: 15px;
+  margin-left: 0px;
   outline: none;
   padding: 5px;
 }
