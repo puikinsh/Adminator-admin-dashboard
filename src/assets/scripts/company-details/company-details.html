@@ -16,8 +16,7 @@
                 <div class="user-data-title">
                   <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
                   <div class="testo">
-                    <h5>Leonardo</h5> A global high-tech company and one of the key players in Aerospace, Defence and
-                    Security
+                    <h5>{{ company.company.name }}</h5> {{ company.company.description }}
                   </div>
                 </div>
                 <div class="card-body-profile">
@@ -26,30 +25,30 @@
                     <div class="row ">
                       <div class="col-4 profile-form-row">
                         <h9 class="">Name</h9>
-                        <input type="text" class="form-control" placeholder="Leonardo" value="" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.name }}" value="" disabled>
                       </div>
                       <div class="col-4 profile-form-row">
                         <h9 class="">Business Type</h9>
-                        <input type="text" class="form-control" placeholder="Technological Innovation" value="" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.type }}" value="" disabled>
                       </div>
                       <div class="col-4 profile-form-row">
                         <h9 class="">ABN</h9>
-                        <input type="text" class="form-control" placeholder="Last name" value="66 942 977 659" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.abn }}" value="" disabled>
                       </div>
                     </div>
       
                     <div class="row ">
                       <div class="col-4 profile-form-row">
                         <h9 class="">Email Address</h9>
-                        <input type="text" class="form-control" placeholder="Email" value="ir@leonardocompany" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.email }}" value="" disabled>
                       </div>
                       <div class="col-4 profile-form-row">
                         <h9 class="">Phone Number</h9>
-                        <input type="text" class="form-control" placeholder="Phone" value="+39 06.324731" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.phone }}" value="" disabled>
                       </div>
                       <div class="col-4 profile-form-row">
                         <h9 class="">Website</h9>
-                        <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.website }}" value="" disabled>
                       </div>
                     </div>
       
@@ -57,45 +56,38 @@
                     <div class="row">
                       <div class="form-group col-md-4 profile-form-row">
                         <h9 class="">Address</h9>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Piazza Monte Grappa, 4" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.address }}" disabled>
                       </div>
                       <div class="form-group col-md-4 profile-form-row">
                         <h9 class="">City</h9>
-                        <input type="text" class="form-control" id="inputCity0" placeholder="Roma" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.city }}" disabled>
                       </div>
                       <div class="form-group col-md-2 profile-form-row">
                         <h9 class="">State</h9>
-                        <input type="text" class="form-control" id="validationCustom04" placeholder="Italia" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.state }}" disabled>
                       </div>
                       <div class="form-group col-md-2 profile-form-row">
                         <h9 class="">Zip</h9>
-                        <input type="text" class="form-control" id="inputZip" placeholder="00195" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.postcode }}" disabled>
                       </div>
                     </div>
-      
-                    <div class="row">
-                      <div class="col-12 profile-form-row">
-                        <h9 class="">Description</h9>
-                        <textarea id="description" class="company-description" name="story" rows="5" disabled>We constantly explore new ideas to turn them into new technologies that improve our world and design the future one. We invest in research and development to provide sustainable and competitive solutions. Wherever defence and security are needed:  land, sea, sky, Space and cyberspace.
-                              </textarea>
-                      </div>
-                    </div>
+
                     <div class="row ">
                       <div class="col-3 profile-form-row">
                         <h9 class="">Twitter</h9>
-                        <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/leonardo_it" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.twitter }}"  disabled>
                       </div>
                       <div class="col-3 profile-form-row">
                         <h9 class="">Facebook</h9>
-                        <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.facebook }}" disabled>
                       </div>
                       <div class="col-3 profile-form-row">
                         <h9 class="">Instagram</h9>
-                        <input type="text" class="form-control" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.instagram }}"  disabled>
                       </div>
                       <div class="col-3 profile-form-row">
                         <h9 class="">Linkedin</h9>
-                        <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.company.linkedin }}" disabled>
                       </div>
                     </div>
       
