@@ -1,12 +1,13 @@
 /** @ngInject */
-const UsersController = ($scope, UsersService, UserService) => {
+const UserDetailsController = ($scope, $routeParams, UserDetailsService, UserService) => {
     $scope.$on('loadUserSuccess', function (event, user) {
         $scope.user = user;
-        UsersService.fetchUsersService()
-          .then( (result) => { $scope.userDetails = result; })
+        UserDetailsService.fetchUserDetails($routeParams)
+          .then( (result) => { console.log(result);
+           $scope.userDetails = result; })
           .catch( (error) => { console.log(error); })
       });
       UserService.loadUser();
 }
 
-export default UsersController;
+export default UserDetailsController;
