@@ -11,7 +11,7 @@
             <div class="masonry-sizer col-md-6"></div>
       
             <!-- #company profile ========= -->
-            <div class="masonry-item  w-100  visible-admin visible-nomit visible-referee visible-user" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee' || profile.role =='user' ">
+            <div class="masonry-item  w-100  visible-admin visible-nomit visible-referee visible-user" ng-show="user.role !='company'">
               <div class="card item-box">
                 <div class="user-data-title">
                   <img class="user-update-img" ng-src="{{avatar.element.src}}" alt="">
