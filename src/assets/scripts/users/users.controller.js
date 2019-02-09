@@ -1,4 +1,5 @@
 import Avatar from 'avatar-initials';
+import masonry from '../masonry';
 
 /** @ngInject */
 const UsersController = ($scope, UsersService, UserService) => {
@@ -15,8 +16,9 @@ const UsersController = ($scope, UsersService, UserService) => {
                         'useGravatar': false,
                         'initials': first_name + last_name,
                         'initial_weight': 300,
-                    }); 
-                }                
+                    });
+                }
+                masonry();
             })
           .catch( (error) => { console.log(error); })
       });
