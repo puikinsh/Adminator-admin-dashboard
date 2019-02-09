@@ -1,5 +1,6 @@
 const
   manifest          = require('../manifest');
+const Dotenv = require('dotenv-webpack');
 
 const plugins = [];
 
@@ -8,7 +9,8 @@ plugins.push(
   ...(require('./htmlPlugin')),
   ...(require('./internal')),
   require('./caseSensitivePlugin'),
-  require('./extractPlugin')
+  require('./extractPlugin'),
+  new Dotenv()
 );
 
 if (manifest.IS_DEVELOPMENT) {

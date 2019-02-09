@@ -7,7 +7,7 @@ const SignupService = ($http)=> {
     serv.signupUserService = (user) => {
         return $http({
             method: 'POST',
-            url: 'https://nomitwisp-restapi.herokuapp.com/signup',
+            url: `${process.env.RESTAPI_URL}/signup`,
             data: user,
             headers: { 'Content-Type': 'application/json' }
         })

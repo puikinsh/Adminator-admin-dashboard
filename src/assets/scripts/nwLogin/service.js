@@ -4,7 +4,7 @@ const LoginService = ($http) => {
     serv.loginUserService = (user) => {
         return $http({
 			method: 'POST',
-			url: 'https://nomitwisp-restapi.herokuapp.com/login',
+			url: `${process.env.RESTAPI_URL}/login`,
 			data: user,
 			headers: { 'Content-Type': 'application/json' }
 		})

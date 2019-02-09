@@ -4,7 +4,7 @@ const LogoutService = ($http) => {
     serv.logoutUserService = (user) =>{
         return $http({
 			method: 'POST',
-            url: 'https://nomitwisp-restapi.herokuapp.com/logout',
+            url: `${process.env.RESTAPI_URL}/logout`,
             data: user,
 			headers: { 'Content-Type': 'application/json' }
 		})
