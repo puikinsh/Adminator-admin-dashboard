@@ -8,19 +8,18 @@
       <!-- #content container ===== -->
       <div class="masonry-sizer col-md-6"></div>
 
-      <div class="masonry-item w-50" ng-repeat="user in users">
+      <div class="masonry-item w-50" ng-repeat="u in users">
         <!-- #first user ========= -->
         <div class="card item-box">
           <div class="user-data-title container">
-            <img class="user-card-img rounded-circle" src="https://www.monmouth.edu/university-advancement/wp-content/uploads/sites/237/2018/08/person-placeholder.jpg"
-              alt="">
+            <img id="user{{$index}}" class="user-card-img rounded-circle" ng-src="{{avatar($index)}}" alt="" />
             <div class="user-card-col">
-              <div class="user-card-title">{{user.fullname}}</div>
-              <div class=" text-size-11">Victoria</div>
-              <div class=" text-size-11">Mobile: 0414987654</div>
-              <a href="#" id="user-action-fill">view user profile</a>
-              <a href="#" id="user-action-border" data-toggle="tooltip" data-placement="bottom" title="User will be unable to log in to WISP">ban
-                user</a>
+              <div class="user-card-title">{{u.personal.first_name}} {{u.personal.last_name}}</div>
+              <div class=" text-size-11">{{u.personal.city}}</div>
+              <div class=" text-size-11">{{u.personal.phone}}</div>
+              <a href="#!user-details" id="user-action-fill">view user profile</a>
+              <a href="#" class="visible-nomit visible-referee visible-admin" ng-show="user.role =='nomit' || user.role =='referee' || user.role =='admin'" id="user-action-border" data-toggle="tooltip" data-placement="bottom" title="User will be unable to log in to WISP">
+                ban user</a>
             </div>
           </div>
           <div class="card-body p-0">

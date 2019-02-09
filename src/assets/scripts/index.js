@@ -33,5 +33,6 @@ import './user-add';
 import './users';
 import './companies';
 import './referees';
+import './reports';
 
 import './app';
