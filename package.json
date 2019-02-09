@@ -4,17 +4,15 @@
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "npm run build && node server.js",
     "dev": "webpack-dashboard -t 'Project' -- webpack-dev-server",
+    "quickdev": "webpack-dev-server",
     "clean": "shx rm -rf ./build",
     "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
     "preview": "cross-env NODE_ENV=\"production\" webpack-dev-server",
     "lint:js": "eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
     "lint": "npm run lint:js && npm run lint:scss"
-  },
-  "devDependencies": {
-    "html-loader": "^0.5.5"
   },
   "dependencies": {
     "angular": "^1.6.4",
@@ -45,6 +43,7 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "2.7.0",
+    "express": "^4.16.4",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "fullcalendar": "^3.6.2",
