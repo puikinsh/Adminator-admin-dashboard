@@ -1,14 +1,16 @@
 import * as $ from 'jquery';
 import Masonry from 'masonry-layout';
 
-export default (function () {
-  window.addEventListener('load', () => {
+const masonry = function () {
+  $(document).ready( () => {
     if ($('.masonry').length > 0) {
-      window.msnry = new Masonry('.masonry', {
+      new Masonry('.masonry', {
         itemSelector: '.masonry-item',
         columnWidth: '.masonry-sizer',
         percentPosition: true,
       });
     }
   });
-}());
+}
+
+export default masonry;
