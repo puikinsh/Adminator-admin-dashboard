@@ -1,0 +1,185 @@
+<main class='main-content bgc-grey-300'>
+    <div id='mainContent row'>
+      <div class="content-title mT-60">
+        <div class="ml-1 mb-3">
+          User's Profile
+        </div>
+      </div>
+  
+      <div class=" gap-30 masonry pos-r">
+        <!-- #content container ===== -->
+        <div class="masonry-sizer col-md-6"></div>
+  
+  
+        <!-- #user profile ========= -->
+        <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee visible-company" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee' || profile.role =='company' ">
+  
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+              <div class="testo">
+                <h5>{{ profile.fullname }}</h5> Bla Bla, this is your bio or whatever!
+              </div>
+            </div>
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
+  
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">First Name</h9>
+                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="Francesca" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Middle Name</h9>
+                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Last Name</h9>
+                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="Sperati" disabled>
+                  </div>
+                </div>
+  
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Email Address</h9>
+                    <input type="text" class="form-control" placeholder="Email" value="{{ profile.email }}" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Phone Number</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="{{ profile.fullname }}" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">State</h9>
+                    <select id="inputState" class="form-control" disabled>
+                      <option selected>VIC</option>
+                      <option>SA</option>
+                      <option>WA</option>
+                      <option>NSW</option>
+                      <option>QLD</option>
+                      <option>TAS</option>
+                    </select>
+                  </div>
+                </div>
+  
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Nationality</h9>
+                    <select id="inputNationality" class="form-control" disabled>
+                      <option selected>Italian</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Visa Type</h9>
+                    <select id="inputVisa" class="form-control" ng-model="user.role" ng-options="visa.name group by visa.type for visa in visas" disabled>
+                      <option value="" selected>Choose visa...</option>
+                    </select>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Language (Select one or more)</h9>
+                    <select id="inputLanguage" class="form-control" disabled>
+                      <option selected>English</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                </div>
+  
+                <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Education</h9>
+                      <select class="form-control" disabled>
+                        <option selected>Diploma</option>
+                        <option>Degree</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>  
+  
+                     
+                    <div class="row profile-form-row">
+                      <div class="mt-4">
+                        <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
+                        <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
+                        <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                        <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
+                        <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                      </div>
+                    </div>
+                    
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- #extra info for nomit and referees ========= -->
+        <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee'">
+          <div class="card item-box">
+  
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold">Help NOMIT collecting more data: your information
+                  won't be visible!!</h5>
+  
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Birthdate</h9>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Birth"
+                          data-provide="datepicker" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Gender</h9>
+                    <select id="inputGender" class="form-control" disabled>
+                      <option selected>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">City of Birth</h9>
+                    <input type="text" class="form-control" id="inputCity" disabled>
+                  </div>
+                </div>
+  
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Arriving in Australia</h9>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Arrive"
+                          data-provide="datepicker" disabled>
+  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Reason for leaving</h9>
+                    <textarea id="leaving" name="story" rows="5" disabled>Tell us something about your old life...</textarea>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Reason for staying in Australia</h9>
+                    <textarea id="staying" name="story" rows="5" disabled>Tell us something about your new life...</textarea>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <!--content container-->
+    </div>
+    <!--page container-->
+  
+  </main>
+  
