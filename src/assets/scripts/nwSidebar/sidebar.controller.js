@@ -1,5 +1,5 @@
-import functionSearch from '../search';
 import functionSidebar from '../sidebar';
+import masonry from '../masonry';
 
 /** @ngInject */
 const SidebarController = ($scope, UserService) => {
@@ -10,6 +10,7 @@ const SidebarController = ($scope, UserService) => {
             $scope.user = user;
             functionSidebar();
         }
+        masonry();
     });
     UserService.loadUser();
 }

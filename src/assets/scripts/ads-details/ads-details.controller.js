@@ -7,13 +7,12 @@ const AdsDetailsController = ($scope, AdsDetailsService, $routeParams, UserServi
         AdsDetailsService.fetchAdDetails($routeParams)
             .then((result) => {
                 $scope.ad = result;
-                window.msnry.layout();
 
-                $scope.avatar = new Avatar(document.getElementById('avatar_company_details'), {
-                    'useGravatar': false,
-                    'initials': 'AD', // it will be`${$scope.user.first_name[0]}${$scope.user.last_name[1]}`
-                    'initial_weight': 300,
-                });
+                // $scope.avatar = new Avatar(document.getElementById('avatar_company_details'), {
+                //     'useGravatar': false,
+                //     'initials': 'AD', // it will be`${$scope.user.first_name[0]}${$scope.user.last_name[1]}`
+                //     'initial_weight': 300,
+                // });
             })
             .catch((error) => { console.log(error); });
         $scope.daysAgo = (timestamp) => { return moment(timestamp).fromNow(); }
