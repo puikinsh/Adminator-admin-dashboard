@@ -35,5 +35,6 @@ import './companies';
 import './referees';
 import './reports';
 import './user-details';
+import './company-details';
 
 import './app';

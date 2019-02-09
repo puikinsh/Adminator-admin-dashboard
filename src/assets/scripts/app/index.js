@@ -20,6 +20,7 @@ angular.module('NomitWisp',
         'nwUsers',
         'nwUserDetails',
         'nwCompanies',
+        'nwCompanyDetails',
         'nwReferees',
         'nwReports',
         ngRoute
@@ -71,6 +72,10 @@ angular.module('NomitWisp',
         .when('/companies', { 
             controller: 'CompaniesController', 
             templateUrl: 'assets/scripts/companies/companies.html' 
+        })
+        .when('/company/:id', { 
+            controller: 'CompanyDetailsController', 
+            templateUrl: 'assets/scripts/company-details/company-details.html' 
         })
         .when('/referees', { 
             controller: 'RefereesController', 
