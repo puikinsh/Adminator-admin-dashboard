@@ -3,13 +3,15 @@
      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="modalLoginFormLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-body d-flex">
-              <div class="modal-left" >
-                    <p class="mo-title">Let's start with getting connected.</p>
-                    <div class="subtitle-modal">Sign up and join the WISP. </div>
-                    <a class="btn btn-signup" href="#!signup" role="button">SIGNUP</a>
+            <div class="modal-body d-flex login-bg">
+              <div class="modal-left signup-modal-left" >
+                    <h2 class="text-white text-left ml-4" style="font-size: 40px;">Let's start with<br>getting connected.</h2>
+                    <div class="subtitle-modal text-white ml-4" style="font-size: 14px;">Sign up and join the WISP to find your best matches now. </div>
+                    <a class="btn btn-signup ml-3" href="#!signup" role="button">SIGN UP</a>
               </div>
-              <div class="modal-right ">
+              <div class="container modal-right">
+                  <div class="row">
+                  <div class="col-10 mx-auto">
                   <div class="logo-wisp-right"> 
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 138.8360748 39.8824463" style="enable-background:new 0 0 138.8360748 39.8824463;" xml:space="preserve">
@@ -133,19 +135,22 @@
                    </svg>
 
                 </div> <!--logo-->
-                <div>
-                  <h4 class=""><strong>Sign In </strong>
+                <div">
+                  <h2 style="font-size: 16px;">Sign In</h2>
                   <form ng-submit="userLogin(LoginForm.$valid)" name="LoginForm" novalidate>
                     <input name="email" class="modal-username form-control" ng-model="user.email" type="email" placeholder="Email" required />
                     <p ng-show="LoginForm.email.$error.required">This field is required.</p>
                     <p ng-show="LoginForm.email.$error.email">Invalid email.</p>
                     
-                    <input name="pwd" class="modal-username" type="password" ng-model="user.password" placeholder="Password" ng-minlength=5 required />
+                    <input name="pwd" class="modal-username form-control" type="password" ng-model="user.password" placeholder="Password" ng-minlength=5 required />
                     <p ng-show="LoginForm.pwd.$error.minlength">Min 5 characters.</p>
-                    <button type="submit" class="btn btn-gradient btn-centered mt-2">SIGN IN</button>
+                    <button type="submit" class="btn btn-signin btn-centered mt-4 mb-3">SIGN IN</button>
+                    <a class="text-terms" href="#">Terms & Conditions</a>
                   </form>
                 </div>
               </div>
+            </div>
+            </div>
               </div>
             
           </div>
