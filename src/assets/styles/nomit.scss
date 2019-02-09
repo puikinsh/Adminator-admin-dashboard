@@ -113,6 +113,7 @@ h1{
     font-weight: bold;
     color: #fff;
 }
+
 .btn-border {
     box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
     color: #501db9;
@@ -165,40 +166,7 @@ h1{
 .icon-purple{
   color: #501db9;
 }
-// ***** TOGGLE BTN ***** //
-  
-  input[type="checkbox"].switch{
-    appearance: none;
-    width: 3.5em;
-    height: 1.5em;
-    background: #ddd;
-    border-radius: 3em;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    transition: all .2s ease-in-out;
-  }
-  
-  input[type="checkbox"].switch:checked{
-    background: #EE38A4;
-  }
-  
-  input[type="checkbox"].switch:after{
-    position: absolute;
-    content: "";
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 .25em rgba(0,0,0,.3);
-    transform: scale(.7);
-    left: 0;
-    transition: all .2s ease-in-out;
-  }
-  
-  input[type="checkbox"].switch:checked:after{
-    left: calc(100% - 1.5em);
-  }
+
 
 // ***** STAR RATING ***** /
   .star-rating-display {
@@ -466,7 +434,15 @@ textarea {
   margin: 200px auto;
 }
 
+.login-bg{
+  background-image: url('/assets/static/images/login-bkg-02.jpg');
+  border-radius: 10px;
+  background-size: 70% 105%;
+  background-position: left;
+}
+
 .modal-content {
+    z-index: 2;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -477,7 +453,6 @@ textarea {
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: rgb(148, 61, 129);
     color: #fff;
     font-size: 12px;
     background-clip: padding-box;
@@ -497,11 +472,12 @@ textarea {
     font-size: 20px;
 }
 
+
 .modal-right {
     background-color: #fff;
-    height: 400px;
+    height: 390px;
     color: #000;
-    width: 350px;
+    width: 300px;
     position: absolute;
     visibility: visible;
     top: -20px;
@@ -512,35 +488,84 @@ textarea {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-left: auto;
-    padding: 100px;
+    padding: 30px 40px;
     text-align: center;
 }
 .logo-wisp-right{
-    width: 174px;
+    text-align: center;
+    padding: 30px 40px 10px 40px;
 }
 .modal-username{
-    font-size: 14px;
+    font-size: 12px;
+    padding: 8px 6px;
     margin-top: 10px;
     padding-left: 10px;
     border-radius: 50px;
     border-color: #501db9;
-    width: 180px;
+    
 }
+
+.signup-modal-left{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+
 .btn-signup{
     color: #fff;
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 50px;
-    height: 40px;
-    width: 180px;
-    margin-top: calc((#{$header-height} - 40px)/2);
+    width: 140px;
+    margin-top: 10px;
     margin-left: 15px;
     outline: none;
-    padding: 5px;
+    padding: 9px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
+
+.btn-signup:hover{
+  background: #501D89;
+  color: #FFFFFF;
+}
+
+.btn-signin {
+  box-shadow: 0 4px 15px 0 rgba(187, 187, 187, 0.5);
+  background-image: linear-gradient(to right,#ee38a4, #501db9);
+  color: #fff !important;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  border: none;
+  margin-top: 30px;
+  outline: none;
+  padding: 12px 63px;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .5s ease;
+}
+.btn-signin:hover {
+  background-image: linear-gradient(to left,#ee38a4, #501db9);
+  font-weight: bold;
+  color: #fff;
+}
+
+
 .mo-title{
     text-align: -webkit-center;
     margin-top: 20px;
+}
+
+a.text-terms{
+  font-size: 10px;
+  color: #454545;
+}
+
+a.text-terms:hover{
+  color:#EE38A4;
 }
 
 //companies
