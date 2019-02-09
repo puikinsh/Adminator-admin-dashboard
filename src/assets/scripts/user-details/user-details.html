@@ -12,13 +12,13 @@
   
   
         <!-- #user profile ========= -->
-        <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee visible-company" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee' || profile.role =='company' ">
+        <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee visible-company" ng-show="user.role != 'user'">
   
           <div class="card item-box">
             <div class="user-data-title">
               <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
               <div class="testo">
-                <h5>{{ profile.fullname }}</h5> Bla Bla, this is your bio or whatever!
+                <h5>{{userDetails.personal.first_name}}</h5> {{userDetails.personal.bio}}
               </div>
             </div>
             <div class="card-body-profile">
@@ -28,26 +28,26 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">First Name</h9>
-                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="Francesca" disabled>
+                    <input type="text" class="form-control" placeholder="{{userDetails.personal.first_name}}" disabled>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Middle Name</h9>
-                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="" disabled>
+                    <input type="text" class="form-control" placeholder="{{userDetails.personal.middle_name}}" value="" disabled>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Last Name</h9>
-                    <input type="text" class="form-control" placeholder="{{ profile.fullname }}" value="Sperati" disabled>
+                    <input type="text" class="form-control" placeholder="{{userDetails.personal.last_name}}" disabled>
                   </div>
                 </div>
   
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Email Address</h9>
-                    <input type="text" class="form-control" placeholder="Email" value="{{ profile.email }}" disabled>
+                    <input type="text" class="form-control" placeholder="Email" value="{{userDetails.email}}" disabled>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Phone Number</h9>
-                    <input type="text" class="form-control" placeholder="Phone" value="{{ profile.fullname }}" disabled>
+                    <input type="text" class="form-control" placeholder="Phone" value="{{userDetails.personal.phone}}" disabled>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">State</h9>
