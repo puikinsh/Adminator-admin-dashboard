@@ -1,10 +1,10 @@
 import angular from 'angular';
-import HistoryController from './history.controller';
-//import HistoryService from './history.service';
+import ReportsController from './reports.controller';
+//import ReportsService from './reports.service';
 
-angular.module('nwHistory', [])
+angular.module('nwReports', [])
     .config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.withCredentials = true;
     }])
-    .controller(HistoryController.name, HistoryController)
+    .controller(ReportsController.name, ReportsController)
     //.factory(HistoryService.name, HistoryService);

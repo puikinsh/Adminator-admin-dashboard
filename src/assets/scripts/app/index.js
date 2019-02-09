@@ -20,6 +20,7 @@ angular.module('NomitWisp',
         'nwUsers',
         'nwCompanies',
         'nwReferees',
+        'nwReports',
         ngRoute
     ])
     .factory(UserService.name, UserService)
@@ -74,10 +75,10 @@ angular.module('NomitWisp',
             controller: 'RefereesController', 
             templateUrl: 'assets/scripts/referees/referees.html' 
         })
-        // .when('/reports', { 
-        //     controller: 'ReportsController', 
-        //     templateUrl: '' 
-        // })
+        .when('/reports', { 
+            controller: 'ReportsController', 
+            templateUrl: 'assets/scripts/reports/reports.html' 
+        })
         .otherwise({ 
             redirectTo: '/' 
         }); 
