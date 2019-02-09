@@ -5,7 +5,6 @@ import './masonry';
 import './charts';
 import './popover';
 import './scrollbar';
-import './sidebar';
 import './skycons';
 import './vectorMaps';
 import './chat';

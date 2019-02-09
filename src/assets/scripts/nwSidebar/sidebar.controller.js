@@ -1,8 +1,15 @@
+import functionSearch from '../search';
+import functionSidebar from '../sidebar';
+
 /** @ngInject */
 const SidebarController = ($scope, UserService) => {
-    UserService.loadUser();
+    var executed = false;
     $scope.$on('loadUserSuccess', function (event, user) {
-        $scope.user = user;
+        if(!executed){
+            executed = true;
+            $scope.user = user;
+            functionSidebar();
+        }
     });
     UserService.loadUser();
 }

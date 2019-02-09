@@ -141,6 +141,18 @@ h1{
     color: #fff;
 }
 
+.btn-gradient.classe-bottone{
+  height: auto !important;
+  line-height: 1 !important;
+  min-height: 0 !important;
+  padding: 15px !important;
+
+  i{
+      float: left;
+      margin: -3px 0 0 14px;
+  }
+
+}
 .btn-skills{
     cursor: default !important;
     color: #501db9;
