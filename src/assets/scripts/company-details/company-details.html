@@ -14,7 +14,7 @@
             <div class="masonry-item  w-100  visible-admin visible-nomit visible-referee visible-user" ng-show="user.role !='company'">
               <div class="card item-box">
                 <div class="user-data-title">
-                  <img class="user-update-img" ng-src="{{avatar.element.src}}" alt="">
+                  <img class="user-update-img" id="avatar_company_details" ng-src="{{avatar.element.src}}" alt="">
                   <div class="testo">
                     <h5>{{ company.company.name }}</h5> {{ company.company.description }}
                   </div>
@@ -40,7 +40,7 @@
                     <div class="row ">
                       <div class="col-4 profile-form-row">
                         <h9 class="">Email Address</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.email }}" value="" disabled>
+                        <input type="text" class="form-control" placeholder="{{ company.email }}" value="" disabled>
                       </div>
                       <div class="col-4 profile-form-row">
                         <h9 class="">Phone Number</h9>
