@@ -15,11 +15,9 @@ const UserService = ($cookies, $rootScope, $location) => {
         if(typeof $cookies.get('access_token') !== 'undefined' ){
 			$rootScope.$broadcast('loadUserSuccess', parseJwt( $cookies.get('access_token') ));
 			$('#modalLoginForm').modal('hide');
-		} else {
-			if($location.path() === '/signup') { $('#modalLoginForm').modal('hide'); }
+		} else if($location.path() === '/signup') { $('#modalLoginForm').modal('hide'); }
 			else { $('#modalLoginForm').modal({backdrop: 'static', keyboard: false}); }
 		}
-	}
 	
 	return serv;
 

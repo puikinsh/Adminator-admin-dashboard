@@ -1,15 +1,17 @@
 import masonry from "../masonry";
+import chart from "../charts/chartJS";
+import pieChart from "../charts/easyPieChart";
 
 /** @ngInject */
 const DashboardController = ($scope, UserService) => {
     $scope.$on('loadUserSuccess', function(event, user) {
         $scope.user = user;
-        window.dispatchEvent(window.EVENT);
     }); 
         
     // tutte le funzioni del controller
     masonry();
-    UserService.loadUser();
+    chart();
+    pieChart();
 }
 
 export default DashboardController;

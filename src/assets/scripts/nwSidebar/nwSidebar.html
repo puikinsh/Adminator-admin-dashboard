@@ -211,7 +211,7 @@
     <!-- ### $Sidebar Menu ### -->
     <ul class="sidebar-menu scrollable pos-r">
       <!-- Dashboard - show to all users -->
-      <li class="nav-item mT-30 active"  ng-show="'{{user.role}}'==='nomit' || '{{user.role}}'==='referee'">
+      <li class="nav-item mT-30 active"  ng-show="user.role == 'nomit' || user.role == 'referee'">
         <a class="sidebar-link" href="/">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-bar-chart text-white"></i>
@@ -229,7 +229,7 @@
         </a>
       </li>
       <!-- Admin no, everyone sees their own -->
-      <li class="nav-item" ng-show="'{{user.role}}'==='nomit' || '{{user.role}}'==='referee' || '{{user.role}}'==='company'  || '{{user.role}}'==='user'">
+      <li class="nav-item" ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'company'  || user.role == 'user'">
         <a class='sidebar-link' href="#!profile">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-user-circle-o text-white"></i>
@@ -238,7 +238,7 @@
         </a>
       </li>
       <!-- Admin, Referee and Nomit see everything -->
-      <li class="nav-item" ng-show="'{{user.role}}'!='user'">
+      <li class="nav-item" ng-show="user.role != 'user'">
         <a class='sidebar-link' href="#!users">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-users text-white"></i>
@@ -247,7 +247,7 @@
         </a>
       </li>
       <!-- Admin, Nomit & referee see all companies  -->
-      <li class="nav-item" ng-show="'{{user.role}}'==='admin' || '{{user.role}}'==='nomit' || '{{user.role}}'==='referee'">
+      <li class="nav-item" ng-show="user.role == 'admin' || user.role == 'nomit' || user.role == 'referee'">
         <a class='sidebar-link' href="#!companies">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-building text-white"></i>
@@ -265,7 +265,7 @@
         </a>
       </li>
       <!-- Admin, Nomit and Referee have access -->
-      <li class="nav-item" ng-show="'{{user.role}}'==='admin' || '{{user.role}}'==='nomit' || '{{user.role}}'==='referee'">
+      <li class="nav-item" ng-show="user.role == 'admin' || user.role == 'nomit' || user.role == 'referee'">
         <a class='sidebar-link' href="#!reports">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-calendar-check-o text-white"></i>
@@ -274,7 +274,7 @@
         </a>
       </li>
       <!-- Everybody besides Admin have access -->
-      <li class="nav-item" ng-show="'{{user.role}}'!=='admin'">
+      <li class="nav-item" ng-show="user.role != 'admin'">
         <a class='sidebar-link' href="#!history">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-history text-white"></i>

@@ -4,8 +4,8 @@ import Avatar from 'avatar-initials';
 import masonry from '../masonry';
 
 /** @ngInject */
-
 const TopbarController = ($scope, UserService) => {
+    UserService.loadUser();
     $scope.$on('loadUserSuccess', function (event, user) {
         $scope.user = user;
 
@@ -14,16 +14,13 @@ const TopbarController = ($scope, UserService) => {
             'initials': user.name[0],
             'initial_weight': 300,
         });
-
-        $scope.$on('needReload', function(event){
-            console.log("NEED RELOAD!");
-            functionSearch();
-            masonry();
-        });
     });
-    UserService.loadUser();
-    
 
+    $scope.$on('needReload', function(event){
+        console.log("NEED RELOAD!");
+        functionSearch();
+        masonry();
+    });
 }
 
 export default TopbarController;
