@@ -1,7 +1,7 @@
 import Chart from 'chart.js';
 import { COLORS } from '../../constants/colors';
 
-export default (function () {
+const chart = function () {
   // ------------------------------------------------------
   // @Line Charts
   // ------------------------------------------------------
@@ -144,4 +144,6 @@ export default (function () {
       },
     });
   }
-}())
+};
+
+export default chart;

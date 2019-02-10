@@ -9,13 +9,15 @@ const CompaniesController = ($scope, CompaniesService, UserService) => {
               $scope.companies = result;
 
                 $scope.avatar = function(index) {
-                new Avatar(document.getElementById('company'+index), {
-                    'useGravatar': false,
-                    'initials': result[index].name[0],
-                    'initial_weight': 300,
-                });
-            }
-              masonry(); 
+                    new Avatar(document.getElementById('company'+index), {
+                        'useGravatar': false,
+                        'initials': result[index].name[0],
+                        'initial_weight': 300,
+                    });
+                }
+                masonry();
+                
+                 
             })
             .catch( (error) => { console.log(error); })
       });

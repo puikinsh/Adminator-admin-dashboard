@@ -3,6 +3,7 @@ import masonry from '../masonry';
 
 /** @ngInject */
 const SidebarController = ($scope, UserService) => {
+    UserService.loadUser();
     var executed = false;
     $scope.$on('loadUserSuccess', function (event, user) {
         if(!executed){
@@ -10,9 +11,11 @@ const SidebarController = ($scope, UserService) => {
             $scope.user = user;
             functionSidebar();
         }
+    });
+
+    $scope.$on('needReload', function(event){
         masonry();
     });
-    UserService.loadUser();
 }
 
 export default SidebarController;

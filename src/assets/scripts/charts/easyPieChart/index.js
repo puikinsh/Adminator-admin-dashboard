@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 import 'easy-pie-chart/dist/jquery.easypiechart.min.js';
 
-export default (function () {
+const pieChart = function () {
   if ($('.easy-pie-chart').length > 0) {
     $('.easy-pie-chart').easyPieChart({
       lineWidth:7,
@@ -13,5 +13,7 @@ export default (function () {
       },
     });
   }
-}())
+};
+
+export default pieChart;
 

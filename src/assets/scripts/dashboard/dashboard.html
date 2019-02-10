@@ -9,7 +9,7 @@
       <!-- #content container ===== -->
       <div class="masonry-sizer col-md-6"></div>
       <!-- #NOMIT & REFEREE ===== -->
-      <div class="masonry-item  w-100  visible-nomit visible-admin visible-referee"  ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='admin'">
+      <div class="masonry-item  w-100  visible-nomit visible-admin visible-referee"  ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'admin'">
         <!-- #First line ========= -->
 
         <div class="row gap-20">
@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      <div class="masonry-item col-12 visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='admin'">
+      <div class="masonry-item col-12 visible-nomit visible-referee" ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'admin'">
         <!-- #New Registered Users ==================== -->
         <div class="bd bgc-white item-box">
           <div class="layers">
@@ -82,7 +82,7 @@
               <h6 class="lh-1">New Registered Users</h6>
             </div>
             <div class="layer w-100 p-20">
-              <canvas id="line-chart" height="220" ng-show="'{{user.role}}' == 'admin'"></canvas>
+              <canvas id="line-chart" height="220" ng-show="user.role == 'admin'"></canvas>
             </div>
             <div class="layer bdT p-20 w-100">
               <div class="peers ai-c jc-c gapX-20">
@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="masonry-item w-100 visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='admin'">
+      <div class="masonry-item w-100 visible-nomit visible-referee" ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'admin'">
         <!-- #Successful Mathches & #Nationality ==================== -->
         <div class="row gap-20">
           <div class="col-3 ">
@@ -189,12 +189,12 @@
       </div>
 
       <!-- #COMPANY / REFEREE / NOMIT ===== -->
-      <div class="masonry-item content-title w-100 visible-company visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company' ">
+      <div class="masonry-item content-title w-100 visible-company visible-nomit visible-referee" ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'company' ">
         <div class="col-8 ml-1 mb-3">
           Your Ads
         </div>
       </div>
-      <div class="masonry-item col-12 visible-company visible-nomit visible-referee" ng-show="'{{user.role}}'=='nomit' || '{{user.role}}'=='referee' || '{{user.role}}'=='company' ">
+      <div class="masonry-item col-12 visible-company visible-nomit visible-referee" ng-show="user.role == 'nomit' || user.role == 'referee' || user.role == 'company' ">
         <!-- #suggested ads ==================== -->
         <div class="row gap-30">
 
@@ -261,7 +261,7 @@
 
 
       <!-- #USERS ===== -->
-      <div class="masonry-item col-12 visible-user" ng-show="'{{user.role}}'=='user'">
+      <div class="masonry-item col-12 visible-user" ng-show="user.role == 'user'">
         <!-- #suggested ads ==================== -->
         <div class="row gap-30">
 
