@@ -7,6 +7,8 @@ const ProfileController = ($scope, ProfileService, UserService) => {
   // Listen for event to do operations
   $scope.$on('loadUserSuccess', function (event, user) {
     $scope.user = user;
+    $scope.userUpdated = {};
+
     // Fetch user info for the profile
     ProfileService.fetchProfileService($scope.user.id)
       .then((result) => {
@@ -22,27 +24,12 @@ const ProfileController = ($scope, ProfileService, UserService) => {
      * 
      * v1.0 non selective update
      */
-    $scope.updateProfile = (userUpdated) => {
-      ProfileService.updateUserProfile($scope.user.id)
+    $scope.updateProfile = () => {
+      ProfileService.updateUserProfile($scope.user.id, $scope.userUpdated)
         .then((result)=>{
-          userUpdated.personal.first_name = "Jack"
-          userUpdated.personal.middle_name= "Francis"
-          userUpdated.personal.last_name= "Sparrow"
-          userUpdated.personal.bio = "Captain Jack Sparrow is a fictional character in the Pirates of the Caribbean film series. The character was created by screenwriters Ted Elliott and Terry Rossio, and is portrayed by Johnny Depp.";
-          userUpdated.personal.phone = 423123123
-          userUpdated.personal.skills = ['Sailing', 'Robbing', 'Drinking']
-          userUpdated.personal.main_classification = ['Captain']
-          userUpdated.personal.languages = ['Rum', 'English']
-          userUpdated.personal.nationality = "Unknown"
-          userUpdated.personal.dob = new Date(1987, 8, 1)
-          userUpdated.personal.address = "199 Eckford Street"
-          userUpdated.personal.city = "Spinachland"
-          userUpdated.personal.state = "VIC"
-          userUpdated.personal.postcode = 3149
-          userUpdated.personal.education = "PhD"
-          userUpdated.personal.visa = "Temporary Skill Shortage visa (subclass 482)"
-          userUpdated.email = "jack@test"
+          console.log(result);
         })
+        .catch((err)=> {console.log(err)})
     }
   });
 
