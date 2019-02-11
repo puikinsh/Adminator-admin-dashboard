@@ -139,12 +139,16 @@
                   <h2 style="font-size: 16px;">Sign In</h2>
                   <form ng-submit="userLogin(LoginForm.$valid)" name="LoginForm" novalidate>
                     <input name="email" class="modal-username form-control" ng-model="user.email" type="email" placeholder="Email" required />
-                    <p ng-show="LoginForm.email.$error.required">This field is required.</p>
-                    <p ng-show="LoginForm.email.$error.email">Invalid email.</p>
+                    <span ng-if="LoginForm.email.$dirty && LoginForm.email.$error.required">This field is required.</span>
+                    <span ng-if="LoginForm.email.$error.email">Invalid email.</span>
                     
                     <input name="pwd" class="modal-username form-control" type="password" ng-model="user.password" placeholder="Password" ng-minlength=5 required />
-                    <p ng-show="LoginForm.pwd.$error.minlength">Min 5 characters.</p>
-                    <button type="submit" class="btn btn-signin btn-centered mt-4 mb-3">SIGN IN</button>
+                    <span ng-if="LoginForm.pwd.$error.minlength">Min 5 characters.</span>
+                    <span ng-if="LoginForm.pwd.$dirty && LoginForm.pwd.$error.required">This field is required.</span>
+                    <div class="form-actions">
+                        <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-signin btn-centered mt-4 mb-3" style="display:inline-block">Login</button>
+                        <img ng-if="dataLoading" src="assets/static/images/loading.gif" height="80px" width="80px" style="display:inline-block"/>
+                    </div>
                     <a class="text-terms" href="#">Terms & Conditions</a>
                   </form>
                 </div>

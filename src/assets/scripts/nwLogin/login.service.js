@@ -1,4 +1,5 @@
-const LoginService = ($http) => {
+/** @ngInject */
+const LoginService = (['$http', ($http) => {
     let serv = {};
 
     serv.loginUserService = (user) => {
@@ -17,6 +18,6 @@ const LoginService = ($http) => {
         });
     }
     return serv;
-}
+}]);
 
 export default LoginService;

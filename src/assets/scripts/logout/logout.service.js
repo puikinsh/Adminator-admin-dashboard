@@ -1,4 +1,5 @@
-const LogoutService = ($http) => {
+/** @ngInject */
+const LogoutService = ['$http', ($http) => {
     let serv = {};
 
     serv.logoutUserService = (user) =>{
@@ -17,6 +18,6 @@ const LogoutService = ($http) => {
         });
     }
     return serv;
-}
+}];
 
 export default LogoutService;

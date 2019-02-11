@@ -1,12 +1,12 @@
 import * as angular from 'angular';
 import ngCookies from 'angular-cookies';
-import LoginController from './controller';
-import LoginService from './service';
+import LoginController from './login.controller';
+import LoginService from './login.service';
 
 angular.module('NomitWisp-Login', [ngCookies])
     .directive('nwLogin', nwLogin)
-    .controller(LoginController.name, LoginController)
-    .factory(LoginService.name, LoginService);
+    .controller('LoginController', LoginController)
+    .factory('LoginService', LoginService);
 
 /** @ngInject */
 function nwLogin(){
