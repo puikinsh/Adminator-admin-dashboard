@@ -3,22 +3,23 @@
 
     <div class="content-title mT-60">
       <div class="ml-1 mb-3">
+        <h1>Ad's Details</h1>
 
       </div>
     </div>
 
     <div class=" gap-30 masonry pos-r ">
       <!-- #content container ===== -->
-      <div class="masonry-sizer col-md-6 "></div>
+      <div class="masonry-sizer col-12 "></div>
 
       <!-- ### Job Details Card ### -->
-      <div class="masonry-item  w-50">
+      <div class="masonry-item  w-100">
         <div class="card">
           <div class="row">
-            <div class="col-3 mt-4 ">
+            <div class="col-2 mt-4 ">
               <img class="img-fluid ml-4 mb-4 companies-update-img avatar rounded-circle" id="ad-details-avatar" alt="company" ng-src={{avatar.element.src}} />
             </div>
-            <div class="col-9 card-body">
+            <div class="col-10 card-body">
               <h2 class="card-title mt-4 mr-4">{{ ad.title }}</h2>
               <h6 class="card-title mr-4">{{ ad.companyname }}</h6>
             </div>
@@ -32,17 +33,17 @@
       </div>
 
       <!-- ### Other Info Card ### -->
-      <div class="masonry-item  w-50">
+      <div class="masonry-item  w-100">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title mt-4 ml-4 mr-4">Location:</h5>
             <p class="card-text ml-4 mr-4">{{ad.location}}</p>
             <h5 class="card-title mt-4 ml-4 mr-4">Application close:</h5>
-            <p class="card-text ml-4 mr-4">14th March 2019 (Friday)</p>
+            <p class="card-text ml-4 mr-4">{{ad.expiration-date}}</p>
 
             <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-            <div class="ml-4 mb-3">
-              <span ng-repeat="skill in ad.skills" class="mr-2 mb-2 btn btn-skills">{{ skill }}</span>
+            <div class="ml-4 mb-3" ng-repeat="skill in ad.skills">
+              <span  class="mr-2 mb-2 btn btn-skills">{{ skill }}</span>
             </div>
             <p class="card-text  ml-4 my-4"></p><small class="text-muted">{{ daysAgo(ad.timestamp) }}</small></p>
           </div>
