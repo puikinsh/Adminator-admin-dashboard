@@ -2,7 +2,7 @@
     <div id='mainContent row'>
       <div class="content-title mT-60">
         <div class="ml-1 mb-3">
-          User's Profile
+          <h1>User's Profile</h1>
         </div>
       </div>
   
@@ -18,7 +18,7 @@
             <div class="user-data-title">
               <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
               <div class="testo">
-                <h5>{{userDetails.personal.first_name}}</h5> {{userDetails.personal.bio}}
+                <h5>{{userDetails.name}}</h5> {{userDetails.personal.bio}}
               </div>
             </div>
             <div class="card-body-profile">
@@ -28,30 +28,30 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">First Name</h9>
-                    <input type="text" class="form-control" placeholder="{{userDetails.personal.first_name}}" disabled>
+                    <p class="font-weight-light"> {{userDetails.personal.first_name}} </p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Middle Name</h9>
-                    <input type="text" class="form-control" placeholder="{{userDetails.personal.middle_name}}" value="" disabled>
+                    <p class="font-weight-light">{{userDetails.personal.middle_name}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Last Name</h9>
-                    <input type="text" class="form-control" placeholder="{{userDetails.personal.last_name}}" disabled>
+                    <p class="font-weight-light">{{userDetails.personal.last_name}}</p>
                   </div>
                 </div>
   
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Email Address</h9>
-                    <input type="text" class="form-control" placeholder="Email" value="{{userDetails.email}}" disabled>
+                    <p class="font-weight-light">{{userDetails.email}} </p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Phone Number</h9>
-                    <input type="text" class="form-control" placeholder="Phone" value="{{userDetails.personal.phone}}" disabled>
+                    <p class="font-weight-light">{{userDetails.personal.phone}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">State</h9>
-                    <select id="inputState" class="form-control" disabled>
+                    <select id="inputState" class="form-control" >
                       <option selected>VIC</option>
                       <option>SA</option>
                       <option>WA</option>
@@ -65,45 +65,39 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Nationality</h9>
-                    <select id="inputNationality" class="form-control" disabled>
-                      <option selected>Italian</option>
-                      <option>...</option>
-                    </select>
+                    <p class="font-weight-light">{{userDetails.personal.nationality}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Visa Type</h9>
-                    <select id="inputVisa" class="form-control" ng-model="user.role" ng-options="visa.name group by visa.type for visa in visas" disabled>
-                      <option value="" selected>Choose visa...</option>
-                    </select>
+                    <p class="font-weight-light">{{userDetails.personal.visa}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Language (Select one or more)</h9>
-                    <select id="inputLanguage" class="form-control" disabled>
-                      <option selected>English</option>
-                      <option>...</option>
-                    </select>
+                    <p class="font-weight-light">{{userDetails.personal.language}}</p>
                   </div>
                 </div>
   
                 <div class="row ">
                     <div class="col-4 profile-form-row">
                       <h9 class="">Education</h9>
-                      <select class="form-control" disabled>
-                        <option selected>Diploma</option>
-                        <option>Degree</option>
-                        <option>...</option>
-                      </select>
+                      <p class="font-weight-light">{{userDetails.personal.education}}</p>
                     </div>
                   </div>  
   
                      
                     <div class="row profile-form-row">
                       <div class="mt-4">
-                        <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
-                        <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
-                        <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-                        <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
-                        <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                        <h5 class="card-title mt-4 ml-4 mr-4 d-flex">Main Classification:</h5>
+                        <div ng-repeat="industry in userDetails.personal.main_classification">
+                            <div class="ml-1 mb-4 btn btn-industry" >{{industry}}</div>
+                        </div>
+
+                        <h5 class="card-title mt-4 ml-4 mr-4 d-flex">Skills:</h5>
+                        <div ng-repeat="skill in userDetails.personal.skills">
+                            <div class="ml-1 mb-4 btn btn-skills" >{{skill}}</div>
+
+                        </div>
+                        
                       </div>
                     </div>
                     
@@ -129,21 +123,17 @@
                         <div class="input-group-addon bgc-white bd bdwR-0">
                           <i class="ti-calendar"></i>
                         </div>
-                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Birth"
-                          data-provide="datepicker" disabled>
+                        <p class="font-weight-light">{{userDetails.personal.dob}}</p>
                       </div>
                     </div>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Gender</h9>
-                    <select id="inputGender" class="form-control" disabled>
-                      <option selected>Male</option>
-                      <option>Female</option>
-                    </select>
+                    <p class="font-weight-light">{{userDetails.personal.gender}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">City of Birth</h9>
-                    <input type="text" class="form-control" id="inputCity" disabled>
+                    <p class="font-weight-light">{{userDetails.personal.city}}</p>
                   </div>
                 </div>
   
@@ -155,15 +145,14 @@
                         <div class="input-group-addon bgc-white bd bdwR-0">
                           <i class="ti-calendar"></i>
                         </div>
-                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Arrive"
-                          data-provide="datepicker" disabled>
+                        <p class="font-weight-light">{{userDetails.personal.arriving}}</p>
   
                       </div>
                     </div>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Reason for leaving</h9>
-                    <textarea id="leaving" name="story" rows="5" disabled>Tell us something about your old life...</textarea>
+                    <p class="font-weight-light">{{userDetails.personal.left}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Reason for staying in Australia</h9>
