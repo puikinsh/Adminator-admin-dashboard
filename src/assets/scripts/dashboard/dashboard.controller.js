@@ -9,6 +9,7 @@ const DashboardController = ($scope, UserService) => {
     }); 
         
     // tutte le funzioni del controller
+    UserService.loadUser();
     masonry();
     chart();
     pieChart();

@@ -1,8 +1,8 @@
 import angular from 'angular';
 import ngCookies from 'angular-cookies';
-import LogoutController from './controller';
-import LogoutService from './service';
+import LogoutController from './logout.controller';
+import LogoutService from './logout.service';
 
 angular.module('nwLogout', [ngCookies])
-    .controller(LogoutController.name, LogoutController)
-    .factory(LogoutService.name, LogoutService);
+    .controller('LogoutController', LogoutController)
+    .factory('LogoutService', LogoutService);
