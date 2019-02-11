@@ -20,7 +20,9 @@
                       <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
                         <h4> {{ ad.title }} </h4>
                         <div>
-                            <a class='' href="" > <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span></a>
+                            <a class='' href="" ng-show="user.role =='user'"> 
+                              <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
+                            </a>
                         </div>
                       </div>
                       <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
