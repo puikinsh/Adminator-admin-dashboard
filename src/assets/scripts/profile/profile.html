@@ -24,7 +24,7 @@
           <div class="user-data-title">
             <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
             <div class="testo">
-              <h5>{{ profile.personal.first_name }}</h5> 
+              <h5>{{ profile.name }}</h5> 
             </div>
           </div>
           <div class="card-body-profile">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-4 profile-form-row">
                   <h9 class="">Middle Name</h9>
-                  <input type="text" class="form-control" placeholder="" value="{{ profile.personal.middle_name  }}" required>
+                  <input type="text" class="form-control" placeholder="" value="{{ profile.personal.middle_name  }}" >
                 </div>
                 <div class="col-4 profile-form-row">
                   <h9 class="">Last Name</h9>
@@ -358,7 +358,7 @@
               <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Education</h9>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" required>
                   </div>
                 </div>  
 
@@ -370,7 +370,7 @@
                   </div>
                   <div class="col-4 profile-form-row">
                       <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-                      <input type="text" class="form-control" placeholder="Preofessions"  >
+                      <input type="text" class="form-control" placeholder="Preofessions" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <div class="mt-4">
@@ -385,19 +385,19 @@
                 <div class="row ">
                     <div class="col-3 profile-form-row">
                       <h9 class="">Twitter</h9>
-                      <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/leonardo_it">
+                      <input type="text" class="form-control" placeholder="Facebook"value="{{ profile.personal.twitter  }}" >
                     </div>
                     <div class="col-3 profile-form-row">
                       <h9 class="">Facebook</h9>
-                      <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/">
+                      <input type="text" class="form-control" placeholder="Facebook" value="{{ profile.personal.facebook  }}" >
                     </div>
                     <div class="col-3 profile-form-row">
                       <h9 class="">Instagram</h9>
-                      <input type="text" class="form-control" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it">
+                      <input type="text" class="form-control" placeholder="Instagram" value="{{ profile.personal.instagram  }}" >
                     </div>
                     <div class="col-3 profile-form-row">
                       <h9 class="">Linkedin</h9>
-                      <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
+                      <input type="text" class="form-control" placeholder="Linkedin" value="{{ profile.personal.linkedin }}" >
                     </div>
                   </div>
 
@@ -497,7 +497,7 @@
           <div class="user-data-title">
             <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
             <div class="testo">
-              <h5>Leonardo</h5> A global high-tech company and one of the key players in Aerospace, Defence and
+              <h5>{{ profile.name }}</h5> A global high-tech company and one of the key players in Aerospace, Defence and
               Security
             </div>
           </div>
