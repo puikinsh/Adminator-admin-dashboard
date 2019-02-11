@@ -15,22 +15,40 @@
         <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee visible-company" ng-show="user.role != 'user'">
   
           <div class="card item-box">
-            <div class="user-data-title">
-              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
-              <div class="testo">
-                <h5>{{userDetails.name}}</h5> {{userDetails.personal.bio}}
+
+            <div class="row user-data-title">
+
+              <div class="col-9">
+                <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+                <div class="testo">
+                  <h5>{{userDetails.name}}</h5> 
+                  {{userDetails.personal.bio}}
+                </div>
               </div>
+
+              <div class="col-3 profile-form-row row">
+                      <div class="users-icons ml-0">
+                        <a href="https://www.linkedin.com/{{userDetails.personal.linkedin}}"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/{{userDetails.personal.facebook}} "><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/{{userDetails.personal.instagram}}"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/{{userDetails.personal.github}}"><i class="fa fa-github"></i></a>
+                      </div>
+              </div>
+
             </div>
+
+
+
             <div class="card-body-profile">
               <div class="profile-forms">
                 <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
   
                 <div class="row ">
-                  <div class="col-4 profile-form-row">
+                  <div class="col-3 profile-form-row">
                     <h9 class="">First Name</h9>
                     <p class="font-weight-light"> {{userDetails.personal.first_name}} </p>
                   </div>
-                  <div class="col-4 profile-form-row">
+                  <div class="col-5 profile-form-row">
                     <h9 class="">Middle Name</h9>
                     <p class="font-weight-light">{{userDetails.personal.middle_name}}</p>
                   </div>
@@ -41,66 +59,62 @@
                 </div>
   
                 <div class="row ">
-                  <div class="col-4 profile-form-row">
+                  <div class="col-3 profile-form-row">
                     <h9 class="">Email Address</h9>
                     <p class="font-weight-light">{{userDetails.email}} </p>
                   </div>
-                  <div class="col-4 profile-form-row">
+                  <div class="col-5 profile-form-row">
                     <h9 class="">Phone Number</h9>
                     <p class="font-weight-light">{{userDetails.personal.phone}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">State</h9>
-                    <select id="inputState" class="form-control" >
-                      <option selected>VIC</option>
-                      <option>SA</option>
-                      <option>WA</option>
-                      <option>NSW</option>
-                      <option>QLD</option>
-                      <option>TAS</option>
-                    </select>
+                    <p class="font-weight-light">{{userDetails.personal.state}}</p>
                   </div>
                 </div>
   
                 <div class="row ">
-                  <div class="col-4 profile-form-row">
+                  <div class="col-3 profile-form-row">
                     <h9 class="">Nationality</h9>
                     <p class="font-weight-light">{{userDetails.personal.nationality}}</p>
                   </div>
-                  <div class="col-4 profile-form-row">
+                  <div class="col-5 profile-form-row">
                     <h9 class="">Visa Type</h9>
                     <p class="font-weight-light">{{userDetails.personal.visa}}</p>
                   </div>
                   <div class="col-4 profile-form-row">
-                    <h9 class="">Language (Select one or more)</h9>
-                    <p class="font-weight-light">{{userDetails.personal.language}}</p>
+                    <h9 class="">Spoken Languages</h9>
+                    <div ng-repeat=" language in userDetails.personal.language">
+                      <p class="font-weight-light">{{language}}</p>
+                    </div>
                   </div>
                 </div>
   
                 <div class="row ">
                     <div class="col-4 profile-form-row">
                       <h9 class="">Education</h9>
+                      <!--<div ng-repeat=" education in userDetails.personal.educations">
+                      <p class="font-weight-light">{{education}}</p>-->
                       <p class="font-weight-light">{{userDetails.personal.education}}</p>
                     </div>
-                  </div>  
-  
-                     
-                    <div class="row profile-form-row">
-                      <div class="mt-4">
-                        <h5 class="card-title mt-4 ml-4 mr-4 d-flex">Main Classification:</h5>
-                        <div ng-repeat="industry in userDetails.personal.main_classification">
-                            <div class="ml-1 mb-4 btn btn-industry" >{{industry}}</div>
-                        </div>
+                </div>  
 
-                        <h5 class="card-title mt-4 ml-4 mr-4 d-flex">Skills:</h5>
-                        <div ng-repeat="skill in userDetails.personal.skills">
-                            <div class="ml-1 mb-4 btn btn-skills" >{{skill}}</div>
+                <div class="row col-12 profile-form-row">
 
-                        </div>
-                        
-                      </div>
-                    </div>
-                    
+                  <h9 class=" ">Main Classification:</h9>
+                  <div ng-repeat="industry in userDetails.personal.main_classification">
+                      <div class="ml-1 mb-4 btn btn-industry" >{{industry}}</div>
+                  </div>
+
+                </div>  
+                <div class="row col-12 profile-form-row">
+                  <h9 class=" mt-60">Skills:</h9>
+                  <div ng-repeat="skill in userDetails.personal.skills">
+                      <div class="ml-1 mb-4 btn btn-skills" >{{skill}}</div>
+                  </div>
+                  
+                </div> 
+                </div>    
               </div>
             </div>
           </div>
