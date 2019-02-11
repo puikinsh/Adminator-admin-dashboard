@@ -1,5 +1,5 @@
 'use strict';
-
+import visas from "../profile/visa.type"
 /** @ngInject */
 const SignupController = ($scope, $cookies, $location, SignupService, UserService) => {
     $scope.userSignup = async() => {
@@ -11,6 +11,8 @@ const SignupController = ($scope, $cookies, $location, SignupService, UserServic
          })
         .catch((error) => { console.log(error); })
     }
+
+    $scope.visas = visas;
 }
 
 export default SignupController;
