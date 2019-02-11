@@ -1,10 +1,9 @@
 /** @ngInject */
+import visas from "../profile/visa.type"
+
 const UserAddController = ($scope,UserService) => {
     $scope.$on('loadUserSuccess', function (event, user) {
         $scope.user = user;
-
-        $scope.classifications = ['class1', 'class2'];
-        $scope.skills = ['s1', 's2'];
 
         $scope.tab = 1;
 
@@ -18,6 +17,8 @@ const UserAddController = ($scope,UserService) => {
 
     });
     UserService.loadUser();
+
+    $scope.visas = visas;
   }
   
   export default UserAddController;
