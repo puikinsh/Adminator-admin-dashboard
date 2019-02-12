@@ -1,44 +1,54 @@
-<main class='main-content bgc-grey-300'>
+<nw-sidebar></nw-sidebar>
+<div class="page-container">
+  <nw-topbar></nw-topbar>
+
+  <main class='main-content bgc-grey-300'>
     <div id='mainContent row'>
       <div class="row content-title mT-60  visible-admin visible-nomit visible-referee" ng-show="user.role =='admin' || user.role =='nomit' || user.role =='referee' ">
-        <h1 class="col-8 col-md-8 ml-1 mb-4">All Published Ads</h1>            
+        <h1 class="col-8 col-md-8 ml-1 mb-4">All Published Ads</h1>
       </div>
       <div class="row content-title mT-60 visible-user visible-company" ng-show="user.role =='user' || user.role =='company' ">
-          <h1 class="col-8 col-md-8 ml-1 mb-4">Your Ads</h1>            
-        </div>
-      <div class=" gap-20 masonry pos-r"> <!-- #content container ===== -->
+        <h1 class="col-8 col-md-8 ml-1 mb-4">Your Ads</h1>
+      </div>
+      <div class=" gap-20 masonry pos-r">
+        <!-- #content container ===== -->
         <div class="masonry-sizer col-md-6"></div>
 
-        <div class="masonry-item  w-100"> <!-- #First line ========= -->
+        <div class="masonry-item  w-100">
+          <!-- #First line ========= -->
           <div class="row gap-30">
 
             <!-- ============== Job Ad ============== -->
             <div class='col-md-4  col-sm-12' ng-repeat="ad in ads">
-                <div class="card item-box">
-                    <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
-                        <h4> {{ ad.title }} </h4>
-                        <div>
-                            <a class='' href="" ng-show="user.role =='user'"> 
-                              <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
-                            </a>
-                        </div>
-                      </div>
-                      <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
-                      <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div> 
-                      <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
+              <div class="card item-box">
+                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
+                    <h4> {{ ad.title }} </h4>
+                    <div>
+                      <a class='' href="" ng-show="user.role =='user'">
+                        <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
+                      </a>
                     </div>
-                    <a href="/#!/ads/{{ad._id}}">
-                      <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                        VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i> 
-                      </div>
-                    </a>
                   </div>
+                  <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
+                  <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
+                  <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
+                </div>
+                <a href="/#!/ads/{{ad._id}}">
+                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                    VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        
-      </div><!--content container -->
-    </div><!--maincontent row -->
-    </main>
+
+      </div>
+      <!--content container -->
+    </div>
+    <!--maincontent row -->
+  </main>
+  <nw-footer></nw-footer>
+</div>

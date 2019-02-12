@@ -16,7 +16,7 @@ import './googleMaps';
 import './utils';
 import './user-form';
 import './logout';
-import './nwLogin';
+import './login';
 import './nwFooter';
 import './nwSidebar';
 import './nwTopbar';

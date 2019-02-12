@@ -12,13 +12,13 @@ const UserService = ($cookies, $rootScope, $location) => {
 
     //load user has been called (is called on page load in menu controller and after login on modal controller)
     serv.loadUser =  () => {
-        if(typeof $cookies.get('access_token') !== 'undefined'  || $location.path() === '/signup'){
+		if(typeof $cookies.get('access_token') !== 'undefined')
+		{
 			$rootScope.$broadcast('loadUserSuccess', parseJwt( $cookies.get('access_token') ));
-			$('#modalLoginForm').modal('hide');
 		} 
 		else 
 		{ 
-			$('#modalLoginForm').modal({ backdrop: 'static', keyboard: false }); 
+			$location.path('/login');
 		}
 	}
 	

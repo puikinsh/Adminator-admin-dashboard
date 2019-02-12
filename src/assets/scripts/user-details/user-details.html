@@ -1,19 +1,22 @@
-<main class='main-content bgc-grey-300'>
+<nw-sidebar></nw-sidebar>
+<div class="page-container">
+  <nw-topbar></nw-topbar>
+  <main class='main-content bgc-grey-300'>
     <div id='mainContent row'>
       <div class="content-title mT-60">
         <div class="ml-1 mb-3">
           <h1>User's Profile</h1>
         </div>
       </div>
-  
+
       <div class=" gap-30 masonry pos-r">
         <!-- #content container ===== -->
         <div class="masonry-sizer col-md-6"></div>
-  
-  
+
+
         <!-- #user profile ========= -->
         <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee visible-company" ng-show="user.role != 'user'">
-  
+
           <div class="card item-box">
 
             <div class="row user-data-title">
@@ -21,18 +24,18 @@
               <div class="col-9">
                 <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
                 <div class="testo">
-                  <h5>{{userDetails.name}}</h5> 
+                  <h5>{{userDetails.name}}</h5>
                   {{userDetails.personal.bio}}
                 </div>
               </div>
 
               <div class="col-3 profile-form-row row">
-                      <div class="users-icons ml-0">
-                        <a href="https://www.linkedin.com/{{userDetails.personal.linkedin}}"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/{{userDetails.personal.facebook}} "><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/{{userDetails.personal.instagram}}"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/{{userDetails.personal.github}}"><i class="fa fa-github"></i></a>
-                      </div>
+                <div class="users-icons ml-0">
+                  <a href="https://www.linkedin.com/{{userDetails.personal.linkedin}}"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://www.facebook.com/{{userDetails.personal.facebook}} "><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/{{userDetails.personal.instagram}}"><i class="fa fa-instagram"></i></a>
+                  <a href="https://github.com/{{userDetails.personal.github}}"><i class="fa fa-github"></i></a>
+                </div>
               </div>
 
             </div>
@@ -42,7 +45,7 @@
             <div class="card-body-profile">
               <div class="profile-forms">
                 <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-  
+
                 <div class="row ">
                   <div class="col-3 profile-form-row">
                     <h9 class="">First Name</h9>
@@ -57,7 +60,7 @@
                     <p class="font-weight-light">{{userDetails.personal.last_name}}</p>
                   </div>
                 </div>
-  
+
                 <div class="row ">
                   <div class="col-3 profile-form-row">
                     <h9 class="">Email Address</h9>
@@ -72,7 +75,7 @@
                     <p class="font-weight-light">{{userDetails.personal.state}}</p>
                   </div>
                 </div>
-  
+
                 <div class="row ">
                   <div class="col-3 profile-form-row">
                     <h9 class="">Nationality</h9>
@@ -89,100 +92,98 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="row ">
-                    <div class="col-4 profile-form-row">
-                      <h9 class="">Education</h9>
-                      <!--<div ng-repeat=" education in userDetails.personal.educations">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Education</h9>
+                    <!--<div ng-repeat=" education in userDetails.personal.educations">
                       <p class="font-weight-light">{{education}}</p>-->
-                      <p class="font-weight-light">{{userDetails.personal.education}}</p>
-                    </div>
-                </div>  
+                    <p class="font-weight-light">{{userDetails.personal.education}}</p>
+                  </div>
+                </div>
 
                 <div class="row col-12 profile-form-row">
 
                   <h9 class=" ">Main Classification:</h9>
                   <div ng-repeat="industry in userDetails.personal.main_classification">
-                      <div class="ml-1 mb-4 btn btn-industry" >{{industry}}</div>
+                    <div class="ml-1 mb-4 btn btn-industry">{{industry}}</div>
                   </div>
 
-                </div>  
+                </div>
                 <div class="row col-12 profile-form-row">
                   <h9 class=" mt-60">Skills:</h9>
                   <div ng-repeat="skill in userDetails.personal.skills">
-                      <div class="ml-1 mb-4 btn btn-skills" >{{skill}}</div>
+                    <div class="ml-1 mb-4 btn btn-skills">{{skill}}</div>
                   </div>
-                  
-                </div> 
-                </div>    
+
+                </div>
               </div>
             </div>
           </div>
         </div>
-  
-        <!-- #extra info for nomit and referees ========= -->
-        <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee'">
-          <div class="card item-box">
-  
-            <div class="card-body-profile">
-              <div class="profile-forms">
-                <h5 class="card-title d-flex text-black-bold">Help NOMIT collecting more data: your information
-                  won't be visible!!</h5>
-  
-                <div class="row ">
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Birthdate</h9>
-                    <div class="timepicker-input input-icon form-group">
-                      <div class="input-group">
-                        <div class="input-group-addon bgc-white bd bdwR-0">
-                          <i class="ti-calendar"></i>
-                        </div>
-                        <p class="font-weight-light">{{userDetails.personal.dob}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Gender</h9>
-                    <p class="font-weight-light">{{userDetails.personal.gender}}</p>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">City of Birth</h9>
-                    <p class="font-weight-light">{{userDetails.personal.city}}</p>
-                  </div>
-                </div>
-  
-                <div class="row ">
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Arriving in Australia</h9>
-                    <div class="timepicker-input input-icon form-group">
-                      <div class="input-group">
-                        <div class="input-group-addon bgc-white bd bdwR-0">
-                          <i class="ti-calendar"></i>
-                        </div>
-                        <p class="font-weight-light">{{userDetails.personal.arriving}}</p>
-  
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Reason for leaving</h9>
-                    <p class="font-weight-light">{{userDetails.personal.left}}</p>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Reason for staying in Australia</h9>
-                    <textarea id="staying" name="story" rows="5" disabled>Tell us something about your new life...</textarea>
-                  </div>
-                </div>
-  
-              </div>
-            </div>
-          </div>
-        </div>
-  
       </div>
-      <!--content container-->
+
+      <!-- #extra info for nomit and referees ========= -->
+      <div class="masonry-item  w-100 visible-admin visible-nomit visible-referee" ng-show="profile.role =='admin' || profile.role =='nomit' || profile.role =='referee'">
+        <div class="card item-box">
+
+          <div class="card-body-profile">
+            <div class="profile-forms">
+              <h5 class="card-title d-flex text-black-bold">Help NOMIT collecting more data: your information
+                won't be visible!!</h5>
+
+              <div class="row ">
+                <div class="col-4 profile-form-row">
+                  <h9 class="">Birthdate</h9>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <p class="font-weight-light">{{userDetails.personal.dob}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 profile-form-row">
+                  <h9 class="">Gender</h9>
+                  <p class="font-weight-light">{{userDetails.personal.gender}}</p>
+                </div>
+                <div class="col-4 profile-form-row">
+                  <h9 class="">City of Birth</h9>
+                  <p class="font-weight-light">{{userDetails.personal.city}}</p>
+                </div>
+              </div>
+
+              <div class="row ">
+                <div class="col-4 profile-form-row">
+                  <h9 class="">Arriving in Australia</h9>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <p class="font-weight-light">{{userDetails.personal.arriving}}</p>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 profile-form-row">
+                  <h9 class="">Reason for leaving</h9>
+                  <p class="font-weight-light">{{userDetails.personal.left}}</p>
+                </div>
+                <div class="col-4 profile-form-row">
+                  <h9 class="">Reason for staying in Australia</h9>
+                  <textarea id="staying" name="story" rows="5" disabled>Tell us something about your new life...</textarea>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!--content container-->
     <!--page container-->
-  
   </main>
-  
+  <nw-footer></nw-footer>
+</div>
