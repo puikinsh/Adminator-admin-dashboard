@@ -29,12 +29,14 @@
           </div>
           <div class="card-body-profile">
             <div class="profile-forms">
+              <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
               <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-              <form data-ng-submit="updateProfile()" name="ProfileForm" novalidate>
+              <form name="ProfileForm" role="form" novalidate>
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">First Name</h9>
-                    <input type="text" data-ng-model="userUpdated.personal.first_name" class="form-control" placeholder="{{ profile.personal.first_name }}"
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.first_name.$error.required">Required!</span>
+                    <input type="text" name="first_name" data-ng-model="userUpdated.personal.first_name" class="form-control" placeholder="{{ profile.personal.first_name }}"
                       required>
                   </div>
                   <div class="col-4 profile-form-row">
@@ -43,7 +45,8 @@
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Last Name</h9>
-                    <input type="text" data-ng-model="userUpdated.personal.last_name" class="form-control" placeholder="{{ profile.personal.last_name }}"
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.last_name.$error.required">Required!</span>
+                    <input type="text" name="last_name" data-ng-model="userUpdated.personal.last_name" class="form-control" placeholder="{{ profile.personal.last_name }}"
                       required>
                   </div>
                 </div>
@@ -51,16 +54,20 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Email Address</h9>
-                    <input type="text" data-ng-model="userUpdated.email" class="form-control" placeholder="{{ profile.email }}" required>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.required">Required!</span>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.email">Invalid email!</span>
+                    <input type="email" name="email" data-ng-model="userUpdated.email" class="form-control" placeholder="{{ profile.email }}" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Phone Number</h9>
-                    <input type="text" data-ng-model="userUpdated.personal.phone" class="form-control" placeholder="{{ profile.personal.phone  }}"
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.phone.$error.required">Required!</span>
+                    <input type="text" name="phone" data-ng-model="userUpdated.personal.phone" class="form-control" placeholder="{{ profile.personal.phone  }}"
                       required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">State of residence in Australia</h9>
-                    <select id="inputState" class="form-control" data-ng-model="userUpdated.personal.state" required>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.state.$error.required">Required!</span>
+                    <select id="inputState" name="state" class="form-control" data-ng-model="userUpdated.personal.state" required>
                       <option selected>VIC</option>
                       <option>SA</option>
                       <option>WA</option>
@@ -74,7 +81,8 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Nationality</h9>
-                    <select name="nationality" id="inputNationality" class="form-control" data-ng-model="userUpdated.personal.nationality" required>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.nationality.$error.required">Required!</span>
+                    <select name="nationality" id="inputNationality" name="nationality" class="form-control" data-ng-model="userUpdated.personal.nationality" required>
                       <option value="">-- select one --</option>
                       <option value="afghan">Afghan</option>
                       <option value="albanian">Albanian</option>
@@ -273,16 +281,17 @@
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Visa Type</h9>
-                    <select id="inputVisa" class="form-control" data-ng-model="userUpdated.personal.visa"  data-ng-options="visa.name group by visa.type for visa in visas"
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.visa.$error.required">Required!</span>
+                    <select id="inputVisa" name="visa" class="form-control" data-ng-model="userUpdated.personal.visa"  data-ng-options="visa.name group by visa.type for visa in visas"
                       required>
                       <option value="">Other visa...</option>
                       <option value="" selected>Choose visa...</option>
-
                     </select>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Language (Select one or more)</h9>
-                    <select id="inputLanguage" data-ng-model="userUpdated.personal.language" class="form-control" data-placeholder="Choose a Language..." required>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.language.$error.required">Required!</span>
+                    <select id="inputLanguage" name="language" data-ng-model="userUpdated.personal.language" class="form-control" data-placeholder="Choose a Language..." required>
                       <option value="AF">Afrikanns</option>
                       <option value="SQ">Albanian</option>
                       <option value="AR">Arabic</option>
@@ -362,19 +371,21 @@
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Education</h9>
-                    <input type="text" class="form-control" placeholder="{{profile.personal.education}}" data-ng-model="userUpdated.personal.education" required>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.education.$error.required">Required!</span>
+                    <input type="text" name="education" class="form-control" placeholder="{{profile.personal.education}}" data-ng-model="userUpdated.personal.education" required>
                   </div>
                 </div>
 
                 <div class="row ">
-
                   <div class="col-4 profile-form-row">
-                    <h5 class="card-title mt-4 ml-4 mr-4">Main Classification:</h5>
-                    <input type="text" class="form-control" placeholder="{{profile.personal.main_classification}}" data-ng-model="userUpdated.personal.main_classification" required>
+                    <h5 class="card-title mt-4 ml-4 mr-4">Main Classification</h5>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.main_classification.$error.required">Required!</span>
+                    <input type="text" name="main_classification" class="form-control" placeholder="{{profile.personal.main_classification}}" data-ng-model="userUpdated.personal.main_classification" required>
                   </div>
                   <div class="col-4 profile-form-row">
-                    <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-                    <input type="text" class="form-control" placeholder="Professions" data-ng-model="userUpdated.personal.skills" required>
+                    <h5 class="card-title mt-4 ml-4 mr-4">Skills</h5>
+                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.skills.$error.required">Required!</span>
+                    <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="userUpdated.personal.skills" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <div class="mt-4">
@@ -383,7 +394,6 @@
                       <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
                     </div>
                   </div>
-
                 </div>
 
                 <div class="row ">
@@ -407,8 +417,8 @@
 
                 <div class="row ">
                   <div class="col-6 profile-form-row">
-                    <button type="submit" class="btn btn-gradient ">UPDATE</button>
-                    <button type="reset" class="btn btn-border ">CLEAR</button>
+                    <button type="submit" data-ng-click="updateProfile(ProfileForm)" class="btn btn-gradient">UPDATE</button>
+                    <button type="reset" class="btn btn-border">CLEAR</button>
                   </div>
                   <div class="col-6 profile-form-row">
 
