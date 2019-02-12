@@ -7,8 +7,7 @@ const ProfileController = ($scope, $timeout, ProfileService, UserService) => {
   // Listen for event to do operations
   $scope.$on('loadUserSuccess', function (event, user) {
     $scope.user = user;
-    $scope.userUpdated = {};
-
+    
     // Fetch user info for the profile
     ProfileService.fetchProfileService($scope.user.id)
       .then((result) => {
@@ -35,7 +34,7 @@ const ProfileController = ($scope, $timeout, ProfileService, UserService) => {
 
       $scope.processing = "Sending the data..."
 
-      ProfileService.updateUserProfile($scope.user.id, $scope.userUpdated)
+      ProfileService.updateUserProfile($scope.user.id, $scope.profile)
         .then((result)=>{
           console.log(result);
           $scope.messages = 'Your profile has been updated!';
