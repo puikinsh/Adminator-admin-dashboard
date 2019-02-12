@@ -37,17 +37,17 @@
                   <div class="col-4 profile-form-row">
                     <h9 class="">First Name</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.first_name.$error.required">Required!</span>
-                    <input type="text" name="first_name" data-ng-model="userUpdated.personal.first_name" class="form-control" placeholder="{{ profile.personal.first_name }}"
+                    <input type="text" name="first_name" data-ng-model="profile.personal.first_name" class="form-control"
                       required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Middle Name</h9>
-                    <input type="text" data-ng-model="userUpdated.personal.middle_name" class="form-control" placeholder="{{ profile.personal.middle_name }}">
+                    <input type="text" data-ng-model="profile.personal.middle_name" class="form-control">
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Last Name</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.last_name.$error.required">Required!</span>
-                    <input type="text" name="last_name" data-ng-model="userUpdated.personal.last_name" class="form-control" placeholder="{{ profile.personal.last_name }}"
+                    <input type="text" name="last_name" data-ng-model="profile.personal.last_name" class="form-control"
                       required>
                   </div>
                 </div>
@@ -57,18 +57,18 @@
                     <h9 class="">Email Address</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.required">Required!</span>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.email">Invalid email!</span>
-                    <input type="email" name="email" data-ng-model="userUpdated.email" class="form-control" placeholder="{{ profile.email }}" required>
+                    <input type="email" name="email" data-ng-model="profile.email" class="form-control" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Phone Number</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.phone.$error.required">Required!</span>
-                    <input type="text" name="phone" data-ng-model="userUpdated.personal.phone" class="form-control" placeholder="{{ profile.personal.phone  }}"
+                    <input type="text" name="phone" data-ng-model="profile.personal.phone" class="form-control"
                       required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">State of residence in Australia</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.state.$error.required">Required!</span>
-                    <select id="inputState" name="state" class="form-control" data-ng-model="userUpdated.personal.state" required>
+                    <select id="inputState" name="state" class="form-control" data-ng-model="profile.personal.state" required>
                       <option selected>VIC</option>
                       <option>SA</option>
                       <option>WA</option>
@@ -83,7 +83,7 @@
                   <div class="col-4 profile-form-row">
                     <h9 class="">Nationality</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.nationality.$error.required">Required!</span>
-                    <select name="nationality" id="inputNationality" name="nationality" class="form-control" data-ng-model="userUpdated.personal.nationality" required>
+                    <select name="nationality" id="inputNationality" name="nationality" class="form-control" data-ng-model="profile.personal.nationality" required>
                       <option value="">-- select one --</option>
                       <option value="afghan">Afghan</option>
                       <option value="albanian">Albanian</option>
@@ -283,7 +283,7 @@
                   <div class="col-4 profile-form-row">
                     <h9 class="">Visa Type</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.visa.$error.required">Required!</span>
-                    <select id="inputVisa" name="visa" class="form-control" data-ng-model="userUpdated.personal.visa"  data-ng-options="visa.name group by visa.type for visa in visas"
+                    <select id="inputVisa" name="visa" class="form-control" data-ng-model="profile.personal.visa.name" data-ng-value="profile.personal.visa.name"  data-ng-options="visa.name group by visa.type for visa in visas"
                       required>
                       <option value="">Other visa...</option>
                       <option value="" selected>Choose visa...</option>
@@ -292,7 +292,7 @@
                   <div class="col-4 profile-form-row">
                     <h9 class="">Language (Select one or more)</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.language.$error.required">Required!</span>
-                    <select id="inputLanguage" name="language" data-ng-model="userUpdated.personal.language" class="form-control" data-placeholder="Choose a Language..." required>
+                    <select id="inputLanguage" name="language" data-ng-model="profile.personal.language" class="form-control" placeholder="Choose a Language..." required>
                       <option value="AF">Afrikanns</option>
                       <option value="SQ">Albanian</option>
                       <option value="AR">Arabic</option>
@@ -373,7 +373,7 @@
                   <div class="col-4 profile-form-row">
                     <h9 class="">Education</h9>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.education.$error.required">Required!</span>
-                    <input type="text" name="education" class="form-control" placeholder="{{profile.personal.education}}" data-ng-model="userUpdated.personal.education" required>
+                    <input type="text" name="education" class="form-control" data-ng-model="profile.personal.education" required>
                   </div>
                 </div>
 
@@ -381,12 +381,12 @@
                   <div class="col-4 profile-form-row">
                     <h5 class="card-title mt-4 ml-4 mr-4">Main Classification</h5>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.main_classification.$error.required">Required!</span>
-                    <input type="text" name="main_classification" class="form-control" placeholder="{{profile.personal.main_classification}}" data-ng-model="userUpdated.personal.main_classification" required>
+                    <input type="text" name="main_classification" class="form-control" data-ng-model="profile.personal.main_classification" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h5 class="card-title mt-4 ml-4 mr-4">Skills</h5>
                     <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.skills.$error.required">Required!</span>
-                    <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="userUpdated.personal.skills" required>
+                    <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="profile.personal.skills" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <div class="mt-4">
@@ -400,19 +400,19 @@
                 <div class="row ">
                   <div class="col-3 profile-form-row">
                     <h9 class="">Twitter</h9>
-                    <input type="text" class="form-control" data-ng-model="userUpdated.personal.twitter" placeholder="{{ profile.personal.twitter  }}">
+                    <input type="text" class="form-control" data-ng-model="profile.personal.twitter">
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Facebook</h9>
-                    <input type="text" class="form-control" data-ng-model="userUpdated.personal.facebook" placeholder="{{ profile.personal.facebook  }}">
+                    <input type="text" class="form-control" data-ng-model="profile.personal.facebook">
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Instagram</h9>
-                    <input type="text" class="form-control" data-ng-model="userUpdated.personal.instagram"  placeholder="{{ profile.personal.instagram  }}">
+                    <input type="text" class="form-control" data-ng-model="profile.personal.instagram" >
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Linkedin</h9>
-                    <input type="text" class="form-control" data-ng-model="userUpdated.personal.linkedin"  placeholder="{{ profile.personal.linkedin }}">
+                    <input type="text" class="form-control" data-ng-model="profile.personal.linkedin" >
                   </div>
                 </div>
 
