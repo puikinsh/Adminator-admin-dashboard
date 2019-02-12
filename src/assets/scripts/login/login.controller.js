@@ -1,14 +1,20 @@
+import * as $ from 'jquery';
+
 /** @ngInject */
 const LoginController = ['$scope', '$cookies', '$location', 'LoginService', 'UserService' ,
-	function ($scope, $cookies, $location, LoginService, UserService) {
+	function($scope, $cookies, $location, LoginService, UserService)  {
+		$('#modalLoginForm').modal({ backdrop: 'static', keyboard: false });
+		// load the user if already logged in, for all controllers
+		UserService.loadUser();
+		$scope.userLogin = (LoginForm) => {
+			$scope.submitted = true;
+			$scope.dataLoading = true;
 
-	// load the user if already logged in, for all controllers
-	UserService.loadUser();
+			if (LoginForm.$invalid) {
+				return;
+			}
 
-	$scope.userLogin = async (isValid) => {
-		$scope.dataLoading = true;
-		if(isValid){
-			await LoginService.loginUserService($scope.user)
+			LoginService.loginUserService($scope.user)
 				.then((result) => {
 					// save the cookie and reload the user for all controllers
 					$cookies.put('access_token', result.token);
@@ -21,8 +27,7 @@ const LoginController = ['$scope', '$cookies', '$location', 'LoginService', 'Use
 					$scope.dataLoading = false;
 					alert(err);
 				})
-		}
-	}
+	}	
 }];
 
 export default LoginController;

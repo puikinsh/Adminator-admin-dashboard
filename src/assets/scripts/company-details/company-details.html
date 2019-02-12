@@ -1,106 +1,108 @@
-<main class='main-content bgc-grey-300'>
-        <div id='mainContent row'>
-          <div class="content-title mT-60">
-            <div class="ml-1 mb-3">
-              <h1>Company's Profile</h1>
-              
+<nw-sidebar></nw-sidebar>
+<div class="page-container">
+  <nw-topbar></nw-topbar>
+  <main class='main-content bgc-grey-300'>
+    <div id='mainContent row'>
+      <div class="content-title mT-60">
+        <div class="ml-1 mb-3">
+          <h1>Company's Profile</h1>
+
+        </div>
+      </div>
+
+      <div class=" gap-30 masonry pos-r">
+        <!-- #content container ===== -->
+        <div class="masonry-sizer col-md-6"></div>
+
+        <!-- #company profile ========= -->
+        <div class="masonry-item  w-100  visible-admin visible-nomit visible-referee visible-user" ng-show="user.role !='company'">
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" id="avatar_company_details" ng-src="{{avatar.element.src}}" alt="">
+              <div class="testo">
+                <h5>{{ company.company.name }}</h5> {{ company.company.description }}
+              </div>
             </div>
-          </div>
-      
-          <div class=" gap-30 masonry pos-r">
-            <!-- #content container ===== -->
-            <div class="masonry-sizer col-md-6"></div>
-      
-            <!-- #company profile ========= -->
-            <div class="masonry-item  w-100  visible-admin visible-nomit visible-referee visible-user" ng-show="user.role !='company'">
-              <div class="card item-box">
-                <div class="user-data-title">
-                  <img class="user-update-img" id="avatar_company_details" ng-src="{{avatar.element.src}}" alt="">
-                  <div class="testo">
-                    <h5>{{ company.company.name }}</h5> {{ company.company.description }}
+            <div class="card-body-profile">
+              <div class="profile-forms">
+
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Name</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.name }}" value="" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Business Type</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.type }}" value="" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">ABN</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.abn }}" value="" disabled>
                   </div>
                 </div>
-                <div class="card-body-profile">
-                  <div class="profile-forms">
-      
-                    <div class="row ">
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">Name</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.name }}" value="" disabled>
-                      </div>
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">Business Type</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.type }}" value="" disabled>
-                      </div>
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">ABN</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.abn }}" value="" disabled>
-                      </div>
-                    </div>
-      
-                    <div class="row ">
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">Email Address</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.email }}" value="" disabled>
-                      </div>
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">Phone Number</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.phone }}" value="" disabled>
-                      </div>
-                      <div class="col-4 profile-form-row">
-                        <h9 class="">Website</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.website }}" value="" disabled>
-                      </div>
-                    </div>
-      
-      
-                    <div class="row">
-                      <div class="form-group col-md-4 profile-form-row">
-                        <h9 class="">Address</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.address }}" disabled>
-                      </div>
-                      <div class="form-group col-md-4 profile-form-row">
-                        <h9 class="">City</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.city }}" disabled>
-                      </div>
-                      <div class="form-group col-md-2 profile-form-row">
-                        <h9 class="">State</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.state }}" disabled>
-                      </div>
-                      <div class="form-group col-md-2 profile-form-row">
-                        <h9 class="">Zip</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.postcode }}" disabled>
-                      </div>
-                    </div>
 
-                    <div class="row ">
-                      <div class="col-3 profile-form-row">
-                        <h9 class="">Twitter</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.twitter }}"  disabled>
-                      </div>
-                      <div class="col-3 profile-form-row">
-                        <h9 class="">Facebook</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.facebook }}" disabled>
-                      </div>
-                      <div class="col-3 profile-form-row">
-                        <h9 class="">Instagram</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.instagram }}"  disabled>
-                      </div>
-                      <div class="col-3 profile-form-row">
-                        <h9 class="">Linkedin</h9>
-                        <input type="text" class="form-control" placeholder="{{ company.company.linkedin }}" disabled>
-                      </div>
-                    </div>
-      
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Email Address</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.email }}" value="" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Phone Number</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.phone }}" value="" disabled>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Website</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.website }}" value=""
+                      disabled>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">Address</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.address }}" disabled>
+                  </div>
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">City</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.city }}" disabled>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">State</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.state }}" disabled>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">Zip</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.postcode }}" disabled>
+                  </div>
+                </div>
+
+                <div class="row ">
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Twitter</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.twitter }}" disabled>
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Facebook</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.facebook }}" disabled>
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Instagram</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.instagram }}" disabled>
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Linkedin</h9>
+                    <input type="text" class="form-control" placeholder="{{ company.company.linkedin }}" disabled>
                   </div>
                 </div>
               </div>
             </div>
-      
           </div>
-          <!--content container-->
         </div>
-        <!--page container-->
-      
-      </main>
-      
+      </div>
+      <!--content container-->
+    </div>
+    <!--page container-->
+  </main>
+  <nw-footer></nw-footer>
+</div>

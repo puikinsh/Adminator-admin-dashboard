@@ -4,7 +4,7 @@ import UserService from './shared.service';
 
 angular.module('NomitWisp', 
     [
-        'NomitWisp-Login',
+        'nwLogin',
         'NomitWisp-Topbar', 
         'NomitWisp-Sidebar',
         'NomitWisp-Footer',
@@ -32,6 +32,10 @@ angular.module('NomitWisp',
         .when('/', { 
             controller: 'DashboardController', 
             templateUrl: 'assets/scripts/dashboard/dashboard.html' 
+        })
+        .when('/login', { 
+            controller: 'LoginController', 
+            templateUrl: 'assets/scripts/login/login.html' 
         })
         .when('/ads', { 
             controller: 'AdsController', 

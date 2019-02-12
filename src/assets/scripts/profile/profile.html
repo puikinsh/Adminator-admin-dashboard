@@ -1,844 +1,831 @@
-<main class='main-content bgc-grey-300' data-ng-controller="ProfileController">
-  <div id='mainContent row'>
-    <div class="content-title mT-60">
-      <div class="ml-1 mb-3">
-        <h1>Profile</h1>
+<nw-sidebar></nw-sidebar>
+<div class="page-container">
+  <nw-topbar></nw-topbar>
+  <main class='main-content bgc-grey-300' data-ng-controller="ProfileController">
+    <div id='mainContent row'>
+      <div class="content-title mT-60">
+        <div class="ml-1 mb-3">
+          <h1>Profile</h1>
+        </div>
       </div>
-    </div>
-    <div class="ml-1 mb-3 text-black-bold">
-      Sign up with WISP now to get yourself connected.
-    </div>
-    <div class="ml-1 mb-3 text-size-11">
-      Please, tell us more about your information so we could find the perfect oportunities for you.
-    </div>
+      <div class="ml-1 mb-3 text-black-bold">
+        Sign up with WISP now to get yourself connected.
+      </div>
+      <div class="ml-1 mb-3 text-size-11">
+        Please, tell us more about your information so we could find the perfect oportunities for you.
+      </div>
 
-    <div class=" gap-30 masonry pos-r">
-      <!-- #content container ===== -->
-      <div class="masonry-sizer col-md-6"></div>
+      <div class=" gap-30 masonry pos-r">
+        <!-- #content container ===== -->
+        <div class="masonry-sizer col-md-6"></div>
 
+        <!-- #user profile ========= -->
+        <div class="masonry-item  w-100 visible-user" data-ng-show="profile.role =='user'">
 
-      <!-- #user profile ========= -->
-      <div class="masonry-item  w-100 visible-user" data-ng-show="profile.role =='user'">
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+              <div class="testo">
+                <h5>{{ profile.name }}</h5>
+              </div>
+            </div>
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+                <div id="processing" class="alert alert-info" data-ng-show="processing" data-ng-bind="processing"></div>
+                <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
+                <form name="ProfileForm" role="form" novalidate>
+                  <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">First Name</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.first_name.$error.required">Required!</span>
+                      <input type="text" name="first_name" data-ng-model="profile.personal.first_name" class="form-control"
+                        required>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Middle Name</h9>
+                      <input type="text" data-ng-model="profile.personal.middle_name" class="form-control">
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Last Name</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.last_name.$error.required">Required!</span>
+                      <input type="text" name="last_name" data-ng-model="profile.personal.last_name" class="form-control"
+                        required>
+                    </div>
+                  </div>
 
-        <div class="card item-box">
-          <div class="user-data-title">
-            <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
-            <div class="testo">
-              <h5>{{ profile.name }}</h5>
+                  <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Email Address</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.required">Required!</span>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.email">Invalid
+                        email!</span>
+                      <input type="email" name="email" data-ng-model="profile.email" class="form-control" required>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Phone Number</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.phone.$error.required">Required!</span>
+                      <input type="text" name="phone" data-ng-model="profile.personal.phone" class="form-control"
+                        required>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">State of residence in Australia</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.state.$error.required">Required!</span>
+                      <select id="inputState" name="state" class="form-control" data-ng-model="profile.personal.state"
+                        required>
+                        <option selected>VIC</option>
+                        <option>SA</option>
+                        <option>WA</option>
+                        <option>NSW</option>
+                        <option>QLD</option>
+                        <option>TAS</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Nationality</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.nationality.$error.required">Required!</span>
+                      <select name="nationality" id="inputNationality" name="nationality" class="form-control"
+                        data-ng-model="profile.personal.nationality" required>
+                        <option value="">-- select one --</option>
+                        <option value="afghan">Afghan</option>
+                        <option value="albanian">Albanian</option>
+                        <option value="algerian">Algerian</option>
+                        <option value="american">American</option>
+                        <option value="andorran">Andorran</option>
+                        <option value="angolan">Angolan</option>
+                        <option value="antiguans">Antiguans</option>
+                        <option value="argentinean">Argentinean</option>
+                        <option value="armenian">Armenian</option>
+                        <option value="australian">Australian</option>
+                        <option value="austrian">Austrian</option>
+                        <option value="azerbaijani">Azerbaijani</option>
+                        <option value="bahamian">Bahamian</option>
+                        <option value="bahraini">Bahraini</option>
+                        <option value="bangladeshi">Bangladeshi</option>
+                        <option value="barbadian">Barbadian</option>
+                        <option value="barbudans">Barbudans</option>
+                        <option value="batswana">Batswana</option>
+                        <option value="belarusian">Belarusian</option>
+                        <option value="belgian">Belgian</option>
+                        <option value="belizean">Belizean</option>
+                        <option value="beninese">Beninese</option>
+                        <option value="bhutanese">Bhutanese</option>
+                        <option value="bolivian">Bolivian</option>
+                        <option value="bosnian">Bosnian</option>
+                        <option value="brazilian">Brazilian</option>
+                        <option value="british">British</option>
+                        <option value="bruneian">Bruneian</option>
+                        <option value="bulgarian">Bulgarian</option>
+                        <option value="burkinabe">Burkinabe</option>
+                        <option value="burmese">Burmese</option>
+                        <option value="burundian">Burundian</option>
+                        <option value="cambodian">Cambodian</option>
+                        <option value="cameroonian">Cameroonian</option>
+                        <option value="canadian">Canadian</option>
+                        <option value="cape verdean">Cape Verdean</option>
+                        <option value="central african">Central African</option>
+                        <option value="chadian">Chadian</option>
+                        <option value="chilean">Chilean</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="colombian">Colombian</option>
+                        <option value="comoran">Comoran</option>
+                        <option value="congolese">Congolese</option>
+                        <option value="costa rican">Costa Rican</option>
+                        <option value="croatian">Croatian</option>
+                        <option value="cuban">Cuban</option>
+                        <option value="cypriot">Cypriot</option>
+                        <option value="czech">Czech</option>
+                        <option value="danish">Danish</option>
+                        <option value="djibouti">Djibouti</option>
+                        <option value="dominican">Dominican</option>
+                        <option value="dutch">Dutch</option>
+                        <option value="east timorese">East Timorese</option>
+                        <option value="ecuadorean">Ecuadorean</option>
+                        <option value="egyptian">Egyptian</option>
+                        <option value="emirian">Emirian</option>
+                        <option value="equatorial guinean">Equatorial Guinean</option>
+                        <option value="eritrean">Eritrean</option>
+                        <option value="estonian">Estonian</option>
+                        <option value="ethiopian">Ethiopian</option>
+                        <option value="fijian">Fijian</option>
+                        <option value="filipino">Filipino</option>
+                        <option value="finnish">Finnish</option>
+                        <option value="french">French</option>
+                        <option value="gabonese">Gabonese</option>
+                        <option value="gambian">Gambian</option>
+                        <option value="georgian">Georgian</option>
+                        <option value="german">German</option>
+                        <option value="ghanaian">Ghanaian</option>
+                        <option value="greek">Greek</option>
+                        <option value="grenadian">Grenadian</option>
+                        <option value="guatemalan">Guatemalan</option>
+                        <option value="guinea-bissauan">Guinea-Bissauan</option>
+                        <option value="guinean">Guinean</option>
+                        <option value="guyanese">Guyanese</option>
+                        <option value="haitian">Haitian</option>
+                        <option value="herzegovinian">Herzegovinian</option>
+                        <option value="honduran">Honduran</option>
+                        <option value="hungarian">Hungarian</option>
+                        <option value="hudata-ng-kong">Hong Kong</option>
+                        <option value="icelander">Icelander</option>
+                        <option value="indian">Indian</option>
+                        <option value="indonesian">Indonesian</option>
+                        <option value="iranian">Iranian</option>
+                        <option value="iraqi">Iraqi</option>
+                        <option value="irish">Irish</option>
+                        <option value="israeli">Israeli</option>
+                        <option value="italian">Italian</option>
+                        <option value="ivorian">Ivorian</option>
+                        <option value="jamaican">Jamaican</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="jordanian">Jordanian</option>
+                        <option value="kazakhstani">Kazakhstani</option>
+                        <option value="kenyan">Kenyan</option>
+                        <option value="kittian and nevisian">Kittian and Nevisian</option>
+                        <option value="kuwaiti">Kuwaiti</option>
+                        <option value="kyrgyz">Kyrgyz</option>
+                        <option value="laotian">Laotian</option>
+                        <option value="latvian">Latvian</option>
+                        <option value="lebanese">Lebanese</option>
+                        <option value="liberian">Liberian</option>
+                        <option value="libyan">Libyan</option>
+                        <option value="liechtensteiner">Liechtensteiner</option>
+                        <option value="lithuanian">Lithuanian</option>
+                        <option value="luxembourger">Luxembourger</option>
+                        <option value="macedonian">Macedonian</option>
+                        <option value="malagasy">Malagasy</option>
+                        <option value="malawian">Malawian</option>
+                        <option value="malaysian">Malaysian</option>
+                        <option value="maldivan">Maldivan</option>
+                        <option value="malian">Malian</option>
+                        <option value="maltese">Maltese</option>
+                        <option value="marshallese">Marshallese</option>
+                        <option value="mauritanian">Mauritanian</option>
+                        <option value="mauritian">Mauritian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="micronesian">Micronesian</option>
+                        <option value="moldovan">Moldovan</option>
+                        <option value="monacan">Monacan</option>
+                        <option value="mongolian">Mongolian</option>
+                        <option value="moroccan">Moroccan</option>
+                        <option value="mosotho">Mosotho</option>
+                        <option value="motswana">Motswana</option>
+                        <option value="mozambican">Mozambican</option>
+                        <option value="namibian">Namibian</option>
+                        <option value="nauruan">Nauruan</option>
+                        <option value="nepalese">Nepalese</option>
+                        <option value="new zealander">New Zealander</option>
+                        <option value="ni-vanuatu">Ni-Vanuatu</option>
+                        <option value="nicaraguan">Nicaraguan</option>
+                        <option value="nigerien">Nigerien</option>
+                        <option value="north korean">North Korean</option>
+                        <option value="northern irish">Northern Irish</option>
+                        <option value="norwegian">Norwegian</option>
+                        <option value="omani">Omani</option>
+                        <option value="pakistani">Pakistani</option>
+                        <option value="palauan">Palauan</option>
+                        <option value="panamanian">Panamanian</option>
+                        <option value="papua new guinean">Papua New Guinean</option>
+                        <option value="paraguayan">Paraguayan</option>
+                        <option value="peruvian">Peruvian</option>
+                        <option value="polish">Polish</option>
+                        <option value="portuguese">Portuguese</option>
+                        <option value="qatari">Qatari</option>
+                        <option value="romanian">Romanian</option>
+                        <option value="russian">Russian</option>
+                        <option value="rwandan">Rwandan</option>
+                        <option value="saint lucian">Saint Lucian</option>
+                        <option value="salvadoran">Salvadoran</option>
+                        <option value="samoan">Samoan</option>
+                        <option value="san marinese">San Marinese</option>
+                        <option value="sao tomean">Sao Tomean</option>
+                        <option value="saudi">Saudi</option>
+                        <option value="scottish">Scottish</option>
+                        <option value="senegalese">Senegalese</option>
+                        <option value="serbian">Serbian</option>
+                        <option value="seychellois">Seychellois</option>
+                        <option value="sierra leonean">Sierra Leonean</option>
+                        <option value="singaporean">Singaporean</option>
+                        <option value="slovakian">Slovakian</option>
+                        <option value="slovenian">Slovenian</option>
+                        <option value="solomon islander">Solomon Islander</option>
+                        <option value="somali">Somali</option>
+                        <option value="south african">South African</option>
+                        <option value="south korean">South Korean</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="sri lankan">Sri Lankan</option>
+                        <option value="sudanese">Sudanese</option>
+                        <option value="surinamer">Surinamer</option>
+                        <option value="swazi">Swazi</option>
+                        <option value="swedish">Swedish</option>
+                        <option value="swiss">Swiss</option>
+                        <option value="syrian">Syrian</option>
+                        <option value="taiwanese">Taiwanese</option>
+                        <option value="tajik">Tajik</option>
+                        <option value="tanzanian">Tanzanian</option>
+                        <option value="thai">Thai</option>
+                        <option value="togolese">Togolese</option>
+                        <option value="tongan">Tongan</option>
+                        <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                        <option value="tunisian">Tunisian</option>
+                        <option value="turkish">Turkish</option>
+                        <option value="tuvaluan">Tuvaluan</option>
+                        <option value="ugandan">Ugandan</option>
+                        <option value="ukrainian">Ukrainian</option>
+                        <option value="uruguayan">Uruguayan</option>
+                        <option value="uzbekistani">Uzbekistani</option>
+                        <option value="venezuelan">Venezuelan</option>
+                        <option value="vietnamese">Vietnamese</option>
+                        <option value="welsh">Welsh</option>
+                        <option value="yemenite">Yemenite</option>
+                        <option value="zambian">Zambian</option>
+                        <option value="zimbabwean">Zimbabwean</option>
+                      </select>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Visa Type</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.visa.$error.required">Required!</span>
+                      <select id="inputVisa" name="visa" class="form-control" data-ng-model="profile.personal.visa.name"
+                        data-ng-value="profile.personal.visa.name" data-ng-options="visa.name group by visa.type for visa in visas"
+                        required>
+                        <option value="">Other visa...</option>
+                        <option value="" selected>Choose visa...</option>
+                      </select>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Language (Select one or more)</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.language.$error.required">Required!</span>
+                      <select id="inputLanguage" name="language" data-ng-model="profile.personal.language" class="form-control"
+                        placeholder="Choose a Language..." required>
+                        <option value="AF">Afrikanns</option>
+                        <option value="SQ">Albanian</option>
+                        <option value="AR">Arabic</option>
+                        <option value="HY">Armenian</option>
+                        <option value="EU">Basque</option>
+                        <option value="BN">Bengali</option>
+                        <option value="BG">Bulgarian</option>
+                        <option value="CA">Catalan</option>
+                        <option value="KM">Cambodian</option>
+                        <option value="ZH">Chinese</option>
+                        <option value="HR">Croation</option>
+                        <option value="CS">Czech</option>
+                        <option value="DA">Danish</option>
+                        <option value="NL">Dutch</option>
+                        <option value="EN" selected>English</option>
+                        <option value="ET">Estonian</option>
+                        <option value="FJ">Fiji</option>
+                        <option value="FI">Finnish</option>
+                        <option value="FR">French</option>
+                        <option value="KA">Georgian</option>
+                        <option value="DE">German</option>
+                        <option value="EL">Greek</option>
+                        <option value="GU">Gujarati</option>
+                        <option value="HE">Hebrew</option>
+                        <option value="HI">Hindi</option>
+                        <option value="HU">Hungarian</option>
+                        <option value="IS">Icelandic</option>
+                        <option value="ID">Indonesian</option>
+                        <option value="GA">Irish</option>
+                        <option value="IT">Italian</option>
+                        <option value="JA">Japanese</option>
+                        <option value="JW">Javanese</option>
+                        <option value="KO">Korean</option>
+                        <option value="LA">Latin</option>
+                        <option value="LV">Latvian</option>
+                        <option value="LT">Lithuanian</option>
+                        <option value="MK">Macedonian</option>
+                        <option value="MS">Malay</option>
+                        <option value="ML">Malayalam</option>
+                        <option value="MT">Maltese</option>
+                        <option value="MI">Maori</option>
+                        <option value="MR">Marathi</option>
+                        <option value="MN">Mongolian</option>
+                        <option value="NE">Nepali</option>
+                        <option value="NO">Norwegian</option>
+                        <option value="FA">Persian</option>
+                        <option value="PL">Polish</option>
+                        <option value="PT">Portuguese</option>
+                        <option value="PA">Punjabi</option>
+                        <option value="QU">Quechua</option>
+                        <option value="RO">Romanian</option>
+                        <option value="RU">Russian</option>
+                        <option value="SM">Samoan</option>
+                        <option value="SR">Serbian</option>
+                        <option value="SK">Slovak</option>
+                        <option value="SL">Slovenian</option>
+                        <option value="ES">Spanish</option>
+                        <option value="SW">Swahili</option>
+                        <option value="SV">Swedish </option>
+                        <option value="TA">Tamil</option>
+                        <option value="TT">Tatar</option>
+                        <option value="TE">Telugu</option>
+                        <option value="TH">Thai</option>
+                        <option value="BO">Tibetan</option>
+                        <option value="TO">Tonga</option>
+                        <option value="TR">Turkish</option>
+                        <option value="UK">Ukranian</option>
+                        <option value="UR">Urdu</option>
+                        <option value="UZ">Uzbek</option>
+                        <option value="VI">Vietnamese</option>
+                        <option value="CY">Welsh</option>
+                        <option value="XH">Xhosa</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h9 class="">Education</h9>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.education.$error.required">Required!</span>
+                      <input type="text" name="education" class="form-control" data-ng-model="profile.personal.education"
+                        required>
+                    </div>
+                  </div>
+
+                  <div class="row ">
+                    <div class="col-4 profile-form-row">
+                      <h5 class="card-title mt-4 ml-4 mr-4">Main Classification</h5>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.main_classification.$error.required">Required!</span>
+                      <input type="text" name="main_classification" class="form-control" data-ng-model="profile.personal.main_classification"
+                        required>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <h5 class="card-title mt-4 ml-4 mr-4">Skills</h5>
+                      <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.skills.$error.required">Required!</span>
+                      <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="profile.personal.skills"
+                        required>
+                    </div>
+                    <div class="col-4 profile-form-row">
+                      <div class="mt-4">
+                        <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
+                        <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
+                        <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row ">
+                    <div class="col-3 profile-form-row">
+                      <h9 class="">Twitter</h9>
+                      <input type="text" class="form-control" data-ng-model="profile.personal.twitter">
+                    </div>
+                    <div class="col-3 profile-form-row">
+                      <h9 class="">Facebook</h9>
+                      <input type="text" class="form-control" data-ng-model="profile.personal.facebook">
+                    </div>
+                    <div class="col-3 profile-form-row">
+                      <h9 class="">Instagram</h9>
+                      <input type="text" class="form-control" data-ng-model="profile.personal.instagram">
+                    </div>
+                    <div class="col-3 profile-form-row">
+                      <h9 class="">Linkedin</h9>
+                      <input type="text" class="form-control" data-ng-model="profile.personal.linkedin">
+                    </div>
+                  </div>
+
+                  <div class="row ">
+                    <div class="col-6 profile-form-row">
+                      <button type="submit" data-ng-disabled="processing" data-ng-click="updateProfile(ProfileForm)"
+                        class="btn btn-gradient">UPDATE</button>
+                      <button type="reset" class="btn btn-border">CLEAR</button>
+                    </div>
+                    <div class="col-6 profile-form-row">
+
+                      <form action="upload.asp" method="post" enctype="multipart/form-data">
+                        <h9 class="cv">Curriculum </h9>
+                        <input class="cv" type="file" name="file1" multiple>
+                        <input type="submit" class="btn btn-cv btn-gradient" value="Upload">
+                      </form>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
-              <div id="processing" class="alert alert-info" data-ng-show="processing" data-ng-bind="processing"></div>
-              <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-              <form name="ProfileForm" role="form" novalidate>
+        </div>
+
+        <div class="masonry-item  w-100 visible-user" data-ng-show="profile.role =='user'">
+          <div class="card item-box">
+
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold">Help NOMIT collecting more data: your information
+                  won't be visible!!</h5>
+
                 <div class="row ">
                   <div class="col-4 profile-form-row">
-                    <h9 class="">First Name</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.first_name.$error.required">Required!</span>
-                    <input type="text" name="first_name" data-ng-model="profile.personal.first_name" class="form-control"
-                      required>
+                    <h9 class="">Birthdate</h9>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Birth"
+                          data-provide="datepicker">
+                      </div>
+                    </div>
                   </div>
                   <div class="col-4 profile-form-row">
-                    <h9 class="">Middle Name</h9>
-                    <input type="text" data-ng-model="profile.personal.middle_name" class="form-control">
+                    <h9 class="">Gender</h9>
+                    <select id="inputGender" class="form-control">
+                      <option selected>Male</option>
+                      <option>Female</option>
+                    </select>
                   </div>
                   <div class="col-4 profile-form-row">
-                    <h9 class="">Last Name</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.last_name.$error.required">Required!</span>
-                    <input type="text" name="last_name" data-ng-model="profile.personal.last_name" class="form-control"
-                      required>
+                    <h9 class="">City of Birth</h9>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                </div>
+
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Arriving in Australia</h9>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Arrive"
+                          data-provide="datepicker">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Reason for leaving</h9>
+                    <textarea id="leaving" name="story" rows="5">Tell us something about your old life...</textarea>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Reason for staying in Australia</h9>
+                    <textarea id="staying" name="story" rows="5">Tell us something about your new life...</textarea>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-gradient ">UPDATE</button>
+                <button type="button" class="btn btn-border ">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- #company profile ========= -->
+        <div class="masonry-item  w-100 visible-company" data-ng-show="profile.role == 'company'">
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+              <div class="testo">
+                <h5>{{ profile.name }}</h5> A global high-tech company and one of the key players in Aerospace, Defence
+                and
+                Security
+              </div>
+            </div>
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Name</h9>
+                    <input type="text" class="form-control" placeholder="Leonardo" value="" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Business Type</h9>
+                    <input type="text" class="form-control" placeholder="Technological Innovation" value="" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">ABN</h9>
+                    <input type="text" class="form-control" placeholder="Last name" value="66 942 977 659" required>
                   </div>
                 </div>
 
                 <div class="row ">
                   <div class="col-4 profile-form-row">
                     <h9 class="">Email Address</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.required">Required!</span>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.email.$error.email">Invalid email!</span>
-                    <input type="email" name="email" data-ng-model="profile.email" class="form-control" required>
+                    <input type="text" class="form-control" placeholder="Email" value="ir@leonardocompany" required>
                   </div>
                   <div class="col-4 profile-form-row">
                     <h9 class="">Phone Number</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.phone.$error.required">Required!</span>
-                    <input type="text" name="phone" data-ng-model="profile.personal.phone" class="form-control"
+                    <input type="text" class="form-control" placeholder="Phone" value="+39 06.324731" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Website</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com"
                       required>
                   </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">State of residence in Australia</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.state.$error.required">Required!</span>
-                    <select id="inputState" name="state" class="form-control" data-ng-model="profile.personal.state" required>
-                      <option selected>VIC</option>
-                      <option>SA</option>
-                      <option>WA</option>
-                      <option>NSW</option>
-                      <option>QLD</option>
-                      <option>TAS</option>
-                    </select>
-                  </div>
                 </div>
 
-                <div class="row ">
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Nationality</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.nationality.$error.required">Required!</span>
-                    <select name="nationality" id="inputNationality" name="nationality" class="form-control" data-ng-model="profile.personal.nationality" required>
-                      <option value="">-- select one --</option>
-                      <option value="afghan">Afghan</option>
-                      <option value="albanian">Albanian</option>
-                      <option value="algerian">Algerian</option>
-                      <option value="american">American</option>
-                      <option value="andorran">Andorran</option>
-                      <option value="angolan">Angolan</option>
-                      <option value="antiguans">Antiguans</option>
-                      <option value="argentinean">Argentinean</option>
-                      <option value="armenian">Armenian</option>
-                      <option value="australian">Australian</option>
-                      <option value="austrian">Austrian</option>
-                      <option value="azerbaijani">Azerbaijani</option>
-                      <option value="bahamian">Bahamian</option>
-                      <option value="bahraini">Bahraini</option>
-                      <option value="bangladeshi">Bangladeshi</option>
-                      <option value="barbadian">Barbadian</option>
-                      <option value="barbudans">Barbudans</option>
-                      <option value="batswana">Batswana</option>
-                      <option value="belarusian">Belarusian</option>
-                      <option value="belgian">Belgian</option>
-                      <option value="belizean">Belizean</option>
-                      <option value="beninese">Beninese</option>
-                      <option value="bhutanese">Bhutanese</option>
-                      <option value="bolivian">Bolivian</option>
-                      <option value="bosnian">Bosnian</option>
-                      <option value="brazilian">Brazilian</option>
-                      <option value="british">British</option>
-                      <option value="bruneian">Bruneian</option>
-                      <option value="bulgarian">Bulgarian</option>
-                      <option value="burkinabe">Burkinabe</option>
-                      <option value="burmese">Burmese</option>
-                      <option value="burundian">Burundian</option>
-                      <option value="cambodian">Cambodian</option>
-                      <option value="cameroonian">Cameroonian</option>
-                      <option value="canadian">Canadian</option>
-                      <option value="cape verdean">Cape Verdean</option>
-                      <option value="central african">Central African</option>
-                      <option value="chadian">Chadian</option>
-                      <option value="chilean">Chilean</option>
-                      <option value="chinese">Chinese</option>
-                      <option value="colombian">Colombian</option>
-                      <option value="comoran">Comoran</option>
-                      <option value="congolese">Congolese</option>
-                      <option value="costa rican">Costa Rican</option>
-                      <option value="croatian">Croatian</option>
-                      <option value="cuban">Cuban</option>
-                      <option value="cypriot">Cypriot</option>
-                      <option value="czech">Czech</option>
-                      <option value="danish">Danish</option>
-                      <option value="djibouti">Djibouti</option>
-                      <option value="dominican">Dominican</option>
-                      <option value="dutch">Dutch</option>
-                      <option value="east timorese">East Timorese</option>
-                      <option value="ecuadorean">Ecuadorean</option>
-                      <option value="egyptian">Egyptian</option>
-                      <option value="emirian">Emirian</option>
-                      <option value="equatorial guinean">Equatorial Guinean</option>
-                      <option value="eritrean">Eritrean</option>
-                      <option value="estonian">Estonian</option>
-                      <option value="ethiopian">Ethiopian</option>
-                      <option value="fijian">Fijian</option>
-                      <option value="filipino">Filipino</option>
-                      <option value="finnish">Finnish</option>
-                      <option value="french">French</option>
-                      <option value="gabonese">Gabonese</option>
-                      <option value="gambian">Gambian</option>
-                      <option value="georgian">Georgian</option>
-                      <option value="german">German</option>
-                      <option value="ghanaian">Ghanaian</option>
-                      <option value="greek">Greek</option>
-                      <option value="grenadian">Grenadian</option>
-                      <option value="guatemalan">Guatemalan</option>
-                      <option value="guinea-bissauan">Guinea-Bissauan</option>
-                      <option value="guinean">Guinean</option>
-                      <option value="guyanese">Guyanese</option>
-                      <option value="haitian">Haitian</option>
-                      <option value="herzegovinian">Herzegovinian</option>
-                      <option value="honduran">Honduran</option>
-                      <option value="hungarian">Hungarian</option>
-                      <option value="hudata-ng-kong">Hong Kong</option>
-                      <option value="icelander">Icelander</option>
-                      <option value="indian">Indian</option>
-                      <option value="indonesian">Indonesian</option>
-                      <option value="iranian">Iranian</option>
-                      <option value="iraqi">Iraqi</option>
-                      <option value="irish">Irish</option>
-                      <option value="israeli">Israeli</option>
-                      <option value="italian">Italian</option>
-                      <option value="ivorian">Ivorian</option>
-                      <option value="jamaican">Jamaican</option>
-                      <option value="japanese">Japanese</option>
-                      <option value="jordanian">Jordanian</option>
-                      <option value="kazakhstani">Kazakhstani</option>
-                      <option value="kenyan">Kenyan</option>
-                      <option value="kittian and nevisian">Kittian and Nevisian</option>
-                      <option value="kuwaiti">Kuwaiti</option>
-                      <option value="kyrgyz">Kyrgyz</option>
-                      <option value="laotian">Laotian</option>
-                      <option value="latvian">Latvian</option>
-                      <option value="lebanese">Lebanese</option>
-                      <option value="liberian">Liberian</option>
-                      <option value="libyan">Libyan</option>
-                      <option value="liechtensteiner">Liechtensteiner</option>
-                      <option value="lithuanian">Lithuanian</option>
-                      <option value="luxembourger">Luxembourger</option>
-                      <option value="macedonian">Macedonian</option>
-                      <option value="malagasy">Malagasy</option>
-                      <option value="malawian">Malawian</option>
-                      <option value="malaysian">Malaysian</option>
-                      <option value="maldivan">Maldivan</option>
-                      <option value="malian">Malian</option>
-                      <option value="maltese">Maltese</option>
-                      <option value="marshallese">Marshallese</option>
-                      <option value="mauritanian">Mauritanian</option>
-                      <option value="mauritian">Mauritian</option>
-                      <option value="mexican">Mexican</option>
-                      <option value="micronesian">Micronesian</option>
-                      <option value="moldovan">Moldovan</option>
-                      <option value="monacan">Monacan</option>
-                      <option value="mongolian">Mongolian</option>
-                      <option value="moroccan">Moroccan</option>
-                      <option value="mosotho">Mosotho</option>
-                      <option value="motswana">Motswana</option>
-                      <option value="mozambican">Mozambican</option>
-                      <option value="namibian">Namibian</option>
-                      <option value="nauruan">Nauruan</option>
-                      <option value="nepalese">Nepalese</option>
-                      <option value="new zealander">New Zealander</option>
-                      <option value="ni-vanuatu">Ni-Vanuatu</option>
-                      <option value="nicaraguan">Nicaraguan</option>
-                      <option value="nigerien">Nigerien</option>
-                      <option value="north korean">North Korean</option>
-                      <option value="northern irish">Northern Irish</option>
-                      <option value="norwegian">Norwegian</option>
-                      <option value="omani">Omani</option>
-                      <option value="pakistani">Pakistani</option>
-                      <option value="palauan">Palauan</option>
-                      <option value="panamanian">Panamanian</option>
-                      <option value="papua new guinean">Papua New Guinean</option>
-                      <option value="paraguayan">Paraguayan</option>
-                      <option value="peruvian">Peruvian</option>
-                      <option value="polish">Polish</option>
-                      <option value="portuguese">Portuguese</option>
-                      <option value="qatari">Qatari</option>
-                      <option value="romanian">Romanian</option>
-                      <option value="russian">Russian</option>
-                      <option value="rwandan">Rwandan</option>
-                      <option value="saint lucian">Saint Lucian</option>
-                      <option value="salvadoran">Salvadoran</option>
-                      <option value="samoan">Samoan</option>
-                      <option value="san marinese">San Marinese</option>
-                      <option value="sao tomean">Sao Tomean</option>
-                      <option value="saudi">Saudi</option>
-                      <option value="scottish">Scottish</option>
-                      <option value="senegalese">Senegalese</option>
-                      <option value="serbian">Serbian</option>
-                      <option value="seychellois">Seychellois</option>
-                      <option value="sierra leonean">Sierra Leonean</option>
-                      <option value="singaporean">Singaporean</option>
-                      <option value="slovakian">Slovakian</option>
-                      <option value="slovenian">Slovenian</option>
-                      <option value="solomon islander">Solomon Islander</option>
-                      <option value="somali">Somali</option>
-                      <option value="south african">South African</option>
-                      <option value="south korean">South Korean</option>
-                      <option value="spanish">Spanish</option>
-                      <option value="sri lankan">Sri Lankan</option>
-                      <option value="sudanese">Sudanese</option>
-                      <option value="surinamer">Surinamer</option>
-                      <option value="swazi">Swazi</option>
-                      <option value="swedish">Swedish</option>
-                      <option value="swiss">Swiss</option>
-                      <option value="syrian">Syrian</option>
-                      <option value="taiwanese">Taiwanese</option>
-                      <option value="tajik">Tajik</option>
-                      <option value="tanzanian">Tanzanian</option>
-                      <option value="thai">Thai</option>
-                      <option value="togolese">Togolese</option>
-                      <option value="tongan">Tongan</option>
-                      <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
-                      <option value="tunisian">Tunisian</option>
-                      <option value="turkish">Turkish</option>
-                      <option value="tuvaluan">Tuvaluan</option>
-                      <option value="ugandan">Ugandan</option>
-                      <option value="ukrainian">Ukrainian</option>
-                      <option value="uruguayan">Uruguayan</option>
-                      <option value="uzbekistani">Uzbekistani</option>
-                      <option value="venezuelan">Venezuelan</option>
-                      <option value="vietnamese">Vietnamese</option>
-                      <option value="welsh">Welsh</option>
-                      <option value="yemenite">Yemenite</option>
-                      <option value="zambian">Zambian</option>
-                      <option value="zimbabwean">Zimbabwean</option>
-                    </select>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Visa Type</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.visa.$error.required">Required!</span>
-                    <select id="inputVisa" name="visa" class="form-control" data-ng-model="profile.personal.visa.name" data-ng-value="profile.personal.visa.name"  data-ng-options="visa.name group by visa.type for visa in visas"
+                <div class="row">
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">Address</h9>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Piazza Monte Grappa, 4"
                       required>
-                      <option value="">Other visa...</option>
-                      <option value="" selected>Choose visa...</option>
-                    </select>
                   </div>
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Language (Select one or more)</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.language.$error.required">Required!</span>
-                    <select id="inputLanguage" name="language" data-ng-model="profile.personal.language" class="form-control" placeholder="Choose a Language..." required>
-                      <option value="AF">Afrikanns</option>
-                      <option value="SQ">Albanian</option>
-                      <option value="AR">Arabic</option>
-                      <option value="HY">Armenian</option>
-                      <option value="EU">Basque</option>
-                      <option value="BN">Bengali</option>
-                      <option value="BG">Bulgarian</option>
-                      <option value="CA">Catalan</option>
-                      <option value="KM">Cambodian</option>
-                      <option value="ZH">Chinese</option>
-                      <option value="HR">Croation</option>
-                      <option value="CS">Czech</option>
-                      <option value="DA">Danish</option>
-                      <option value="NL">Dutch</option>
-                      <option value="EN" selected>English</option>
-                      <option value="ET">Estonian</option>
-                      <option value="FJ">Fiji</option>
-                      <option value="FI">Finnish</option>
-                      <option value="FR">French</option>
-                      <option value="KA">Georgian</option>
-                      <option value="DE">German</option>
-                      <option value="EL">Greek</option>
-                      <option value="GU">Gujarati</option>
-                      <option value="HE">Hebrew</option>
-                      <option value="HI">Hindi</option>
-                      <option value="HU">Hungarian</option>
-                      <option value="IS">Icelandic</option>
-                      <option value="ID">Indonesian</option>
-                      <option value="GA">Irish</option>
-                      <option value="IT">Italian</option>
-                      <option value="JA">Japanese</option>
-                      <option value="JW">Javanese</option>
-                      <option value="KO">Korean</option>
-                      <option value="LA">Latin</option>
-                      <option value="LV">Latvian</option>
-                      <option value="LT">Lithuanian</option>
-                      <option value="MK">Macedonian</option>
-                      <option value="MS">Malay</option>
-                      <option value="ML">Malayalam</option>
-                      <option value="MT">Maltese</option>
-                      <option value="MI">Maori</option>
-                      <option value="MR">Marathi</option>
-                      <option value="MN">Mongolian</option>
-                      <option value="NE">Nepali</option>
-                      <option value="NO">Norwegian</option>
-                      <option value="FA">Persian</option>
-                      <option value="PL">Polish</option>
-                      <option value="PT">Portuguese</option>
-                      <option value="PA">Punjabi</option>
-                      <option value="QU">Quechua</option>
-                      <option value="RO">Romanian</option>
-                      <option value="RU">Russian</option>
-                      <option value="SM">Samoan</option>
-                      <option value="SR">Serbian</option>
-                      <option value="SK">Slovak</option>
-                      <option value="SL">Slovenian</option>
-                      <option value="ES">Spanish</option>
-                      <option value="SW">Swahili</option>
-                      <option value="SV">Swedish </option>
-                      <option value="TA">Tamil</option>
-                      <option value="TT">Tatar</option>
-                      <option value="TE">Telugu</option>
-                      <option value="TH">Thai</option>
-                      <option value="BO">Tibetan</option>
-                      <option value="TO">Tonga</option>
-                      <option value="TR">Turkish</option>
-                      <option value="UK">Ukranian</option>
-                      <option value="UR">Urdu</option>
-                      <option value="UZ">Uzbek</option>
-                      <option value="VI">Vietnamese</option>
-                      <option value="CY">Welsh</option>
-                      <option value="XH">Xhosa</option>
-                    </select>
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">City</h9>
+                    <input type="text" class="form-control" id="inputCity0" placeholder="Roma" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">State</h9>
+                    <input type="text" class="form-control" id="validationCustom04" placeholder="Italia" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">Zip</h9>
+                    <input type="text" class="form-control" id="inputZip" placeholder="00195" required>
                   </div>
                 </div>
 
-                <div class="row ">
-                  <div class="col-4 profile-form-row">
-                    <h9 class="">Education</h9>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.education.$error.required">Required!</span>
-                    <input type="text" name="education" class="form-control" data-ng-model="profile.personal.education" required>
+                <div class="row">
+                  <div class="col-12 profile-form-row">
+                    <h9 class="">Description</h9>
+                    <textarea id="description" class="company-description" name="story" rows="5">We constantly explore new ideas to turn them into new technologies that improve our world and design the future one. We invest in research and development to provide sustainable and competitive solutions. Wherever defence and security are needed:  land, sea, sky, Space and cyberspace.
+                        </textarea>
                   </div>
                 </div>
-
-                <div class="row ">
-                  <div class="col-4 profile-form-row">
-                    <h5 class="card-title mt-4 ml-4 mr-4">Main Classification</h5>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.main_classification.$error.required">Required!</span>
-                    <input type="text" name="main_classification" class="form-control" data-ng-model="profile.personal.main_classification" required>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <h5 class="card-title mt-4 ml-4 mr-4">Skills</h5>
-                    <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.skills.$error.required">Required!</span>
-                    <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="profile.personal.skills" required>
-                  </div>
-                  <div class="col-4 profile-form-row">
-                    <div class="mt-4">
-                      <div class=" ml-4 mb-4 btn btn-industry mt-4">Graphic Design</div>
-                      <div class="ml-1 mb-4 btn btn-skills">Adobe Creaetive CC</div>
-                      <div class="ml-1 mb-4 btn btn-skills">Illustration</div>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="row ">
                   <div class="col-3 profile-form-row">
                     <h9 class="">Twitter</h9>
-                    <input type="text" class="form-control" data-ng-model="profile.personal.twitter">
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/leonardo_it">
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Facebook</h9>
-                    <input type="text" class="form-control" data-ng-model="profile.personal.facebook">
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/">
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Instagram</h9>
-                    <input type="text" class="form-control" data-ng-model="profile.personal.instagram" >
+                    <input type="text" class="form-control" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it">
                   </div>
                   <div class="col-3 profile-form-row">
                     <h9 class="">Linkedin</h9>
-                    <input type="text" class="form-control" data-ng-model="profile.personal.linkedin" >
+                    <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-gradient ">UPDATE</button>
+                <button type="button" class="btn btn-border ">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- #nomit profile ========= -->
+        <div class="masonry-item w-100 visible-nomit" data-ng-show="profile.role =='nomit'">
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" src="assets/static/images/nomit-logo.png" alt="">
+              <div class="testo">
+                <h5>Nomit</h5> The Italian Network of Melbourne
+              </div>
+            </div>
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
+
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Name</h9>
+                    <input type="text" class="form-control" placeholder="Nomit" value="" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Business Type</h9>
+                    <input type="text" class="form-control" placeholder="Australian non-profit Association" value=""
+                      required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">ABN</h9>
+                    <input type="text" class="form-control" placeholder="Last name" value="92 106 088 918" required>
                   </div>
                 </div>
 
                 <div class="row ">
-                  <div class="col-6 profile-form-row">
-                    <button type="submit" data-ng-disabled="processing" data-ng-click="updateProfile(ProfileForm)" class="btn btn-gradient">UPDATE</button>
-                    <button type="reset" class="btn btn-border">CLEAR</button>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Email Address</h9>
+                    <input type="text" class="form-control" placeholder="Email" value="info@nomit.com.au" required>
                   </div>
-                  <div class="col-6 profile-form-row">
-
-                    <form action="upload.asp" method="post" enctype="multipart/form-data">
-                      <h9 class="cv">Curriculum </h9>
-                      <input class="cv" type="file" name="file1" multiple>
-                      <input type="submit" class="btn btn-cv btn-gradient" value="Upload">
-                    </form>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Phone Number</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="0481 983 702 " required>
                   </div>
-
-                </div>
-
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="masonry-item  w-100 visible-user" data-ng-show="profile.role =='user'">
-        <div class="card item-box">
-
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <h5 class="card-title d-flex text-black-bold">Help NOMIT collecting more data: your information
-                won't be visible!!</h5>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Birthdate</h9>
-                  <div class="timepicker-input input-icon form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon bgc-white bd bdwR-0">
-                        <i class="ti-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Birth"
-                        data-provide="datepicker">
-                    </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Website</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com"
+                      required>
                   </div>
                 </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Gender</h9>
-                  <select id="inputGender" class="form-control">
-                    <option selected>Male</option>
-                    <option>Female</option>
-                  </select>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">City of Birth</h9>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-              </div>
 
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Arriving in Australia</h9>
-                  <div class="timepicker-input input-icon form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon bgc-white bd bdwR-0">
-                        <i class="ti-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Date of Arrive"
-                        data-provide="datepicker">
-
-                    </div>
+                <div class="row">
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">Address</h9>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="1/509 St Kilda Rd" required>
+                  </div>
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">City</h9>
+                    <input type="text" class="form-control" id="inputCity2" placeholder="Melbourne" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">State</h9>
+                    <input type="text" class="form-control" id="validationCustom05" placeholder="VIC" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">Zip</h9>
+                    <input type="text" class="form-control" id="inputZip2" placeholder="3004" required>
                   </div>
                 </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Reason for leaving</h9>
-                  <textarea id="leaving" name="story" rows="5">Tell us something about your old life...</textarea>
+
+                <div class="row">
+                  <div class="col-12 profile-form-row">
+                    <h9 class="">Description</h9>
+                    <textarea id="description" class="company-description" name="story" rows="5">Nomit is an Australian non-profit organisation supported, amongst others, by the Italian Consulate in Melbourne and the Victorian Multicultural Commission.</textarea>
+                  </div>
                 </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Reason for staying in Australia</h9>
-                  <textarea id="staying" name="story" rows="5">Tell us something about your new life...</textarea>
+                <div class="row ">
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Twitter</h9>
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/nomitnetwork">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Facebook</h9>
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/nomitnetwork">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Instagram</h9>
+                    <input type="text" class="form-control" placeholder="Instagram" value="">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Linkedin</h9>
+                    <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/nomit/about/">
+                  </div>
                 </div>
+                <button type="button" class="btn btn-gradient ">UPDATE</button>
+                <button type="button" class="btn btn-border ">CANCEL</button>
               </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- #referee profile ========= -->
+        <div class="masonry-item w-100 visible-nomit" data-ng-show="'profile.role' =='nomit'">
+          <div class="card item-box">
+            <div class="user-data-title">
+              <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
+              <div class="testo">
+                <h5>Jobwatch</h5> EMPLOYMENT RIGHTS LEGAL CENTRE
+              </div>
+            </div>
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
 
-              <button type="button" class="btn btn-gradient ">UPDATE</button>
-              <button type="button" class="btn btn-border ">CANCEL</button>
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Name</h9>
+                    <input type="text" class="form-control" placeholder="Jobwatch" value="" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Business Type</h9>
+                    <input type="text" class="form-control" placeholder="Employment rights legal centre" value=""
+                      required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">ABN</h9>
+                    <input type="text" class="form-control" placeholder="Last name" value="92 106 088 918" required>
+                  </div>
+                </div>
 
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Email Address</h9>
+                    <input type="text" class="form-control" placeholder="Email" value="info@test.com.au" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Phone Number</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="9662 1933 " required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Website</h9>
+                    <input type="text" class="form-control" placeholder="Phone" value="http://jobwatch.org.au/"
+                      required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">Address</h9>
+                    <input type="text" class="form-control" id="inputAddress3" placeholder="1/509 St Kilda Rd" required>
+                  </div>
+                  <div class="form-group col-md-4 profile-form-row">
+                    <h9 class="">City</h9>
+                    <input type="text" class="form-control" id="inputCity3" placeholder="Melbourne" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">State</h9>
+                    <input type="text" class="form-control" id="validationCustom06" placeholder="VIC" required>
+                  </div>
+                  <div class="form-group col-md-2 profile-form-row">
+                    <h9 class="">Zip</h9>
+                    <input type="text" class="form-control" id="inputZip3" placeholder="3004" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 profile-form-row">
+                    <h9 class="">Description</h9>
+                    <textarea id="description" class="company-description" name="story" rows="5">Nomit is an Australian non-profit organisation supported, amongst others, by the Italian Consulate in Melbourne and the Victorian Multicultural Commission.</textarea>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Twitter</h9>
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/nomitnetwork">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Facebook</h9>
+                    <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/nomitnetwork">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Instagram</h9>
+                    <input type="text" class="form-control" placeholder="Instagram" value="">
+                  </div>
+                  <div class="col-3 profile-form-row">
+                    <h9 class="">Linkedin</h9>
+                    <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/nomit/about/">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-gradient ">UPDATE</button>
+                <button type="button" class="btn btn-border ">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- #change password ========= -->
+        <div class="masonry-item  w-100">
+          <div class="card item-box">
+            <div class="card-body-profile">
+              <div class="profile-forms">
+                <h5 class="card-title d-flex text-black-bold"> Change Password</h5>
+                <div class="row ">
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Current Password</h9>
+                    <input type="password" class="form-control" placeholder="Password" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">New Password</h9>
+                    <input type="password" class="form-control" placeholder="New Password" required>
+                  </div>
+                  <div class="col-4 profile-form-row">
+                    <h9 class="">Confirm New Password</h9>
+                    <input type="password" class="form-control" placeholder="New Password" required>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-gradient ">UPDATE</button>
+                <button type="button" class="btn btn-border ">CANCEL</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- #company profile ========= -->
-      <div class="masonry-item  w-100 visible-company" data-ng-show="profile.role == 'company'">
-        <div class="card item-box">
-          <div class="user-data-title">
-            <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
-            <div class="testo">
-              <h5>{{ profile.name }}</h5> A global high-tech company and one of the key players in Aerospace, Defence
-              and
-              Security
-            </div>
-          </div>
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Name</h9>
-                  <input type="text" class="form-control" placeholder="Leonardo" value="" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Business Type</h9>
-                  <input type="text" class="form-control" placeholder="Technological Innovation" value="" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">ABN</h9>
-                  <input type="text" class="form-control" placeholder="Last name" value="66 942 977 659" required>
-                </div>
-              </div>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Email Address</h9>
-                  <input type="text" class="form-control" placeholder="Email" value="ir@leonardocompany" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Phone Number</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="+39 06.324731" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Website</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com"
-                    required>
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">Address</h9>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Piazza Monte Grappa, 4"
-                    required>
-                </div>
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">City</h9>
-                  <input type="text" class="form-control" id="inputCity0" placeholder="Roma" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">State</h9>
-                  <input type="text" class="form-control" id="validationCustom04" placeholder="Italia" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">Zip</h9>
-                  <input type="text" class="form-control" id="inputZip" placeholder="00195" required>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 profile-form-row">
-                  <h9 class="">Description</h9>
-                  <textarea id="description" class="company-description" name="story" rows="5">We constantly explore new ideas to turn them into new technologies that improve our world and design the future one. We invest in research and development to provide sustainable and competitive solutions. Wherever defence and security are needed:  land, sea, sky, Space and cyberspace.
-                        </textarea>
-                </div>
-              </div>
-              <div class="row ">
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Twitter</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/leonardo_it">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Facebook</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/Leonardo-Company-473417172849580/">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Instagram</h9>
-                  <input type="text" class="form-control" placeholder="Instagram" value="https://www.instagram.com/leonardo_company/?hl=it">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Linkedin</h9>
-                  <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/drs-defense-solutions-llc/life/">
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-gradient ">UPDATE</button>
-              <button type="button" class="btn btn-border ">CANCEL</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- #nomit profile ========= -->
-      <div class="masonry-item w-100 visible-nomit" data-ng-show="profile.role =='nomit'">
-        <div class="card item-box">
-          <div class="user-data-title">
-            <img class="user-update-img" src="assets/static/images/nomit-logo.png" alt="">
-            <div class="testo">
-              <h5>Nomit</h5> The Italian Network of Melbourne
-            </div>
-          </div>
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Name</h9>
-                  <input type="text" class="form-control" placeholder="Nomit" value="" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Business Type</h9>
-                  <input type="text" class="form-control" placeholder="Australian non-profit Association" value=""
-                    required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">ABN</h9>
-                  <input type="text" class="form-control" placeholder="Last name" value="92 106 088 918" required>
-                </div>
-              </div>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Email Address</h9>
-                  <input type="text" class="form-control" placeholder="Email" value="info@nomit.com.au" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Phone Number</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="0481 983 702 " required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Website</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="https://www.leonardocompany.com"
-                    required>
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">Address</h9>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="1/509 St Kilda Rd" required>
-                </div>
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">City</h9>
-                  <input type="text" class="form-control" id="inputCity2" placeholder="Melbourne" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">State</h9>
-                  <input type="text" class="form-control" id="validationCustom05" placeholder="VIC" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">Zip</h9>
-                  <input type="text" class="form-control" id="inputZip2" placeholder="3004" required>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 profile-form-row">
-                  <h9 class="">Description</h9>
-                  <textarea id="description" class="company-description" name="story" rows="5">Nomit is an Australian non-profit organisation supported, amongst others, by the Italian Consulate in Melbourne and the Victorian Multicultural Commission.</textarea>
-                </div>
-              </div>
-              <div class="row ">
-
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Twitter</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/nomitnetwork">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Facebook</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/nomitnetwork">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Instagram</h9>
-                  <input type="text" class="form-control" placeholder="Instagram" value="">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Linkedin</h9>
-                  <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/nomit/about/">
-                </div>
-              </div>
-              <button type="button" class="btn btn-gradient ">UPDATE</button>
-              <button type="button" class="btn btn-border ">CANCEL</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- #referee profile ========= -->
-      <div class="masonry-item w-100 visible-nomit" data-ng-show="'profile.role' =='nomit'">
-        <div class="card item-box">
-          <div class="user-data-title">
-            <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
-            <div class="testo">
-              <h5>Jobwatch</h5> EMPLOYMENT RIGHTS LEGAL CENTRE
-            </div>
-          </div>
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Name</h9>
-                  <input type="text" class="form-control" placeholder="Jobwatch" value="" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Business Type</h9>
-                  <input type="text" class="form-control" placeholder="Employment rights legal centre" value=""
-                    required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">ABN</h9>
-                  <input type="text" class="form-control" placeholder="Last name" value="92 106 088 918" required>
-                </div>
-              </div>
-
-
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Email Address</h9>
-                  <input type="text" class="form-control" placeholder="Email" value="info@test.com.au" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Phone Number</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="9662 1933 " required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Website</h9>
-                  <input type="text" class="form-control" placeholder="Phone" value="http://jobwatch.org.au/" required>
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">Address</h9>
-                  <input type="text" class="form-control" id="inputAddress3" placeholder="1/509 St Kilda Rd" required>
-                </div>
-                <div class="form-group col-md-4 profile-form-row">
-                  <h9 class="">City</h9>
-                  <input type="text" class="form-control" id="inputCity3" placeholder="Melbourne" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">State</h9>
-                  <input type="text" class="form-control" id="validationCustom06" placeholder="VIC" required>
-                </div>
-                <div class="form-group col-md-2 profile-form-row">
-                  <h9 class="">Zip</h9>
-                  <input type="text" class="form-control" id="inputZip3" placeholder="3004" required>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 profile-form-row">
-                  <h9 class="">Description</h9>
-                  <textarea id="description" class="company-description" name="story" rows="5">Nomit is an Australian non-profit organisation supported, amongst others, by the Italian Consulate in Melbourne and the Victorian Multicultural Commission.</textarea>
-                </div>
-              </div>
-              <div class="row ">
-
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Twitter</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://twitter.com/nomitnetwork">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Facebook</h9>
-                  <input type="text" class="form-control" placeholder="Facebook" value="https://www.facebook.com/nomitnetwork">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Instagram</h9>
-                  <input type="text" class="form-control" placeholder="Instagram" value="">
-                </div>
-                <div class="col-3 profile-form-row">
-                  <h9 class="">Linkedin</h9>
-                  <input type="text" class="form-control" placeholder="Linkedin" value="https://www.linkedin.com/company/nomit/about/">
-                </div>
-              </div>
-              <button type="button" class="btn btn-gradient ">UPDATE</button>
-
-              <button type="button" class="btn btn-border ">CANCEL</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- #change password ========= -->
-      <div class="masonry-item  w-100">
-
-        <div class="card item-box">
-
-          <div class="card-body-profile">
-            <div class="profile-forms">
-              <h5 class="card-title d-flex text-black-bold"> Change Password</h5>
-              <div class="row ">
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Current Password</h9>
-                  <input type="password" class="form-control" placeholder="Password" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">New Password</h9>
-                  <input type="password" class="form-control" placeholder="New Password" required>
-                </div>
-                <div class="col-4 profile-form-row">
-                  <h9 class="">Confirm New Password</h9>
-                  <input type="password" class="form-control" placeholder="New Password" required>
-
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-gradient ">UPDATE</button>
-              <button type="button" class="btn btn-border ">CANCEL</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+      <!--content container-->
     </div>
-    <!--content container-->
-  </div>
-  <!--page container-->
-
-</main>
+    <!--page container-->
+  </main>
+  <nw-footer></nw-footer>
+</div>
