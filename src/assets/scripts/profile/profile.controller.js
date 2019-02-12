@@ -1,6 +1,6 @@
 import visas from './visa.type';
 /** @ngInject */
-const ProfileController = ($scope, ProfileService, UserService) => {
+const ProfileController = ($scope, $timeout, ProfileService, UserService) => {
   // Load visas in the scope
   $scope.visas = visas;
   
@@ -24,12 +24,32 @@ const ProfileController = ($scope, ProfileService, UserService) => {
      * 
      * v1.0 non selective update
      */
-    $scope.updateProfile = () => {
+    $scope.updateProfile = (ProfileForm) => {
+      // Trigger validation flag.
+      $scope.submitted = true;
+
+      // If form is invalid, return and show validation errors.
+      if (ProfileForm.$invalid) {
+        return;
+      }
+
+
       ProfileService.updateUserProfile($scope.user.id, $scope.userUpdated)
         .then((result)=>{
           console.log(result);
+          $scope.messages = 'Your profile has been updated!';
         })
-        .catch((err)=> {console.log(err)})
+        .catch((err)=> {
+          console.log(err);
+          $scope.messages = 'Oops, we received your request, but there was an error processing it.';
+        })
+        .finally(() => { 
+          // Hide status messages after three seconds.
+          $timeout(() => {
+            $scope.messages = null;
+          }, 3000);
+        });
+        
     }
   });
 
