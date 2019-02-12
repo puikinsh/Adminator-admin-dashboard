@@ -33,6 +33,7 @@ const ProfileController = ($scope, $timeout, ProfileService, UserService) => {
         return;
       }
 
+      $scope.processing = "Sending the data..."
 
       ProfileService.updateUserProfile($scope.user.id, $scope.userUpdated)
         .then((result)=>{
@@ -44,10 +45,11 @@ const ProfileController = ($scope, $timeout, ProfileService, UserService) => {
           $scope.messages = 'Oops, we received your request, but there was an error processing it.';
         })
         .finally(() => { 
-          // Hide status messages after three seconds.
+          $scope.processing = null;
+          // Hide status messages after five seconds.
           $timeout(() => {
             $scope.messages = null;
-          }, 3000);
+          }, 5000);
         });
         
     }

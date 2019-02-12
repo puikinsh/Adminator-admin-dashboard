@@ -30,6 +30,7 @@
           <div class="card-body-profile">
             <div class="profile-forms">
               <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+              <div id="processing" class="alert alert-info" data-ng-show="processing" data-ng-bind="processing"></div>
               <h5 class="card-title d-flex text-black-bold"> Your Profile</h5>
               <form name="ProfileForm" role="form" novalidate>
                 <div class="row ">
@@ -417,7 +418,7 @@
 
                 <div class="row ">
                   <div class="col-6 profile-form-row">
-                    <button type="submit" data-ng-click="updateProfile(ProfileForm)" class="btn btn-gradient">UPDATE</button>
+                    <button type="submit" data-ng-disabled="processing" data-ng-click="updateProfile(ProfileForm)" class="btn btn-gradient">UPDATE</button>
                     <button type="reset" class="btn btn-border">CLEAR</button>
                   </div>
                   <div class="col-6 profile-form-row">
