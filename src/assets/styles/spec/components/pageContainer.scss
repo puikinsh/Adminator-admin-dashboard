@@ -38,7 +38,7 @@
 
 .main-content {
   padding: 85px 20px 20px;
-  min-height: calc(100vh - 61px);
+  min-height: calc(100vh - 150px );
 
   @include to($breakpoint-md) {
     padding: 85px 5px 5px;

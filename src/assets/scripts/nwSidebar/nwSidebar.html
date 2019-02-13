@@ -238,7 +238,9 @@
         </a>
       </li>
       <!-- Admin, Referee and Nomit see everything -->
-      <li class="nav-item" ng-show="user.role != 'user'">
+      <!-- <li class="nav-item" ng-show="user.role != 'user'">-->
+      <!-- company can't see users, only the users who applied for its ads-->  
+      <li class="nav-item" ng-show="user.role == 'nomi' || user.role == 'referee' || user.role == 'admin'">
         <a class='sidebar-link' href="#!users">
           <span class="icon-holder">
             <i class="c-white-500 fa fa-users text-white"></i>
