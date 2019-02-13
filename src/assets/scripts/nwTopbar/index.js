@@ -2,8 +2,8 @@ import angular from 'angular';
 import TopbarController from './topbar.controller';
 
 angular.module('NomitWisp-Topbar', [])
-    .controller(TopbarController.name, TopbarController)
-    .directive('nwTopbar', nwTopbar);
+    .directive('nwTopbar', nwTopbar)
+    .controller(TopbarController.name, TopbarController);
 
 /** @ngInject */
 function nwTopbar(){
