@@ -9,6 +9,7 @@
 // + @Others
 // + @Header Themes
 // + @Social Networks Colors
+// + @Nomit WISP Color System
 
 // ---------------------------------------------------------
 // @Greyscale Colors
@@ -67,6 +68,9 @@ $default-text-color   : #72777a;
 $default-warning      : #fc0;
 $default-white        : #fff;
 
+$default-dark-wisp    : #501db9;
+$default-light-wisp   : #ee38a4;
+
 // ---------------------------------------------------------
 // @Inverted Colors
 // ---------------------------------------------------------
@@ -83,8 +87,8 @@ $inverse-warning      : lighten($default-warning, 45%);
 
 $border-color         : #e6ecf5;
 $collapsed-size       : 70px;
-$header-height        : 65px;
-$offscreen-size       : 280px;
+$header-height        : 80px;
+$offscreen-size       : 240px;
 $side-nav-dark        : #313644;
 $side-nav-dark-border : rgba(120, 130, 140, 0.3);
 $side-nav-dark-font   : #99abb4;
@@ -98,3 +102,17 @@ $theme-dark           : lighten($side-nav-dark, 10%);
 $theme-info           : $default-info;
 $theme-primary        : $default-primary;
 $theme-success        : desaturate($default-success, 5%);
+
+// ---------------------------------------------------------
+// @Nomit WISP Color System
+// ---------------------------------------------------------
+
+$nomit-purple         : #8B00B1;
+$nomit-pink           : #EE38A4;
+$nomit-dark-purple    : #501DB9;
+$nomit-gradient       : linear-gradient(-45deg, #501DB9, #EE38A4);
+$grey-dark            : #454545;
+$grey-light           : #888888;
+$bkg                  : #F4F4F4;
+
+

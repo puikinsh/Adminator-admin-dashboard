@@ -1,0 +1,97 @@
+/* FONT SETTINGS */
+body{
+  background-color: #F4F4F4;
+  }
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #454545;
+    font-size: 14px;
+}
+
+h1{
+  font-family: 'Fredoka One', cursive;
+  color: #501D89;
+  font-size: 28px;
+}
+
+h2{
+  font-family: 'Fredoka One', cursive;
+  color: #454545;
+  font-size: 24px;
+}
+
+h3{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #454545;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+h5{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #454545;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+h6{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #888888;
+}
+
+/* BUTTONS */
+.btn span{
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.btn-border span {
+  color: #501DB9;
+  font-weight: bold;
+	align-items: center;
+	background: #F4F4F4;
+	border-radius: 23px;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	transition: background .5s ease;
+	width: 100%;
+}
+
+.btn-border:hover {
+	color: #FFFFFF;
+}
+
+.btn-border:hover span {
+  background: transparent;
+  color: #FFFFFF;
+}
+
+.btn, .btn-border {
+  background-image: linear-gradient(-45deg, #501DB9 0%, #EE38A4 100%);
+	border-radius: 23px;
+  box-sizing: border-box;
+	height: 40px;
+	margin: 0 auto;
+	padding: 4px;
+	position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* REPORTS PAGE */
+.table .thead-purple-border th{
+  border-top: transparent;
+  border-bottom-color: #8B00B1;
+  border-width: 3px;
+} 
+
+.table {
+  background-color: #FFFFFF;
+  }
+
+

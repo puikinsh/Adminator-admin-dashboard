@@ -1,8 +1,8 @@
 import * as $ from 'jquery';
 import Masonry from 'masonry-layout';
 
-export default (function () {
-  window.addEventListener('load', () => {
+const masonry = function () {
+  $(document).ready( () => {
     if ($('.masonry').length > 0) {
       new Masonry('.masonry', {
         itemSelector: '.masonry-item',
@@ -11,4 +11,6 @@ export default (function () {
       });
     }
   });
-}());
+}
+
+export default masonry;

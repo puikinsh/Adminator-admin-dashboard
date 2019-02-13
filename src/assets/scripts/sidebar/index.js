@@ -1,6 +1,9 @@
 import * as $ from 'jquery';
 
-export default (function () {
+const functionSidebar = () => {
+
+
+
   // Sidebar links
   $('.sidebar .sidebar-menu li a').on('click', function () {
     const $this = $(this);
@@ -42,20 +45,6 @@ export default (function () {
     }
   });
 
-  // Sidebar Activity Class
-  const sidebarLinks = $('.sidebar').find('.sidebar-link');
-
-  sidebarLinks
-    .each((index, el) => {
-      $(el).removeClass('active');
-    })
-    .filter(function () {
-      const href = $(this).attr('href');
-      const pattern = href[0] === '/' ? href.substr(1) : href;
-      return pattern === (window.location.pathname).substr(1);
-    })
-    .addClass('active');
-
   // ٍSidebar Toggle
   $('.sidebar-toggle').on('click', e => {
     $('.app').toggleClass('is-collapsed');
@@ -73,4 +62,6 @@ export default (function () {
       window.dispatchEvent(window.EVENT);
     }, 300);
   });
-}());
+};
+
+export default functionSidebar;

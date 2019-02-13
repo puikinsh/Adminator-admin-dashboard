@@ -15,12 +15,13 @@ const
  */
 
 const devServer = {
-  contentBase        : manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
+  contentBase        : manifest.paths.src,
   historyApiFallback : true,
-  port               : manifest.IS_PRODUCTION ? 3001 : 3000,
-  compress           : manifest.IS_PRODUCTION,
-  inline             : !manifest.IS_PRODUCTION,
-  watchContentBase: true,
+  port               : process.env.PORT || 3000,
+  compress           : false,
+  inline             : true,
+  watchContentBase   : !manifest.IS_PRODUCTION,
+  open               : false,
   hot                : !manifest.IS_PRODUCTION,
   host               : '0.0.0.0',
   disableHostCheck   : true, // [1]
