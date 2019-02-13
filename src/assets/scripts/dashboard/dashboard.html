@@ -203,33 +203,34 @@
           <div class="row gap-30">
 
             <!-- # ads ==================== -->
-            <div class='col-md-4  col-sm-12' ng-repeat="ad in ads">
-                <div class="card item-box">
-                  <img class="card-img-top" src="assets/static/images/ads-office-02.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
-                      <h4> {{ ad.title }} </h4>
-                      <!-- ============== favourites ============== 
-                      <div>
-                        <a class='' href="" ng-show="user.role =='user'">
-                          <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
-                        </a>
-                      </div>
-                    -->
+            <div class='col-md-4  col-sm-12' ng-repeat="ad in ads | orderBy:'-matches'">
+              <div class="card item-box">
+                <img class="card-img-top" src="assets/static/images/ads-office-02.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
+                    <h4> {{ ad.content.title }} </h4>
+                     <!-- ============== favourites ============== 
+                    <div>
+                      <a class='' href="" ng-show="user.role =='user'">
+                        <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
+                      </a>
                     </div>
-                    <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
-                    <!-- ============== star-rating ============== 
-                    <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
                     -->
-                    <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
                   </div>
-                  <a href="/#!/ads/{{ad._id}}">
-                    <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                      VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
-                    </div>
-                  </a>
+                  <p class="card-text mx-2"><small class="text-muted">{{ ad.content.description }}</small></p>
+                  <!-- ============== star rating ============== 
+                  <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
+                  -->
+                  <p class="card-text mx-2 mb-2"> {{ ad.content.companyintro }} </p>
                 </div>
+                <a href="/#!/ads/{{ad.content._id}}">
+                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                    VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
+                  </div>
+                </a>
               </div>
+            </div>
+            
 
           </div>
 
@@ -238,44 +239,11 @@
 
 
         <!-- #USERS ===== -->
-        <div class="masonry-item col-12 visible-user" ng-show="user.role == 'user'">
-          <!-- #suggested ads ==================== -->
-          <div class="row gap-30">
-
-            <!-- # ads ==================== -->
-            <div class='col-md-4  col-sm-12' ng-repeat="ad in ads">
-                <div class="card item-box">
-                  <img class="card-img-top" src="assets/static/images/ads-office-02.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
-                      <h4> {{ ad.title }} </h4>
-                      <!-- # favourites ==================== 
-                      <div>
-                        <a class='' href="" ng-show="user.role =='user'">
-                          <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
-                        </a>
-                      </div>
-                      -->
-                    </div>
-                    <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
-                    <!-- # ads ==================== 
-                    <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
-                    -->
-                    <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
-                  </div>
-                  <a href="/#!/ads/{{ad._id}}">
-                    <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                      VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-          </div>
+        
 
 
 
-        </div>
+
       </div>
     </div>
   </main>
