@@ -11,54 +11,90 @@
         </div>
       </div>
 
-      <div class=" gap-30 masonry pos-r ">
-        <!-- #content container ===== -->
-        <div class="masonry-sizer col-12 "></div>
+      <div class=" gap-15 row pos-r ">
+        <div class="col-6">
+          <!-- #content container ===== -->
 
-        <!-- ### Job Details Card ### -->
-        <div class="masonry-item  w-100">
-          <div class="card">
-            <div class="row">
-              <div class="col-2 mt-4 ">
-                <img class="img-fluid ml-4 mb-4 companies-update-img avatar rounded-circle" id="ad-details-avatar" alt="company"
-                  ng-src={{avatar.element.src}} />
+          <!-- ### Job Details Card ### -->
+          <!-- <div class="masonry-item  w-50 "> -->
+          <div class=" " style="margin-bottom:15px">
+            <div class="item-box ">
+              <div class="card ">
+                <div class="row">
+                  <div class="col-2 mt-4 ">
+                    <img class="img-fluid ml-4 mb-4 companies-update-img avatar rounded-circle" id="ad-details-avatar" alt="company"
+                      ng-src={{avatar.element.src}} />
+                  </div>
+                  <div class="col-10 card-body">
+                    <h2 class="card-title mt-4 mr-4">{{ ad.title }}</h2>
+                    <h6 class="card-title mr-4">{{ ad.companyname }}</h6>
+                  </div>
+                </div>
               </div>
-              <div class="col-10 card-body">
-                <h2 class="card-title mt-4 mr-4">{{ ad.title }}</h2>
-                <h6 class="card-title mr-4">{{ ad.companyname }}</h6>
+              <div class="card ">
+                <div class="card-body">
+                  {{ ad.description }}
+                </div>
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              {{ ad.description }}
+
+          <!-- ### Other Info Card ### -->
+          <div class=" " style="margin-bottom:15px">
+            <div class="card item-box">
+              <div class="card-body">
+                <h5 class="card-title mt-4 ml-4 mr-4">Location:</h5>
+                <p class="card-text ml-4 mr-4">{{ad.location}}</p>
+                <h5 class="card-title mt-4 ml-4 mr-4">Application close:</h5>
+                <p class="card-text ml-4 mr-4">{{ad.expiration-date}}</p>
+
+                <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
+                <div class="ml-4 mb-3" ng-repeat="skill in ad.skills">
+                  <span class="mr-2 mb-2 btn btn-skills">{{ skill }}</span>
+                </div>
+                <p class="card-text  ml-4 my-4"></p><small class="text-muted">{{ daysAgo(ad.timestamp) }}</small></p>
+              </div>
             </div>
+          </div>
+
+          <!-- ### Buttons ### -->
+          <div class=" m-auto btn-centered-container visible-user" ng-show="profile.role =='user'">
+            <button type="button" href="#" class="col-5 mr-1 btn btn-gradient btn-centered">Apply Now</button>
+            <button type="button" href="#" class="col-5 ml-1 btn btn-border  btn-centered">Save</button>
+
           </div>
         </div>
-
-        <!-- ### Other Info Card ### -->
-        <div class="masonry-item  w-100">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title mt-4 ml-4 mr-4">Location:</h5>
-              <p class="card-text ml-4 mr-4">{{ad.location}}</p>
-              <h5 class="card-title mt-4 ml-4 mr-4">Application close:</h5>
-              <p class="card-text ml-4 mr-4">{{ad.expiration-date}}</p>
-
-              <h5 class="card-title mt-4 ml-4 mr-4">Skills:</h5>
-              <div class="ml-4 mb-3" ng-repeat="skill in ad.skills">
-                <span class="mr-2 mb-2 btn btn-skills">{{ skill }}</span>
-              </div>
-              <p class="card-text  ml-4 my-4"></p><small class="text-muted">{{ daysAgo(ad.timestamp) }}</small></p>
-            </div>
+        <div class="col-6">
+          <!-- ### Users cards ### only for the company whoi's published that ad, and nomit, referee and admin -->
+          <div class="  " style="margin-bottom:15px" ng-show="profile.role !='user'" ng-repeat="u in users">
+              <div class="card item-box layer w-100">
+                  <div class="user-data-title container">
+                    <img id="user{{$index}}" class="user-card-img rounded-circle" ng-src="{{avatar_user($index)}}" alt="" />
+                    <div class="user-card-col">
+                      <div class="user-card-title">{{u.personal.first_name}} {{u.personal.last_name}}</div>
+                      <div class=" text-size-11">{{u.personal.city}}</div>
+                      <div class=" text-size-11">{{u.personal.phone}}</div>
+                      <a href="#!users/{{u._id}}" id="user-action-fill">view user profile</a>
+                      <a href="#" class="visible-nomit visible-referee visible-admin" ng-show="user.role =='nomit' || user.role =='referee' || user.role =='admin'"
+                        id="user-action-border" data-toggle="tooltip" data-placement="bottom" title="User will be unable to log in to WISP">
+                        ban user</a>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="card-body-users row">
+                      <div class="col-4"></div>
+                      <div class="users-icons col-8">
+                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-instagram"></i></a>
+                        <a href=""><i class="fa fa-github"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
           </div>
-        </div>
-
-        <!-- ### Buttons ### -->
-        <div class="masonry-item  w-50 m-auto btn-centered-container visible-user" ng-show="profile.role =='user'">
-          <button type="button" href="#" class="col-5 mr-1 btn btn-gradient btn-centered">Apply Now</button>
-          <button type="button" href="#" class="col-5 ml-1 btn btn-border  btn-centered">Save</button>
-
         </div>
       </div>
 
