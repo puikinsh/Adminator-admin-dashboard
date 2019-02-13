@@ -15,14 +15,14 @@
         <div class="masonry-sizer col-md-6"></div>
 
         <!-- ============== ADS USERS ============== -->
-        <div class="masonry-item  w-100" ng-show="user.role =='user'">
+        <div class="masonry-item  w-100" ng-show="user.role == 'user'">
           <!-- #First line ========= -->
           <div class="row gap-30">
 
             <!-- ============== Job Ad ============== -->
             <div class='col-md-4  col-sm-12' ng-repeat="ad in ads | orderBy:'-matches'">
               <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
+                <img class="card-img-top" src="assets/static/images/ads-office-02.jpg" alt="Card image cap">
                 <div class="card-body">
                   <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
                     <h4> {{ ad.content.title }} </h4>
