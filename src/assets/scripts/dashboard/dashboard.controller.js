@@ -4,25 +4,22 @@ import pieChart from "../charts/easyPieChart";
 
 /** @ngInject */
 const DashboardController = ($scope, AdsService, UserService) => {
-    $scope.$on('loadUserSuccess', function(event, user) {
+    $scope.$on('loadUserSuccess', async function(event, user) {
         $scope.user = user;
-    }); 
 
-    //link al ad-detail
-    $scope.$on('loadUserSuccess', async (event, user) => {
-        await AdsService.fetchAdsService()
-          .then( (result) => { $scope.ads = result; })
-          .catch( (error) => { console.log(error); })
-    });
-
-
-
+        // load ads
+        await AdsService.fetchAdsService(user)
+        .then( (result) => { $scope.ads = result; })
+        .catch( (error) => { console.log(error); })
         
-    // tutte le funzioni del controller
+        
+        // tutte le funzioni del controller
+        masonry();
+        chart();
+        pieChart();
+
+    });  
     UserService.loadUser();
-    masonry();
-    chart();
-    pieChart();
 }
 
 export default DashboardController;
