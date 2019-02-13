@@ -25,14 +25,18 @@
                 <div class="card-body">
                   <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
                     <h4> {{ ad.title }} </h4>
+                     <!-- ============== favourites ============== 
                     <div>
                       <a class='' href="" ng-show="user.role =='user'">
                         <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
                       </a>
                     </div>
+                    -->
                   </div>
                   <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
+                  <!-- ============== star rating ============== 
                   <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
+                  -->
                   <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
                 </div>
                 <a href="/#!/ads/{{ad._id}}">
