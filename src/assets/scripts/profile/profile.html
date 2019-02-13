@@ -27,6 +27,8 @@
               <img class="user-update-img" src="assets/static/images/user-update.png" alt="">
               <div class="testo">
                 <h5>{{ profile.name }}</h5>
+                <div class="col-11 p-0"><textarea name="bio" rows="3"  >{{ profile.personal.bio }}</textarea></div>
+                
               </div>
             </div>
             <div class="card-body-profile">
@@ -387,13 +389,13 @@
 
                   <div class="row ">
                     <div class="col-4 profile-form-row">
-                      <h5 class="card-title mt-4 ml-4 mr-4">Main Classification</h5>
+                      <h9 class="card-title mt-4  mr-4">Main Classification</h9>
                       <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.main_classification.$error.required">Required!</span>
                       <input type="text" name="main_classification" class="form-control" data-ng-model="profile.personal.main_classification"
                         required>
                     </div>
                     <div class="col-4 profile-form-row">
-                      <h5 class="card-title mt-4 ml-4 mr-4">Skills</h5>
+                      <h9 class="card-title mt-4mr-4">Skills</h9>
                       <span class="badge badge-danger" data-ng-show="submitted && ProfileForm.skills.$error.required">Required!</span>
                       <input type="text" name="skills" class="form-control" placeholder="Professions" data-ng-model="profile.personal.skills"
                         required>
