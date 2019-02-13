@@ -58,7 +58,7 @@
           </div>
 
           <!-- ### Buttons ### -->
-          <div class=" m-auto btn-centered-container visible-user" ng-show="profile.role =='user'">
+          <div class=" m-auto btn-centered-container visible-user" ng-show="user.role == 'user'">
             <button type="button" href="#" class="col-5 mr-1 btn btn-gradient btn-centered">Apply Now</button>
             <button type="button" href="#" class="col-5 ml-1 btn btn-border  btn-centered">Save</button>
 
@@ -66,7 +66,7 @@
         </div>
         <div class="col-6">
           <!-- ### Users cards ### only for the company whoi's published that ad, and nomit, referee and admin -->
-          <div class="  " style="margin-bottom:15px" ng-show="profile.role !='user'" ng-repeat="u in users">
+          <div class="  " style="margin-bottom:15px" ng-show="user.role != 'user'" ng-repeat="u in users">
               <div class="card item-box layer w-100">
                   <div class="user-data-title container">
                     <img id="user{{$index}}" class="user-card-img rounded-circle" ng-src="{{avatar_user($index)}}" alt="" />
