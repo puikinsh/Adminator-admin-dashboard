@@ -202,65 +202,34 @@
           <!-- #syour ads ==================== -->
           <div class="row gap-30">
 
-            <!-- # ad n 1 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
+            <!-- # ads ==================== -->
+            <div class='col-md-4  col-sm-12' ng-repeat="ad in ads">
+                <div class="card item-box">
+                  <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
+                      <h4> {{ ad.title }} </h4>
+                      <div>
+                        <a class='' href="" ng-show="user.role =='user'">
+                          <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
+                        </a>
+                      </div>
+                    </div>
+                    <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
+                    <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
+                    <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
                   </div>
-                </a>
+                  <a href="/#!/ads/{{ad._id}}">
+                    <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                      VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <!-- # ad n 2 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- # ad n 3 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
+
+
         </div>
 
 
@@ -269,74 +238,35 @@
           <!-- #suggested ads ==================== -->
           <div class="row gap-30">
 
-            <!-- # ad n 1 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                    <div>
-                      <a class='' href=""> <span class="icon-holder" style="color:#EE38A4"><i class="fa fa-heart"></i></span></a>
+            <!-- # ads ==================== -->
+            <div class='col-md-4  col-sm-12' ng-repeat="ad in ads">
+                <div class="card item-box">
+                  <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <div class="card-title d-flex  mx-2" style="justify-content:space-between; margin-bottom:0px; text-align: left;">
+                      <h4> {{ ad.title }} </h4>
+                      <div>
+                        <a class='' href="" ng-show="user.role =='user'">
+                          <span class="icon-holder"><i class="fa fa-heart-o font-weight-bold mt-2" style="color:#EE38A4; font-size: 22px;"></i></span>
+                        </a>
+                      </div>
                     </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
+                    <p class="card-text mx-2"><small class="text-muted">{{ ad.description }}</small></p>
+                    <div class="star-rating-display ml-2 mb-2" data-rating="2"><span class="is-vishidden">TBD</span></div>
+                    <p class="card-text mx-2 mb-2"> {{ ad.companyintro }} </p>
                   </div>
-                </a>
+                  <a href="/#!/ads/{{ad._id}}">
+                    <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
+                      VIEW MORE <i class=" fa fa-chevron-right ml-1" style="color:#fff; font-size: 11px; font-weight: bolder;"></i>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <!-- # ad n 2 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                    <div>
-                      <a class='' href=""> <span class="icon-holder" style="color:#EE38A4"><i class="fa fa-heart"></i></span></a>
-                    </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- # ad n 3 ==================== -->
-            <div class='col-md-4'>
-              <div class="card item-box">
-                <img class="card-img-top" src="assets/static/images/bg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title d-flex" style="justify-content:space-between; margin-bottom:1px; font-weight: bolder; text-align: left;">
-                    <div>Adv title </div>
-                    <div>
-                      <a class='' href=""> <span class="icon-holder" style="color:#EE38A4"><i class="fa fa-heart"></i></span></a>
-                    </div>
-                  </h5>
-                  <h5 class="card-title" style="font-size:11px; margin-top: 1px;">Adv title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <a href="ads_1.html">
-                  <div class="card-body view-more-btn" style="color:#fff; background-color:#EE38A4;  font-weight: bolder; text-align: center; margin: 0px">
-                    VIEW MORE <i class=" ti-angle-right" style="color:#fff;  font-weight: bolder;"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
+
+
+
         </div>
       </div>
     </div>
