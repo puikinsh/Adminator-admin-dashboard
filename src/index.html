@@ -76,9 +76,9 @@
     </div>
 
     <script>
-      window.addEventListener('load', () => {
+      window.addEventListener('load', function load() {
         const loader = document.getElementById('loader');
-        setTimeout(() => {
+        setTimeout(function() {
           loader.classList.add('fadeOut');
         }, 300);
       });
