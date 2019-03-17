@@ -49,6 +49,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
     "bootstrap-datepicker": "^1.7.1",
+    "brand-colors": "^2.0.1",
     "chart.js": "^2.7.1",
     "datatables": "^1.10.13",
     "easy-pie-chart": "^2.1.7",
