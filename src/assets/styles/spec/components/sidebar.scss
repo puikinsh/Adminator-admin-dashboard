@@ -188,7 +188,7 @@
   }
 
   .sidebar-link {
-    &.active::before {
+    &.actived::before {
       background: $md-blue-500;
       border-radius: 50%;
       content: '';
@@ -286,7 +286,7 @@
               }
             }
 
-            &.active {
+            &.actived {
               a {
                 color: $default-dark;
               }
