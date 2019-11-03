@@ -2,12 +2,16 @@ port module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser exposing (Document, UrlRequest(..))
 import Browser.Navigation as Nav exposing (Key)
-import Html exposing (Html, a, br, div, h1, img, text)
+import Components.Footer as Footer
+import Components.Header as Header
+import Components.Sidebar as Sidebar
+import Html exposing (Html, a, br, div, h1, img, main_, text)
 import Html.Attributes exposing (class, href, id, src)
 import Html.Events exposing (onClick)
 import Pages.Counselors as Counselors
+import Pages.Dashboard as Dashboard
 import Pages.Login as LoginPage
-import Session exposing (User)
+import Session exposing (User, anonUser)
 import Url exposing (Url)
 import Url.Parser as Parser exposing (Parser, map, oneOf, s, top)
 
@@ -62,6 +66,7 @@ type Msg
     | ChangedUrl Url
     | CounselorsMsg Counselors.Msg
     | LoginPageMsg LoginPage.Msg
+    | DashboardMsg Dashboard.Msg
     | Logout
     | NoOp
 
@@ -113,7 +118,7 @@ view model =
                     Html.map CounselorsMsg Counselors.view
 
                 Dashboard ->
-                    mainHtml
+                    Html.map DashboardMsg Dashboard.view
 
                 LoginPage ->
                     Html.map LoginPageMsg LoginPage.view
@@ -121,9 +126,18 @@ view model =
     { title = "InteroCare Admin"
     , body =
         [ div []
-            [ img [ src "/ALFBLogo.png" ] []
-            , div [ id "firebaseui-auth-container", class "hidden" ] []
-            , content
+            [ Sidebar.view
+            , div [ class "page-container" ]
+                [ Header.view (Maybe.withDefault anonUser model.user)
+                , main_
+                    [ class "main-content bgc-grey-100" ]
+                    [ div
+                        [ id "mainContent" ]
+                        [ content
+                        , Footer.view
+                        ]
+                    ]
+                ]
             ]
         ]
     }

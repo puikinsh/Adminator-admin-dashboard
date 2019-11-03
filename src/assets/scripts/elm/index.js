@@ -16,6 +16,7 @@ export default (function () {
             Promise.all([user.getIdToken(), user.getIdTokenResult()]).then(([accessToken, idToken]) => {
                 const app = Elm.Main.init({
                     flags: {
+                        name: user.displayName,
                         email: user.email,
                         photoUrl: user.photoURL,
                         orgId: idToken.claims.orgId || null,
