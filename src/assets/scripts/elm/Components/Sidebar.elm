@@ -1,4 +1,4 @@
-module Components.Sidebar exposing (view)
+port module Components.Sidebar exposing (view, initSidebar)
 
 import Html exposing (Html, a, div, h5, i, img, li, span, text, ul)
 import Html.Attributes exposing (class, href, src, alt)
@@ -118,7 +118,7 @@ view =
                         ]
                     ]
                 , li [ class "nav-item dropdown" ]
-                    [ a [ class "dropdown-toggle", href "javascript:void(0);" ]
+                    [ a [ class "dropdown-toggle", href "" ]
                         [ span [ class "icon-holder" ]
                             [ i [ class "c-orange-500 ti-layout-list-thumb" ]
                                 []
@@ -142,7 +142,7 @@ view =
                         ]
                     ]
                 , li [ class "nav-item dropdown" ]
-                    [ a [ class "dropdown-toggle", href "javascript:void(0);" ]
+                    [ a [ class "dropdown-toggle", href "" ]
                         [ span [ class "icon-holder" ]
                             [ i [ class "c-purple-500 ti-map" ]
                                 []
@@ -166,7 +166,7 @@ view =
                         ]
                     ]
                 , li [ class "nav-item dropdown" ]
-                    [ a [ class "dropdown-toggle", href "javascript:void(0);" ]
+                    [ a [ class "dropdown-toggle", href "" ]
                         [ span [ class "icon-holder" ]
                             [ i [ class "c-red-500 ti-files" ]
                                 []
@@ -202,7 +202,7 @@ view =
                         ]
                     ]
                 , li [ class "nav-item dropdown" ]
-                    [ a [ class "dropdown-toggle", href "javascript:void(0);" ]
+                    [ a [ class "dropdown-toggle", href "" ]
                         [ span [ class "icon-holder" ]
                             [ i [ class "c-teal-500 ti-view-list-alt" ]
                                 []
@@ -216,13 +216,13 @@ view =
                         ]
                     , ul [ class "dropdown-menu" ]
                         [ li [ class "nav-item dropdown" ]
-                            [ a [ href "javascript:void(0);" ]
+                            [ a [ href "" ]
                                 [ span []
                                     [ text "Menu Item" ]
                                 ]
                             ]
                         , li [ class "nav-item dropdown" ]
-                            [ a [ href "javascript:void(0);" ]
+                            [ a [ href "" ]
                                 [ span []
                                     [ text "Menu Item" ]
                                 , span [ class "arrow" ]
@@ -232,11 +232,11 @@ view =
                                 ]
                             , ul [ class "dropdown-menu" ]
                                 [ li []
-                                    [ a [ href "javascript:void(0);" ]
+                                    [ a [ href "" ]
                                         [ text "Menu Item" ]
                                     ]
                                 , li []
-                                    [ a [ href "javascript:void(0);" ]
+                                    [ a [ href "" ]
                                         [ text "Menu Item" ]
                                     ]
                                 ]
@@ -246,3 +246,6 @@ view =
                 ]
             ]
         ]
+
+
+port initSidebar : () -> Cmd msg

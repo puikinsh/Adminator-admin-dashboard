@@ -1,4 +1,6 @@
 import { Elm } from './Main.elm';
+import { initSidebar } from '.././sidebar';
+import { initSearch } from '../search';
 
 export default (function () {
     var firebaseConfig = require('./firebaseConfig');
@@ -28,6 +30,14 @@ export default (function () {
                     firebase.auth().signOut().then(() => {
                         window.location.reload();
                     });
+                });
+
+                app.ports.initSidebar.subscribe(() => {
+                    initSidebar();
+                });
+
+                app.ports.initHeader.subscribe(() => {
+                    initSearch();
                 });
             });
         } else {

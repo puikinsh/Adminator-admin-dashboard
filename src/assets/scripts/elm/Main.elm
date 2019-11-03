@@ -3,8 +3,8 @@ port module Main exposing (Model, Msg(..), init, main, update, view)
 import Browser exposing (Document, UrlRequest(..))
 import Browser.Navigation as Nav exposing (Key)
 import Components.Footer as Footer
-import Components.Header as Header
-import Components.Sidebar as Sidebar
+import Components.Header as Header exposing (initHeader)
+import Components.Sidebar as Sidebar exposing (initSidebar)
 import Html exposing (Html, a, br, div, h1, img, main_, text)
 import Html.Attributes exposing (class, href, id, src)
 import Html.Events exposing (onClick)
@@ -36,7 +36,7 @@ init user url key =
       , page = whichPage user url
       , user = user
       }
-    , Cmd.none
+    , Cmd.batch [ initSidebar (), initHeader () ]
     )
 
 

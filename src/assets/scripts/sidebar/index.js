@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 
-export default (function () {
+export function initSidebar() {
   // Sidebar links
   $('.sidebar .sidebar-menu li a').on('click', function () {
     const $this = $(this);
@@ -73,4 +73,4 @@ export default (function () {
       window.dispatchEvent(window.EVENT);
     }, 300);
   });
-}());
+}
