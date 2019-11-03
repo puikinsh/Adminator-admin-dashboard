@@ -1,6 +1,7 @@
 import { Elm } from './Main.elm';
 import { initSidebar } from '.././sidebar';
 import { initSearch } from '../search';
+import { initPopovers } from '../popover';
 
 export default (function () {
     var firebaseConfig = require('./firebaseConfig');
@@ -38,6 +39,7 @@ export default (function () {
 
                 app.ports.initHeader.subscribe(() => {
                     initSearch();
+                    initPopovers();
                 });
             });
         } else {
