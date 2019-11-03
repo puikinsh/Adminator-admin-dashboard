@@ -6,6 +6,7 @@ import Html exposing (Html, a, br, div, h1, img, text)
 import Html.Attributes exposing (class, href, id, src)
 import Html.Events exposing (onClick)
 import Pages.Counselors as Counselors
+import Pages.Login as LoginPage
 import Session exposing (User)
 import Url exposing (Url)
 import Url.Parser as Parser exposing (Parser, map, oneOf, s, top)
@@ -20,14 +21,15 @@ type alias Model =
 
 
 type Page
-    = Dashboard
+    = LoginPage
+    | Dashboard
     | Counselors Counselors.Model
 
 
 init : Maybe User -> Url -> Key -> ( Model, Cmd Msg )
 init user url key =
     ( { navKey = key
-      , page = whichPage url
+      , page = whichPage user url
       , user = user
       }
     , Cmd.none
@@ -42,9 +44,13 @@ routes =
         ]
 
 
-whichPage : Url -> Page
-whichPage url =
-    Maybe.withDefault Dashboard (Parser.parse routes url)
+whichPage : Maybe User -> Url -> Page
+whichPage user url =
+    if user == Nothing then
+        LoginPage
+
+    else
+        Maybe.withDefault Dashboard (Parser.parse routes url)
 
 
 
@@ -55,6 +61,7 @@ type Msg
     = ClickedLink UrlRequest
     | ChangedUrl Url
     | CounselorsMsg Counselors.Msg
+    | LoginPageMsg LoginPage.Msg
     | Logout
     | NoOp
 
@@ -73,7 +80,7 @@ update msg model =
                     ( model, Nav.load href )
 
         ( ChangedUrl url, _ ) ->
-            ( { model | page = whichPage url }, Cmd.none )
+            ( { model | page = whichPage model.user url }, Cmd.none )
 
         ( CounselorsMsg cMsg, Counselors cModel ) ->
             let
@@ -107,6 +114,9 @@ view model =
 
                 Dashboard ->
                     mainHtml
+
+                LoginPage ->
+                    Html.map LoginPageMsg LoginPage.view
     in
     { title = "InteroCare Admin"
     , body =

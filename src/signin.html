@@ -54,18 +54,11 @@
     </style>
   </head>
   <body class="app">
+    <div id="firebaseui-auth-container"></div>
     <div id='loader'>
       <div class="spinner"></div>
     </div>
 
-    <script>
-      window.addEventListener('load', function load() {
-        const loader = document.getElementById('loader');
-        setTimeout(function() {
-          loader.classList.add('fadeOut');
-        }, 300);
-      });
-    </script>
     <div class="peers ai-s fxw-nw h-100vh">
       <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style='background-image: url("assets/static/images/bg.jpg")'>
         <div class="pos-a centerXY">
@@ -103,5 +96,13 @@
         </form>
       </div>
     </div>
+    <script>
+      window.addEventListener('load', function load() {
+        const loader = document.getElementById('loader');
+        setTimeout(function() {
+          loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
   </body>
 </html>
