@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Vector Maps</title>
+    <title>Mapbox GL</title>
     <style>
+      #world-map-marker { position: absolute; top: 13px; left: 29px; bottom: 0; width: 1142px; height: 538px; margin: 0; padding: 0;}
       #loader {
         transition: all 0.3s ease-in-out;
         opacity: 1;
@@ -33,6 +34,19 @@
         border-radius: 100%;
         -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
         animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @media screen and (max-width: 812px) {
+        #world-map-marker {
+           position: absolute;
+           top: 8px;
+           left: 20px;
+           bottom: 0;
+           width: 325px;
+           height: 538px;
+           margin: 0;
+          padding: 0;
+          }
       }
 
       @-webkit-keyframes sk-scaleout {
@@ -218,7 +232,7 @@
                   <a href="google-maps.html">Google Map</a>
                 </li>
                 <li>
-                  <a href="vector-maps.html">Vector Map</a>
+                  <a href="vector-maps.html">Mapbox GL Map</a>
                 </li>
               </ul>
             </li>
@@ -516,11 +530,10 @@
         <main class='main-content bgc-grey-100'>
           <div id='mainContent'>
             <div class="container-fluid">
-              <h4 class="c-grey-900 mT-10 mB-30">Vector Maps</h4>
+              <h4 class="c-grey-900 mT-10 mB-30">Mapbox GL Map</h4>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                    <h6 class="c-grey-900 mB-20">Jquery Vector Maps</h6>
+                  <div class="bgc-white bd bdrs-3 p-20 mB-20" style="height: 580px;">
                     <div id="world-map-marker"></div>
                   </div>
                 </div>

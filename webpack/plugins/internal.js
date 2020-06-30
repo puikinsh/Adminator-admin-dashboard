@@ -47,7 +47,7 @@ plugins.push(
     $: 'jquery',
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
-    Popper: ['popper.js', 'default'],
+    Popper: ['@popperjs/core', 'default'],
   })
 );
 

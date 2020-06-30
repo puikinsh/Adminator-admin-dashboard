@@ -18,7 +18,7 @@ const titles = {
   'signin': 'Signin',
   'signup': 'Signup',
   'ui': 'UI',
-  'vector-maps': 'Vector Maps',
+  'vector-maps': 'Mapbox GL Maps',
   '404': '404',
   '500': '500',
   'basic-table': 'Basic Table',

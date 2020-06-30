@@ -6,6 +6,16 @@
     <title>Dashboard</title>
 
     <style>
+      #world-map-marker {
+         position: absolute;
+         top: 11px;
+         left: 11px;
+         bottom: 0;
+         width: 838px;
+         height: 521px;
+         margin: 0;
+         padding: 0;
+      }
       #loader {
         transition: all 0.3s ease-in-out;
         opacity: 1;
@@ -32,6 +42,20 @@
         border-radius: 100%;
         -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
         animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @media screen and (max-width: 812px) {
+        #world-map-marker {
+          display: none;
+           position: absolute;
+           top: 11px;
+           left: 11px;
+           bottom: 0;
+           width: 400px;
+           height: 70px;
+           margin: 0;
+          padding: 0;
+          }
       }
 
       @-webkit-keyframes sk-scaleout {
@@ -217,7 +241,7 @@
                   <a href="google-maps.html">Google Map</a>
                 </li>
                 <li>
-                  <a href="vector-maps.html">Vector Map</a>
+                  <a href="vector-maps.html">Mapbox GL Map</a>
                 </li>
               </ul>
             </li>
@@ -601,9 +625,6 @@
                   <div class="peers fxw-nw@lg+ ai-s">
                     <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
                       <div class="layers">
-                        <div class="layer w-100 mB-10">
-                          <h6 class="lh-1">Site Visits</h6>
-                        </div>
                         <div class="layer w-100">
                           <div id="world-map-marker"></div>
                         </div>
