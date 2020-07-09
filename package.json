@@ -53,7 +53,7 @@
     "chart.js": "^2.9.2",
     "datatables": "^1.10.13",
     "easy-pie-chart": "^2.1.7",
-    "file-loader": "^1.1.5",
+    "file-loader": "^2.0.0",
     "fullcalendar": "^3.6.2",
     "jquery": "^3.2.1",
     "jquery-sparkline": "^2.4.0",
