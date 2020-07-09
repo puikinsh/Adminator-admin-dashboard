@@ -29,7 +29,7 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-import": "2.22.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "imagemin-webpack-plugin": "^1.6.1",
