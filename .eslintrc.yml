@@ -3,7 +3,7 @@
     airbnb-base
 
   parser:
-    babel-eslint
+    @babel/eslint-parser
 
   settings:
     ecmascript: 7

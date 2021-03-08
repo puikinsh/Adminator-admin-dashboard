@@ -16,7 +16,7 @@
 const
   manifest          = require('../manifest'),
   path              = require('path'),
-  cssNext           = require('postcss-cssnext');
+  cssNext           = require('postcss-preset-env');
 
 
 // ---------------
