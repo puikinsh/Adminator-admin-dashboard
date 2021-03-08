@@ -55,7 +55,7 @@
     "datatables": "^1.10.18",
     "easy-pie-chart": "^2.1.7",
     "file-loader": "^2.0.0",
-    "fullcalendar": "^3.10.0",
+    "fullcalendar": "^5.5.1",
     "jquery": "^3.6.0",
     "jquery-sparkline": "^2.4.0",
     "jvectormap": "^2.0.4",
