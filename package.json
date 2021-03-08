@@ -59,7 +59,7 @@
     "jquery": "^3.6.0",
     "jquery-sparkline": "^2.4.0",
     "jvectormap": "^2.0.4",
-    "load-google-maps-api": "^1.3.3",
+    "load-google-maps-api": "^2.0.2",
     "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "moment": "^2.29.1",
