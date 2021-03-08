@@ -39,7 +39,7 @@
     "postcss-preset-env": "^6.7.0",
     "sass-loader": "^7.3.1",
     "shx": "^0.3.3",
-    "style-loader": "^0.23.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.11.0",
     "stylelint-config-standard": "^20.0.0",
     "webpack": "^3.10.0",
