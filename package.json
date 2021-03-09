@@ -21,7 +21,7 @@
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/runtime": "^7.13.9",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
