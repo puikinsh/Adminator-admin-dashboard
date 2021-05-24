@@ -2,8 +2,7 @@
   extends:
     airbnb-base
 
-  parser:
-    @babel/eslint-parser
+  parser: "@babel/eslint-parser"
 
   settings:
     ecmascript: 7

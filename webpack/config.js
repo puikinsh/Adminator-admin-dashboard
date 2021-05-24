@@ -54,6 +54,7 @@ module.exports = {
   context: path.join(manifest.paths.src, manifest.entries.js),
   watch: !manifest.IS_PRODUCTION,
   entry,
+  mode: manifest.NODE_ENV,
   output: {
     path: manifest.paths.build,
     publicPath: '',
