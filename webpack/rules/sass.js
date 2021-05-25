@@ -28,27 +28,33 @@ const loaders = [
     loader: 'css-loader',
     options: {
       sourceMap : manifest.IS_DEVELOPMENT,
-      minimize  : manifest.IS_PRODUCTION,
+      // minimize  : manifest.IS_PRODUCTION,
     },
   },
   {
     loader: 'postcss-loader',
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
-      plugins: () => [
-        cssNext(),
-      ],
+      postcssOptions: {
+        plugins: [
+          [
+            cssNext(),
+          ],
+        ],
+      },
     },
   },
   {
     loader: 'sass-loader',
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
-      includePaths: [
-        path.join('../../', 'node_modules'),
-        path.join(manifest.paths.src, 'assets', 'styles'),
-        path.join(manifest.paths.src, ''),
-      ],
+      sassOptions: {
+        includePaths: [
+          path.join('../../', 'node_modules'),
+          path.join(manifest.paths.src, 'assets', 'styles'),
+          path.join(manifest.paths.src, ''),
+        ],
+      },
     },
   },
 ];
