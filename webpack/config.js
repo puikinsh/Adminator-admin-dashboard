@@ -50,15 +50,16 @@ const resolve = {
 // -----------------
 
 module.exports = {
-  devtool: manifest.IS_PRODUCTION ? false : 'cheap-eval-source-map',
+  devtool: manifest.IS_PRODUCTION ? false : 'source-map',
   context: path.join(manifest.paths.src, manifest.entries.js),
-  watch: !manifest.IS_PRODUCTION,
+  // watch: !manifest.IS_PRODUCTION,
   entry,
-  output: {
-    path: manifest.paths.build,
-    publicPath: '',
-    filename: manifest.outputFiles.bundle,
-  },
+  mode: manifest.NODE_ENV,
+  // output: {
+  //   path: manifest.paths.build,
+  //   publicPath: '',
+  //   filename: manifest.outputFiles.bundle,
+  // },
   module: {
     rules,
   },
