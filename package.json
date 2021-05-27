@@ -57,7 +57,7 @@
     "@fullcalendar/timegrid": "^5.7.0",
     "@popperjs/core": "^2.9.2",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.1",
     "bootstrap-datepicker": "^1.9.0",
     "brand-colors": "^2.1.1",
     "chart.js": "^2.9.4",
