@@ -37,7 +37,7 @@
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^4.14.1",
     "postcss": "^8.3.0",
-    "postcss-loader": "^5.3.0",
+    "postcss-loader": "^6.1.0",
     "postcss-preset-env": "^6.7.0",
     "sass-loader": "^11.1.1",
     "shx": "^0.3.3",
