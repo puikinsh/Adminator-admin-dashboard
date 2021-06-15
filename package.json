@@ -20,6 +20,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/runtime": "^7.13.9",
+    "@popperjs/core": "^2.9.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
@@ -55,9 +56,8 @@
     "@fullcalendar/interaction": "^5.7.0",
     "@fullcalendar/list": "^5.7.0",
     "@fullcalendar/timegrid": "^5.7.0",
-    "@popperjs/core": "^2.9.2",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.1",
     "bootstrap-datepicker": "^1.9.0",
     "brand-colors": "^2.1.1",
     "chart.js": "^2.9.4",
@@ -73,7 +73,6 @@
     "masonry-layout": "^4.2.2",
     "moment": "^2.29.1",
     "perfect-scrollbar": "^1.5.0",
-    "popper.js": "^1.16.1",
     "skycons": "^1.0.0"
   }
 }
