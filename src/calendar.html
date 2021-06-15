@@ -312,7 +312,7 @@
             <ul class="nav-right">
               <li class="notifications dropdown">
                 <span class="counter bgc-red">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle no-after" data-bs-toggle="dropdown">
                   <i class="ti-bell"></i>
                 </a>
 
@@ -385,7 +385,7 @@
               </li>
               <li class="notifications dropdown">
                 <span class="counter bgc-blue">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle no-after" data-bs-toggle="dropdown">
                   <i class="ti-email"></i>
                 </a>
 
@@ -472,7 +472,7 @@
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-bs-toggle="dropdown">
                   <div class="peer mR-10">
                     <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                   </div>
@@ -529,7 +529,7 @@
                       </button>
                       <ul class="m-0 p-0 mT-20">
                         <li class="bdB peers ai-c jc-sb fxw-nw">
-                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-toggle="modal" data-target="#calendar-edit">
+                          <a class="td-n p-20 peers fxw-nw me-20 peer-greed c-grey-900" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#calendar-edit">
                             <div class="peer mR-15">
                               <i class="fa fa-fw fa-clock-o c-red-500"></i>
                             </div>
@@ -555,7 +555,7 @@
                           </div>
                         </li>
                         <li class="bdB peers ai-c jc-sb fxw-nw">
-                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-toggle="modal" data-target="#calendar-edit">
+                          <a class="td-n p-20 peers fxw-nw me-20 peer-greed c-grey-900" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#calendar-edit">
                             <div class="peer mR-15">
                               <i class="fa fa-fw fa-clock-o c-blue-500"></i>
                             </div>
@@ -581,7 +581,7 @@
                           </div>
                         </li>
                         <li class="bdB peers ai-c jc-sb fxw-nw">
-                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-toggle="modal" data-target="#calendar-edit">
+                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#calendar-edit">
                             <div class="peer mR-15">
                               <i class="fa fa-fw fa-clock-o c-indigo-500"></i>
                             </div>
@@ -607,7 +607,7 @@
                           </div>
                         </li>
                         <li class="bdB peers ai-c jc-sb fxw-nw">
-                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-toggle="modal" data-target="#calendar-edit">
+                          <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#calendar-edit">
                             <div class="peer mR-15">
                               <i class="fa fa-fw fa-clock-o c-green-500"></i>
                             </div>
@@ -648,16 +648,16 @@
                     </div>
                     <div class="modal-body">
                       <form>
-                        <div class="form-group">
-                          <label class="fw-500">Event title</label>
+                        <div class="mb-3">
+                          <label class="form-label fw-500">Event title</label>
                           <input class="form-control bdc-grey-200">
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label class="fw-500">Start</label>
-                            <div class="timepicker-input input-icon form-group">
+                            <label class="fw-500 form-label">Start</label>
+                            <div class="timepicker-input input-icon mb-3">
                               <div class="input-group">
-                                <div class="input-group-addon bgc-white bd bdwR-0">
+                                <div class="input-group-text bgc-white bd bdwR-0">
                                   <i class="ti-calendar"></i>
                                 </div>
                                 <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Datepicker" data-provide="datepicker">
@@ -665,10 +665,10 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label class="fw-500">End</label>
-                            <div class="timepicker-input input-icon form-group">
+                            <label class="fw-500 form-label">End</label>
+                            <div class="timepicker-input input-icon mb-3">
                               <div class="input-group">
-                                <div class="input-group-addon bgc-white bd bdwR-0">
+                                <div class="input-group-text bgc-white bd bdwR-0">
                                   <i class="ti-calendar"></i>
                                 </div>
                                 <input type="text" class="form-control bdc-grey-200 end-date" placeholder="Datepicker" data-provide="datepicker">
@@ -676,12 +676,12 @@
                             </div>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <label class="fw-500">Event title</label>
+                        <div class="mb-3">
+                          <label class="fw-500 form-label">Event title</label>
                           <textarea class="form-control bdc-grey-200" rows='5'></textarea>
                         </div>
-                        <div class="text-right">
-                          <button class="btn btn-primary cur-p" data-dismiss="modal">Done</button>
+                        <div class="text-end">
+                          <button class="btn btn-primary cur-p btn-color" data-dismiss="modal">Done</button>
                         </div>
                       </form>
                     </div>
@@ -694,7 +694,7 @@
 
         <!-- ### $App Screen Footer ### -->
         <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2019 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
+          <span>Copyright © 2021 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
         </footer>
       </div>
     </div>

@@ -22,6 +22,7 @@ const titles = {
   '404': '404',
   '500': '500',
   'basic-table': 'Basic Table',
+  'test': 'Test',
 };
 
 module.exports = Object.keys(titles).map(title => {

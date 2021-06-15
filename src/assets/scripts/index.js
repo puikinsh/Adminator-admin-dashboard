@@ -1,5 +1,8 @@
-import '../styles/index.scss';
+// import "@popperjs/core";
+import bootstrap from 'bootstrap';
 
+import '../styles/index.scss';
+import './fullcalendar';
 import './masonry';
 import './charts';
 import './popover';
@@ -12,6 +15,5 @@ import './chat';
 import './datatable';
 import './datepicker';
 import './email';
-import './fullcalendar';
 import './googleMaps';
 import './utils';
