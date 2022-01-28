@@ -7,6 +7,11 @@ import listPlugin from '@fullcalendar/list';
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
+  // element found in dom ?
+  if (calendarEl == null) {
+    return
+  }
+
   var calendar = new Calendar(calendarEl, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
     headerToolbar: {
