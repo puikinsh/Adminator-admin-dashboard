@@ -26,42 +26,41 @@ jobs:
         npm run build
         zip -r -j static.zip dist/*
     
-    # - name: Get version
-    #   run: echo "::set-output name=version::$(./ci/getVersion.sh)"
-    #   id: version
+    - name: Get version
+      run: echo "::set-output name=version::$(./ci/getVersion.sh)"
+      id: version
 
     # - name: Verify version
     #   run: |
     #     ./ci/verifyVersion.sh
 
     # Verify changelog has entry with new version
-
-    #  - name: Release
-    #     uses: softprops/action-gh-release@v1
-    #     name: ${{ steps.version.outputs.version }}
-    #     fail_on_unmatched_files: true
-    #     prerelease: false
-    #     draft: false
-    #     with:
-    #       files: static.zip
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      # name: ${{ steps.version.outputs.version }}
+      fail_on_unmatched_files: true
+      prerelease: false
+      draft: false
+      with:
+        files: static.zip
 
     # - name: Create release
-    #     uses: actions/create-release@v1
-    #     id: create_release
-    #     with:
-    #       draft: false
-    #       prerelease: false
-    #       release_name: ${{ steps.version.outputs.version }}
-    #       tag_name: ${{ github.ref }}
-    #     env:
-    #       GITHUB_TOKEN: ${{ github.token }}
+    #   uses: actions/create-release@v1
+    #   id: create_release
+    #   with:
+    #     draft: false
+    #     prerelease: false
+    #     release_name: ${{ steps.version.outputs.version }}
+    #     tag_name: ${{ github.ref }}
+    #   env:
+    #     GITHUB_TOKEN: ${{ github.token }}
 
     # - name: Upload artifacts
-    #     uses: actions/upload-release-asset@v1
-    #     env:
-    #       GITHUB_TOKEN: ${{ github.token }}
-    #     with:
-    #       upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #       asset_path: static.zip
-    #       asset_name: static.zip
-    #       asset_content_type: application/gzip
+    #   uses: actions/upload-release-asset@v1
+    #   env:
+    #     GITHUB_TOKEN: ${{ github.token }}
+    #   with:
+    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+    #     asset_path: static.zip
+    #     asset_name: static.zip
+    #     asset_content_type: application/gzip
