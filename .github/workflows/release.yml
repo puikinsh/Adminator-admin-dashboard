@@ -27,19 +27,19 @@ jobs:
         zip -r -j static.zip dist/*
     
     - name: Get version
-      run: echo "::set-output name=version::$(./ci/getVersion.sh)"
+      run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
       id: version
 
-    # - name: Verify version
-    #   run: |
-    #     ./ci/verifyVersion.sh
+    - name: Verify version
+      run: |
+        ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
 
     # Verify changelog has entry with new version
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
         name: ${{ steps.version.outputs.version }}
-        tag_name: v${{ steps.version.outputs.version }}
+        tag_name: ${{ steps.version.outputs.version }}
         files: static.zip
         fail_on_unmatched_files: true
         prerelease: false
