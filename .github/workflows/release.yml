@@ -1,5 +1,9 @@
 name: NodeJS with Webpack
 
+on:
+  push:
+    branches: [ "master" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
