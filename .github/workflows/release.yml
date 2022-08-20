@@ -44,24 +44,3 @@ jobs:
         fail_on_unmatched_files: true
         prerelease: false
         draft: false
-
-    # - name: Create release
-    #   uses: actions/create-release@v1
-    #   id: create_release
-    #   with:
-    #     draft: false
-    #     prerelease: false
-    #     release_name: ${{ steps.version.outputs.version }}
-    #     tag_name: ${{ github.ref }}
-    #   env:
-    #     GITHUB_TOKEN: ${{ github.token }}
-
-    # - name: Upload artifacts
-    #   uses: actions/upload-release-asset@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ github.token }}
-    #   with:
-    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #     asset_path: static.zip
-    #     asset_name: static.zip
-    #     asset_content_type: application/gzip
