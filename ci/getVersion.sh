@@ -1,0 +1,1 @@
+echo $(sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json)
