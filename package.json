@@ -8,7 +8,6 @@
     "dev": "webpack-dashboard -t 'Project' -- webpack server",
     "clean": "shx rm -rf ./dist",
     "build": "npm run clean && cross-env webpack",
-    "release": "npm run clean && cross-env webpack --node-env=production",
     "preview": "cross-env webpack server",
     "lint:js": "eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
