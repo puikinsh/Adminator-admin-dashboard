@@ -26,9 +26,9 @@ jobs:
         npm run build
         zip -r -j static.zip dist/*
     
-    - name: Get version
-      run: echo "::set-output name=version::$(./ci/getVersion.sh)"
-      id: version
+    # - name: Get version
+    #   run: echo "::set-output name=version::$(./ci/getVersion.sh)"
+    #   id: version
 
     # - name: Verify version
     #   run: |
@@ -36,14 +36,14 @@ jobs:
 
     # Verify changelog has entry with new version
 
-     - name: Release
-        uses: softprops/action-gh-release@v1
-        name: ${{ steps.version.outputs.version }}
-        fail_on_unmatched_files: true
-        prerelease: false
-        draft: false
-        with:
-          files: static.zip
+    #  - name: Release
+    #     uses: softprops/action-gh-release@v1
+    #     name: ${{ steps.version.outputs.version }}
+    #     fail_on_unmatched_files: true
+    #     prerelease: false
+    #     draft: false
+    #     with:
+    #       files: static.zip
 
     # - name: Create release
     #     uses: actions/create-release@v1
