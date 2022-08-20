@@ -37,12 +37,12 @@ jobs:
     # Verify changelog has entry with new version
     - name: Release
       uses: softprops/action-gh-release@v1
-      # name: ${{ steps.version.outputs.version }}
-      fail_on_unmatched_files: true
-      prerelease: false
-      draft: false
       with:
+        name: ${{ steps.version.outputs.version }}
         files: static.zip
+        fail_on_unmatched_files: true
+        prerelease: false
+        draft: false
 
     # - name: Create release
     #   uses: actions/create-release@v1
