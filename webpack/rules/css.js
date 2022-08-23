@@ -31,7 +31,6 @@ const loaders = [
     loader: 'css-loader',
     options: {
       sourceMap : manifest.IS_DEVELOPMENT,
-      // minimize  : manifest.IS_PRODUCTION,
       importLoaders: 1,
     },
   },
@@ -45,10 +44,9 @@ const loaders = [
 if (manifest.IS_PRODUCTION) {
   rule = {
     test: /\.css$/,
-    // loader: ExtractTextPlugin({
-    //   use: loaders,
-    // }),
-    use: [ExtractTextPlugin.loader, loaders],
+    use: [{
+        loader: ExtractTextPlugin.loader,
+    }].concat(loaders),
   };
 }
 
