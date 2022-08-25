@@ -21,6 +21,8 @@ const
   rules     = require('./rules'),
   plugins   = require('./plugins');
 
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 // ------------------
 // @Entry Point Setup
@@ -44,6 +46,17 @@ const resolve = {
   ],
 };
 
+let optimization = {};
+
+if (manifest.MINIFY) {
+  optimization = {
+    minimize: manifest.MINIFY,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
+    ],
+  };
+}
 
 // -----------------
 // @Exporting Module
@@ -63,6 +76,7 @@ module.exports = {
   module: {
     rules,
   },
+  optimization: optimization,
   resolve,
   plugins,
   devServer,

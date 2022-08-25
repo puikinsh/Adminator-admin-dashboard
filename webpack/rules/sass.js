@@ -16,8 +16,8 @@
 const
   manifest          = require('../manifest'),
   path              = require('path'),
-  cssNext           = require('postcss-preset-env');
-
+  cssNext           = require('postcss-preset-env'),
+  ExtractTextPlugin = require('mini-css-extract-plugin');
 
 // ---------------
 // @Common Loaders
@@ -55,15 +55,21 @@ const loaders = [
           path.join(manifest.paths.src, ''),
         ],
       },
-    },
-  },
+    }
+  }
 ];
+
+if (manifest.IS_PRODUCTION) {
+  loaders.unshift(ExtractTextPlugin.loader);
+} else {
+  loaders.unshift({
+    loader: 'style-loader',
+  });
+}
 
 const rule = {
   test: /\.scss$/,
-  use: [{
-    loader: 'style-loader',
-  }].concat(loaders),
+  use: loaders
 };
 
 // -----------------
