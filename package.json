@@ -9,6 +9,7 @@
     "clean": "shx rm -rf ./dist",
     "build": "npm run clean && cross-env webpack",
     "release:minified": "npm run clean && NODE_ENV=production MINIFY=true cross-env webpack",
+    "release:unminified": "npm run clean && NODE_ENV=production MINIFY=false cross-env webpack",
     "preview": "cross-env webpack server",
     "lint:js": "eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",

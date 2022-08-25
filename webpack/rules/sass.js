@@ -27,8 +27,7 @@ const loaders = [
   {
     loader: 'css-loader',
     options: {
-      sourceMap : manifest.IS_DEVELOPMENT,
-      // minimize  : manifest.IS_PRODUCTION,
+      sourceMap : manifest.IS_DEVELOPMENT
     },
   },
   {

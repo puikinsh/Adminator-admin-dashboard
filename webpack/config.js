@@ -15,11 +15,11 @@
 // ---------------------
 
 const
-  path      = require('path'),
-  manifest  = require('./manifest'),
+  path = require('path'),
+  manifest = require('./manifest'),
   devServer = require('./devServer'),
-  rules     = require('./rules'),
-  plugins   = require('./plugins');
+  rules = require('./rules'),
+  plugins = require('./plugins');
 
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -46,22 +46,20 @@ const resolve = {
   ],
 };
 
-let optimization = {};
+const optimization = {
+  minimize: manifest.MINIFY
+};
 
 if (manifest.MINIFY) {
-  optimization = {
-    minimize: manifest.MINIFY,
-    minimizer: [
-      new CssMinimizerPlugin(),
-      new TerserPlugin()
-    ],
-  };
+  optimization.minimizer = [
+    new CssMinimizerPlugin(),
+    new TerserPlugin()
+  ];
 }
 
 // -----------------
 // @Exporting Module
 // -----------------
-
 module.exports = {
   devtool: manifest.IS_PRODUCTION ? false : 'source-map',
   context: path.join(manifest.paths.src, manifest.entries.js),
