@@ -48,6 +48,7 @@ const loaders = [
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
       sassOptions: {
+        outputStyle: manifest.MINIFY ? 'compressed' : 'expanded',
         includePaths: [
           path.join('../../', 'node_modules'),
           path.join(manifest.paths.src, 'assets', 'styles'),
