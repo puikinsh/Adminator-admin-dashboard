@@ -1,6 +1,6 @@
 const
-  path = require('path'),
-  manifest = require('../manifest'),
+  path              = require('path'),
+  manifest          = require('../manifest'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const titles = {
