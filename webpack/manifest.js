@@ -27,8 +27,8 @@ const path = require('path');
 const
   NODE_ENV       = process.env.NODE_ENV || 'development',
   IS_DEVELOPMENT = NODE_ENV === 'development',
-  IS_PRODUCTION  = NODE_ENV === 'production';
-
+  IS_PRODUCTION  = NODE_ENV === 'production',
+  MINIFY         = process.env.MINIFY === 'true';
 
 // ------
 // @Utils
@@ -82,4 +82,5 @@ module.exports = {
   NODE_ENV,
   IS_DEVELOPMENT,
   IS_PRODUCTION,
+  MINIFY
 };
