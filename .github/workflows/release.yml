@@ -2,7 +2,7 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master-rtl" ]
 
 jobs:
   build:
@@ -10,8 +10,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
-    
+        node-version: [18.x]
+
     steps:
     - uses: actions/checkout@v3
 
@@ -27,7 +27,7 @@ jobs:
         zip -r -j static_minified.zip dist/*
         npm run release:unminified
         zip -r -j static_unminified.zip dist/*
-    
+
     - name: Get version
       run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
       id: version
