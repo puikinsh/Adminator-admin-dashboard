@@ -1,9 +1,9 @@
 name: Merge checks
 
-on:  
+on:
   pull_request:
     branches:
-      - master
+      - master-rtl
 
 jobs:
   build:
@@ -11,8 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
-    
+        node-version: [18.x]
+
     steps:
     - uses: actions/checkout@v3
 
@@ -25,7 +25,7 @@ jobs:
       run: |
         npm install
         npm run build
-    
+
     - name: Get version
       run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
       id: version
