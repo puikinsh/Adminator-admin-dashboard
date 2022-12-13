@@ -19,7 +19,7 @@ const devServer = {
     directory:  manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
     watch: true,
   },
-  historyApiFallback : true,
+  historyApiFallback : { index: '/404.html'},
   port               : manifest.IS_PRODUCTION ? 3001 : 3000,
   compress           : manifest.IS_PRODUCTION,
   hot                : !manifest.IS_PRODUCTION,
