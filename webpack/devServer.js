@@ -15,28 +15,34 @@ const
  */
 
 const devServer = {
-  contentBase        : manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
+  static:{
+    directory:  manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
+    watch: true,
+  },
   historyApiFallback : true,
   port               : manifest.IS_PRODUCTION ? 3001 : 3000,
   compress           : manifest.IS_PRODUCTION,
-  inline             : !manifest.IS_PRODUCTION,
-  watchContentBase: true,
   hot                : !manifest.IS_PRODUCTION,
   host               : '0.0.0.0',
-  disableHostCheck   : true, // [1]
-  overlay            : true,
-  stats: {
-    assets     : true,
-    children   : false,
-    chunks     : false,
-    hash       : false,
-    modules    : false,
-    publicPath : false,
-    timings    : true,
-    version    : false,
-    warnings   : true,
-    colors     : true,
+  allowedHosts       : "all",// [1]
+  client:{
+    overlay            : true,
+    progress           : true
   },
+  devMiddleware: {
+    stats: {
+      assets: true,
+      children: false,
+      chunks: false,
+      hash: false,
+      modules: false,
+      publicPath: false,
+      timings: true,
+      version: false,
+      warnings: true,
+      colors: true,
+    },
+  }
 };
 
 
