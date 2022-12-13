@@ -52,6 +52,7 @@ const optimization = {
 
 if (manifest.MINIFY) {
   optimization.minimizer = [
+    ...require('./plugins/imageminPlugin'),
     new CssMinimizerPlugin(),
     new TerserPlugin()
   ];
@@ -73,6 +74,10 @@ module.exports = {
   // },
   module: {
     rules,
+  },
+  performance: {
+    maxEntrypointSize: 5120000,
+    maxAssetSize: 5120000
   },
   optimization: optimization,
   resolve,
