@@ -90,7 +90,6 @@ if (manifest.IS_DEVELOPMENT) {
   plugins.push(
     // new webpack.NoEmitOnErrorsPlugin(),
     // new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
   );
 }
 
