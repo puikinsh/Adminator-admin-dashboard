@@ -1,7 +1,6 @@
-const
-  path              = require('path'),
-  manifest          = require('../manifest'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  manifest = require('../manifest');
 
 const titles = {
   'index': 'Dashboard',
@@ -43,13 +42,12 @@ if (manifest.MINIFY) {
   };
 }
 
-
-module.exports = Object.keys(titles).map(title => {
+module.exports = Object.keys(titles).map((title) => {
   return new HtmlWebpackPlugin({
     template: path.join(manifest.paths.src, `${title}.html`),
     path: manifest.paths.build,
     filename: `${title}.html`,
     inject: true,
-    minify: minify
+    minify,
   });
 });

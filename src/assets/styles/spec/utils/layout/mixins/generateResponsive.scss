@@ -1,3 +1,5 @@
+@use "sass:list";
+
 // ---------------------------------------------------------
 // @Responsive Suffix Generator
 // ---------------------------------------------------------
@@ -7,8 +9,8 @@
 
 @mixin generateResponsive() {
   @each $breakpoint in $breakpoints {
-    $breakpointAlias     : nth($breakpoint, 1) !global;
-    $breakpointCondition : nth($breakpoint, 2);
+    $breakpointAlias     : list.nth($breakpoint, 1) !global;
+    $breakpointCondition : list.nth($breakpoint, 2);
 
     @include mediaQueryCondition($breakpointAlias) {
       @content;

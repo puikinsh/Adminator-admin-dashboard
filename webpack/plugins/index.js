@@ -1,11 +1,10 @@
-const
-  manifest          = require('../manifest');
+const manifest = require('../manifest');
 
 const plugins = [];
 
 plugins.push(
-  ...(require('./htmlPlugin')),
-  ...(require('./internal')),
+  ...require('./htmlPlugin'),
+  ...require('./internal'),
   require('./caseSensitivePlugin'),
   require('./extractPlugin'),
   require('./copyPlugin')

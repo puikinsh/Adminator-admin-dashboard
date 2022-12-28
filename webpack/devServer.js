@@ -2,9 +2,7 @@
 // @Loading Dependencies
 // ---------------------
 
-const
-  manifest = require('./manifest');
-
+const manifest = require('./manifest');
 
 // ------------------
 // @DevServer Configs
@@ -15,19 +13,19 @@ const
  */
 
 const devServer = {
-  static:{
-    directory:  manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
+  static: {
+    directory: manifest.IS_PRODUCTION ? manifest.paths.build : manifest.paths.src,
     watch: true,
   },
-  historyApiFallback : { index: '/404.html'},
-  port               : manifest.IS_PRODUCTION ? 3001 : 3000,
-  compress           : manifest.IS_PRODUCTION,
-  hot                : !manifest.IS_PRODUCTION,
-  host               : '0.0.0.0',
-  allowedHosts       : "all",// [1]
-  client:{
-    overlay            : true,
-    progress           : true
+  historyApiFallback: { index: '/404.html' },
+  port: manifest.IS_PRODUCTION ? 3001 : 3000,
+  compress: manifest.IS_PRODUCTION,
+  hot: !manifest.IS_PRODUCTION,
+  host: '0.0.0.0',
+  allowedHosts: 'all', // [1]
+  client: {
+    overlay: true,
+    progress: true,
   },
   devMiddleware: {
     stats: {
@@ -42,9 +40,8 @@ const devServer = {
       warnings: true,
       colors: true,
     },
-  }
+  },
 };
-
 
 // -----------------
 // @Exporting Module

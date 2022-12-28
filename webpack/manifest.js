@@ -12,64 +12,53 @@
  * + @Exporting Module
  */
 
-
 // ---------------------
 // @Loading Dependencies
 // ---------------------
 
 const path = require('path');
 
-
 // --------------------
 // @Environment Holders
 // --------------------
 
-const
-  NODE_ENV       = process.env.NODE_ENV || 'development',
+const NODE_ENV = process.env.NODE_ENV || 'development',
   IS_DEVELOPMENT = NODE_ENV === 'development',
-  IS_PRODUCTION  = NODE_ENV === 'production',
-  MINIFY         = process.env.MINIFY === 'true'? true: IS_PRODUCTION;
+  IS_PRODUCTION = NODE_ENV === 'production',
+  MINIFY = process.env.MINIFY === 'true';
 
 // ------
 // @Utils
 // ------
 
-const
-  dir = src => path.join(__dirname, src);
-
+const dir = (src) => path.join(__dirname, src);
 
 // ----------
 // @App Paths
 // ----------
 
-const
-  paths = {
-    src   : dir('../src'),
-    build : dir('../dist'),
-  };
-
+const paths = {
+  src: dir('../src'),
+  build: dir('../dist'),
+};
 
 // -------------------
 // @Output Files Names
 // -------------------
 
-const
-  outputFiles = {
-    bundle : 'bundle.js',
-    vendor : 'vendor.js',
-    css    : 'style.css',
-  };
-
+const outputFiles = {
+  bundle: 'bundle.js',
+  vendor: 'vendor.js',
+  css: 'style.css',
+};
 
 // --------------------
 // @Entries Files Names
 // --------------------
 
-const
-  entries = {
-    js   : 'index.js',
-  };
-
+const entries = {
+  js: 'index.js',
+};
 
 // -----------------
 // @Exporting Module
@@ -82,5 +71,5 @@ module.exports = {
   NODE_ENV,
   IS_DEVELOPMENT,
   IS_PRODUCTION,
-  MINIFY
+  MINIFY,
 };

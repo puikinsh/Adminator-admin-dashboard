@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .fc {
   background-color: $default-white;
   border: 1px solid $border-color;
@@ -18,7 +20,7 @@
     background-image: none;
     height: 37px;
     padding: 0 15px;
-    color: darken($default-text-color, 10%);
+    color: color.adjust($default-text-color, $lightness: -10%);
 
     &.fc-state-default {
       border-color: $border-color;

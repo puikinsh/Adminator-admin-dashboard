@@ -1,0 +1,30 @@
+name: Publish to Github Pages
+
+on:
+  push:
+    branches: [ "master-rtl" ]
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build ⚙
+        run: |
+          npm install
+          npm run release:minified
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: 'dist' #

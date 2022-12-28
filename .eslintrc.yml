@@ -1,65 +1,81 @@
 ---
-  extends:
-    airbnb-base
+plugins: [ "prettier" ]
+extends:
+  airbnb-base
 
-  parser: "@babel/eslint-parser"
+parser: "@babel/eslint-parser"
 
-  settings:
-    ecmascript: 7
+settings:
+  ecmascript: 7
 
-  parserOptions:
-    ecmaFeatures:
-      modules: true
-      destructuring: true
-      experimentalObjectRestSpread: true
-      classes: true
-      forOf: true
-      blockBindings: true
-      arrowFunctions: true
+parserOptions:
+  ecmaFeatures:
+    modules: true
+    destructuring: true
+    experimentalObjectRestSpread: true
+    classes: true
+    forOf: true
+    blockBindings: true
+    arrowFunctions: true
 
-  env:
-    browser: true
+env:
+  browser: true
+  jquery: true
+  commonjs: true
+  es6: true
 
-  rules:
-    # -------------
-    # General Rules
-    # -------------
+rules:
+  # -------------
+  # General Rules
+  # -------------
+  prettier/prettier: [ "error",{
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "semi": true,
+    "quoteProps": "preserve",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "endOfLine": "lf"
+  } ]
+  wrap-iife: [ 'error','any' ]
+  newline-per-chained-call: 0
+  arrow-body-style: 0
+  prefer-arrow-callback: 0
+  arrow-parens: 0
+  no-param-reassign: 0
+  no-new: 0
+  consistent-return: 0
+  key-spacing: 0
+  no-multi-spaces: 0
+  no-underscore-dangle: 0
+  one-var: 0
+  global-require: 0
+  class-methods-use-this: 0
+  comma-dangle: [ "error", {
+    "arrays": "always-multiline",
+    "objects": "always-multiline",
+    "imports": "always-multiline",
+    "exports": "always-multiline",
+    "functions": "never"
+  } ]
+  func-names: 0
+  function-paren-newline: 0
+  indent: 2
+  new-cap: 0
+  no-plusplus: 0
+  no-return-assign: 0
+  quote-props: 0
+  template-curly-spacing: 0
+  no-unused-expressions: 0
 
-    arrow-body-style: 0
-    prefer-arrow-callback: 0
-    arrow-parens: 0
-    no-param-reassign: 0
-    no-new: 0
-    consistent-return: 0
-    key-spacing: 0
-    no-multi-spaces: 0
-    no-underscore-dangle: 0
-    one-var: 0
-    global-require: 0
-    class-methods-use-this: 0
-    comma-dangle: ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "never"
-    }]
-    func-names: 0
-    function-paren-newline: 0
-    indent: 2
-    new-cap: 0
-    no-plusplus: 0
-    no-return-assign: 0
-    quote-props: 0
-    template-curly-spacing: 0
-    no-unused-expressions: 0
 
+  # ------------
+  # Import Rules
+  # ------------
 
-    # ------------
-    # Import Rules
-    # ------------
-
-    import/extensions: 0
-    import/no-extraneous-dependencies: 0
-    import/no-unresolved: 0
-    import/prefer-default-export: 0
+  import/extensions: 0
+  import/no-extraneous-dependencies: 0
+  import/no-unresolved: 0
+  import/prefer-default-export: 0

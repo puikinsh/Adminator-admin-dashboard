@@ -9,8 +9,8 @@ module.exports = [
           // Your options for `sharp`
           // https://sharp.pixelplumbing.com/api-output
         },
-      }
-    }
+      },
+    },
   }),
   new ImageMinimizerPlugin({
     minimizer: {
@@ -22,7 +22,7 @@ module.exports = [
           plugins: [
             // set of built-in plugins enabled by default
             // see: https://github.com/svg/svgo#default-preset
-            "preset-default",
+            'preset-default',
           ],
         },
       },

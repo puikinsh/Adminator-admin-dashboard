@@ -8,18 +8,16 @@
  * + @Exporting Module
  */
 
-
 // ---------------------
 // @Loading Dependencies
 // ---------------------
 
-const
-  manifest          = require('../manifest'),
-  path              = require('path'),
-  cssNext           = require('postcss-preset-env'),
-  rtlcss            = require('rtlcss'),
-  autoprefixer      = require('autoprefixer'),
-  ExtractTextPlugin = require('mini-css-extract-plugin');
+const path = require('path'),
+  cssNext = require('postcss-preset-env'),
+  rtlcss = require('rtlcss'),
+  autoprefixer = require('autoprefixer'),
+  ExtractTextPlugin = require('mini-css-extract-plugin'),
+  manifest = require('../manifest');
 
 // ---------------
 // @Common Loaders
@@ -29,7 +27,7 @@ const loaders = [
   {
     loader: 'css-loader',
     options: {
-      sourceMap : manifest.IS_DEVELOPMENT
+      sourceMap: manifest.IS_DEVELOPMENT,
     },
   },
   {
@@ -37,11 +35,7 @@ const loaders = [
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
       postcssOptions: {
-        plugins: [
-            cssNext(),
-            rtlcss(),
-            autoprefixer()
-        ],
+        plugins: [cssNext(), rtlcss(), autoprefixer()],
       },
     },
   },
@@ -57,8 +51,8 @@ const loaders = [
           path.join(manifest.paths.src, ''),
         ],
       },
-    }
-  }
+    },
+  },
 ];
 
 if (manifest.IS_PRODUCTION) {
@@ -71,7 +65,7 @@ if (manifest.IS_PRODUCTION) {
 
 const rule = {
   test: /\.scss$/,
-  use: loaders
+  use: loaders,
 };
 
 // -----------------

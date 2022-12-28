@@ -11,7 +11,7 @@
 // ---------------------------------------------------------
 // @Sidebar
 // ---------------------------------------------------------
-
+/* stylelint-disable no-descending-specificity */
 .sidebar {
   background-color: $default-white;
   bottom: 0;
@@ -175,6 +175,7 @@
 
 .sidebar-menu {
   @include clearfix;
+
   border-right: 1px solid $border-color;
   height: calc(100vh - #{$header-height});
   list-style: none;
@@ -446,3 +447,4 @@
     }
   }
 }
+/* stylelint-enable no-descending-specificity */

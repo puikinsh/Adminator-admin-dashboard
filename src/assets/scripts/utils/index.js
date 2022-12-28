@@ -12,7 +12,6 @@ export default (function () {
   window.EVENT = EVENT;
   EVENT.initUIEvent('resize', true, false, window, 0);
 
-
   window.addEventListener('load', () => {
     /**
      * Trigger window resize event after page load
@@ -40,4 +39,4 @@ export default (function () {
   document.addEventListener('click', () => {
     window.dispatchEvent(window.EVENT);
   });
-}());
+})();

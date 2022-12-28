@@ -9,30 +9,24 @@
  * + @Exporting Module
  */
 
-
 // ---------------------
 // @Loading Dependencies
 // ---------------------
 
-const
-  path = require('path'),
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+const path = require('path'),
   manifest = require('./manifest'),
   devServer = require('./devServer'),
   rules = require('./rules'),
   plugins = require('./plugins');
 
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-
 // ------------------
 // @Entry Point Setup
 // ------------------
 
-const
-  entry = [
-    path.join(manifest.paths.src, 'assets', 'scripts', manifest.entries.js),
-  ];
-
+const entry = [path.join(manifest.paths.src, 'assets', 'scripts', manifest.entries.js)];
 
 // ---------------
 // @Path Resolving
@@ -40,21 +34,18 @@ const
 
 const resolve = {
   extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js'],
-  modules: [
-    path.join(__dirname, '../node_modules'),
-    path.join(manifest.paths.src, ''),
-  ],
+  modules: [path.join(__dirname, '../node_modules'), path.join(manifest.paths.src, '')],
 };
 
 const optimization = {
-  minimize: manifest.MINIFY
+  minimize: manifest.MINIFY,
 };
 
 if (manifest.MINIFY) {
   optimization.minimizer = [
     ...require('./plugins/imageminPlugin'),
     new CssMinimizerPlugin(),
-    new TerserPlugin()
+    new TerserPlugin(),
   ];
 }
 
@@ -77,9 +68,9 @@ module.exports = {
   },
   performance: {
     maxEntrypointSize: 5120000,
-    maxAssetSize: 5120000
+    maxAssetSize: 5120000,
   },
-  optimization: optimization,
+  optimization,
   resolve,
   plugins,
   devServer,

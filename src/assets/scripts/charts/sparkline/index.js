@@ -63,70 +63,52 @@ export default (function () {
   // @Other Sparklines
   // ------------------------------------------------------
 
-  $('#sparkline').sparkline(
-    [5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7],
-    {
-      type: 'line',
+  $('#sparkline').sparkline([5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7], {
+    type: 'line',
+    resize: true,
+    height: '20',
+  });
+
+  $('#compositebar').sparkline('html', {
+    type: 'bar',
+    resize: true,
+    barColor: '#aaf',
+    height: '20',
+  });
+
+  $('#compositebar').sparkline([4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7], {
+    composite: true,
+    fillColor: false,
+    lineColor: 'red',
+    resize: true,
+    height: '20',
+  });
+
+  $('#normalline').sparkline('html', {
+    fillColor: false,
+    normalRangeMin: -1,
+    resize: true,
+    normalRangeMax: 8,
+    height: '20',
+  });
+
+  $('.sparktristate').sparkline('html', {
+    type: 'tristate',
+    resize: true,
+    height: '20',
+  });
+
+  $('.sparktristatecols').sparkline('html', {
+    type: 'tristate',
+    colorMap: {
+      '-2': '#fa7',
       resize: true,
+      '2': '#44f',
       height: '20',
-    }
-  );
+    },
+  });
 
-  $('#compositebar').sparkline(
-    'html',
-    {
-      type: 'bar',
-      resize: true,
-      barColor: '#aaf',
-      height: '20',
-    }
-  );
-
-  $('#compositebar').sparkline(
-    [4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7],
-    {
-      composite: true,
-      fillColor: false,
-      lineColor: 'red',
-      resize: true,
-      height: '20',
-    }
-  );
-
-  $('#normalline').sparkline(
-    'html',
-    {
-      fillColor: false,
-      normalRangeMin: -1,
-      resize: true,
-      normalRangeMax: 8,
-      height: '20',
-    }
-  );
-
-  $('.sparktristate').sparkline(
-    'html',
-    {
-      type: 'tristate',
-      resize: true,
-      height: '20',
-    }
-  );
-
-  $('.sparktristatecols').sparkline(
-    'html',
-    {
-      type: 'tristate',
-      colorMap: {
-        '-2': '#fa7',
-        resize: true,
-        '2': '#44f',
-        height: '20',
-      },
-    }
-  );
-
-  const values    = [5, 4, 5, -2, 0, 3, -5, 6, 7, 9, 9, 5, -3, -2, 2, -4];
+  const values = [5, 4, 5, -2, 0, 3, -5, 6, 7, 9, 9, 5, -3, -2, 2, -4];
   const valuesAlt = [1, 1, 0, 1, -1, -1, 1, -1, 0, 0, 1, 1];
 
   $('.sparkline').sparkline(values, {
@@ -245,4 +227,4 @@ export default (function () {
     borderWidth: 1,
     borderColor: '000',
   });
-}())
+})();

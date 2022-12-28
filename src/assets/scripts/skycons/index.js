@@ -4,7 +4,7 @@ const Skycons = SkyconsInit(window);
 
 export default (function () {
   const icons = new Skycons({ 'color': '#ff6849' });
-  const list  = [
+  const list = [
     'clear-day',
     'clear-night',
     'partly-cloudy-day',
@@ -19,9 +19,8 @@ export default (function () {
   let i = list.length;
 
   while (i--) {
-    const
-      weatherType = list[i],
-      elements    = document.getElementsByClassName(weatherType);
+    const weatherType = list[i],
+      elements = document.getElementsByClassName(weatherType);
     let j = elements.length;
 
     while (j--) {
@@ -30,4 +29,4 @@ export default (function () {
   }
 
   icons.play();
-}());
+})();

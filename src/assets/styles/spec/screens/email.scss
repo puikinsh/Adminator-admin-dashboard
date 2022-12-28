@@ -1,3 +1,4 @@
+
 .email-app {
   .email-side-nav {
     background: $default-white;
@@ -56,6 +57,7 @@
       position: relative;
       padding: 0;
       background-color: $default-white;
+
       // min-height: calc(100vh - #{$header-height});
 
       &.no-inbox-view {
@@ -80,6 +82,7 @@
 
       .email-compose {
         position: relative;
+
       .email-compose-body {
         padding: 30px 20px;
 

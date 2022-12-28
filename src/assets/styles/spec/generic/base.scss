@@ -1,8 +1,12 @@
-html, html a, body {
+@use "sass:color";
+
+/* stylelint-disable */
+html, body {
   -webkit-font-smoothing: antialiased;
 }
 
 a {
+  -webkit-font-smoothing: antialiased;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
@@ -30,9 +34,10 @@ h6 {
     font-family: $font-secondary;
   }
 
+
   small {
     font-weight: 300;
-    color: lighten($default-dark, 5%);
+    color: color.adjust($default-dark, $lightness: 5%);
   }
 }
 
@@ -55,7 +60,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
-    color: darken($default-info, 10%);
+    color: color.adjust($default-info, $lightness: -10%);
   }
 
   &:focus {
@@ -81,17 +86,19 @@ hr {
 
 
 a.btn {
-    color:#fff;
-  }
+  color: #fff;
+}
 
 a.btn:hover {
-  color:#fff;
+  color: #fff;
 }
 
 .btn-color {
-  color:#fff;
+  color: #fff;
 }
 
 .btn-color:hover {
-  color:#fff;
+  color: #fff;
 }
+
+/* stylelint-enable */

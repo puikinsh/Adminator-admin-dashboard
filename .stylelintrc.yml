@@ -1,7 +1,17 @@
 ---
-  extends: stylelint-config-standard
+  extends:
+    - stylelint-config-standard
+    - stylelint-config-standard-scss
+    - stylelint-config-prettier-scss
   rules:
-    at-rule-no-unknown: null
     at-rule-empty-line-before: null
-    selector-list-comma-newline-after: null
+    at-rule-no-unknown: null
     block-opening-brace-space-before: null
+    scss/at-mixin-argumentless-call-parentheses: null
+    scss/at-mixin-pattern: null
+    scss/at-rule-conditional-no-parentheses: null
+    scss/dollar-variable-pattern: null
+    selector-class-pattern: null
+    selector-list-comma-newline-after: null
+    selector-pseudo-class-no-unknown: null
+    selector-pseudo-element-no-unknown: null

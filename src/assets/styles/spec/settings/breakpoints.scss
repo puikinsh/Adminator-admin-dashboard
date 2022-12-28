@@ -7,7 +7,6 @@ $breakpoint-lg : 1200px;
 $breakpoint-md : 992px;
 $breakpoint-sm : 768px;
 $breakpoint-xs : 0;
-
 $breakpoints: (
   "xl\\+" "screen and (min-width: #{$breakpoint-xl})",
   "lg\\+" "screen and (min-width: #{$breakpoint-lg})",

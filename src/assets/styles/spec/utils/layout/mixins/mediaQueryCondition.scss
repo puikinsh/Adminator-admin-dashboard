@@ -1,3 +1,5 @@
+@use "sass:list";
+
 // ---------------------------------------------------------
 // @Media Queries Generator
 // ---------------------------------------------------------
@@ -8,8 +10,8 @@
   $breakpointFound: false;
 
   @each $breakpoint in $breakpoints {
-    $alias: nth($breakpoint, 1);
-    $condition: nth($breakpoint, 2);
+    $alias: list.nth($breakpoint, 1);
+    $condition: list.nth($breakpoint, 2);
 
     @if $mq == $alias and $condition {
       $breakpointFound: true;

@@ -1,0 +1,9 @@
+printWidth: 100
+tabWidth: 2
+useTabs: false
+singleQuote: true
+semi: true
+quoteProps: preserve
+bracketSpacing: true
+bracketSameLine: true
+endOfLine: lf

@@ -246,7 +246,9 @@ $responsive: true;
 // ---------------------------------------------------------
 
 .m-a  { margin: auto !important; }
-.mX-a { margin-left: auto !important; margin-right: auto !important; }
+
+.mX-a { margin-left: auto !important;
+        margin-right: auto !important; }
 .mT-a { margin-top: auto !important; }
 .mR-a { margin-right: auto !important; }
 .mB-a { margin-bottom: auto !important; }
@@ -255,7 +257,8 @@ $responsive: true;
 @if ($responsive == true) {
   @include generateResponsive() {
     .m-a\@#{$breakpointAlias}  { margin: auto !important; }
-    .mX-a\@#{$breakpointAlias} { margin-left: auto !important; margin-right: auto !important; }
+    .mX-a\@#{$breakpointAlias} { margin-left: auto !important;
+                                 margin-right: auto !important; }
     .mT-a\@#{$breakpointAlias} { margin-top: auto !important; }
     .mR-a\@#{$breakpointAlias} { margin-right: auto !important; }
     .mB-a\@#{$breakpointAlias} { margin-bottom: auto !important; }

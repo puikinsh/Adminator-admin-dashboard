@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ---------------------------------------------------------
 // @TOC
 
@@ -91,11 +93,12 @@
         }
       }
     }
-
+    /* stylelint-disable no-descending-specificity */
     .dropdown-menu {
       // display: block;
       margin: 0;
       transform-origin: top right;
+
       // transform: scale(0, 0);
       transition: transform 0.15s ease-out;
 
@@ -141,6 +144,7 @@
         }
       }
     }
+    /* stylelint-enable no-descending-specificity */
   }
 
   .search-box {
@@ -181,7 +185,7 @@
       }
 
       @include placeholder {
-        color: lighten($default-text-color, 20%);
+        color: color.adjust($default-text-color, $lightness: 20%);
         font-style: italic;
       }
     }

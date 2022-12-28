@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .datepicker {
   border-radius: 0;
   padding: 25px;
@@ -95,7 +97,7 @@
 
     &.active {
       border-radius: 0;
-      border-color: lighten($default-info, 20%);
+      border-color: color.adjust($default-info, $lightness: 20%);
     }
   }
 
@@ -107,14 +109,15 @@
     }
   }
 
+  /* stylelint-disable no-descending-specificity */
   td,
   th {
     border-radius: 0;
     width: 40px;
     height: 35px;
 
-    &.available{
-      &:hover{
+    &.available {
+      &:hover {
         background: $default-primary;
         color: #fff;
       }
@@ -139,6 +142,7 @@
       }
     }
 
+    /* stylelint-enable no-descending-specificity */
     &.start-date {
       border-radius: 0;
 

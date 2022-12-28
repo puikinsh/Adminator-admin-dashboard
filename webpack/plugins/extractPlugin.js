@@ -1,6 +1,5 @@
-const
-  manifest          = require('../manifest'),
-  ExtractTextPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('mini-css-extract-plugin'),
+  manifest = require('../manifest');
 
 module.exports = new ExtractTextPlugin({
   filename: manifest.outputFiles.css,

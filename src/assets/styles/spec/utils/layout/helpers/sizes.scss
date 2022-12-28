@@ -56,7 +56,7 @@ $responsive: true;
 // @Relative Width
 // ---------------------------------------------------------
 
-.w-0     { width: 0px; }
+.w-0     { width: 0; }
 .w-10p   { width: 10%; }
 .w-20p   { width: 20%; }
 .w-30p   { width: 30%; }
@@ -72,7 +72,7 @@ $responsive: true;
 
 @if ($responsive == true) {
   @include generateResponsive() {
-    .w-0\@#{$breakpointAlias}     { width: 0px; }
+    .w-0\@#{$breakpointAlias}     { width: 0; }
     .w-10p\@#{$breakpointAlias}   { width: 10%; }
     .w-20p\@#{$breakpointAlias}   { width: 20%; }
     .w-30p\@#{$breakpointAlias}   { width: 30%; }
