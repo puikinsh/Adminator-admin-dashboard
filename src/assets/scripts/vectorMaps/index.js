@@ -3,6 +3,7 @@ import 'jvectormap';
 import 'jvectormap/jquery-jvectormap.css';
 import './jquery-jvectormap-world-mill.js';
 import { debounce } from 'lodash';
+import countries from './countries';
 
 export default (function () {
   const vectorMapInit = () => {
@@ -36,7 +37,9 @@ export default (function () {
             fill: '#e4ecef',
           },
         },
-
+        onRegionTipShow: (e, el, code) => {
+          el.html(countries.find((c) => c.code == code).name_fa);
+        },
         markerStyle: {
           initial: {
             r: 7,
@@ -51,23 +54,23 @@ export default (function () {
         markers: [
           {
             latLng: [21.0, 78.0],
-            name: 'INDIA : 350',
+            name: 'هند : ۳۵۰',
           },
           {
             latLng: [-33.0, 151.0],
-            name: 'Australia : 250',
+            name: 'استرالیا : ۲۵۰',
           },
           {
             latLng: [36.77, -119.41],
-            name: 'USA : 250',
+            name: 'آمریکا : ۲۵۰',
           },
           {
             latLng: [55.37, -3.41],
-            name: 'UK   : 250',
+            name: 'بریتانیا   : ۲۵۰',
           },
           {
             latLng: [25.2, 55.27],
-            name: 'UAE : 250',
+            name: 'امارات متحده عربی : ۲۵۰',
           },
         ],
         series: {

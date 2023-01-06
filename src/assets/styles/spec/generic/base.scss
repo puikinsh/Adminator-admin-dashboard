@@ -102,3 +102,19 @@ a.btn:hover {
 }
 
 /* stylelint-enable */
+
+/* rtl:begin:ignore */
+.ltr {
+  direction: ltr !important;
+}
+
+.rtl {
+  direction: rtl !important;
+}
+
+.code {
+  direction:ltr !important;
+  text-align:left !important;
+}
+
+/* rtl:end:ignore */

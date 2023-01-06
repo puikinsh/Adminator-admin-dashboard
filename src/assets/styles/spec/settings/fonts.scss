@@ -1,4 +1,6 @@
-$font-primary:
-  roboto, -apple-system, system-ui, blinkmacsystemfont, "Segoe UI", "Helvetica Neue", arial, sans-serif;
+/* rtl:raw:
+@import "vazirmatn/Vazirmatn-font-face.css";
+*/
+$font-primary: roboto, -apple-system, system-ui, blinkmacsystemfont, "Segoe UI", "Helvetica Neue", arial, sans-serif #{'/*rtl:prepend:"Vazirmatn", */'};
 $font-secondary: $font-primary;
-$font-size-base:              0.875rem;
+$font-size-base: 0.875rem;

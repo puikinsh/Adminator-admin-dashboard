@@ -1,13 +1,13 @@
-# Adminator Bootstrap 5 Admin Template
-**Adminator** is a responsive Bootstrap 5 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
+# Adminator RTL Bootstrap 5 Admin Template
+**Adminator RTL** is a responsive Bootstrap 5 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://morteza-karimi.ir/Adminator-admin-dashboard-rtl/index.html
 
 # Preview
 
 ### Screenshot
 
-![Adminator admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/adminator-free-admin-dashboard-template.jpg)
+![Adminator RTL admin dashboard template preview](./demo-preview.png)
 
-### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
+### Demo Site: [Here](https://morteza-karimi.ir/Adminator-admin-dashboard-rtl/index.html)
 
 ## TOC
 - [Getting Started](#getting-started)
@@ -22,7 +22,7 @@
 
 
 ## Getting Started
-In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases).
+In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl/releases).
 
 #### Prerequisites
   - Node.js
@@ -34,7 +34,7 @@ In order to run **Adminator** on your local machine all what you need to do is t
 Start by typing the following commands in your terminal in order to get **Adminator** full package on your machine and starting a local development server with live reload feature.
 
 ```
-> git clone https://github.com/puikinsh/Adminator-admin-dashboard.git adminator
+> git clone https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl.git adminator
 > cd adminator
 > npm install
 > npm run dev
@@ -145,6 +145,7 @@ Used to create a local dev server in order to preview the final output of build 
 - [Themify Icons](https://themify.me/themify-icons)
 - [Roboto Font](https://fonts.google.com/specimen/Roboto)
 - [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
+- [Vazirmatn](https://rastikerdar.github.io/vazirmatn/)
 
 ## Changelog
 #### V 1.0.0
@@ -152,6 +153,7 @@ Initial Release
 
 ## Authors
 [Colorlib](https://colorlib.com)
+[Morteza Karimi](https://morteza-karimi.ir)
 
 ## More info
 - [Bootstrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
