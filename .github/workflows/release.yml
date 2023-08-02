@@ -1,0 +1,50 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        npm run release:minified
+        zip -r -j static_minified.zip dist/*
+        npm run release:unminified
+        zip -r -j static_unminified.zip dist/*
+    
+    - name: Get version
+      run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
+      id: version
+
+    - name: Verify version
+      run: |
+        ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
+
+    # Verify changelog has entry with new version
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ steps.version.outputs.version }}
+        files: |
+          static_minified.zip
+          static_unminified.zip
+        fail_on_unmatched_files: true
+        prerelease: false
+        draft: false
