@@ -25,7 +25,7 @@
 In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases).
 
 #### Prerequisites
-  - Node.js
+  - Node.js 14+
   - Yarn or NPM
   - Git
   - libpng-dev *linux only*
