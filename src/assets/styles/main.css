@@ -1,0 +1,12 @@
+.search-image-container{
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, transparent 95%);
+}
+.google-logo{
+    width: 30%;
+}
+.m-1r{
+    margin: 1rem!important;
+}
+.search-button{
+    width: 200px;
+}
