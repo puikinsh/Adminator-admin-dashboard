@@ -13,6 +13,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
+- [Adminator for other platforms and frameworks](#adminator-for-other-platforms-and-frameworks)
 - [Files/Folder Structure](#filesfolders-structure)
 - [Deployment](#deployment)
 - [Built With](#built-with)
@@ -39,7 +40,8 @@ Start by typing the following commands in your terminal in order to get **Admina
 > npm install
 > npm run dev
 ```
-
+## Adminator for other platforms and frameworks
+* [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) Adminator modified to work with right to left languages like Persian and Arabic
 
 ## Files/Folders Structure
 Here is a brief explanation of the template folder structure and some of its main files usage:
