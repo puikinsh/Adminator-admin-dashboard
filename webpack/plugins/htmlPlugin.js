@@ -22,7 +22,27 @@ const titles = {
   '404': '404',
   '500': '500',
   'basic-table': 'Basic Table',
+  'test': 'Test',
 };
+
+let minify = {
+  collapseWhitespace: false,
+  minifyCSS: false,
+  minifyJS: false,
+  removeComments: true,
+  useShortDoctype: false,
+};
+
+if (manifest.MINIFY) {
+  minify = {
+    collapseWhitespace: true,
+    minifyCSS: true,
+    minifyJS: true,
+    removeComments: true,
+    useShortDoctype: true,
+  };
+}
+
 
 module.exports = Object.keys(titles).map(title => {
   return new HtmlWebpackPlugin({
@@ -30,12 +50,6 @@ module.exports = Object.keys(titles).map(title => {
     path: manifest.paths.build,
     filename: `${title}.html`,
     inject: true,
-    minify: {
-      collapseWhitespace: true,
-      minifyCSS: true,
-      minifyJS: true,
-      removeComments: true,
-      useShortDoctype: true,
-    },
+    minify: minify
   });
 });

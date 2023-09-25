@@ -1,5 +1,5 @@
-# Adminator HTML5 Admin Template
-**Adminator** is a responsive Bootstrap 4 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
+# Adminator Bootstrap 5 Admin Template
+**Adminator** is a responsive Bootstrap 5 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
 # Preview
 
@@ -13,6 +13,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
+- [Adminator for other platforms and frameworks](#adminator-for-other-platforms-and-frameworks)
 - [Files/Folder Structure](#filesfolders-structure)
 - [Deployment](#deployment)
 - [Built With](#built-with)
@@ -22,10 +23,10 @@
 
 
 ## Getting Started
-In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below.
+In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases).
 
 #### Prerequisites
-  - Node.js
+  - Node.js 14+
   - Yarn or NPM
   - Git
   - libpng-dev *linux only*
@@ -39,7 +40,8 @@ Start by typing the following commands in your terminal in order to get **Admina
 > npm install
 > npm run dev
 ```
-
+## Adminator for other platforms and frameworks
+* [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) Adminator modified to work with right to left languages like Persian and Arabic
 
 ## Files/Folders Structure
 Here is a brief explanation of the template folder structure and some of its main files usage:

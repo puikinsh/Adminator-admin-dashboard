@@ -15,12 +15,14 @@
 // ---------------------
 
 const
-  path      = require('path'),
-  manifest  = require('./manifest'),
+  path = require('path'),
+  manifest = require('./manifest'),
   devServer = require('./devServer'),
-  rules     = require('./rules'),
-  plugins   = require('./plugins');
+  rules = require('./rules'),
+  plugins = require('./plugins');
 
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 // ------------------
 // @Entry Point Setup
@@ -44,24 +46,35 @@ const resolve = {
   ],
 };
 
+const optimization = {
+  minimize: manifest.MINIFY
+};
+
+if (manifest.MINIFY) {
+  optimization.minimizer = [
+    new CssMinimizerPlugin(),
+    new TerserPlugin()
+  ];
+}
 
 // -----------------
 // @Exporting Module
 // -----------------
-
 module.exports = {
-  devtool: manifest.IS_PRODUCTION ? false : 'cheap-eval-source-map',
+  devtool: manifest.IS_PRODUCTION ? false : 'source-map',
   context: path.join(manifest.paths.src, manifest.entries.js),
-  watch: !manifest.IS_PRODUCTION,
+  // watch: !manifest.IS_PRODUCTION,
   entry,
-  output: {
-    path: manifest.paths.build,
-    publicPath: '',
-    filename: manifest.outputFiles.bundle,
-  },
+  mode: manifest.NODE_ENV,
+  // output: {
+  //   path: manifest.paths.build,
+  //   publicPath: '',
+  //   filename: manifest.outputFiles.bundle,
+  // },
   module: {
     rules,
   },
+  optimization: optimization,
   resolve,
   plugins,
   devServer,

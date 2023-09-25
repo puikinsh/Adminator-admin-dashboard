@@ -312,7 +312,7 @@
             <ul class="nav-right">
               <li class="notifications dropdown">
                 <span class="counter bgc-red">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle no-after" data-bs-toggle="dropdown">
                   <i class="ti-bell"></i>
                 </a>
 
@@ -325,7 +325,7 @@
                     <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -342,7 +342,7 @@
                       </li>
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -359,7 +359,7 @@
                       </li>
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -378,14 +378,14 @@
                   </li>
                   <li class="pX-20 pY-15 ta-c bdT">
                     <span>
-                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs ms-10"></i></a>
                     </span>
                   </li>
                 </ul>
               </li>
               <li class="notifications dropdown">
                 <span class="counter bgc-blue">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle no-after" data-bs-toggle="dropdown">
                   <i class="ti-email"></i>
                 </a>
 
@@ -398,7 +398,7 @@
                     <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -420,7 +420,7 @@
                       </li>
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -442,7 +442,7 @@
                       </li>
                       <li>
                         <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                          <div class="peer mR-15">
+                          <div class="peer me-15">
                             <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
                           </div>
                           <div class="peer peer-greed">
@@ -466,14 +466,14 @@
                   </li>
                   <li class="pX-20 pY-15 ta-c bdT">
                     <span>
-                      <a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i class="fs-xs ti-angle-right mL-10"></i></a>
+                      <a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i class="fs-xs ti-angle-right ms-10"></i></a>
                     </span>
                   </li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
-                  <div class="peer mR-10">
+                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-bs-toggle="dropdown">
+                  <div class="peer me-10">
                     <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                   </div>
                   <div class="peer">
@@ -483,26 +483,26 @@
                 <ul class="dropdown-menu fsz-sm">
                   <li>
                     <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-settings mR-10"></i>
+                      <i class="ti-settings me-10"></i>
                       <span>Setting</span>
                     </a>
                   </li>
                   <li>
                     <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-user mR-10"></i>
+                      <i class="ti-user me-10"></i>
                       <span>Profile</span>
                     </a>
                   </li>
                   <li>
                     <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-email mR-10"></i>
+                      <i class="ti-email me-10"></i>
                       <span>Messages</span>
                     </a>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
                     <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-power-off mR-10"></i>
+                      <i class="ti-power-off me-10"></i>
                       <span>Logout</span>
                     </a>
                   </li>
@@ -522,18 +522,18 @@
                   <h6 class="c-grey-900">Basic Form</h6>
                   <div class="mT-30">
                     <form action="" method="POST">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                      <div class="mb-3">
+                        <label class="form-label" for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <small id="emailHelp" class="text-muted">We'll never share your email with anyone else.</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                      <div class="mb-3">
+                        <label class="form-label" for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <div class="checkbox checkbox-circle checkbox-info peers ai-c mB-15">
                         <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">
-                        <label for="inputCall1" class=" peers peer-greed js-sb ai-c">
+                        <label for="inputCall1" class="form-label peers peer-greed js-sb ai-c">
                           <span class="peer peer-greed">Call John for Dinner</span>
                         </label>
                       </div>
@@ -564,47 +564,47 @@
                   <h6 class="c-grey-900">Complex Form Layout</h6>
                   <div class="mT-30">
                     <form action="" method="POST">
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputEmail4">Email</label>
+                      <div class="row">
+                        <div class="mb-3 col-md-6">
+                          <label for="inputEmail4" class="form-label">Email</label>
                           <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                         </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputPassword4">Password</label>
+                        <div class="mb-3 col-md-6">
+                          <label for="inputPassword4" class="form-label">Password</label>
                           <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="inputAddress">Address</label>
+                      <div class="mb-3">
+                        <label for="inputAddress" class="form-label">Address</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                       </div>
-                      <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
+                      <div class="mb-3">
+                        <label for="inputAddress2" class="form-label">Address 2</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                       </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputCity">City</label>
+                      <div class="row">
+                        <div class="mb-3 col-md-6">
+                          <label for="inputCity" class="form-label">City</label>
                           <input type="text" class="form-control" id="inputCity">
                         </div>
-                        <div class="form-group col-md-4">
-                          <label for="inputState">State</label>
+                        <div class="mb-3 col-md-4">
+                          <label for="inputState" class="form-label">State</label>
                           <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
                           </select>
                         </div>
-                        <div class="form-group col-md-2">
-                          <label for="inputZip">Zip</label>
+                        <div class="mb-3 col-md-2">
+                          <label for="inputZip" class="form-label">Zip</label>
                           <input type="text" class="form-control" id="inputZip">
                         </div>
                       </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label class="fw-500">Birthdate</label>
-                          <div class="timepicker-input input-icon form-group">
+                      <div class="row">
+                        <div class="mb-3 col-md-6">
+                          <label class="form-label" class="fw-500">Birthdate</label>
+                          <div class="timepicker-input input-icon mb-3">
                             <div class="input-group">
-                              <div class="input-group-addon bgc-white bd bdwR-0">
+                              <div class="input-group-text bgc-white bd bdwR-0">
                                 <i class="ti-calendar"></i>
                               </div>
                               <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Datepicker" data-provide="datepicker">
@@ -612,10 +612,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="mb-3">
                         <div class="checkbox checkbox-circle checkbox-info peers ai-c">
                           <input type="checkbox" id="inputCall2" name="inputCheckboxesCall" class="peer">
-                          <label for="inputCall2" class=" peers peer-greed js-sb ai-c">
+                          <label for="inputCall2" class="form-label peers peer-greed js-sb ai-c">
                             <span class="peer peer-greed">Call John for Dinner</span>
                           </label>
                         </div>
@@ -630,36 +630,36 @@
                   <h6 class="c-grey-900">Horizontal Form</h6>
                   <div class="mT-30">
                     <form>
-                      <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                      <div class="mb-3 row">
+                        <label for="inputEmail3" class="form-label col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
                           <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                      <div class="mb-3 row">
+                        <label for="inputPassword3" class="form-label col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                           <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                         </div>
                       </div>
-                      <fieldset class="form-group">
+                      <fieldset class="mb-3">
                         <div class="row">
                           <legend class="col-form-legend col-sm-2">Radios</legend>
                           <div class="col-sm-10">
                             <div class="form-check">
-                              <label class="form-check-label">
+                              <label class="form-check-label form-label">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                                 Option one is this and that&mdash;be sure to include why it's great
                               </label>
                             </div>
                             <div class="form-check">
-                              <label class="form-check-label">
+                              <label class="form-check-label form-label">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                                 Option two can be something else and selecting it will deselect option one
                               </label>
                             </div>
                             <div class="form-check disabled">
-                              <label class="form-check-label">
+                              <label class="form-check-label form-label">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
                                 Option three is disabled
                               </label>
@@ -667,17 +667,17 @@
                           </div>
                         </div>
                       </fieldset>
-                      <div class="form-group row">
+                      <div class="mb-3 row">
                         <div class="col-sm-2">Checkbox</div>
                         <div class="col-sm-10">
                           <div class="form-check">
-                            <label class="form-check-label">
+                            <label class="form-check-label form-label">
                               <input class="form-check-input" type="checkbox"> Check me out
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group row">
+                      <div class="mb-3 row">
                         <div class="col-sm-10">
                           <button type="submit" class="btn btn-primary">Sign in</button>
                         </div>
@@ -692,18 +692,18 @@
                   <div class="mT-30">
                     <form>
                       <fieldset disabled>
-                        <div class="form-group">
-                          <label for="disabledTextInput">Disabled input</label>
+                        <div class="mb-3">
+                          <label for="disabledTextInput" class="form-label">Disabled input</label>
                           <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
                         </div>
-                        <div class="form-group">
-                          <label for="disabledSelect">Disabled select menu</label>
+                        <div class="mb-3">
+                          <label for="disabledSelect" class="form-label">Disabled select menu</label>
                           <select id="disabledSelect" class="form-control">
                             <option>Disabled select</option>
                           </select>
                         </div>
                         <div class="form-check">
-                          <label class="form-check-label">
+                          <label class="form-check-label" class="form-label">
                             <input class="form-check-input" type="checkbox"> Can't check this
                           </label>
                         </div>
@@ -720,31 +720,31 @@
                     <form class="container" id="needs-validation" novalidate>
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom01">First name</label>
+                          <label for="validationCustom01" class="form-label">First name</label>
                           <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom02">Last name</label>
+                          <label for="validationCustom02" class="form-label">Last name</label>
                           <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom03">City</label>
+                          <label for="validationCustom03" class="form-label">City</label>
                           <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
                           <div class="invalid-feedback">
                             Please provide a valid city.
                           </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                          <label for="validationCustom04">State</label>
+                          <label for="validationCustom04" class="form-label">State</label>
                           <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
                           <div class="invalid-feedback">
                             Please provide a valid state.
                           </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                          <label for="validationCustom05">Zip</label>
+                          <label for="validationCustom05" class="form-label">Zip</label>
                           <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
                           <div class="invalid-feedback">
                             Please provide a valid zip.

@@ -4,6 +4,7 @@ html, html a, body {
 
 a {
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 body {
@@ -76,4 +77,21 @@ a {
 
 hr {
   border-top: 1px solid $border-color;
+}
+
+
+a.btn {
+    color:#fff;
+  }
+
+a.btn:hover {
+  color:#fff;
+}
+
+.btn-color {
+  color:#fff;
+}
+
+.btn-color:hover {
+  color:#fff;
 }

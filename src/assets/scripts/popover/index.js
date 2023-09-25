@@ -1,16 +1,22 @@
-import * as $ from 'jquery';
-import 'bootstrap';
+// import * as $ from 'jquery';
+import * as bootstrap from 'bootstrap'
 
 export default (function () {
   // ------------------------------------------------------
   // @Popover
   // ------------------------------------------------------
 
-  $('[data-toggle="popover"]').popover();
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
 
   // ------------------------------------------------------
   // @Tooltips
   // ------------------------------------------------------
 
-  $('[data-toggle="tooltip"]').tooltip();
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 }());
