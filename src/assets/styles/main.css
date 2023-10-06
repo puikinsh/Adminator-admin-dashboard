@@ -10,3 +10,27 @@
 .search-button{
     width: 200px;
 }
+.mt-15{
+    margin-top: 15px!important;
+}
+.ml-15{
+    margin-left: 15px!important;
+}
+.mr-15{
+    margin-right: 15px!important;
+}
+.mb-15{
+    margin-bottom: 15px!important;
+}
+.float-l{
+    float: left;
+}
+.news-img-container img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.single-news:hover{
+    background-color: #f2f3f5 !important;
+    cursor: pointer;
+}

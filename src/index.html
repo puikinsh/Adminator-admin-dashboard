@@ -58,7 +58,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css" />
   </head>
   <body class="app">
     <!-- @TOC -->
@@ -617,36 +617,84 @@
         </div>
 
         <!-- ### $App Screen Content ### -->
-        <main class="main-content bgc-grey-100">
+        <main class="main-content">
           <div id="mainContent">
-            <div class="full-container">
+            <div class="full-container bgc-grey-100">
+              <!-- Google Search -->
               <div class="mansonary-item col-12 google-search p-20">
                 <div class="bd bgc-white">
                   <div class="peers fxw-nw@lg+ ai-s p-20">
                     <div class="col-sm-12 col-md-6 search-image-container">
-                      <img src="https://picsum.photos/850/300" alt="" class="img-fluid" />
+                      <img
+                        src="https://picsum.photos/850/300"
+                        alt=""
+                        class="img-fluid"
+                      />
                     </div>
-                    <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
-                      <img src="https://cdn.webrazzi.com/uploads/2015/09/google-logo.png" class="google-logo" alt="">
-                      <input type="text" class="form-control bdrs-10em m-1r" id="search-text" />
-                      <button type="button" class="btn btn-primary p-0 h-2r btn-color search-button" onclick="googleSearch()"><i class="fa fa-search"></i></button>
+                    <div
+                      class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <img
+                        src="https://cdn.webrazzi.com/uploads/2015/09/google-logo.png"
+                        class="google-logo"
+                        alt=""
+                      />
+                      <input
+                        type="text"
+                        class="form-control bdrs-10em m-1r"
+                        id="search-text"
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-primary p-0 h-2r btn-color search-button"
+                        onclick="googleSearch()"
+                      >
+                        <i class="fa fa-search"></i>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- Google Search  END -->
+              <!-- News -->
+              <div class="masonry-item col-md-6 p-20">
+                <div class="bd bgc-white">
+                  <div class="peers fxw-nw@lg+ ai-s">
+                    <div class="peer bdL p-20 w-100">
+                      <div class="layers">
+                        <div class="layer w-100">
+                          <h3 class="lh-1">News</h3>
+                        </div>
+                        <div class="layer w-100" >
+                          <div class="layers" id="news-container">
+                            <!-- <div class="layer w-100 mt-15 single-news">
+                              <div class="news-img-container float-l mr-15">
+                                <img src="https://placehold.co/100" alt="" class="img-fluid">
+                              </div>
+                              <h5 class="mB-5">100k</h5>
+                              <small class="fw-600 c-grey-700">Visitors From USA</small>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- News END-->
             </div>
           </div>
         </main>
 
         <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+        <!-- <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
           <span
             >Copyright © 2021 Designed by
             <a href="https://colorlib.com" target="_blank" title="Colorlib"
               >Colorlib</a
             >. All rights reserved.</span
           >
-        </footer>
+        </footer> -->
       </div>
     </div>
   </body>
