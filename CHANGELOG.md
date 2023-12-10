@@ -1,13 +1,16 @@
-### Changelog
+# Changelog
 
-#### 1.0.0
+## [2.0.0]
 
-- Intial release
+### Changed
+- Upgrade to Bootstrap 5
 
-#### 1.1.0
+## [1.1.0]
 
+### Changed
 - Upgrade to webpack 5
 
-#### 2.0.0
+## [1.0.0]
 
-- Upgrade to Bootstrap 5
+### Added
+- Intial release
