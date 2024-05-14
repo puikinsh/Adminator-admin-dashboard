@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.1.0]
+- Upgraded all dependencies
+
 ## [2.0.0]
 
 ### Changed
