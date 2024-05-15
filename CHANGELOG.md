@@ -1,13 +1,19 @@
-### Changelog
+# Changelog
 
-#### 1.0.0
+## [2.1.0]
+- Upgraded all dependencies
 
-- Intial release
+## [2.0.0]
 
-#### 1.1.0
+### Changed
+- Upgrade to Bootstrap 5
 
+## [1.1.0]
+
+### Changed
 - Upgrade to webpack 5
 
-#### 2.0.0
+## [1.0.0]
 
-- Upgrade to Bootstrap 5
+### Added
+- Intial release
