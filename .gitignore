@@ -23,10 +23,10 @@ logs
 npm-debug.log*
 node_modules
 yarn.lock
-package-lock.json
 
 # ----------------------------
 # Project Folders
 # ----------------------------
 
 build/
+dist/

@@ -16,8 +16,8 @@
 const
   manifest          = require('../manifest'),
   path              = require('path'),
-  cssNext           = require('postcss-cssnext');
-
+  cssNext           = require('postcss-preset-env'),
+  ExtractTextPlugin = require('mini-css-extract-plugin');
 
 // ---------------
 // @Common Loaders
@@ -27,37 +27,49 @@ const loaders = [
   {
     loader: 'css-loader',
     options: {
-      sourceMap : manifest.IS_DEVELOPMENT,
-      minimize  : manifest.IS_PRODUCTION,
+      sourceMap : manifest.IS_DEVELOPMENT
     },
   },
   {
     loader: 'postcss-loader',
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
-      plugins: () => [
-        cssNext(),
-      ],
+      postcssOptions: {
+        plugins: [
+          [
+            cssNext(),
+          ],
+        ],
+      },
     },
   },
   {
     loader: 'sass-loader',
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
-      includePaths: [
-        path.join('../../', 'node_modules'),
-        path.join(manifest.paths.src, 'assets', 'styles'),
-        path.join(manifest.paths.src, ''),
-      ],
-    },
-  },
+      sassOptions: {
+        outputStyle: manifest.MINIFY ? 'compressed' : 'expanded',
+        includePaths: [
+          path.join('../../', 'node_modules'),
+          path.join(manifest.paths.src, 'assets', 'styles'),
+          path.join(manifest.paths.src, ''),
+        ],
+      },
+    }
+  }
 ];
+
+if (manifest.IS_PRODUCTION) {
+  loaders.unshift(ExtractTextPlugin.loader);
+} else {
+  loaders.unshift({
+    loader: 'style-loader',
+  });
+}
 
 const rule = {
   test: /\.scss$/,
-  use: [{
-    loader: 'style-loader',
-  }].concat(loaders),
+  use: loaders
 };
 
 // -----------------
