@@ -227,4 +227,4 @@ export default (function () {
     borderWidth: 1,
     borderColor: '000',
   });
-})();
+}());

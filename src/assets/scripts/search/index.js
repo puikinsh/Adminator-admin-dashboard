@@ -6,4 +6,4 @@ export default (function () {
     $('.search-input input').focus();
     e.preventDefault();
   });
-})();
+}());

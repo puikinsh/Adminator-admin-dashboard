@@ -6,4 +6,4 @@ semi: true
 quoteProps: preserve
 bracketSpacing: true
 bracketSameLine: true
-endOfLine: lf
+endOfLine: crlf

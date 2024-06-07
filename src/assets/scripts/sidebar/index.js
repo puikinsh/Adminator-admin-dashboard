@@ -13,8 +13,10 @@ export default (function () {
           $this.parent().removeClass('open');
         });
     } else {
-      $this.parent().parent().children('li.open').children('.dropdown-menu').slideUp(200);
-      $this.parent().parent().children('li.open').children('a').removeClass('open');
+      $this.parent().parent().children('li.open').children('.dropdown-menu')
+        .slideUp(200);
+      $this.parent().parent().children('li.open').children('a')
+        .removeClass('open');
       $this.parent().parent().children('li.open').removeClass('open');
       $this
         .parent()
@@ -56,4 +58,4 @@ export default (function () {
       window.dispatchEvent(window.EVENT);
     }, 300);
   });
-})();
+}());

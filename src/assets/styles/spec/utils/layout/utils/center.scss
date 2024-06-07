@@ -31,8 +31,8 @@ $responsive: true;
   transform: translate(-50%, -50%);
 }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .centerY\@#{$breakpointAlias} {
       top: 50%;
       transform: translateY(-50%);

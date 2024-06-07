@@ -58,8 +58,8 @@ $responsive: true;
     }
   }
 
-  @if ($responsive == true) {
-    @include generateResponsive() {
+  @if $responsive == true {
+    @include generateResponsive {
       .gapX-#{$i}\@#{$breakpointAlias} {
         margin-left: #{math.div($i, -2)}px !important;
         margin-right: #{math.div($i, -2)}px !important;
@@ -125,8 +125,8 @@ $responsive: true;
       }
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .gapX-#{$i}\@#{$breakpointAlias} {
           margin-left: #{math.div($i, -2)}px !important;
           margin-right: #{math.div($i, -2)}px !important;
@@ -193,8 +193,8 @@ $responsive: true;
       }
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .gapX-#{$i}\@#{$breakpointAlias} {
           margin-left: #{math.div($i, -2)}px !important;
           margin-right: #{math.div($i, -2)}px !important;

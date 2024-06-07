@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 jQuery.fn.vectorMap('addMap', 'world_mill', {
   'insets': [
     {

@@ -23,8 +23,8 @@ $responsive: true;
   .b-#{$i} { bottom: #{$i}px; }
   .l-#{$i} { left: #{$i}px; }
 
-  @if ($responsive == true) {
-    @include generateResponsive() {
+  @if $responsive == true {
+    @include generateResponsive {
       .t-#{$i}\@#{$breakpointAlias} { top: #{$i}px; }
       .r-#{$i}\@#{$breakpointAlias} { right: #{$i}px; }
       .b-#{$i}\@#{$breakpointAlias} { bottom: #{$i}px; }
@@ -44,8 +44,8 @@ $responsive: true;
     .b-#{$i} { bottom: #{$i}px; }
     .l-#{$i} { left: #{$i}px; }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .t-#{$i}\@#{$breakpointAlias} { top: #{$i}px; }
         .r-#{$i}\@#{$breakpointAlias} { right: #{$i}px; }
         .b-#{$i}\@#{$breakpointAlias} { bottom: #{$i}px; }
@@ -66,8 +66,8 @@ $responsive: true;
     .b-#{$i} { bottom: #{$i}px; }
     .l-#{$i} { left: #{$i}px; }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .t-#{$i}\@#{$breakpointAlias} { top: #{$i}px; }
         .r-#{$i}\@#{$breakpointAlias} { right: #{$i}px; }
         .b-#{$i}\@#{$breakpointAlias} { bottom: #{$i}px; }
@@ -96,8 +96,8 @@ $responsive: true;
 .b-50p { bottom: 50%; }
 .l-50p { left: 50%; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .tl-50p\@#{$breakpointAlias} {
       top: 50%;
       left: 50%;

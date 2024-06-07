@@ -5,4 +5,4 @@ export default (function () {
     $('#chat-sidebar').toggleClass('open');
     e.preventDefault();
   });
-})();
+}());

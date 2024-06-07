@@ -5,7 +5,6 @@
 const
   manifest = require('./manifest');
 
-
 // ------------------
 // @DevServer Configs
 // ------------------
@@ -44,7 +43,6 @@ const devServer = {
     },
   },
 };
-
 
 // -----------------
 // @Exporting Module

@@ -3,7 +3,7 @@ name: Merge checks
 on:
   pull_request:
     branches:
-      - master
+      - master-rtl
 
 jobs:
   build:

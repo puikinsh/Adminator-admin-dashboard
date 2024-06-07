@@ -21,4 +21,4 @@ export default (function () {
   const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
-})();
+}());
