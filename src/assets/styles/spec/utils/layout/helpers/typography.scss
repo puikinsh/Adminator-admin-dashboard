@@ -30,8 +30,8 @@ $responsive: true;
 .ta-l { text-align: left !important; }
 .ta-r { text-align: right !important; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .ta-c\@#{$breakpointAlias} { text-align: center !important; }
     .ta-l\@#{$breakpointAlias} { text-align: left !important; }
     .ta-r\@#{$breakpointAlias} { text-align: right !important; }

@@ -35,8 +35,8 @@ $responsive: true;
     margin-right: #{math.div($i, -2)}px !important;
 
     & > * {
-      padding-left: #{($i * 0.5)}px !important;
-      padding-right: #{($i * 0.5)}px !important;
+      padding-left: #{math.div($i, 2)}px !important;
+      padding-right: #{math.div($i, 2)}px !important;
     }
   }
 
@@ -45,8 +45,8 @@ $responsive: true;
     margin-bottom: #{math.div($i, -2)}px !important;
 
     & > * {
-      padding-top: #{($i * 0.5)}px !important;
-      padding-bottom: #{($i * 0.5)}px !important;
+      padding-top: #{math.div($i, 2)}px !important;
+      padding-bottom: #{math.div($i, 2)}px !important;
     }
   }
 
@@ -54,19 +54,19 @@ $responsive: true;
     margin: #{math.div($i, -2)}px !important;
 
     & > * {
-      padding: #{($i * 0.5)}px !important;
+      padding: #{math.div($i, 2)}px !important;
     }
   }
 
-  @if ($responsive == true) {
-    @include generateResponsive() {
+  @if $responsive == true {
+    @include generateResponsive {
       .gapX-#{$i}\@#{$breakpointAlias} {
         margin-left: #{math.div($i, -2)}px !important;
         margin-right: #{math.div($i, -2)}px !important;
 
         & > * {
-          padding-left: #{($i * 0.5)}px !important;
-          padding-right: #{($i * 0.5)}px !important;
+          padding-left: #{math.div($i, 2)}px !important;
+          padding-right: #{math.div($i, 2)}px !important;
         }
       }
 
@@ -75,8 +75,8 @@ $responsive: true;
         margin-bottom: #{math.div($i, -2)}px !important;
 
         & > * {
-          padding-top: #{($i * 0.5)}px !important;
-          padding-bottom: #{($i * 0.5)}px !important;
+          padding-top: #{math.div($i, 2)}px !important;
+          padding-bottom: #{math.div($i, 2)}px !important;
         }
       }
 
@@ -84,7 +84,7 @@ $responsive: true;
         margin: #{math.div($i, -2)}px !important;
 
         & > * {
-          padding: #{($i * 0.5)}px !important;
+          padding: #{math.div($i, 2)}px !important;
         }
       }
     }
@@ -102,8 +102,8 @@ $responsive: true;
       margin-right: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding-left: #{($i * 0.5)}px !important;
-        padding-right: #{($i * 0.5)}px !important;
+        padding-left: #{math.div($i, 2)}px !important;
+        padding-right: #{math.div($i, 2)}px !important;
       }
     }
 
@@ -112,8 +112,8 @@ $responsive: true;
       margin-bottom: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding-top: #{($i * 0.5)}px !important;
-        padding-bottom: #{($i * 0.5)}px !important;
+        padding-top: #{math.div($i, 2)}px !important;
+        padding-bottom: #{math.div($i, 2)}px !important;
       }
     }
 
@@ -121,19 +121,19 @@ $responsive: true;
       margin: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding: #{($i * 0.5)}px !important;
+        padding: #{math.div($i, 2)}px !important;
       }
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .gapX-#{$i}\@#{$breakpointAlias} {
           margin-left: #{math.div($i, -2)}px !important;
           margin-right: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding-left: #{($i * 0.5)}px !important;
-            padding-right: #{($i * 0.5)}px !important;
+            padding-left: #{math.div($i, 2)}px !important;
+            padding-right: #{math.div($i, 2)}px !important;
           }
         }
 
@@ -142,8 +142,8 @@ $responsive: true;
           margin-bottom: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding-top: #{($i * 0.5)}px !important;
-            padding-bottom: #{($i * 0.5)}px !important;
+            padding-top: #{math.div($i, 2)}px !important;
+            padding-bottom: #{math.div($i, 2)}px !important;
           }
         }
 
@@ -151,7 +151,7 @@ $responsive: true;
           margin: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding: #{($i * 0.5)}px !important;
+            padding: #{math.div($i, 2)}px !important;
           }
         }
       }
@@ -170,8 +170,8 @@ $responsive: true;
       margin-right: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding-left: #{($i * 0.5)}px !important;
-        padding-right: #{($i * 0.5)}px !important;
+        padding-left: #{math.div($i, 2)}px !important;
+        padding-right: #{math.div($i, 2)}px !important;
       }
     }
 
@@ -180,8 +180,8 @@ $responsive: true;
       margin-bottom: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding-top: #{($i * 0.5)}px !important;
-        padding-bottom: #{($i * 0.5)}px !important;
+        padding-top: #{math.div($i, 2)}px !important;
+        padding-bottom: #{math.div($i, 2)}px !important;
       }
     }
 
@@ -189,19 +189,19 @@ $responsive: true;
       margin: #{math.div($i, -2)}px !important;
 
       & > * {
-        padding: #{($i * 0.5)}px !important;
+        padding: #{math.div($i, 2)}px !important;
       }
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .gapX-#{$i}\@#{$breakpointAlias} {
           margin-left: #{math.div($i, -2)}px !important;
           margin-right: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding-left: #{($i * 0.5)}px !important;
-            padding-right: #{($i * 0.5)}px !important;
+            padding-left: #{math.div($i, 2)}px !important;
+            padding-right: #{math.div($i, 2)}px !important;
           }
         }
 
@@ -210,8 +210,8 @@ $responsive: true;
           margin-bottom: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding-top: #{($i * 0.5)}px !important;
-            padding-bottom: #{($i * 0.5)}px !important;
+            padding-top: #{math.div($i, 2)}px !important;
+            padding-bottom: #{math.div($i, 2)}px !important;
           }
         }
 
@@ -219,7 +219,7 @@ $responsive: true;
           margin: #{math.div($i, -2)}px !important;
 
           & > * {
-            padding: #{($i * 0.5)}px !important;
+            padding: #{math.div($i, 2)}px !important;
           }
         }
       }

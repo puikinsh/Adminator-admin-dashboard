@@ -10,4 +10,4 @@ export default (function () {
     $('.email-content').toggleClass('open');
     e.preventDefault();
   });
-})();
+}());

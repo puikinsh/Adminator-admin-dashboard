@@ -33,8 +33,8 @@ $responsive: true;
 .w-11\/2r, .sz-11\/2r  { width: 5.5rem; }
 .w-6r, .sz-6r          { width: 6rem; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .w-1\/4r\@#{$breakpointAlias}, .sz-1\/4r\@#{$breakpointAlias}    { width: 0.25rem; }
     .w-1\/2r\@#{$breakpointAlias}, .sz-1\/2r\@#{$breakpointAlias}    { width: 0.5rem; }
     .w-3\/4r\@#{$breakpointAlias}, .sz-3\/4r\@#{$breakpointAlias}    { width: 0.75rem; }
@@ -70,8 +70,8 @@ $responsive: true;
 .w-1px   { width: 1px; }
 .w-a     { width: auto; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .w-0\@#{$breakpointAlias}     { width: 0; }
     .w-10p\@#{$breakpointAlias}   { width: 10%; }
     .w-20p\@#{$breakpointAlias}   { width: 20%; }
@@ -107,8 +107,8 @@ $responsive: true;
 .h-11\/2r, .sz-11\/2r  { height: 5.5rem; }
 .h-6r, .sz-6r          { height: 6rem; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .h-1\/4r\@#{$breakpointAlias}, .sz-1\/4r\@#{$breakpointAlias}    { height: 0.25rem; }
     .h-1\/2r\@#{$breakpointAlias}, .sz-1\/2r\@#{$breakpointAlias}    { height: 0.5rem; }
     .h-3\/4r\@#{$breakpointAlias}, .sz-3\/4r\@#{$breakpointAlias}    { height: 0.75rem; }
@@ -131,8 +131,8 @@ $responsive: true;
 .h-100p  { height: 100%; }
 .h-100vh { height: 100vh; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .h-0\@#{$breakpointAlias}     { height: 0; }
     .h-auto\@#{$breakpointAlias}  { height: auto; }
     .h-100p\@#{$breakpointAlias}  { height: 100%; }
@@ -147,8 +147,8 @@ $responsive: true;
 .mw-100p { max-width: 100%; }
 .mh-100p { max-height: 100%; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .mw-100p\@#{$breakpointAlias} { max-width: 100%; }
     .mh-100p\@#{$breakpointAlias} { max-height: 100%; }
   }

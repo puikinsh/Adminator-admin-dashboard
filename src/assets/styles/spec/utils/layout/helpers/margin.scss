@@ -51,8 +51,8 @@ $responsive: true;
     margin-right: -#{$i}px !important;
   }
 
-  @if ($responsive == true) {
-    @include generateResponsive() {
+  @if $responsive == true {
+    @include generateResponsive {
       .m-#{$i}\@#{$breakpointAlias}  { margin: #{$i}px !important; }
       .mT-#{$i}\@#{$breakpointAlias} { margin-top: #{$i}px !important; }
       .mR-#{$i}\@#{$breakpointAlias} { margin-right: #{$i}px !important; }
@@ -126,8 +126,8 @@ $responsive: true;
       margin-right: -#{$i}px !important;
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .m-#{$i}\@#{$breakpointAlias}  { margin: #{$i}px !important; }
         .mT-#{$i}\@#{$breakpointAlias} { margin-top: #{$i}px !important; }
         .mR-#{$i}\@#{$breakpointAlias} { margin-right: #{$i}px !important; }
@@ -203,8 +203,8 @@ $responsive: true;
       margin-right: -#{$i}px !important;
     }
 
-    @if ($responsive == true) {
-      @include generateResponsive() {
+    @if $responsive == true {
+      @include generateResponsive {
         .m-#{$i}\@#{$breakpointAlias}  { margin: #{$i}px !important; }
         .mT-#{$i}\@#{$breakpointAlias} { margin-top: #{$i}px !important; }
         .mR-#{$i}\@#{$breakpointAlias} { margin-right: #{$i}px !important; }
@@ -254,8 +254,8 @@ $responsive: true;
 .mB-a { margin-bottom: auto !important; }
 .mL-a { margin-left: auto !important; }
 
-@if ($responsive == true) {
-  @include generateResponsive() {
+@if $responsive == true {
+  @include generateResponsive {
     .m-a\@#{$breakpointAlias}  { margin: auto !important; }
     .mX-a\@#{$breakpointAlias} { margin-left: auto !important;
                                  margin-right: auto !important; }

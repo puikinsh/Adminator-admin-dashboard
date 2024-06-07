@@ -1,4 +1,4 @@
-import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 import { COLORS } from '../../constants/colors';
 
 export default (function () {
@@ -119,7 +119,8 @@ export default (function () {
   if (scatterChartBox) {
     const scatterCtx = scatterChartBox.getContext('2d');
 
-    Chart.Scatter(scatterCtx, {
+    new Chart(scatterCtx, {
+      type: 'scatter',
       data: {
         datasets: [
           {
@@ -154,4 +155,4 @@ export default (function () {
       },
     });
   }
-})();
+}());

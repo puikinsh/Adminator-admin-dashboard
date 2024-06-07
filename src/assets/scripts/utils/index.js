@@ -39,4 +39,4 @@ export default (function () {
   document.addEventListener('click', () => {
     window.dispatchEvent(window.EVENT);
   });
-})();
+}());

@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "at-rule-empty-line-before": null,
+    "selector-class-pattern": null,
+    "scss/at-mixin-pattern": null,
+    "scss/dollar-variable-pattern": null,
+    "selector-pseudo-element-no-unknown": null,
+    "selector-type-no-unknown": null,
+    "selector-pseudo-class-no-unknown": null
+  }
+}

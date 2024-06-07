@@ -38,7 +38,7 @@ export default (function () {
           },
         },
         onRegionTipShow: (e, el, code) => {
-          el.html(countries.find((c) => c.code == code).name_fa);
+          el.html(countries.find((c) => c.code === code)?.name_fa);
         },
         markerStyle: {
           initial: {
@@ -102,4 +102,4 @@ export default (function () {
 
   vectorMapInit();
   $(window).resize(debounce(vectorMapInit, 150));
-})();
+}());
