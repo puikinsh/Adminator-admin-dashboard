@@ -27,7 +27,7 @@ jobs:
         npm run build
 
     - name: Get version
-      run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
+      run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
       id: version
 
     - name: Verify version

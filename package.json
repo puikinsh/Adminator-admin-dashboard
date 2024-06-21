@@ -1,6 +1,6 @@
 {
   "name": "adminator-rtl",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
@@ -42,15 +42,15 @@
     "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.5.14",
-    "sass": "^1.77.4",
+    "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "shx": "^0.3.4",
     "style-loader": "^4.0.0",
     "stylelint": "^16.6.1",
-    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
-    "stylelint-scss": "^6.3.1",
-    "webpack": "^5.91.0",
+    "stylelint-scss": "^6.3.2",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-dashboard": "^3.3.8",
     "webpack-dev-server": "^5.0.4"
