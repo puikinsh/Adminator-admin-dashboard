@@ -50,7 +50,6 @@ if (manifest.IS_PRODUCTION) {
   };
 }
 
-
 // ----------------------------
 // @Merging Development Loaders
 // ----------------------------
@@ -63,7 +62,6 @@ if (manifest.IS_DEVELOPMENT) {
     }].concat(loaders),
   };
 }
-
 
 // -----------------
 // @Exporting Module
