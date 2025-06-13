@@ -20,7 +20,7 @@ const devServer = {
     watch: true,
   },
   historyApiFallback: true,
-  port: manifest.IS_PRODUCTION ? 3001 : 3000,
+  port: manifest.IS_PRODUCTION ? 3001 : 4000,
   compress: manifest.IS_PRODUCTION,
   client: {
     overlay: true,
@@ -41,6 +41,17 @@ const devServer = {
       version: false,
       warnings: true,
       colors: true,
+      warningsFilter: [
+        /Deprecation Warning/,
+        /node_modules\/bootstrap/,
+        /repetitive deprecation warnings omitted/,
+        /red\(\) is deprecated/,
+        /green\(\) is deprecated/,
+        /blue\(\) is deprecated/,
+        /mix\(white, \$color/,
+        /mix\(black, \$color/,
+        /Global built-in functions are deprecated/
+      ]
     },
   },
 };

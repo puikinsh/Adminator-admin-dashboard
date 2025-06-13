@@ -4,7 +4,6 @@ const
 const plugins = [];
 
 plugins.push(
-  require('./imageminPlugin'),
   ...(require('./htmlPlugin')),
   ...(require('./internal')),
   require('./caseSensitivePlugin'),

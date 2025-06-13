@@ -1,2 +1,2 @@
-@import 'layout/index';
-@import 'colors';
+@use 'layout/index' as *;
+@use 'colors' as *;

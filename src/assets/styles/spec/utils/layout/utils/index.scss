@@ -1,5 +1,5 @@
-@import 'center';
-@import 'gap';
-@import 'peers';
-@import 'layers';
+@use 'center' as *;
+@use 'gap' as *;
+@use 'peers' as *;
+@use 'layers' as *;
 

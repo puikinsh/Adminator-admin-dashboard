@@ -1,3 +1,5 @@
+@use '../spec/settings/baseColors' as *;
+
 .fc {
   background-color: $default-white;
   border: 1px solid $border-color;

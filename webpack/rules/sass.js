@@ -47,6 +47,7 @@ const loaders = [
     loader: 'sass-loader',
     options: {
       sourceMap: manifest.IS_DEVELOPMENT,
+      api: 'modern-compiler',
       sassOptions: {
         outputStyle: manifest.MINIFY ? 'compressed' : 'expanded',
         includePaths: [
@@ -54,6 +55,8 @@ const loaders = [
           path.join(manifest.paths.src, 'assets', 'styles'),
           path.join(manifest.paths.src, ''),
         ],
+        quietDeps: true,
+        verbose: false
       },
     }
   }

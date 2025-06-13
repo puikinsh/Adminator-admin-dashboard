@@ -1,3 +1,6 @@
+@use '../settings/baseColors' as *;
+@use '../settings/materialColors' as *;
+
 .checkbox label {
   display: inline-block;
   vertical-align: middle;

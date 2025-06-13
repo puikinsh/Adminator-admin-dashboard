@@ -1,3 +1,7 @@
+@use '../settings/baseColors' as *;
+@use '../settings/breakpoints' as *;
+@use '../tools/mixins/mediaQueriesRanges' as *;
+
 // ---------------------------------------------------------
 // @TOC
 // ---------------------------------------------------------

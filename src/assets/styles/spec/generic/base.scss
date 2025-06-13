@@ -1,3 +1,7 @@
+@use '../settings/fonts' as *;
+@use '../settings/baseColors' as *;
+@use 'sass:color';
+
 html, html a, body {
   -webkit-font-smoothing: antialiased;
 }
@@ -25,6 +29,7 @@ h6 {
   font-family: $font-secondary;
   letter-spacing: 0.5px;
   line-height: 1.5;
+  font-weight: 400;
 
   a {
     font-family: $font-secondary;
@@ -32,7 +37,7 @@ h6 {
 
   small {
     font-weight: 300;
-    color: lighten($default-dark, 5%);
+    color: color.adjust($default-dark, $lightness: 5%);
   }
 }
 

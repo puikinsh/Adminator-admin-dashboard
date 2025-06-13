@@ -1,3 +1,9 @@
+@use '../../../settings/breakpoints' as *;
+@use 'mediaQueryCondition' as *;
+
+// Initialize global variable to avoid deprecation warning
+$breakpointAlias: null;
+
 // ---------------------------------------------------------
 // @Responsive Suffix Generator
 // ---------------------------------------------------------

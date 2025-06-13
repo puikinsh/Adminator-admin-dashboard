@@ -1,6 +1,6 @@
-@import 'spec/settings/index';
-@import 'spec/tools/index';
-@import "bootstrap/scss/bootstrap";
-@import 'spec/index';
-@import 'vendor/index';
+@use 'spec/settings/index' as *;
+@use 'spec/tools/index' as *;
+@use "bootstrap/scss/bootstrap" as *;
+@use 'spec/index' as *;
+@use 'vendor/index' as *;
 

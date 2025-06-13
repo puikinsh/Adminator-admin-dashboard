@@ -1,8 +1,8 @@
-@import 'perfect-scrollbar/css/perfect-scrollbar';
-@import 'themify-icons';
-@import 'font-awesome';
-@import 'perfectScrollbar';
-@import 'sparkline';
-@import 'jquery.datatables';
-@import 'fullcalendar';
-@import 'datepicker';
+@use 'perfect-scrollbar/css/perfect-scrollbar' as *;
+@use 'themify-icons' as *;
+@use 'font-awesome' as *;
+@use 'perfectScrollbar' as *;
+@use 'sparkline' as *;
+@use 'jquery.datatables' as *;
+@use 'fullcalendar' as *;
+@use 'datepicker' as *;

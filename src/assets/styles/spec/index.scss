@@ -1,4 +1,4 @@
-@import 'generic/index';
-@import 'components/index';
-@import 'screens/index';
-@import 'utils/index';
+@use 'generic/index' as *;
+@use 'components/index' as *;
+@use 'screens/index' as *;
+@use 'utils/index' as *;

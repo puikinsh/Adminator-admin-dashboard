@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'materialColors' as *;
+
 // ---------------------------------------------------------
 // @TOC
 // ---------------------------------------------------------
@@ -71,11 +74,11 @@ $default-white        : #fff;
 // @Inverted Colors
 // ---------------------------------------------------------
 
-$inverse-danger       : lighten($default-danger, 35%);
-$inverse-info         : lighten($default-info, 45%);
-$inverse-primary      : lighten($default-primary, 30%);
-$inverse-success      : lighten($default-success, 45%);
-$inverse-warning      : lighten($default-warning, 45%);
+$inverse-danger       : color.adjust($default-danger, $lightness: 35%);
+$inverse-info         : color.adjust($default-info, $lightness: 45%);
+$inverse-primary      : color.adjust($default-primary, $lightness: 30%);
+$inverse-success      : color.adjust($default-success, $lightness: 45%);
+$inverse-warning      : color.adjust($default-warning, $lightness: 45%);
 
 // ---------------------------------------------------------
 // @Others
@@ -94,7 +97,7 @@ $side-nav-dark-font   : #99abb4;
 // ---------------------------------------------------------
 
 $theme-danger         : #f53f61;
-$theme-dark           : lighten($side-nav-dark, 10%);
+$theme-dark           : color.adjust($side-nav-dark, $lightness: 10%);
 $theme-info           : $default-info;
 $theme-primary        : $default-primary;
-$theme-success        : desaturate($default-success, 5%);
+$theme-success        : color.adjust($default-success, $saturation: -5%);

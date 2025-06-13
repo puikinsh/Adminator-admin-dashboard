@@ -1,2 +1,2 @@
-@import 'chat';
-@import 'email';
+@use 'chat' as *;
+@use 'email' as *;

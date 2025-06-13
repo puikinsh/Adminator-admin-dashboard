@@ -1,3 +1,7 @@
+@use '../spec/settings/baseColors' as *;
+@use '../spec/settings/breakpoints' as *;
+@use '../spec/tools/mixins/mediaQueriesRanges' as *;
+
 table {
   &.dataTable {
     &.no-footer {

@@ -1,2 +1,2 @@
-@import 'mediaQueryCondition';
-@import 'generateResponsive';
+@use 'mediaQueryCondition' as *;
+@use 'generateResponsive' as *;

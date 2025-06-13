@@ -1,9 +1,9 @@
-@import 'sidebar';
-@import 'topbar';
-@import 'pageContainer';
-@import 'progressBar';
-@import 'easyPieChart';
-@import 'forms';
-@import 'masonry';
-@import 'loader';
-@import 'footer';
+@use 'sidebar' as *;
+@use 'topbar' as *;
+@use 'pageContainer' as *;
+@use 'progressBar' as *;
+@use 'easyPieChart' as *;
+@use 'forms' as *;
+@use 'masonry' as *;
+@use 'loader' as *;
+@use 'footer' as *;
