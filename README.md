@@ -1,5 +1,10 @@
-# Adminator Bootstrap 5 Admin Template
-**Adminator** is a responsive Bootstrap 5 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
+# Adminator Bootstrap 5 Admin Template v2.5.0
+
+**Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. 
+
+✨ **Latest Update (v2.5.0)**: Completely modernized build system with latest dependencies, ESLint 9.x flat config, and enhanced development experience.
+
+Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
 # Preview
 
@@ -10,6 +15,7 @@
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
+- [What's New in v2.5.0](#whats-new-in-v250)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
@@ -21,29 +27,85 @@
 - [Authors](#authors)
 - [License](#license)
 
+## What's New in v2.5.0
+
+🎉 **Major Modernization Release** - Complete overhaul of the development stack:
+
+- **🚀 Latest Dependencies**: All 22+ dependencies updated to latest versions
+- **⚡ Modern Build Tools**: webpack 5.99.9, webpack-dev-server 5.2.2
+- **🔧 ESLint 9.x**: Migrated to modern flat config format
+- **🎨 Enhanced CSS**: Latest Sass (1.89.2), PostCSS (8.5.5), Bootstrap (5.3.6)
+- **📊 Updated Components**: Chart.js 4.5.0, FullCalendar 6.1.17
+- **🛡️ Zero Vulnerabilities**: Complete security audit with all packages secure
+- **🔄 Modern Tooling**: babel-loader 10.x, copy-webpack-plugin 13.x, webpack-cli 6.x
+- **📱 Enhanced Experience**: Better development server, faster builds, improved linting
 
 ## Getting Started
+
 In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases).
 
 #### Prerequisites
-  - Node.js 14+
-  - Yarn or NPM
-  - Git
-  - libpng-dev *linux only*
+  - **Node.js 18.12.0 or higher** (tested with Node.js 23.11.0)
+  - **npm** (included with Node.js) or **Yarn**
+  - **Git**
 
 #### Installing & Local Development
+
 Start by typing the following commands in your terminal in order to get **Adminator** full package on your machine and starting a local development server with live reload feature.
 
+```bash
+# Clone the repository
+git clone https://github.com/puikinsh/Adminator-admin-dashboard.git adminator
+
+# Navigate to the project directory
+cd adminator
+
+# Install dependencies
+npm install
+
+# Start development server (available at http://localhost:4000)
+npm start
+
+# Alternative: Start with webpack dashboard
+npm run dev
 ```
-> git clone https://github.com/puikinsh/Adminator-admin-dashboard.git adminator
-> cd adminator
-> npm install
-> npm run dev
+
+#### Development Commands
+
+```bash
+# Development server with hot reload
+npm start
+
+# Development server with dashboard
+npm run dev
+
+# Build for production (optimized)
+npm run build
+
+# Build for production (unminified)
+npm run release:unminified
+
+# Build for production (minified)
+npm run release:minified
+
+# Preview production build
+npm run preview
+
+# Lint JavaScript files
+npm run lint:js
+
+# Lint SCSS files  
+npm run lint:scss
+
+# Run all linters
+npm run lint
 ```
+
 ## Adminator for other platforms and frameworks
-* [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) Adminator modified to work with right to left languages like Persian and Arabic
+* [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) - Adminator modified to work with right to left languages like Persian and Arabic
 
 ## Files/Folders Structure
+
 Here is a brief explanation of the template folder structure and some of its main files usage:
 
 ```
@@ -66,7 +128,7 @@ Here is a brief explanation of the template folder structure and some of its mai
 │   │   │   └── skycons         # Animated icons plugin init.
 │   │   │   └── utils           # Basic utils used for proper rendering.
 │   │   │   └── vectorMaps      # Vector maps plugin init.
-│   │   │   └── index.js        # Indicator file.
+│   │   │   └── app.js          # Main application entry point.
 │   │   │
 │   │   └── static              # Contains the non-code files.
 │   │   │   └── fonts           # Contains icon fonts.
@@ -83,74 +145,106 @@ Here is a brief explanation of the template folder structure and some of its mai
 │   │       │   └── index.scss  # Indicator file.
 │   │       │
 │   │       └── vendor          # Contains all plugin files & custom styles.
-│   │       └── index.scss      # Indicator file.
+│   │       └── index.scss      # Main style entry point.
 │   │
-│   └── *.html                  # All HTML pages files .
-└── webpack                     # Contains Webpack init code.
+│   └── *.html                  # All HTML template pages.
+└── webpack                     # Contains Webpack configuration.
 │   └── plugins                 # Contains all Webpack plugins config.
-│   └── rules                   # Contains Loaders config code.
-│   └── config.js               # Contains Webpack config object.
-│   └── devServer.js            # Webpack dev server config code.
-│   └── manifest.js             # All build system constants.
+│   └── rules                   # Contains Webpack loaders config.
+│   └── config.js               # Main Webpack configuration.
+│   └── devServer.js            # Development server configuration.
+│   └── manifest.js             # Build system constants.
 │
-└── .babelrc                    # Babel ES6 Transpiler.
-└── .editorconfig               # Keep same coding styles between code editors.
-└── .eslintrc.yml               # JavaScript Linting.
-└── .gitattributes              # Git Attributes.
-└── .gitignore                  # Ignored files in Git.
-└── .stylelintrc.yml            # SCSS/CSS Linting.
-└── browserslist                # Supported Browsers.
-└── CHANGELOG.md                # Versioning.
-└── package.json                # Package metadata.
-└── README.md                   # Manual file.
-└── webpack.config.js           # Webpack main config file.
-└── yarn.lock                   # Yarn metadata.
+└── .babelrc                    # Babel ES6 transpiler configuration.
+└── .editorconfig               # Code editor consistency settings.
+└── eslint.config.mjs           # ESLint 9.x flat configuration.
+└── .gitattributes              # Git attributes configuration.
+└── .gitignore                  # Git ignore patterns.
+└── .stylelintrc.json           # SCSS/CSS linting configuration.
+└── browserslist                # Supported browsers configuration.
+└── CHANGELOG.md                # Version history and updates.
+└── package.json                # Node.js package configuration.
+└── README.md                   # This documentation file.
+└── webpack.config.js           # Webpack entry configuration.
 ```
 
 ## Deployment
-In deployment process, you have two commands:
 
-1. Build command
-Used to generate the final result of compiling src files into build folder. This can be achieved by running the following command:
-```
-> npm run build
+In deployment process, you have several commands:
+
+1. **Production Build** - Generate optimized assets for production:
+```bash
+npm run build
 ```
 
-2. Preview command
-Used to create a local dev server in order to preview the final output of build process. This can be achieved by running the following command:
+2. **Production Preview** - Preview the production build locally:
+```bash
+npm run preview
 ```
-> npm run preview
+
+3. **Custom Builds**:
+```bash
+# Unminified production build (for debugging)
+npm run release:unminified
+
+# Minified production build (smallest size)
+npm run release:minified
 ```
+
+The built files will be available in the `dist/` directory.
 
 ## Built With
-- [Babel](https://babeljs.io/)
-- [Webpack](https://webpack.js.org/)
-- [Eslint](https://eslint.org/)
-- [Sass](http://sass-lang.com/)
-- [Postcss](http://postcss.org/)
-- [Stylelint](https://stylelint.io/)
-- [Bootstrap](http://getbootstrap.com/)
-- [Chart.js](http://www.chartjs.org/)
-- [Datatables](https://datatables.net/)
-- [Easy Pie Chart](http://rendro.github.io/easy-pie-chart/)
-- [Fullcalendar](https://fullcalendar.io/)
-- [Jquery](https://jquery.com/)
-- [Jquery Sparkline](https://omnipotent.net/jquery.sparkline/)
-- [Jvectormap](http://jvectormap.com/)
-- [Load Google Maps API](https://github.com/yuanqing/load-google-maps-api)
-- [Lodash](https://lodash.com/)
-- [Masonry](https://masonry.desandro.com/)
-- [Moment](https://momentjs.com/)
-- [Perfect Scrollbar](https://github.com/utatti/perfect-scrollbar)
-- [Skycons](https://darkskyapp.github.io/skycons/)
-- [Fontawesome](http://fontawesome.io/)
-- [Themify Icons](https://themify.me/themify-icons)
-- [Roboto Font](https://fonts.google.com/specimen/Roboto)
-- [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
+
+### Core Framework & Build Tools
+- [Bootstrap 5.3.6](http://getbootstrap.com/) - Modern CSS framework
+- [Webpack 5.99.9](https://webpack.js.org/) - Module bundler and build tool
+- [Babel 7.27.x](https://babeljs.io/) - JavaScript transpiler
+- [Sass 1.89.2](http://sass-lang.com/) - CSS preprocessor
+- [PostCSS 8.5.5](http://postcss.org/) - CSS transformations
+- [ESLint 9.29.0](https://eslint.org/) - JavaScript linting (flat config)
+- [Stylelint 16.20.0](https://stylelint.io/) - CSS/SCSS linting
+
+### UI Components & Charts
+- [Chart.js 4.5.0](http://www.chartjs.org/) - Modern charting library
+- [FullCalendar 6.1.17](https://fullcalendar.io/) - Interactive calendar
+- [DataTables](https://datatables.net/) - Advanced table functionality
+- [Easy Pie Chart](http://rendro.github.io/easy-pie-chart/) - Animated pie charts
+- [Perfect Scrollbar 1.5.6](https://github.com/utatti/perfect-scrollbar) - Custom scrollbars
+
+### JavaScript Libraries
+- [jQuery 3.7.1](https://jquery.com/) - DOM manipulation library
+- [Lodash 4.17.21](https://lodash.com/) - Utility library
+- [Moment.js 2.30.1](https://momentjs.com/) - Date manipulation
+- [Masonry 4.2.2](https://masonry.desandro.com/) - Grid layouts
+- [jQuery Sparkline](https://omnipotent.net/jquery.sparkline/) - Inline charts
+- [jVectorMap](http://jvectormap.com/) - Interactive vector maps
+
+### Icons & Fonts
+- [Font Awesome](http://fontawesome.io/) - Icon library
+- [Themify Icons](https://themify.me/themify-icons) - Additional icons
+- [Roboto Font](https://fonts.google.com/specimen/Roboto) - Google Fonts
+
+### Additional Plugins
+- [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/) - Date selection
+- [Skycons](https://darkskyapp.github.io/skycons/) - Animated weather icons
+- [Load Google Maps API](https://github.com/yuanqing/load-google-maps-api) - Maps integration
 
 ## Changelog
-#### V 1.0.0
-Initial Release
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
+
+#### Latest Release: V 2.5.0 (2025-06-16)
+- Complete modernization of build system and dependencies
+- Updated to ESLint 9.x with flat config
+- All 22+ dependencies updated to latest versions
+- Enhanced development experience and performance
+- Zero security vulnerabilities
+
+#### Previous Releases
+- **V 2.1.0**: Upgraded all dependencies
+- **V 2.0.0**: Upgrade to Bootstrap 5
+- **V 1.1.0**: Upgrade to webpack 5
+- **V 1.0.0**: Initial Release
 
 ## Authors
 [Colorlib](https://colorlib.com)
