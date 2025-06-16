@@ -41,17 +41,6 @@ const devServer = {
       version: false,
       warnings: true,
       colors: true,
-      warningsFilter: [
-        /Deprecation Warning/,
-        /node_modules\/bootstrap/,
-        /repetitive deprecation warnings omitted/,
-        /red\(\) is deprecated/,
-        /green\(\) is deprecated/,
-        /blue\(\) is deprecated/,
-        /mix\(white, \$color/,
-        /mix\(black, \$color/,
-        /Global built-in functions are deprecated/
-      ]
     },
   },
 };
