@@ -48,6 +48,11 @@ This release represents a comprehensive modernization of the entire build toolch
 - Improved CSS processing pipeline
 - Better development server performance
 
+**Package Management:**
+- Fixed `package.json` to reflect exact installed dependency versions
+- Removed incompatible ESLint packages from dependencies
+- Ensured version alignment between installed and declared packages
+
 ### 🛠️ Development Experience
 
 - **Node.js Support**: Now requires Node.js 18.12.0+ (compatible with v23.11.0)
