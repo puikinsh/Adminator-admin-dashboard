@@ -1,19 +1,19 @@
-// import "@popperjs/core";
-import bootstrap from 'bootstrap';
+/**
+ * Adminator Admin Template
+ * Modern Entry Point - Phase 2 Modernization
+ */
 
-import '../styles/index.scss';
-import './fullcalendar';
-import './masonry';
-import './charts';
-import './popover';
-import './scrollbar';
-import './search';
-import './sidebar';
-import './skycons';
-import './vectorMaps';
-import './chat';
+// Import the modern application
+import './app.js';
+
+// Legacy imports that haven't been modernized yet
+// These will be gradually replaced in future iterations
 import './datatable';
 import './datepicker';
-import './email';
-import './googleMaps';
-import './utils';
+
+// Note: The following have been modernized and are now handled by app.js:
+// - sidebar (now Sidebar component)
+// - charts (now ChartComponent using Chart.js instead of jQuery Sparkline)
+// - Basic DOM utilities (now DOM utils)
+
+console.log('📦 Adminator Template Loaded (Modern Version - Phase 2)');

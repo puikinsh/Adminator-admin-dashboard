@@ -78,12 +78,14 @@ module.exports = {
   resolve,
   plugins,
   devServer,
-  // Suppress Bootstrap SASS deprecation warnings
-  stats: {
-    warningsFilter: [
-      /Deprecation Warning/,
-      /node_modules\/bootstrap/,
-      /repetitive deprecation warnings omitted/
-    ]
-  }
+  // Suppress Bootstrap SASS deprecation warnings (modern syntax)
+  ignoreWarnings: [
+    /Deprecation Warning/,
+    /node_modules\/bootstrap/,
+    /repetitive deprecation warnings omitted/,
+    /red\(\) is deprecated/,
+    /green\(\) is deprecated/,
+    /blue\(\) is deprecated/,
+    /Global built-in functions are deprecated/
+  ]
 };
