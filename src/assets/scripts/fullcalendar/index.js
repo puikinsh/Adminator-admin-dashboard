@@ -3,6 +3,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
+import DateUtils from '../utils/date';
 
 document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('calendar');
@@ -19,64 +20,64 @@ document.addEventListener('DOMContentLoaded', function () {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
     },
-    initialDate: '2024-01-12',
+    initialDate: DateUtils.format(DateUtils.now(), 'YYYY-MM-DD'),
     navLinks: true, // can click day/week names to navigate views
     editable: true,
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
       {
         title: 'All Day Event',
-        start: '2024-01-01',
+        start: DateUtils.format(DateUtils.now(), 'YYYY-MM-DD'),
       },
       {
         title: 'Long Event',
-        start: '2024-01-07',
-        end: '2024-01-10',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 1, 'day'), 'YYYY-MM-DD'),
+        end: DateUtils.format(DateUtils.add(DateUtils.now(), 4, 'day'), 'YYYY-MM-DD'),
       },
       {
         groupId: 999,
         title: 'Repeating Event',
-        start: '2024-01-09T16:00:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 2, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T16:00'),
       },
       {
         groupId: 999,
         title: 'Repeating Event',
-        start: '2024-01-16T16:00:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 9, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T16:00'),
       },
       {
         title: 'Conference',
-        start: '2024-01-11',
-        end: '2024-01-13',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 5, 'day'), 'YYYY-MM-DD'),
+        end: DateUtils.format(DateUtils.add(DateUtils.now(), 7, 'day'), 'YYYY-MM-DD'),
       },
       {
         title: 'Meeting',
-        start: '2024-01-12T10:30:00',
-        end: '2024-01-12T12:30:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T10:30'),
+        end: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T12:30'),
       },
       {
         title: 'Lunch',
-        start: '2024-01-12T12:00:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T12:00'),
       },
       {
         title: 'Meeting',
-        start: '2024-01-12T14:30:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T14:30'),
       },
       {
         title: 'Happy Hour',
-        start: '2024-01-12T17:30:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T17:30'),
       },
       {
         title: 'Dinner',
-        start: '2024-01-12T20:00:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 3, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T20:00'),
       },
       {
         title: 'Birthday Party',
-        start: '2024-01-13T07:00:00',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 4, 'day'), 'YYYY-MM-DDTHH:mm:ss').replace(/:\d{2}$/, ':00:00').replace(/T\d{2}:\d{2}/, 'T07:00'),
       },
       {
         title: 'Click for Google',
         url: 'http://google.com/',
-        start: '2024-01-28',
+        start: DateUtils.format(DateUtils.add(DateUtils.now(), 14, 'day'), 'YYYY-MM-DD'),
       },
     ],
   });

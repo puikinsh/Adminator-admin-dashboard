@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Adminator gradient logo icon">
+  <title>Adminator Logo – Gradient</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4B7CF3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B4BF3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background with gradient -->
+  <rect width="64" height="64" rx="12" fill="url(#grad)" />
+  <!-- Stylised "A" -->
+  <path d="M20 46L32 18l12 28h-6l-3-7H29l-3 7h-6zm13-11l-4-10-4 10h8z" fill="#FFFFFF" />
+</svg> 

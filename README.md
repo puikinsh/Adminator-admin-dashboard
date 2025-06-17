@@ -214,7 +214,7 @@ The built files will be available in the `dist/` directory.
 ### JavaScript Libraries
 - [jQuery 3.7.1](https://jquery.com/) - DOM manipulation library
 - [Lodash 4.17.21](https://lodash.com/) - Utility library
-- [Moment.js 2.30.1](https://momentjs.com/) - Date manipulation
+- [Day.js 1.11.13](https://day.js.org/) - Modern 2KB date library (replaces Moment.js)
 - [Masonry 4.2.2](https://masonry.desandro.com/) - Grid layouts
 - [jQuery Sparkline](https://omnipotent.net/jquery.sparkline/) - Inline charts
 - [jVectorMap](http://jvectormap.com/) - Interactive vector maps

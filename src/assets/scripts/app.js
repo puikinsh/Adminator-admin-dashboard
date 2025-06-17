@@ -5,6 +5,7 @@
 
 import bootstrap from 'bootstrap';
 import DOM from './utils/dom';
+import DateUtils from './utils/date';
 import Sidebar from './components/Sidebar';
 import ChartComponent from './components/Chart';
 
@@ -137,7 +138,7 @@ class AdminatorApp {
   }
 
   /**
-   * Initialize Date Pickers (modern approach)
+   * Initialize Date Pickers (modern approach with Day.js)
    */
   initDatePickers() {
     const startDatePickers = DOM.selectAll('.start-date');
@@ -148,8 +149,104 @@ class AdminatorApp {
       if (picker.type !== 'date') {
         picker.type = 'date';
         picker.classList.add('form-control');
-        console.log('📅 Date picker converted to HTML5');
+        
+        // Clear the placeholder since HTML5 date inputs don't need it
+        picker.removeAttribute('placeholder');
+        
+        // Set default value to today if no value is set
+        if (!picker.value) {
+          picker.value = DateUtils.form.toInputValue(DateUtils.now());
+        }
+        
+        // Make sure the input is clickable and focusable
+        picker.style.pointerEvents = 'auto';
+        picker.style.cursor = 'pointer';
+        
+        // Ensure proper styling for HTML5 date input
+        picker.style.minHeight = '38px';
+        picker.style.lineHeight = '1.5';
+        
+        console.log('📅 Date picker converted to HTML5 with Day.js support');
       }
+    });
+    
+    // Add enhanced interaction - handle both field and icon clicks
+    [...startDatePickers, ...endDatePickers].forEach(picker => {
+      // Handle direct field clicks
+      DOM.on(picker, 'click', (event) => {
+        event.target.focus();
+        // For mobile browsers, trigger the date picker
+        if (event.target.showPicker && typeof event.target.showPicker === 'function') {
+          try {
+            event.target.showPicker();
+          } catch (e) {
+            // Fallback if showPicker is not supported
+            console.log('📅 Date picker opened via field click');
+          }
+        }
+      });
+      
+      // Handle calendar icon clicks (find the icon in the input group)
+      const inputGroup = picker.closest('.input-group');
+      if (inputGroup) {
+        const calendarIcon = inputGroup.querySelector('.input-group-text i.ti-calendar');
+        if (calendarIcon) {
+          DOM.on(calendarIcon, 'click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            picker.focus();
+            if (picker.showPicker && typeof picker.showPicker === 'function') {
+              try {
+                picker.showPicker();
+              } catch (e) {
+                // Fallback for browsers that don't support showPicker
+                console.log('📅 Date picker opened via icon click');
+              }
+            }
+          });
+          
+          // Also make the entire icon container clickable
+          const iconContainer = inputGroup.querySelector('.input-group-text');
+          if (iconContainer) {
+            iconContainer.style.cursor = 'pointer';
+            DOM.on(iconContainer, 'click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              picker.focus();
+              if (picker.showPicker && typeof picker.showPicker === 'function') {
+                try {
+                  picker.showPicker();
+                } catch (e) {
+                  console.log('📅 Date picker opened via icon container click');
+                }
+              }
+            });
+          }
+        }
+      }
+    });
+    
+    // Add date validation
+    [...startDatePickers, ...endDatePickers].forEach(picker => {
+      DOM.on(picker, 'change', (event) => {
+        const isValid = DateUtils.form.validateDateInput(event.target.value);
+        if (!isValid) {
+          event.target.classList.add('is-invalid');
+          console.warn('Invalid date format:', event.target.value);
+        } else {
+          event.target.classList.remove('is-invalid');
+          console.log('Valid date selected:', DateUtils.formatters.shortDate(event.target.value));
+        }
+      });
+      
+      // Add focus/blur handlers for better UX
+      DOM.on(picker, 'focus', () => {
+        picker.classList.add('focus');
+      });
+      
+      DOM.on(picker, 'blur', () => {
+        picker.classList.remove('focus');
+      });
     });
   }
 

@@ -9,7 +9,7 @@ import './app.js';
 // Legacy imports that haven't been modernized yet
 // These will be gradually replaced in future iterations
 import './datatable';
-import './datepicker';
+// import './datepicker'; // REMOVED: Replaced with modern day.js implementation in app.js
 
 // Note: The following have been modernized and are now handled by app.js:
 // - sidebar (now Sidebar component)

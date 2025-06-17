@@ -148,6 +148,12 @@
       min-height: calc(#{$header-height} - 1px);
       width: 100%;
       width: 70px;
+      img {
+        height: 42px;
+        width: auto;
+        display: block;
+        margin: 11px auto;
+      }
     }
 
     .logo-text {

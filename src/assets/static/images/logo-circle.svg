@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Adminator circle logo icon">
+  <title>Adminator Logo – Circle</title>
+  <!-- Circular background -->
+  <circle cx="32" cy="32" r="30" fill="#4B7CF3" />
+  <!-- Stylised "A" -->
+  <path d="M20 46L32 18l12 28h-6l-3-7H29l-3 7h-6zm13-11l-4-10-4 10h8z" fill="#FFFFFF" />
+</svg> 

@@ -607,7 +607,7 @@
                               <div class="input-group-text bgc-white bd bdwR-0">
                                 <i class="ti-calendar"></i>
                               </div>
-                              <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Datepicker" data-provide="datepicker">
+                              <input type="text" class="form-control bdc-grey-200 start-date" placeholder="Select Date">
                             </div>
                           </div>
                         </div>
