@@ -1,0 +1,182 @@
+// Custom styles for Adminator Documentation
+
+// Fix code block formatting
+.highlight {
+  .language-javascript,
+  .language-css,
+  .language-html,
+  .language-bash {
+    &:before {
+      content: attr(class);
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+  }
+}
+
+// Better code block styling
+pre.highlight {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  
+  code {
+    background: transparent !important;
+    border: none !important;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  }
+}
+
+// Inline code styling
+code:not(.highlighter-rouge) {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 3px !important;
+  font-size: 0.875em !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+// Feature cards styling
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  
+  h3 {
+    margin-top: 0;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:before {
+      content: "✨";
+      font-size: 1.25em;
+    }
+  }
+}
+
+// Button improvements
+.btn {
+  &.btn-outline {
+    border: 1px solid #d1d5db;
+    color: #374151;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: #f9fafb;
+      border-color: #9ca3af;
+    }
+  }
+  
+  &.btn-green {
+    background-color: #059669;
+    color: white;
+    border: 1px solid #059669;
+    
+    &:hover {
+      background-color: #047857;
+      border-color: #047857;
+    }
+  }
+}
+
+// Table styling improvements
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  tr:hover {
+    background-color: #f9fafb;
+  }
+}
+
+// Navigation improvements
+.site-nav {
+  .nav-list {
+    .nav-list-item {
+      &.active {
+        > .nav-list-link {
+          background-color: #eff6ff;
+          color: #1d4ed8;
+        }
+      }
+    }
+  }
+}
+
+// Custom alert boxes
+.alert {
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  border-left: 4px solid;
+  
+  &.alert-info {
+    background-color: #eff6ff;
+    border-left-color: #3b82f6;
+    color: #1e40af;
+  }
+  
+  &.alert-warning {
+    background-color: #fffbeb;
+    border-left-color: #f59e0b;
+    color: #92400e;
+  }
+  
+  &.alert-success {
+    background-color: #f0fdf4;
+    border-left-color: #10b981;
+    color: #065f46;
+  }
+}
+
+// Dark mode improvements for code
+@media (prefers-color-scheme: dark) {
+  pre.highlight {
+    background-color: #1f2937 !important;
+    border-color: #374151;
+    
+    code {
+      color: #e5e7eb !important;
+    }
+  }
+  
+  code:not(.highlighter-rouge) {
+    background-color: #374151 !important;
+    color: #d1d5db !important;
+    border-color: #4b5563 !important;
+  }
+} 

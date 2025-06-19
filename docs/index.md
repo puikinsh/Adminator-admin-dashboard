@@ -1,19 +1,30 @@
 ---
-title: Adminator Documentation
-description: Complete guide for the Adminator Bootstrap 5 Admin Dashboard Template
+layout: default
+title: Home
+nav_order: 1
+description: "Adminator Bootstrap 5 Admin Dashboard with Dark Mode"
+permalink: /
 ---
 
 # Adminator Documentation
+{: .fs-9 }
 
-Welcome to the comprehensive documentation for **Adminator**, a modern Bootstrap 5 admin dashboard template with dark mode support.
+Complete guide for the Bootstrap 5 Admin Dashboard Template with comprehensive Dark Mode system
+{: .fs-6 .fw-300 }
 
-## 🌟 Overview
+[Get Started Now](getting-started/installation){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View on GitHub](https://github.com/puikinsh/Adminator-admin-dashboard){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-Adminator is a responsive, feature-rich admin template built with:
-- **Bootstrap 5.3.6** - Latest CSS framework
-- **Dark Mode System** - Complete theme switching with OS detection
-- **Modern Components** - Charts, calendars, maps, and interactive elements
-- **Performance Optimized** - Webpack build system with modern tooling
+---
+
+## ✨ What's New in v2.6.0
+
+🌗 **Complete Dark Mode System** - Intelligent theme switching with OS preference detection  
+⚡ **Smart Theme Toggle** - Bootstrap-based switch with instant updates  
+🎨 **CSS Variables Architecture** - Semantic color system for easy customization  
+📊 **Component Integration** - All charts, calendars, and maps are theme-aware  
+
+---
 
 ## 🚀 Quick Start
 
@@ -28,99 +39,72 @@ npm install
 npm start
 ```
 
-Visit `http://localhost:4000` to see Adminator in action.
-
-## 📖 Documentation Sections
-
-### 🏁 [Getting Started](getting-started/)
-- [Installation Guide](getting-started/installation.md)
-- [Project Structure](getting-started/project-structure.md)
-- [Development Workflow](getting-started/development.md)
-- [Build & Deployment](getting-started/build-deployment.md)
-
-### 🎨 [Components](components/)
-- [Charts & Data Visualization](components/charts.md)
-- [Forms & Input Elements](components/forms.md)
-- [Tables & Data Display](components/tables.md)
-- [Navigation & Layout](components/navigation.md)
-- [Modals & Overlays](components/modals.md)
-
-### 🌙 [Dark Mode & Theming](customization/)
-- [Theme System Overview](customization/theme-system.md)
-- [CSS Variables Reference](customization/css-variables.md)
-- [Custom Theme Creation](customization/custom-themes.md)
-- [Component Theming](customization/component-theming.md)
-
-### 🔧 [API Reference](api/)
-- [Theme API](api/theme-api.md)
-- [Component APIs](api/component-apis.md)
-- [Utility Functions](api/utilities.md)
-- [Event System](api/events.md)
-
-### 💡 [Examples](examples/)
-- [Basic Setup](examples/basic-setup.md)
-- [Custom Components](examples/custom-components.md)
-- [Theme Integration](examples/theme-integration.md)
-- [Advanced Patterns](examples/advanced-patterns.md)
-
-### 🚀 [Deployment](deployment/)
-- [Production Build](deployment/production-build.md)
-- [Static Hosting](deployment/static-hosting.md)
-- [CDN Integration](deployment/cdn-integration.md)
-- [Performance Optimization](deployment/performance.md)
-
-### 🤝 [Contributing](contributing/)
-- [Development Setup](contributing/development-setup.md)
-- [Code Standards](contributing/code-standards.md)
-- [Pull Request Process](contributing/pull-requests.md)
-- [Issue Templates](contributing/issues.md)
-
-## ✨ Key Features
-
-### 🌗 Dark Mode System
-- **Smart Toggle**: Bootstrap-based switch with visual indicators
-- **OS Detection**: Automatically respects user's system preference
-- **Persistent Storage**: Remembers theme choice across sessions
-- **Component Integration**: All elements are theme-aware
-
-### 📊 Rich Components
-- **Chart.js Integration**: Line, bar, pie, and radar charts
-- **FullCalendar**: Interactive calendar with event management
-- **DataTables**: Advanced table features with search and pagination
-- **Vector Maps**: Interactive world and regional maps
-- **Google Maps**: Custom styled maps with markers
-
-### 🛠️ Developer Experience
-- **Modern Tooling**: Webpack 5, ESLint 9.x, Sass, PostCSS
-- **Hot Reload**: Instant development feedback
-- **Code Quality**: Automated linting and formatting
-- **Performance**: Optimized builds with code splitting
-
-## 🔗 Quick Links
-
-- **[Live Demo](https://colorlib.com/polygon/adminator/index.html)** - See Adminator in action
-- **[GitHub Repository](https://github.com/puikinsh/Adminator-admin-dashboard)** - Source code and issues
-- **[Changelog](https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/CHANGELOG.md)** - Version history
-- **[License](https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/LICENSE)** - MIT License
-
-## 🆕 What's New in v2.6.0
-
-The latest release introduces a comprehensive dark mode system:
-
-- **🌙 Complete Dark Theme** with automatic OS detection
-- **🎨 Theme-Aware Components** for charts, calendars, and maps
-- **⚡ Instant Switching** without page reload
-- **🎯 CSS Variables Architecture** for consistent theming
-- **📱 Responsive Design** across all screen sizes
-
-[View Full Changelog →](https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/CHANGELOG.md)
-
-## 💬 Support
-
-- **Issues**: [GitHub Issues](https://github.com/puikinsh/Adminator-admin-dashboard/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/puikinsh/Adminator-admin-dashboard/discussions)
-- **Documentation**: You're here! 📖
+Visit `http://localhost:4000` to see your dashboard!
 
 ---
 
-**Happy coding with Adminator!** 🚀 
+## 📚 Documentation Sections
+
+### Getting Started
+Learn how to install, configure, and deploy Adminator with our comprehensive setup guides.
+
+[Installation Guide →](getting-started/installation){: .btn .btn-outline }
+
+### Dark Mode & Theming
+Discover the powerful dark mode system with CSS variables and theme switching capabilities.
+
+[Theme System →](customization/theme-system){: .btn .btn-outline }
+
+### API Reference
+Complete JavaScript API documentation for theme management and component integration.
+
+[API Documentation →](api/theme-api){: .btn .btn-outline }
+
+### Examples & Integration
+Real-world examples and integration guides for popular frameworks and use cases.
+
+[View Examples →](examples/theme-integration){: .btn .btn-outline }
+
+---
+
+## 🎯 Key Features
+
+| Feature | Description |
+|:--------|:------------|
+| **Bootstrap 5** | Latest Bootstrap framework with modern components |
+| **Dark Mode** | Comprehensive dark theme with intelligent switching |
+| **Responsive** | Mobile-first design that works on all devices |
+| **Chart Integration** | Chart.js with theme-aware color schemes |
+| **Calendar Support** | FullCalendar with dark mode styling |
+| **Vector Maps** | Interactive maps with custom color palettes |
+| **Clean Code** | Well-organized, documented, and maintainable |
+
+---
+
+## 🌟 Live Demo
+
+Experience Adminator's features in action:
+
+### Light Mode
+![Adminator Light Mode](https://github.com/user-attachments/assets/24c5a0df-ae77-4826-9ef5-4a6b4a8ea6c7)
+
+### Dark Mode  
+![Adminator Dark Mode](https://github.com/user-attachments/assets/9c2b9e3b-b67e-4d5c-9ec4-5d9d8e1c7a8f)
+
+[Try Live Demo](https://adminator.colorlib.com){: .btn .btn-green .fs-5 }
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [contributing guidelines](contributing/) before submitting pull requests.
+
+---
+
+## 📄 License
+
+Adminator is released under the [MIT License](https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/LICENSE).
+
+---
+
+**Ready to build amazing dashboards?** Start with our [installation guide](getting-started/installation) or explore the [dark mode features](customization/theme-system)! 

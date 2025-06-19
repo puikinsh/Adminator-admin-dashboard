@@ -1,4 +1,18 @@
+---
+layout: default
+title: Theme API
+nav_order: 1
+parent: API Reference
+---
+
 # Theme API Reference
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Complete API documentation for the Adminator Theme utility system.
 

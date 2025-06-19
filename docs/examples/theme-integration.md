@@ -1,4 +1,18 @@
+---
+layout: default
+title: Theme Integration
+nav_order: 1
+parent: Examples
+---
+
 # Theme Integration Examples
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Practical examples for integrating custom components with Adminator's theme system.
 

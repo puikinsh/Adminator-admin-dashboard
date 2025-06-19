@@ -9,7 +9,7 @@ baseurl: "/Adminator-admin-dashboard"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+remote_theme: just-the-docs/just-the-docs
 
 # Plugin settings
 plugins:
@@ -17,20 +17,45 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Navigation
-navigation:
-  - title: "Getting Started"
-    url: "/getting-started/"
-  - title: "Components"
-    url: "/components/"
-  - title: "Dark Mode & Theming"
-    url: "/customization/"
-  - title: "API Reference"
-    url: "/api/"
-  - title: "Examples"
-    url: "/examples/"
-  - title: "Deployment"
-    url: "/deployment/"
+# Just the Docs theme configuration
+color_scheme: nil
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Enable custom CSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Heading anchor links appear on hover over h1-h6 tags
+heading_anchors: true
+
+# Footer
+footer_content: "Copyright &copy; 2024 Colorlib. Distributed by an <a href=\"https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/LICENSE\">MIT license.</a>"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Navigation Structure
+nav_sort: case_insensitive
+
+# Aux links for the upper right navigation
+aux_links:
+  "GitHub Repository":
+    - "//github.com/puikinsh/Adminator-admin-dashboard"
+  "Live Demo":
+    - "//adminator.colorlib.com"
+
+# Makes Aux links open in a new tab
+aux_links_new_tab: true
 
 # SEO
 author: "Colorlib"
@@ -52,6 +77,15 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
+# Code highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    block:
+      line_numbers: false
+      start_line: 1
+
 # Include
 include:
   - _pages
@@ -72,14 +106,4 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
-
-# Code highlighting
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true 
+      layout: "default" 

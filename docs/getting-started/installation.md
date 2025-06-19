@@ -1,4 +1,20 @@
+---
+layout: default
+title: Installation
+nav_order: 1
+parent: Getting Started
+---
+
 # Installation Guide
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 This guide will help you get Adminator up and running on your local machine.
 

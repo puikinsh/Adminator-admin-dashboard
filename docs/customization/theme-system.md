@@ -1,4 +1,18 @@
+---
+layout: default
+title: Theme System
+nav_order: 1
+parent: Customization
+---
+
 # Theme System Overview
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Adminator v2.6.0 introduces a comprehensive dark mode system with intelligent theme switching and component integration.
 
