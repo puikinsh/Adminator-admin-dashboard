@@ -17,7 +17,7 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
-- [What's New in v2.5.0](#whats-new-in-v250)
+- [What's New in v2.6.0](#whats-new-in-v260)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
