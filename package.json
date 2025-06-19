@@ -2,7 +2,8 @@
   "name": "adminator",
   "version": "2.6.0",
   "private": true,
-  "description": "HTML Admin Template",
+  "description": "HTML Admin Template with Dark Mode",
+  "homepage": "https://puikinsh.github.io/Adminator-admin-dashboard/",
   "scripts": {
     "start": "webpack server",
     "dev": "webpack-dashboard -t 'Project' -- webpack server",

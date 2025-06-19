@@ -6,7 +6,7 @@
 
 🌙 **Dark Mode Features**: Automatic theme detection, persistent user preferences, theme-aware components (charts, calendars, maps), and a beautiful toggle switch.
 
-📚 **[Complete Documentation](docs/)** - Detailed setup guides, API reference, and examples
+📚 **[Complete Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Detailed setup guides, API reference, and examples
 
 Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
@@ -138,6 +138,8 @@ Adminator now includes a comprehensive dark mode system that works out of the bo
 
 ### **For Developers**
 
+📚 **[Complete Theme API Documentation →](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)**
+
 **Using the Theme API:**
 ```javascript
 // Get current theme
@@ -171,6 +173,18 @@ window.addEventListener('adminator:themeChanged', (event) => {
 - `--c-text-muted` - Secondary text color
 - `--c-border` - Border colors
 - `--c-primary` - Primary brand color
+
+📖 **[View Complete CSS Variables Reference →](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)**
+
+## Documentation
+
+📚 **[Complete Documentation Site](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Comprehensive guides and API reference
+
+### Quick Links:
+- 🚀 **[Installation Guide](https://puikinsh.github.io/Adminator-admin-dashboard/getting-started/installation)** - Complete setup instructions
+- 🌙 **[Theme System](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)** - Dark mode and theming
+- 🔧 **[API Reference](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)** - JavaScript API documentation
+- 💡 **[Examples](https://puikinsh.github.io/Adminator-admin-dashboard/examples/theme-integration)** - Integration examples
 
 ## Adminator for other platforms and frameworks
 * [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) - Adminator modified to work with right to left languages like Persian and Arabic
@@ -304,12 +318,14 @@ The built files will be available in the `dist/` directory.
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-#### Latest Release: V 2.5.0 (2025-06-16)
-- Complete modernization of build system and dependencies
-- Updated to ESLint 9.x with flat config
-- All 22+ dependencies updated to latest versions
-- Enhanced development experience and performance
-- Zero security vulnerabilities
+📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
+
+#### Latest Release: V 2.6.0 (2025-01-19)
+- **🌙 Complete Dark Mode System** with intelligent theme switching
+- **🎨 CSS Variables Architecture** for comprehensive theming
+- **📊 Component Integration** - Charts, calendars, and maps are theme-aware
+- **⚡ Smart Toggle** with OS preference detection
+- **💾 Persistent Storage** remembers user theme choice
 
 #### Previous Releases
 - **V 2.1.0**: Upgraded all dependencies

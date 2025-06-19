@@ -38,7 +38,7 @@ sass:
 heading_anchors: true
 
 # Footer
-footer_content: "Copyright &copy; 2024 Colorlib. Distributed by an <a href=\"https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/LICENSE\">MIT license.</a>"
+footer_content: "Copyright &copy; 2025 Colorlib. Distributed by an <a href=\"https://github.com/puikinsh/Adminator-admin-dashboard/blob/master/LICENSE\">MIT license.</a>"
 
 # Back to top link
 back_to_top: true
