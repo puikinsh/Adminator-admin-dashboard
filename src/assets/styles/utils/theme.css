@@ -1,0 +1,97 @@
+:root {
+  --c-bkg-body: #f8f9fa;
+  --c-bkg-card: #ffffff;
+  --c-bkg-sidebar: #ffffff;
+
+  --c-text-base: #212529;
+  --c-text-muted: #6c757d;
+
+  --c-border: #e2e5e8;
+
+  --c-primary: #4b7cf3;
+  --c-success: #2ecc71;
+  --c-danger: #e74c3c;
+  
+  /* Vector map colors */
+  --vmap-bg-color: #ffffff;
+  --vmap-border-color: #ffffff;
+  --vmap-region-color: #e4ecef;
+  --vmap-marker-fill: #ffffff;
+  --vmap-marker-stroke: #000000;
+  --vmap-hover-color: #ffffff;
+  --vmap-selected-color: #c9dfaf;
+  --vmap-scale-start: #03a9f3;
+  --vmap-scale-end: #02a7f1;
+  --vmap-scale-light: #b6d6ff;
+  --vmap-scale-dark: #005ace;
+  
+  /* Skycons */
+  --skycons-color: #ff6849;
+  
+  /* Sparkline colors */
+  --sparkline-success: #4caf50;
+  --sparkline-purple: #9675ce;
+  --sparkline-info: #03a9f3;
+  --sparkline-danger: #f96262;
+  --sparkline-light: #aaf;
+  
+  /* Loader */
+  --loader-bg: #ffffff;
+  --spinner-bg: #333333;
+  
+  /* Google Maps */
+  --gmap-landscape-hue: #FFBB00;
+  --gmap-highway-hue: #FFC200;
+  --gmap-road-hue: #FF0300;
+  --gmap-water-hue: #0078FF;
+  --gmap-poi-hue: #00FF6A;
+}
+
+[data-theme="dark"] {
+  --c-bkg-body: #181a1f;
+  --c-bkg-card: #20232a;
+  --c-bkg-sidebar: #20232a;
+
+  --c-text-base: #e8eaed;
+  --c-text-muted: #9ca3af;
+
+  --c-border: #2b2f36;
+
+  --c-primary: #4b7cf3;
+  --c-success: #32d48e;
+  --c-danger: #ff6b6b;
+  
+  /* Vector map colors - dark theme */
+  --vmap-bg-color: #20232a;
+  --vmap-border-color: #2b2f36;
+  --vmap-region-color: #2b2f36;
+  --vmap-marker-fill: #e8eaed;
+  --vmap-marker-stroke: #9ca3af;
+  --vmap-hover-color: #181a1f;
+  --vmap-selected-color: #4b5563;
+  --vmap-scale-start: #3b82f6;
+  --vmap-scale-end: #1d4ed8;
+  --vmap-scale-light: #1e40af;
+  --vmap-scale-dark: #60a5fa;
+  
+  /* Skycons - dark theme */
+  --skycons-color: #f97316;
+  
+  /* Sparkline colors - dark theme */
+  --sparkline-success: #10b981;
+  --sparkline-purple: #a855f7;
+  --sparkline-info: #3b82f6;
+  --sparkline-danger: #ef4444;
+  --sparkline-light: #60a5fa;
+  
+  /* Loader - dark theme */
+  --loader-bg: #181a1f;
+  --spinner-bg: #e8eaed;
+  
+  /* Google Maps - dark theme */
+  --gmap-landscape-hue: #D4AC0D;
+  --gmap-highway-hue: #E6AC00;
+  --gmap-road-hue: #CC2900;
+  --gmap-water-hue: #1B4F72;
+  --gmap-poi-hue: #148F77;
+} 

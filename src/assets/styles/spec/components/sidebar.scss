@@ -458,3 +458,185 @@
     }
   }
 }
+
+// Dark mode sidebar improvements - proper active states for both themes
+[data-theme="dark"] {
+  .sidebar {
+    background-color: var(--c-bkg-card);
+
+    .sidebar-menu {
+      border-right-color: var(--c-border);
+
+      li {
+        a {
+          color: var(--c-text-base);
+
+          &:hover,
+          &:focus {
+            color: var(--c-text-base);
+            background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+
+            .icon-holder {
+              color: var(--c-primary);
+              background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
+            }
+          }
+        }
+
+        &.dropdown {
+          &.open {
+            > a {
+              color: var(--c-text-base);
+              background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+
+              .icon-holder {
+                color: var(--c-primary);
+                background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
+              }
+            }
+          }
+        }
+
+        // Active menu item styling for dark mode - lighter shade approach
+        &.actived {
+          > a {
+            color: var(--c-text-base) !important;
+            background-color: color-mix(in srgb, var(--c-bkg-card) 92%, #ffffff) !important;
+
+            .icon-holder {
+              color: var(--c-text-base) !important;
+              background-color: color-mix(in srgb, var(--c-bkg-card) 85%, #ffffff) !important;
+            }
+          }
+        }
+
+        // Styling for dropdown parent when it has an active child - lighter shade approach
+        &.dropdown.has-active-child {
+          > a {
+            color: var(--c-text-base) !important;
+            background-color: color-mix(in srgb, var(--c-bkg-card) 95%, #ffffff) !important;
+
+            .icon-holder {
+              color: var(--c-text-base) !important;
+              background-color: color-mix(in srgb, var(--c-bkg-card) 90%, #ffffff) !important;
+            }
+          }
+        }
+      }
+
+      // Dropdown menu items
+      > li {
+        &.dropdown {
+          ul.dropdown-menu {
+            > li {
+              > a {
+                color: var(--c-text-muted);
+
+                &:hover,
+                &:focus {
+                  color: var(--c-text-base);
+                  background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+                }
+              }
+
+              &.actived {
+                a {
+                  color: var(--c-text-base) !important;
+                  background-color: color-mix(in srgb, var(--c-bkg-card) 92%, #ffffff) !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-logo {
+    border-bottom-color: var(--c-border);
+    border-right-color: var(--c-border);
+
+    a {
+      .logo-text {
+        color: var(--c-text-base);
+      }
+    }
+
+    .mobile-toggle {
+      a {
+        color: var(--c-text-base);
+      }
+    }
+  }
+}
+
+// Light mode active states (ensure proper visibility)
+[data-theme="light"], :root {
+  .sidebar {
+    .sidebar-menu {
+      li {
+        &.actived {
+          > a {
+            background-color: color-mix(in srgb, #ffffff 85%, var(--c-primary)) !important;
+            color: var(--c-primary) !important;
+
+            .icon-holder {
+              color: var(--c-primary) !important;
+              background-color: color-mix(in srgb, var(--c-primary) 10%, transparent) !important;
+            }
+          }
+        }
+
+        // Styling for dropdown parent when it has an active child (light mode)
+        &.dropdown.has-active-child {
+          > a {
+            background-color: color-mix(in srgb, #ffffff 90%, var(--c-primary)) !important;
+            color: var(--c-primary) !important;
+
+            .icon-holder {
+              color: var(--c-primary) !important;
+              background-color: color-mix(in srgb, var(--c-primary) 8%, transparent) !important;
+            }
+          }
+        }
+
+        a {
+          &:hover,
+          &:focus {
+            background-color: color-mix(in srgb, #ffffff 90%, var(--c-primary));
+            color: var(--c-primary);
+
+            .icon-holder {
+              color: var(--c-primary);
+              background-color: color-mix(in srgb, var(--c-primary) 8%, transparent);
+            }
+          }
+        }
+      }
+
+      // Dropdown items for light mode
+      > li {
+        &.dropdown {
+          ul.dropdown-menu {
+            > li {
+              &.actived {
+                a {
+                  color: var(--c-primary) !important;
+                  background-color: color-mix(in srgb, #ffffff 85%, var(--c-primary)) !important;
+                }
+              }
+
+              > a {
+                &:hover,
+                &:focus {
+                  background-color: color-mix(in srgb, #ffffff 90%, var(--c-primary));
+                  color: var(--c-primary);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

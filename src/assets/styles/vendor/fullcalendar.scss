@@ -1,54 +1,124 @@
 @use '../spec/settings/baseColors' as *;
 
 .fc {
-  background-color: $default-white;
-  border: 1px solid $border-color;
+  background-color: var(--c-bkg-card) !important;
+  border: 1px solid var(--c-border) !important;
+  color: var(--c-text-base) !important;
+
+  // All table elements within the calendar
+  table {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+  }
 
   th {
     text-align: center;
     padding: 15px;
-    background-color: transparent;
-    color: $default-text-color;
+    background-color: var(--c-bkg-card) !important;
+    color: var(--c-text-base) !important;
     font-size: 12px;
     text-transform: uppercase;
     border-right-width: 0;
     border-left-width: 0;
+    border-color: var(--c-border) !important;
+  }
+
+  td {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+    color: var(--c-text-base) !important;
   }
 
   button {
-    background-color: $default-white;
+    background-color: var(--c-bkg-card) !important;
     background-image: none;
     height: 37px;
     padding: 0 15px;
-    color: darken($default-text-color, 10%);
+    color: var(--c-text-base) !important;
+    border-color: var(--c-border) !important;
 
     &.fc-state-default {
-      border-color: $border-color;
+      border-color: var(--c-border) !important;
       box-shadow: none;
+      background-color: var(--c-bkg-card) !important;
+      color: var(--c-text-base) !important;
     }
 
     &.fc-state-active {
       box-shadow: none;
-      background-color: $border-color;
+      background-color: var(--c-primary) !important;
+      color: white !important;
+      border-color: var(--c-primary) !important;
     }
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--c-bkg-card) 85%, var(--c-border)) !important;
+      border-color: var(--c-border) !important;
+      color: var(--c-text-base) !important;
+    }
+  }
+
+  // Calendar header/toolbar
+  .fc-head {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+  }
+
+  .fc-head-container {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+  }
+
+  // Calendar body
+  .fc-body {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+  }
+
+  // Individual day cells
+  .fc-day {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+    
+    &:hover {
+      background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-border)) !important;
+    }
+  }
+
+  // Week cells
+  .fc-week {
+    background-color: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+  }
+
+  // All grid elements
+  .fc-widget-header,
+  .fc-widget-content {
+    border-color: var(--c-border) !important;
+    background-color: var(--c-bkg-card) !important;
   }
 }
 
 .fc-toolbar {
   padding: 20px 20px 0;
+  background-color: var(--c-bkg-card) !important;
 }
 
 .fc-view,
 .fc-view > table {
-  background-color: $default-white;
+  background-color: var(--c-bkg-card) !important;
+  border-color: var(--c-border) !important;
 }
 
 .fc-basic-view td.fc-day-number,
 .fc-basic-view td.fc-week-number span {
   padding: 7px 15px;
+  color: var(--c-text-base) !important;
 }
 
 .fc-unthemed {
+  background-color: var(--c-bkg-card) !important;
+  
   .fc-content,
   .fc-divider,
   .fc-popover,
@@ -57,19 +127,43 @@
   td,
   th,
   thead {
-    border-color: $border-color;
+    border-color: var(--c-border) !important;
+    background-color: var(--c-bkg-card) !important;
   }
 
   .fc-today {
-    background-color: transparent;
+    background-color: color-mix(in srgb, var(--c-primary) 10%, var(--c-bkg-card)) !important;
+  }
+
+  .fc-popover {
+    background: var(--c-bkg-card) !important;
+    color: var(--c-text-base) !important;
+    border-color: var(--c-border) !important;
+  }
+
+  // Other month dates (faded)
+  .fc-other-month {
+    .fc-day-number {
+      color: var(--c-text-muted) !important;
+    }
+  }
+
+  // Weekend styling
+  .fc-sun,
+  .fc-sat {
+    background-color: color-mix(in srgb, var(--c-bkg-card) 95%, var(--c-border)) !important;
   }
 }
 
 .fc-basic-view {
+  background-color: var(--c-bkg-card) !important;
+  
   .fc-day-number {
+    color: var(--c-text-base) !important;
+
     &.fc-today {
-      background-color: $default-info;
-      color: $default-white;
+      background-color: var(--c-primary) !important;
+      color: white !important;
       display: inline-block;
       float: right;
       border-radius: 50%;
@@ -78,20 +172,46 @@
       margin: 4px 4px 0 0;
     }
   }
+
+  .fc-day-header {
+    background-color: var(--c-bkg-card) !important;
+    color: var(--c-text-base) !important;
+    border-color: var(--c-border) !important;
+  }
 }
 
 .fc-event-container {
   .fc-event {
-    border-radius: 0;
+    border-radius: 3px;
     border: 0;
-    background-color: $inverse-info;
-    color: $default-info !important;
+    background-color: var(--c-primary) !important;
+    color: white !important;
     font-size: 12px;
     line-height: 2.5;
     padding: 0 15px;
+
+    &:hover {
+      background-color: var(--c-primary-hover) !important;
+      opacity: 0.9;
+    }
   }
 
   .fc-day-grid-event {
     margin: 1px 5px 5px;
   }
+}
+
+// Comprehensive border fix for all calendar elements
+.fc * {
+  border-color: var(--c-border) !important;
+}
+
+// Fix for any remaining border inconsistencies
+.fc .fc-grid,
+.fc .fc-grid table,
+.fc .fc-grid tr,
+.fc .fc-grid td,
+.fc .fc-grid th {
+  border-color: var(--c-border) !important;
+  background-color: var(--c-bkg-card) !important;
 }

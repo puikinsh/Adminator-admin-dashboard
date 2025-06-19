@@ -4,9 +4,9 @@
 
 .email-app {
   .email-side-nav {
-    background: $default-white;
+    background: var(--c-bkg-card);
     position: fixed;
-    border-right: 1px solid $border-color;
+    border-right: 1px solid var(--c-border);
     float: left;
     width: 250px;
     transition: all 0.3s ease-in-out;
@@ -40,7 +40,7 @@
       padding: 0;
       width: 100%;
       overflow-y: hidden;
-      background-color: $default-white;
+      background-color: var(--c-bkg-card);
       height: calc(100vh - #{$header-height});
 
       @include to($breakpoint-md) {
@@ -49,7 +49,7 @@
 
       @include from($breakpoint-md) {
         width: 40%;
-        border-right: 1px solid $border-color;
+        border-right: 1px solid var(--c-border);
         float: left;
       }
     }
@@ -59,7 +59,7 @@
       width: 60%;
       position: relative;
       padding: 0;
-      background-color: $default-white;
+      background-color: var(--c-bkg-card);
       // min-height: calc(100vh - #{$header-height});
 
       &.no-inbox-view {

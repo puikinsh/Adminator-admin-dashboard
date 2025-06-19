@@ -3,4 +3,686 @@
 @use "bootstrap/scss/bootstrap" as *;
 @use 'spec/index' as *;
 @use 'vendor/index' as *;
+@import "utils/theme.css";
+
+body {
+  background: var(--c-bkg-body);
+  color: var(--c-text-base);
+}
+
+.sidebar {
+  background: var(--c-bkg-sidebar);
+}
+
+.bgc-white {
+  background: var(--c-bkg-card) !important;
+}
+
+// Dark-mode aware Header & Dropdown --------------------------------
+.header {
+  background: var(--c-bkg-card);
+  border-bottom: 1px solid var(--c-border);
+
+  .dropdown-menu {
+    background: var(--c-bkg-card);
+    border: 1px solid var(--c-border);
+  }
+
+  .nav-left > li > a,
+  .nav-right > li > a {
+    color: var(--c-text-base);
+
+    &:hover,
+    &:focus {
+      color: var(--c-primary);
+    }
+  }
+
+  .notifications .counter {
+    background: var(--c-danger);
+    color: #fff;
+  }
+
+  // Theme toggle switch styling
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    height: 65px; // Match header height
+    padding: 0 15px;
+
+    .form-check {
+      margin: 0;
+      
+      .form-check-label {
+        color: var(--c-text-muted);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        
+        i {
+          font-size: 12px;
+        }
+      }
+
+      .form-check-input {
+        width: 2.5rem;
+        height: 1.25rem;
+        background-color: var(--c-border);
+        border: 1px solid var(--c-border);
+        cursor: pointer;
+        
+        &:checked {
+          background-color: var(--c-primary);
+          border-color: var(--c-primary);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--c-primary) 25%, transparent);
+          border-color: var(--c-primary);
+        }
+      }
+    }
+  }
+}
+
+// Tables -------------------------------------------------
+.table {
+  background: var(--c-bkg-card);
+  color: var(--c-text-base);
+  
+  thead th {
+    background: var(--c-bkg-card);
+    color: var(--c-text-base);
+    border-color: var(--c-border);
+  }
+  
+  tbody {
+    td, th {
+      border-color: var(--c-border);
+      color: var(--c-text-base);
+      background: var(--c-bkg-card);
+    }
+    
+    tr:nth-child(even) {
+      td, th {
+        background: color-mix(in srgb, var(--c-bkg-card) 95%, var(--c-border));
+      }
+    }
+  }
+  
+  tfoot th {
+    background: var(--c-bkg-card);
+    color: var(--c-text-base);
+    border-color: var(--c-border);
+  }
+  
+  // Bootstrap table variants
+  &.table-striped {
+    tbody tr:nth-child(odd) {
+      td, th {
+        background: var(--c-bkg-card);
+      }
+    }
+    
+    tbody tr:nth-child(even) {
+      td, th {
+        background: color-mix(in srgb, var(--c-bkg-card) 95%, var(--c-border));
+      }
+    }
+  }
+  
+  &.table-hover {
+    tbody tr:hover {
+      td, th {
+        background: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-border)) !important;
+        color: var(--c-text-base);
+      }
+    }
+  }
+  
+  &.table-bordered {
+    border: 1px solid var(--c-border);
+    
+    th, td {
+      border: 1px solid var(--c-border);
+    }
+  }
+  
+  // Table head variants
+  .table-dark {
+    background: color-mix(in srgb, var(--c-bkg-card) 80%, #000);
+    
+    th {
+      background: color-mix(in srgb, var(--c-bkg-card) 80%, #000);
+      color: var(--c-text-base);
+      border-color: var(--c-border);
+    }
+  }
+  
+  .table-light {
+    background: var(--c-bkg-card);
+    
+    th {
+      background: var(--c-bkg-card);
+      color: var(--c-text-base);
+      border-color: var(--c-border);
+    }
+  }
+}
+
+// Forms --------------------------------------------------
+.form-control,
+.form-select {
+  background: var(--c-bkg-card);
+  color: var(--c-text-base);
+  border: 1px solid var(--c-border);
+
+  &:focus {
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 0.1rem rgba(75, 124, 243, .25);
+  }
+}
+
+input::placeholder {
+  color: var(--c-text-muted);
+}
+
+// Cards --------------------------------------------------
+.card,
+.bgc-white.bd,
+.bgc-white.bdT,
+.bgc-white.bdB {
+  background: var(--c-bkg-card);
+  border-color: var(--c-border) !important;
+  color: var(--c-text-base);
+}
+
+// Alerts -------------------------------------------------
+.alert {
+  color: var(--c-text-base);
+  border-color: var(--c-border);
+  background: color-mix(in srgb, var(--c-bkg-card) 85%, var(--c-border));
+
+  &.alert-primary {
+    background: color-mix(in srgb, var(--c-primary) 20%, var(--c-bkg-card));
+    border-color: var(--c-primary);
+    color: var(--c-primary);
+  }
+}
+
+// Modals -------------------------------------------------
+.modal-content {
+  background: var(--c-bkg-card);
+  color: var(--c-text-base);
+  border: 1px solid var(--c-border);
+}
+
+// Logo colours ------------------------------------------
+.logo img,
+.logo-auth {
+  // Light mode: invert the "A" to make it white (if default is dark)
+  filter: invert(1) hue-rotate(180deg) brightness(1.2);
+}
+
+[data-theme="dark"] .logo img,
+[data-theme="dark"] .logo-auth {
+  // Dark mode: keep original colors (dark "A" on blue background)
+  filter: brightness(1) contrast(1);
+}
+
+.logo-text {
+  color: var(--c-text-base);
+}
+
+// Ensure auth page logos are properly sized
+.logo-auth {
+  max-width: 60px !important;
+  max-height: 60px !important;
+  width: auto;
+  height: auto;
+}
+
+// Generic border utility override -----------------------
+.bd,
+.bdT,
+.bdB,
+.bdL,
+.bdR {
+  border-color: var(--c-border) !important;
+}
+
+// Sidebar logo border -----------------------------------
+.sidebar-logo {
+  border-color: var(--c-border) !important;
+}
+
+// Grey-100 utility override -----------------------------
+.bgc-grey-100 { background: color-mix(in srgb, var(--c-bkg-body) 90%, #000) !important; }
+
+// Sales Report widget styling -------------------------------
+.sales-report-header {
+  background-color: var(--c-primary) !important;
+  color: #ffffff !important;
+  
+  h5, h3, p {
+    color: #ffffff !important;
+  }
+}
+
+// Hover background utilities for dark mode ----------------
+[data-theme="dark"] .bgcH-grey-100:hover {
+  background: color-mix(in srgb, var(--c-bkg-card) 85%, var(--c-border)) !important;
+}
+
+// Sidebar right border ----------------------------------
+.sidebar,
+.sidebar-menu {
+  border-right: 1px solid var(--c-border);
+}
+
+// Dark mode text color overrides for better visibility -------
+[data-theme="dark"] .c-grey-900 {
+  color: var(--c-text-base) !important;
+}
+
+[data-theme="dark"] .c-grey-800 {
+  color: var(--c-text-base) !important;
+}
+
+[data-theme="dark"] .c-grey-700 {
+  color: var(--c-text-muted) !important;
+}
+
+[data-theme="dark"] .c-grey-600 {
+  color: var(--c-text-muted) !important;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--c-text-base) !important;
+}
+
+// Ensure all headings are theme-aware ----------------------
+h1, h2, h3, h4, h5, h6 {
+  color: var(--c-text-base);
+}
+
+// Email & Compose dark mode fixes ---------------------------
+.email-app {
+  .email-side-nav {
+    background: var(--c-bkg-card);
+    border-color: var(--c-border);
+  }
+  
+  .email-list,
+  .email-content,
+  .email-wrapper {
+    background: var(--c-bkg-card) !important;
+    color: var(--c-text-base);
+  }
+  
+  .email-list-item {
+    border-color: var(--c-border) !important;
+    
+    &:hover {
+      background: color-mix(in srgb, var(--c-bkg-card) 85%, var(--c-border)) !important;
+    }
+  }
+}
+
+// Badge colors for dark mode ---------------------------------
+[data-theme="dark"] .badge {
+  &.bgc-deep-purple-50 {
+    background: #8b5cf6 !important;
+    color: #fff !important;
+  }
+  
+  &.c-deep-purple-700 {
+    color: #fff !important;
+  }
+  
+  &.bgc-green-50 {
+    background: var(--c-success) !important;
+    color: #fff !important;
+  }
+  
+  &.c-green-700 {
+    color: #fff !important;
+  }
+  
+  &.bgc-blue-50 {
+    background: var(--c-primary) !important;
+    color: #fff !important;
+  }
+  
+  &.c-blue-700 {
+    color: #fff !important;
+  }
+  
+  &.bgc-amber-50 {
+    background: #f59e0b !important;
+    color: #000 !important;
+  }
+  
+  &.c-amber-700 {
+    color: #000 !important;
+  }
+  
+  &.bgc-red-50 {
+    background: var(--c-danger) !important;
+    color: #fff !important;
+  }
+  
+  &.c-red-700 {
+    color: #fff !important;
+  }
+}
+
+// Email buttons in dark mode ---------------------------------
+[data-theme="dark"] .email-app {
+  .btn.bgc-white {
+    background: var(--c-bkg-card) !important;
+    color: var(--c-text-base) !important;
+    border: 1px solid var(--c-border) !important;
+    
+    &:hover {
+      background: color-mix(in srgb, var(--c-bkg-card) 85%, var(--c-border)) !important;
+    }
+  }
+}
+
+// Additional table styling for consistency ----------------
+.table-responsive {
+  border: 1px solid var(--c-border);
+  border-radius: 3px;
+}
+
+// Table inside cards should blend seamlessly
+.bgc-white .table {
+  background: var(--c-bkg-card);
+  border: none;
+  
+  thead th {
+    border-top: none;
+  }
+}
+
+// Status badges in tables need proper theming
+.table .badge {
+  &.bgc-red-50.c-red-700 {
+    background: var(--c-danger) !important;
+    color: #fff !important;
+  }
+  
+  &.bgc-deep-purple-50.c-deep-purple-700 {
+    background: #8b5cf6 !important;
+    color: #fff !important;
+  }
+  
+  &.bgc-pink-50.c-pink-700 {
+    background: #ec4899 !important;
+    color: #fff !important;
+  }
+}
+
+// Chat page specific dark mode fixes ----------------------
+[data-theme="dark"] {
+  // Chat page loader
+  #loader {
+    background: var(--c-bkg-body) !important;
+  }
+
+  // Chat message bubbles - different styling for sent vs received
+  .ai-fs .pY-3.pX-10.bgc-white {
+    background: var(--c-bkg-card) !important;
+    border: 1px solid var(--c-border);
+  }
+
+  .ai-fe .pY-3.pX-10.bgc-white {
+    background: var(--c-primary) !important;
+    border: 1px solid var(--c-primary);
+    color: white !important;
+
+    small {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    span {
+      color: white !important;
+    }
+  }
+
+  // Chat status indicators (preserve their semantic colors)
+  .c-green-500 {
+    color: var(--c-success) !important;
+  }
+
+  .c-amber-500 {
+    color: #f59e0b !important;
+  }
+
+  .c-red-500 {
+    color: var(--c-danger) !important;
+  }
+
+  // Chat typing indicator
+  .lh-1 i {
+    color: var(--c-text-muted);
+  }
+
+  // Chat backgrounds  
+  .bgc-grey-200 {
+    background: var(--c-bkg-body) !important;
+  }
+}
+
+// Todo List dark mode fixes ---------------------------------
+[data-theme="dark"] {
+  .list-task {
+    background: var(--c-bkg-card);
+    border: 1px solid var(--c-border);
+
+    .list-group-item {
+      background: var(--c-bkg-card);
+      border-color: var(--c-border);
+      color: var(--c-text-base);
+
+      &:first-child {
+        border-top-color: var(--c-border);
+      }
+
+      &:last-child {
+        border-bottom-color: var(--c-border);
+      }
+
+      .form-label {
+        color: var(--c-text-base);
+      }
+
+      // Checkbox styling for dark mode
+      .checkbox {
+        input[type="checkbox"] {
+          &:checked + label::before {
+            background: var(--c-primary);
+            border-color: var(--c-primary);
+          }
+
+          &:focus + label::before {
+            border-color: var(--c-primary);
+            box-shadow: 0 0 0 0.2rem rgba(var(--c-primary-rgb), 0.25);
+          }
+        }
+
+        label::before {
+          background: var(--c-bkg-card);
+          border-color: var(--c-border);
+        }
+      }
+
+      // Todo badges
+      .badge {
+        &.bg-success {
+          background: var(--c-success) !important;
+          color: white !important;
+        }
+
+        &.bg-danger {
+          background: var(--c-danger) !important;
+          color: white !important;
+        }
+
+        &.bg-warning {
+          background: #f59e0b !important;
+          color: #000 !important;
+        }
+
+        &.bg-info {
+          background: var(--c-primary) !important;
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+// Calendar page dark mode fixes -----------------------------
+[data-theme="dark"] {
+  // Calendar event sidebar
+  .bgc-white.bd {
+    background: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+
+    .bdB {
+      border-bottom-color: var(--c-border) !important;
+    }
+
+    // Calendar event items
+    .peers.ai-c.jc-sb.fxw-nw {
+      border-bottom-color: var(--c-border) !important;
+
+      .c-grey-900 {
+        color: var(--c-text-base) !important;
+      }
+
+      .c-grey-600 {
+        color: var(--c-text-muted) !important;
+      }
+
+      .c-grey-700 {
+        color: var(--c-text-muted) !important;
+      }
+
+      // Action buttons (edit, delete)
+      .c-deep-purple-500 {
+        &:hover.cH-blue-500 {
+          color: var(--c-primary) !important;
+        }
+      }
+
+      .c-red-500 {
+        &:hover.cH-blue-500 {
+          color: var(--c-danger) !important;
+        }
+      }
+    }
+
+    // Add event button
+    .btn-warning {
+      background: #f59e0b;
+      border-color: #f59e0b;
+      color: #000;
+
+      &:hover {
+        background: #d97706;
+        border-color: #d97706;
+      }
+    }
+  }
+
+  // Calendar modal
+  .modal-content {
+    background: var(--c-bkg-card);
+    border: 1px solid var(--c-border);
+    color: var(--c-text-base);
+
+    .modal-body {
+      .form-label {
+        color: var(--c-text-base);
+      }
+
+      .form-control {
+        background: var(--c-bkg-body);
+        border-color: var(--c-border);
+        color: var(--c-text-base);
+
+        &::placeholder {
+          color: var(--c-text-muted);
+        }
+
+        &:focus {
+          background: var(--c-bkg-body);
+          border-color: var(--c-primary);
+          box-shadow: 0 0 0 0.2rem rgba(var(--c-primary-rgb), 0.25);
+        }
+      }
+
+      .input-group-text {
+        background: var(--c-bkg-card) !important;
+        border-color: var(--c-border);
+        color: var(--c-text-base);
+
+        &.bgc-white {
+          background: var(--c-bkg-card) !important;
+        }
+      }
+
+      .btn-primary {
+        background: var(--c-primary);
+        border-color: var(--c-primary);
+
+        &:hover {
+          background: var(--c-primary-hover);
+          border-color: var(--c-primary-hover);
+        }
+      }
+    }
+  }
+
+  // Calendar grid improvements
+  .fc {
+    // Calendar day cells
+    .fc-day {
+      background: var(--c-bkg-card);
+      
+      &:hover {
+        background: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-border));
+      }
+    }
+
+    // Calendar header
+    .fc-head {
+      background: var(--c-bkg-card);
+    }
+
+    // Weekend styling
+    .fc-sun,
+    .fc-sat {
+      background: color-mix(in srgb, var(--c-bkg-card) 95%, var(--c-border));
+    }
+
+    // Other days
+    .fc-other-month {
+      .fc-day-number {
+        color: var(--c-text-muted) !important;
+      }
+    }
+
+    // Event hover effects
+    .fc-event {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
 

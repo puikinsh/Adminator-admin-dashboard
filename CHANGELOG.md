@@ -1,5 +1,119 @@
 # Changelog
 
+## [2.6.0] - 2025-01-21
+
+### 🌙 Dark Mode Release
+
+This release introduces a comprehensive dark mode system with seamless theme switching and component integration.
+
+### ✨ New Features
+
+**🎨 Complete Dark Mode System:**
+- **Smart Theme Toggle**: Bootstrap-based switch with sun/moon icons and "Light/Dark" labels
+- **OS Preference Detection**: Automatically detects and applies user's preferred color scheme
+- **Persistent Theme Storage**: Remembers user's theme choice across sessions
+- **Instant Theme Switching**: Real-time theme updates without page reload
+
+**🎯 Theme-Aware Components:**
+- **Chart.js Integration**: Dynamic color schemes for all chart types with proper contrast
+- **FullCalendar Support**: Dark-mode aware calendar with proper border and text colors
+- **Vector Maps**: Custom color palettes for both light and dark themes
+- **Google Maps**: Theme-specific styling for landscapes, highways, and POI markers
+- **Sparkline Charts**: Optimized color sets for dark mode visibility
+- **Skycons Weather Icons**: Adaptive colors for better dark mode contrast
+
+**🎛️ CSS Architecture:**
+- **CSS Custom Properties**: Comprehensive variable system for consistent theming
+- **Semantic Color Naming**: Intuitive color variables (--c-text-base, --c-bkg-card, etc.)
+- **Component Isolation**: Each component respects global theme variables
+- **Responsive Design**: Theme switching works seamlessly across all screen sizes
+
+**🖼️ Visual Enhancements:**
+- **Adaptive Logo**: SVG logo automatically adjusts colors based on theme
+- **Smart Contrast**: Proper text/background contrast ratios in both themes
+- **Border Consistency**: Unified border colors throughout the interface
+- **Loading States**: Theme-aware loaders and progress indicators
+
+### 🔧 Technical Improvements
+
+**🏗️ Architecture Updates:**
+- **Theme Utility Module**: New `src/assets/scripts/utils/theme.js` with comprehensive theme management
+- **CSS Variables File**: New `src/assets/styles/utils/theme.css` with light/dark color schemes
+- **Component Integration**: Updated all major components to support theme switching
+- **Event System**: Custom events for theme change notifications
+
+**⚡ Performance Optimizations:**
+- **Efficient Switching**: Minimal DOM manipulation for theme changes
+- **CSS Variable Updates**: Leverages browser-native CSS custom properties
+- **Memory Management**: Proper cleanup of theme-related event listeners
+- **Build Integration**: Theme assets are properly bundled and optimized
+
+### 🎮 User Experience
+
+**💡 Intuitive Controls:**
+- **Accessible Toggle**: Proper ARIA labels and keyboard navigation support
+- **Visual Feedback**: Clear indication of current theme state
+- **Smooth Transitions**: CSS transitions for theme switching (where appropriate)
+- **Consistent Placement**: Theme toggle integrated into header navigation
+
+**🔄 Smart Behavior:**
+- **First-Time Detection**: Respects OS dark mode preference on first visit
+- **Cross-Session Persistence**: Theme choice remembered across browser sessions
+- **Fallback Handling**: Graceful degradation when localStorage is unavailable
+- **Dynamic Updates**: All components update immediately when theme changes
+
+### 🛠️ Development Experience
+
+**📝 Documentation:**
+- **Theme API**: Comprehensive methods for theme management
+- **Color Guidelines**: Standardized color usage across components
+- **Component Examples**: Updated examples showing theme-aware components
+- **Migration Guide**: Instructions for theme integration in custom components
+
+### 🔍 Enhanced Components
+
+**📊 Charts & Data Visualization:**
+- Chart.js with dynamic color schemes
+- Sparkline charts with theme-optimized colors
+- Easy Pie Charts with adaptive styling
+- Vector maps with custom dark mode palettes
+
+**🗓️ Interactive Elements:**
+- FullCalendar with proper dark mode borders
+- DataTables with theme-consistent styling  
+- Date pickers with adaptive colors
+- Form elements with dark mode support
+
+**🗺️ Maps & Location:**
+- Google Maps with custom dark mode styling
+- Vector maps with region-specific color schemes
+- Marker and overlay theme integration
+
+### ⚠️ Breaking Changes
+
+None. This release is fully backward compatible.
+
+### 🏁 Migration Guide
+
+Existing projects will automatically inherit dark mode capabilities. No code changes required.
+
+**Optional Enhancements:**
+- Add `data-theme` attribute handling for custom components
+- Use CSS variables from `theme.css` for consistent coloring
+- Listen for `adminator:themeChanged` events for custom theme handling
+
+### 📋 Files Added/Modified
+
+**New Files:**
+- `src/assets/scripts/utils/theme.js` - Theme management utility
+- `src/assets/styles/utils/theme.css` - CSS variables and color schemes
+
+**Enhanced Files:**
+- All HTML pages updated with theme-aware components
+- Component JavaScript files updated for theme integration
+- SCSS files enhanced with CSS variable usage
+- Logo SVG updated for theme compatibility
+
 ## [2.5.0] - 2025-06-16
 
 ### 🎉 Major Modernization Release

@@ -142,7 +142,7 @@
   margin-left: -20px;
   border: 1px solid #cccccc;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--c-bkg-card);
   -webkit-transition: border 0.15s ease-in-out;
   -o-transition: border 0.15s ease-in-out;
   transition: border 0.15s ease-in-out;
@@ -158,7 +158,7 @@
   top: 3px;
   margin-left: -20px;
   border-radius: 50%;
-  background-color: #555555;
+  background-color: var(--c-text-base);
   -webkit-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
   -o-transform: scale(0, 0);
@@ -257,4 +257,32 @@
 
 .radio-success input[type="radio"]:checked + label::after {
   background-color: #5cb85c;
+}
+
+// Dark mode specific fixes for birthdate field only
+[data-theme="dark"] {
+  // Date picker specific styling (birthdate field)
+  .timepicker-input {
+    .input-group-text {
+      background-color: var(--c-bkg-card) !important;
+      border-color: var(--c-border) !important;
+      color: var(--c-text-base) !important;
+
+      // Override specific background classes
+      &.bgc-white {
+        background-color: var(--c-bkg-card) !important;
+      }
+
+      // Calendar icon styling
+      .ti-calendar {
+        color: var(--c-text-base) !important;
+      }
+    }
+
+    .form-control {
+      &.bdc-grey-200 {
+        border-color: var(--c-border) !important;
+      }
+    }
+  }
 }

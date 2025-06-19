@@ -249,17 +249,11 @@ class ChartComponent {
               font: {
                 size: 12,
                 weight: '600'
-              },
-              color: '#333'
+              }
             }
           },
           tooltip: {
             enabled: true,
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            titleColor: '#333',
-            bodyColor: '#666',
-            borderColor: '#ddd',
-            borderWidth: 1,
             cornerRadius: 8,
             displayColors: true,
             intersect: false,
@@ -277,7 +271,6 @@ class ChartComponent {
               display: false
             },
             ticks: {
-              color: '#666',
               font: {
                 size: 11
               }
@@ -286,11 +279,9 @@ class ChartComponent {
           y: {
             beginAtZero: true,
             grid: {
-              color: 'rgba(0, 0, 0, 0.05)',
               borderDash: [5, 5]
             },
             ticks: {
-              color: '#666',
               font: {
                 size: 11
               },
@@ -938,16 +929,10 @@ class ChartComponent {
               size: 12,
               weight: '600'
             },
-            color: '#333'
           }
         },
         tooltip: {
           enabled: true,
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          titleColor: '#333',
-          bodyColor: '#666',
-          borderColor: '#ddd',
-          borderWidth: 1,
           cornerRadius: 8,
           displayColors: true
         }
@@ -985,7 +970,6 @@ class ChartComponent {
                 }
               },
               grid: {
-                color: 'rgba(0, 0, 0, 0.1)'
               }
             }
           }
@@ -997,21 +981,17 @@ class ChartComponent {
           scales: {
             r: {
               angleLines: {
-                display: true,
-                color: 'rgba(0, 0, 0, 0.1)'
+                display: true
               },
               grid: {
-                color: 'rgba(0, 0, 0, 0.1)'
               },
               pointLabels: {
                 font: {
                   size: 11
-                },
-                color: '#666'
+                }
               },
               ticks: {
                 display: true,
-                color: '#666',
                 font: {
                   size: 10
                 }
@@ -1028,11 +1008,9 @@ class ChartComponent {
               type: 'linear',
               position: 'bottom',
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }
@@ -1041,11 +1019,9 @@ class ChartComponent {
             y: {
               beginAtZero: true,
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }
@@ -1073,11 +1049,9 @@ class ChartComponent {
               type: 'linear',
               position: 'bottom',
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }
@@ -1085,11 +1059,9 @@ class ChartComponent {
             },
             y: {
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }
@@ -1105,11 +1077,9 @@ class ChartComponent {
           scales: {
             x: {
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }
@@ -1118,11 +1088,9 @@ class ChartComponent {
             y: {
               beginAtZero: true,
               grid: {
-                color: 'rgba(0, 0, 0, 0.05)',
                 borderDash: [5, 5]
               },
               ticks: {
-                color: '#666',
                 font: {
                   size: 11
                 }

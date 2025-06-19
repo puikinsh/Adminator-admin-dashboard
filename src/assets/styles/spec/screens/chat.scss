@@ -21,3 +21,127 @@
   height: calc(100vh - #{$header-height} - 60px);
   overflow: auto;
 }
+
+// Dark mode chat styles
+[data-theme="dark"] {
+  // Chat sidebar search input
+  input[name="chatSearch"] {
+    background: var(--c-bkg-card);
+    color: var(--c-text-base);
+    border-color: var(--c-border);
+
+    &::placeholder {
+      color: var(--c-text-muted);
+    }
+
+    &:focus {
+      background: var(--c-bkg-card);
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 0.2rem rgba(var(--c-primary-rgb), 0.25);
+    }
+  }
+
+  // Contact list items
+  .peers.bgc-white {
+    background: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+
+    &:hover,
+    &.bgcH-grey-50:hover {
+      background: var(--c-bkg-hover) !important;
+    }
+
+    h6 {
+      color: var(--c-text-base);
+    }
+
+    small {
+      // Status colors remain as they are for visual indication
+      &.c-grey-500 {
+        color: var(--c-text-muted) !important;
+      }
+    }
+  }
+
+  // Chat header
+  .peers.bgc-white {
+    background: var(--c-bkg-card) !important;
+
+    h6 {
+      color: var(--c-text-base);
+    }
+
+    i {
+      color: var(--c-text-muted);
+    }
+
+    .c-grey-900 {
+      color: var(--c-text-base) !important;
+
+      &.cH-blue-500:hover {
+        color: var(--c-primary) !important;
+      }
+    }
+  }
+
+  // Chat background area
+  .bgc-grey-200 {
+    background: var(--c-bkg-body) !important;
+  }
+
+  .bgc-grey-100 {
+    background: var(--c-bkg-body) !important;
+  }
+
+  // Chat messages
+  .pY-3.pX-10.bgc-white {
+    background: var(--c-bkg-card) !important;
+    color: var(--c-text-base);
+    border: 1px solid var(--c-border);
+
+    small {
+      color: var(--c-text-muted);
+    }
+
+    span {
+      color: var(--c-text-base);
+    }
+  }
+
+  // Chat input area
+  .bdT.bgc-white {
+    background: var(--c-bkg-card) !important;
+    border-color: var(--c-border) !important;
+
+    .form-control {
+      background: var(--c-bkg-body);
+      border-color: var(--c-border);
+      color: var(--c-text-base);
+
+      &::placeholder {
+        color: var(--c-text-muted);
+      }
+
+      &:focus {
+        background: var(--c-bkg-body);
+        border-color: var(--c-primary);
+        color: var(--c-text-base);
+        box-shadow: 0 0 0 0.2rem rgba(var(--c-primary-rgb), 0.25);
+      }
+    }
+
+    .btn-primary {
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+
+      &:hover {
+        background: var(--c-primary-hover);
+        border-color: var(--c-primary-hover);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(var(--c-primary-rgb), 0.25);
+      }
+    }
+  }
+}

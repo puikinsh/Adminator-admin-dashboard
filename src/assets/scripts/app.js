@@ -6,6 +6,7 @@
 import bootstrap from 'bootstrap';
 import DOM from './utils/dom';
 import DateUtils from './utils/date';
+import Theme from './utils/theme';
 import Sidebar from './components/Sidebar';
 import ChartComponent from './components/Chart';
 
@@ -50,6 +51,7 @@ class AdminatorApp {
       this.initCharts();
       this.initDataTables();
       this.initDatePickers();
+      this.initTheme();
       
       // Setup global event listeners
       this.setupGlobalEvents();
@@ -248,6 +250,49 @@ class AdminatorApp {
         picker.classList.remove('focus');
       });
     });
+  }
+
+  /**
+   * Initialize theme
+   */
+  initTheme() {
+    Theme.init();
+
+    // inject toggle switch if missing
+    const navRight = document.querySelector('.nav-right');
+    if (navRight && !document.getElementById('theme-toggle')) {
+      const li = document.createElement('li');
+      li.className = 'theme-toggle d-flex ai-c';
+      li.innerHTML = `
+        <div class="form-check form-switch d-flex ai-c" style="margin: 0; padding: 0;">
+          <label class="form-check-label me-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-right: 8px;">
+            <i class="ti-sun" style="margin-right: 4px;"></i>Light
+          </label>
+          <input class="form-check-input" type="checkbox" id="theme-toggle" style="margin: 0;">
+          <label class="form-check-label ms-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-left: 8px;">
+            Dark<i class="ti-moon" style="margin-left: 4px;"></i>
+          </label>
+        </div>
+      `;
+      navRight.insertBefore(li, navRight.firstElementChild);
+
+      const toggleInput = li.querySelector('#theme-toggle');
+
+      const updateSwitch = () => {
+        toggleInput.checked = Theme.current() === 'dark';
+      };
+      updateSwitch();
+
+      toggleInput.addEventListener('change', (e) => {
+        Theme.apply(e.target.checked ? 'dark' : 'light');
+      });
+
+      window.addEventListener('adminator:themeChanged', () => {
+        updateSwitch();
+        const charts = this.components.get('charts');
+        if (charts) charts.redrawCharts();
+      });
+    }
   }
 
   /**

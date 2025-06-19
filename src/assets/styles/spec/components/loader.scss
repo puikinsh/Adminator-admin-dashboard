@@ -1,15 +1,18 @@
 #loader {
   transition: all 0.3s ease-in-out;
   opacity: 1;
-  display: default;
+  visibility: visible;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: var(--loader-bg);
+  z-index: 90000;
 }
 
 #loader.fadeOut {
   opacity: 0;
-  display: none;
+  visibility: hidden;
 }
-
-
 
 .spinner {
   width: 40px;
@@ -17,7 +20,7 @@
   position: absolute;
   top: calc(50% - 20px);
   left: calc(50% - 20px);
-  background-color: #333;
+  background-color: var(--spinner-bg);
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;

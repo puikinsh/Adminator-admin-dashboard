@@ -2,6 +2,7 @@ import * as $ from 'jquery';
 import 'jquery-sparkline';
 import { debounce } from 'lodash';
 import { COLORS } from '../../constants/colors';
+import Theme from '../../utils/theme.js';
 
 export default (function () {
   // ------------------------------------------------------
@@ -9,6 +10,8 @@ export default (function () {
   // ------------------------------------------------------
 
   const drawSparklines = () => {
+    const sparkColors = Theme.getSparklineColors();
+    
     if ($('#sparklinedash').length > 0) {
       $('#sparklinedash').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
         type: 'bar',
@@ -16,7 +19,7 @@ export default (function () {
         barWidth: '3',
         resize: true,
         barSpacing: '3',
-        barColor: '#4caf50',
+        barColor: sparkColors.success,
       });
     }
 
@@ -27,7 +30,7 @@ export default (function () {
         barWidth: '3',
         resize: true,
         barSpacing: '3',
-        barColor: '#9675ce',
+        barColor: sparkColors.purple,
       });
     }
 
@@ -38,7 +41,7 @@ export default (function () {
         barWidth: '3',
         resize: true,
         barSpacing: '3',
-        barColor: '#03a9f3',
+        barColor: sparkColors.info,
       });
     }
 
@@ -49,7 +52,7 @@ export default (function () {
         barWidth: '3',
         resize: true,
         barSpacing: '3',
-        barColor: '#f96262',
+        barColor: sparkColors.danger,
       });
     }
   };
@@ -58,6 +61,9 @@ export default (function () {
 
   // Redraw sparklines on resize
   $(window).resize(debounce(drawSparklines, 150));
+  
+  // Listen for theme changes
+  window.addEventListener('adminator:themeChanged', debounce(drawSparklines, 150));
 
   // ------------------------------------------------------
   // @Other Sparklines
@@ -77,7 +83,7 @@ export default (function () {
     {
       type: 'bar',
       resize: true,
-      barColor: '#aaf',
+      barColor: Theme.getSparklineColors().light,
       height: '20',
     }
   );

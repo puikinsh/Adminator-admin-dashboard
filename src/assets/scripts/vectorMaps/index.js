@@ -3,6 +3,7 @@ import 'jvectormap';
 import 'jvectormap/jquery-jvectormap.css';
 import './jquery-jvectormap-world-mill.js';
 import { debounce } from 'lodash';
+import Theme from '../utils/theme.js';
 
 export default (function () {
   const vectorMapInit = () => {
@@ -24,25 +25,28 @@ export default (function () {
         </div>
       `);
 
+      // Get current theme colors
+      const colors = Theme.getVectorMapColors();
+
       $('#vmap').vectorMap({
         map: 'world_mill',
-        backgroundColor: '#fff',
-        borderColor: '#fff',
+        backgroundColor: colors.backgroundColor,
+        borderColor: colors.borderColor,
         borderOpacity: 0.25,
         borderWidth: 0,
-        color: '#e6e6e6',
+        color: colors.regionColor,
         regionStyle : {
           initial : {
-            fill : '#e4ecef',
+            fill : colors.regionColor,
           },
         },
 
         markerStyle: {
           initial: {
             r: 7,
-            'fill': '#fff',
+            'fill': colors.markerFill,
             'fill-opacity':1,
-            'stroke': '#000',
+            'stroke': colors.markerStroke,
             'stroke-width' : 2,
             'stroke-opacity': 0.4,
           },
@@ -73,22 +77,25 @@ export default (function () {
               'IN': 200,
               'GB': 120,
             },
-            scale: ['#03a9f3', '#02a7f1'],
+            scale: [colors.scaleStart, colors.scaleEnd],
             normalizeFunction: 'polynomial',
           }],
         },
         hoverOpacity: null,
         normalizeFunction: 'linear',
         zoomOnScroll: false,
-        scaleColors: ['#b6d6ff', '#005ace'],
-        selectedColor: '#c9dfaf',
+        scaleColors: [colors.scaleLight, colors.scaleDark],
+        selectedColor: colors.selectedColor,
         selectedRegions: [],
         enableZoom: false,
-        hoverColor: '#fff',
+        hoverColor: colors.hoverColor,
       });
     }
   };
 
   vectorMapInit();
   $(window).resize(debounce(vectorMapInit, 150));
+  
+  // Listen for theme changes and reinitialize the vector map
+  window.addEventListener('adminator:themeChanged', debounce(vectorMapInit, 150));
 })();

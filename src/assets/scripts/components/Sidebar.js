@@ -36,8 +36,13 @@ class Sidebar {
         const listItem = link.parentElement;
         const dropdownMenu = listItem.querySelector('.dropdown-menu');
         
-        if (!dropdownMenu) return;
+        // If this is a regular navigation link (not dropdown), allow normal navigation
+        if (!dropdownMenu) {
+          // Don't prevent default for regular navigation links
+          return;
+        }
         
+        // Only prevent default for dropdown toggles
         e.preventDefault();
         
         if (listItem.classList.contains('open')) {
@@ -109,6 +114,9 @@ class Sidebar {
       if (dropdownMenu) {
         this.closeDropdown(item, dropdownMenu);
       }
+      
+      // Also remove the has-active-child class
+      item.classList.remove('has-active-child');
     });
   }
 
@@ -161,21 +169,62 @@ class Sidebar {
    * Set active link based on current URL
    */
   setActiveLink() {
-    const sidebarLinks = this.sidebar.querySelectorAll('.sidebar-link');
-    const currentPath = window.location.pathname.substr(1);
+    // Remove active class from all nav items (including dropdown items)
+    const allNavItems = this.sidebar.querySelectorAll('.nav-item');
+    allNavItems.forEach(item => {
+      item.classList.remove('actived');
+    });
+
+    // Close all dropdowns first
+    this.closeAllDropdowns();
+
+    // Get current page filename
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
     
-    sidebarLinks.forEach(link => {
-      link.classList.remove('active');
-      
+    let activeItemFound = false;
+    
+    // Find and activate the correct nav item
+    const allLinks = this.sidebar.querySelectorAll('a[href]');
+    
+    allLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (!href) return;
+      if (!href || href === 'javascript:void(0);' || href === 'javascript:void(0)') return;
       
-      const pattern = href.startsWith('/') ? href.substr(1) : href;
+      // Extract filename from href
+      const linkPage = href.split('/').pop();
       
-      if (pattern === currentPath) {
-        link.classList.add('active');
+      if (linkPage === currentPage) {
+        const navItem = link.closest('.nav-item');
+        if (navItem) {
+          navItem.classList.add('actived');
+          activeItemFound = true;
+          
+          // If this is inside a dropdown, handle parent dropdown specially
+          const parentDropdown = navItem.closest('.dropdown-menu');
+          if (parentDropdown) {
+            const parentDropdownItem = parentDropdown.closest('.nav-item.dropdown');
+            if (parentDropdownItem) {
+              // Open the parent dropdown
+              parentDropdownItem.classList.add('open');
+              parentDropdown.style.display = 'block';
+              
+              // Add special styling to indicate parent has active child
+              parentDropdownItem.classList.add('has-active-child');
+              
+              console.log('Active dropdown child set for:', currentPage);
+            }
+          } else {
+            console.log('Active navigation set for:', currentPage);
+          }
+        }
       }
     });
+    
+    // If no specific item was found, log it for debugging
+    if (!activeItemFound) {
+      console.log('No matching navigation item found for:', currentPage);
+    }
   }
 
   /**

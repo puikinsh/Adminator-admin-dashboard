@@ -1,8 +1,10 @@
-# Adminator Bootstrap 5 Admin Template v2.5.0
+# Adminator Bootstrap 5 Admin Template v2.6.0
 
 **Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. 
 
-✨ **Latest Update (v2.5.0)**: Completely modernized build system with latest dependencies, ESLint 9.x flat config, and enhanced development experience.
+✨ **Latest Update (v2.6.0)**: Complete **Dark Mode System** with smart theme switching, OS preference detection, and seamless component integration.
+
+🌙 **Dark Mode Features**: Automatic theme detection, persistent user preferences, theme-aware components (charts, calendars, maps), and a beautiful toggle switch.
 
 Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
@@ -27,18 +29,31 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Authors](#authors)
 - [License](#license)
 
-## What's New in v2.5.0
+## What's New in v2.6.0
 
-🎉 **Major Modernization Release** - Complete overhaul of the development stack:
+🌙 **Dark Mode Release** - Complete dark mode system with seamless theme switching:
 
-- **🚀 Latest Dependencies**: All 22+ dependencies updated to latest versions
-- **⚡ Modern Build Tools**: webpack 5.99.9, webpack-dev-server 5.2.2
-- **🔧 ESLint 9.x**: Migrated to modern flat config format
-- **🎨 Enhanced CSS**: Latest Sass (1.89.2), PostCSS (8.5.5), Bootstrap (5.3.6)
-- **📊 Updated Components**: Chart.js 4.5.0, FullCalendar 6.1.17
-- **🛡️ Zero Vulnerabilities**: Complete security audit with all packages secure
-- **🔄 Modern Tooling**: babel-loader 10.x, copy-webpack-plugin 13.x, webpack-cli 6.x
-- **📱 Enhanced Experience**: Better development server, faster builds, improved linting
+### 🎨 Dark Mode Features
+- **🌗 Smart Theme Toggle**: Bootstrap-based switch with sun/moon icons and intuitive labels
+- **🔄 OS Preference Detection**: Automatically detects and applies your preferred color scheme  
+- **💾 Persistent Storage**: Remembers your theme choice across browser sessions
+- **⚡ Instant Switching**: Real-time theme updates without page reload
+- **🎯 Component Integration**: All charts, calendars, maps, and UI elements are theme-aware
+
+### 🛠️ Technical Implementation
+- **🎨 CSS Variables Architecture**: Comprehensive color system with semantic naming
+- **📊 Chart.js Integration**: Dynamic color schemes for all chart types
+- **🗓️ FullCalendar Support**: Dark-mode aware calendar with proper contrast
+- **🗺️ Vector Maps**: Custom color palettes for both light and dark themes
+- **🎪 Component Compatibility**: Theme support across all interactive elements
+
+### 🚀 Previous Updates (v2.5.0)
+- **Latest Dependencies**: All 22+ dependencies updated to latest versions  
+- **Modern Build Tools**: webpack 5.99.9, webpack-dev-server 5.2.2
+- **ESLint 9.x**: Migrated to modern flat config format
+- **Enhanced CSS**: Latest Sass (1.89.2), PostCSS (8.5.5), Bootstrap (5.3.6)
+- **Updated Components**: Chart.js 4.5.0, FullCalendar 6.1.17
+- **Zero Vulnerabilities**: Complete security audit with all packages secure
 
 ## Getting Started
 
@@ -100,6 +115,56 @@ npm run lint:scss
 # Run all linters
 npm run lint
 ```
+
+## 🌙 Dark Mode Usage
+
+Adminator now includes a comprehensive dark mode system that works out of the box:
+
+### **Automatic Setup**
+- Dark mode is automatically initialized on page load
+- Detects your OS preference (light/dark) on first visit
+- Remembers your choice across browser sessions
+
+### **Theme Toggle**
+- Look for the **Light/Dark** toggle switch in the header navigation
+- Click to instantly switch between light and dark themes
+- Visual feedback with sun ☀️ and moon 🌙 icons
+
+### **For Developers**
+
+**Using the Theme API:**
+```javascript
+// Get current theme
+const currentTheme = Theme.current(); // 'light' or 'dark'
+
+// Switch themes programmatically
+Theme.toggle();
+
+// Set specific theme
+Theme.apply('dark');
+
+// Listen for theme changes
+window.addEventListener('adminator:themeChanged', (event) => {
+  console.log('Theme changed to:', event.detail.theme);
+});
+```
+
+**CSS Variables for Custom Styling:**
+```css
+.my-component {
+  background: var(--c-bkg-card);
+  color: var(--c-text-base);
+  border: 1px solid var(--c-border);
+}
+```
+
+**Available CSS Variables:**
+- `--c-bkg-body` - Main background
+- `--c-bkg-card` - Card backgrounds  
+- `--c-text-base` - Primary text color
+- `--c-text-muted` - Secondary text color
+- `--c-border` - Border colors
+- `--c-primary` - Primary brand color
 
 ## Adminator for other platforms and frameworks
 * [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) - Adminator modified to work with right to left languages like Persian and Arabic
