@@ -52,7 +52,7 @@ aux_links:
   "GitHub Repository":
     - "//github.com/puikinsh/Adminator-admin-dashboard"
   "Live Demo":
-    - "//adminator.colorlib.com"
+    - "//colorlib.com/polygon/adminator/index.html"
 
 # Makes Aux links open in a new tab
 aux_links_new_tab: true

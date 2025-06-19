@@ -91,7 +91,7 @@ Experience Adminator's features in action:
 ### Dark Mode  
 ![Adminator Dark Mode](https://github.com/user-attachments/assets/9c2b9e3b-b67e-4d5c-9ec4-5d9d8e1c7a8f)
 
-[Try Live Demo](https://adminator.colorlib.com){: .btn .btn-green .fs-5 }
+[Try Live Demo](https://colorlib.com/polygon/adminator/index.html){: .btn .btn-green .fs-5 }
 
 ---
 
