@@ -6,6 +6,8 @@
 
 🌙 **Dark Mode Features**: Automatic theme detection, persistent user preferences, theme-aware components (charts, calendars, maps), and a beautiful toggle switch.
 
+📚 **[Complete Documentation](docs/)** - Detailed setup guides, API reference, and examples
+
 Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
 # Preview

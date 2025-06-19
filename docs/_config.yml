@@ -1,0 +1,85 @@
+# GitHub Pages Configuration for Adminator Documentation
+
+# Site settings
+title: "Adminator Documentation"
+description: "Complete guide for the Adminator Bootstrap 5 Admin Dashboard Template with Dark Mode"
+url: "https://puikinsh.github.io"
+baseurl: "/Adminator-admin-dashboard"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+navigation:
+  - title: "Getting Started"
+    url: "/getting-started/"
+  - title: "Components"
+    url: "/components/"
+  - title: "Dark Mode & Theming"
+    url: "/customization/"
+  - title: "API Reference"
+    url: "/api/"
+  - title: "Examples"
+    url: "/examples/"
+  - title: "Deployment"
+    url: "/deployment/"
+
+# SEO
+author: "Colorlib"
+twitter:
+  username: colorlib
+social:
+  name: "Colorlib"
+  links:
+    - https://github.com/puikinsh/Adminator-admin-dashboard
+    - https://colorlib.com
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include
+include:
+  - _pages
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Code highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true 
