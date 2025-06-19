@@ -10,14 +10,18 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 
 # Preview
 
-### Screenshot
+### Screenshots
 
-![Adminator admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/adminator-free-admin-dashboard-template.jpg)
+**Light Mode:**
+![Adminator Bootstrap 5 Light Mode](https://colorlib.com/wp/wp-content/uploads/sites/2/adminator-bootstrap-5-light.png.avif)
+
+**Dark Mode:**
+![Adminator Bootstrap 5 Dark Mode](https://colorlib.com/wp/wp-content/uploads/sites/2/adminator-bootstrap-5-dark.png.avif)
 
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
-- [What's New in v2.5.0](#whats-new-in-v250)
+- [What's New in v2.6.0](#whats-new-in-v260)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
