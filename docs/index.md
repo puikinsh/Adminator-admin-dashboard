@@ -86,10 +86,10 @@ Real-world examples and integration guides for popular frameworks and use cases.
 Experience Adminator's features in action:
 
 ### Light Mode
-![Adminator Light Mode](https://github.com/user-attachments/assets/24c5a0df-ae77-4826-9ef5-4a6b4a8ea6c7)
+![Adminator Light Mode](assets/images/adminator-light-mode.avif)
 
 ### Dark Mode  
-![Adminator Dark Mode](https://github.com/user-attachments/assets/9c2b9e3b-b67e-4d5c-9ec4-5d9d8e1c7a8f)
+![Adminator Dark Mode](assets/images/adminator-dark-mode.avif)
 
 [Try Live Demo](https://colorlib.com/polygon/adminator/index.html){: .btn .btn-green .fs-5 }
 
