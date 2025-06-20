@@ -57,7 +57,7 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - **Latest Dependencies**: All 22+ dependencies updated to latest versions  
 - **Modern Build Tools**: webpack 5.99.9, webpack-dev-server 5.2.2
 - **ESLint 9.x**: Migrated to modern flat config format
-- **Enhanced CSS**: Latest Sass (1.89.2), PostCSS (8.5.5), Bootstrap (5.3.6)
+- **Enhanced CSS**: Latest Sass (1.89.2), PostCSS (8.5.6), Bootstrap (5.3.7)
 - **Updated Components**: Chart.js 4.5.0, FullCalendar 6.1.17
 - **Zero Vulnerabilities**: Complete security audit with all packages secure
 
@@ -281,13 +281,13 @@ The built files will be available in the `dist/` directory.
 ## Built With
 
 ### Core Framework & Build Tools
-- [Bootstrap 5.3.6](http://getbootstrap.com/) - Modern CSS framework
+- [Bootstrap 5.3.7](http://getbootstrap.com/) - Modern CSS framework
 - [Webpack 5.99.9](https://webpack.js.org/) - Module bundler and build tool
 - [Babel 7.27.x](https://babeljs.io/) - JavaScript transpiler
 - [Sass 1.89.2](http://sass-lang.com/) - CSS preprocessor
-- [PostCSS 8.5.5](http://postcss.org/) - CSS transformations
+- [PostCSS 8.5.6](http://postcss.org/) - CSS transformations
 - [ESLint 9.29.0](https://eslint.org/) - JavaScript linting (flat config)
-- [Stylelint 16.20.0](https://stylelint.io/) - CSS/SCSS linting
+- [Stylelint 16.21.0](https://stylelint.io/) - CSS/SCSS linting
 
 ### UI Components & Charts
 - [Chart.js 4.5.0](http://www.chartjs.org/) - Modern charting library

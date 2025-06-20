@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1] - 2025-07-26
+
+### ⬆️ Dependency Updates
+- Updated `bootstrap` 5.3.6 → 5.3.7
+- Updated `postcss` 8.5.5 → 8.5.6
+- Updated `stylelint` 16.20.0 → 16.21.0
+
 ## [2.6.0] - 2025-01-21
 
 ### 🌙 Dark Mode Release
