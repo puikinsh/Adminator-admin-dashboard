@@ -10,6 +10,7 @@
 
 // + @Topbar
 // + @Collapsed State
+// + @Mobile Responsive Fixes
 
 // ---------------------------------------------------------
 // @Topbar
@@ -196,6 +197,244 @@
 }
 
 // ---------------------------------------------------------
+// @Mobile Responsive Fixes - AGGRESSIVE APPROACH
+// ---------------------------------------------------------
+
+// Tablet mobile fixes (768px to 991px)
+@include to($breakpoint-md) {
+  .header {
+    .header-container {
+      padding: 0 10px;
+      
+      .nav-left {
+        margin-left: 5px;
+
+        > li > a {
+          padding: 0 8px !important;
+        }
+      }
+
+      .nav-right {
+        margin-right: 5px;
+
+        > li {
+          > a {
+            padding: 0 8px !important;
+            
+            // Hide text in user dropdown on tablet
+            .peer:last-child {
+              display: none;
+            }
+          }
+        }
+
+        // Make theme toggle more compact
+        .theme-toggle {
+          padding: 0 5px !important;
+          
+          .form-check-label {
+            font-size: 9px !important;
+            margin: 0 3px !important;
+          }
+          
+          .form-check-input {
+            width: 1.8rem !important;
+            height: 1rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small mobile phones (576px to 767px)
+@include to($breakpoint-sm) {
+  .header {
+    .header-container {
+      height: auto;
+      min-height: $header-height;
+      padding: 0 5px;
+
+      .nav-left {
+        margin-left: 2px;
+
+        > li > a {
+          padding: 0 5px !important;
+        }
+
+        // Hide search toggle on small mobile - make it icon only when active
+        .search-box:not(.active) {
+          display: none;
+        }
+      }
+
+      .nav-right {
+        margin-right: 2px;
+
+        > li {
+          > a {
+            padding: 0 4px !important;
+            
+            // Hide all text content, keep only icons
+            span {
+              display: none;
+            }
+            
+            .peer:last-child {
+              display: none;
+            }
+          }
+        }
+
+        // Ultra-compact theme toggle
+        .theme-toggle {
+          padding: 0 3px !important;
+          
+          .form-check {
+            flex-direction: column;
+            align-items: center;
+            
+            .form-check-label {
+              font-size: 7px !important;
+              margin: 0 !important;
+              line-height: 1 !important;
+              
+              span {
+                display: none !important;
+              }
+            }
+            
+            .form-check-input {
+              width: 1.5rem !important;
+              height: 0.8rem !important;
+              margin: 1px 0 !important;
+            }
+          }
+        }
+      }
+
+      // Full-screen mobile dropdowns
+      .nav-right .dropdown-menu {
+        position: fixed !important;
+        top: $header-height !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: calc(100vh - #{$header-height}) !important;
+        max-width: none !important;
+        min-width: auto !important;
+        transform: none !important;
+        border-radius: 0 !important;
+        z-index: 9999;
+        overflow-y: auto;
+        
+        // Close button for mobile dropdowns
+        &::before {
+          content: "✕ Close";
+          position: sticky;
+          top: 0;
+          display: block;
+          background: var(--c-primary);
+          color: white;
+          text-align: center;
+          padding: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          z-index: 10000;
+        }
+      }
+    }
+  }
+}
+
+// Extra small mobile phones (less than 576px)
+@include to(480px) {
+  .header {
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding: 0 2px;
+
+      .nav-left {
+        flex: 0 0 auto;
+        margin: 0;
+        
+        > li {
+          float: none;
+          display: inline-block;
+          
+          > a {
+            padding: 0 3px !important;
+            font-size: 14px !important;
+          }
+        }
+
+        // Search overlay for tiny screens
+        .search-input.active {
+          position: fixed;
+          top: $header-height;
+          left: 0;
+          right: 0;
+          background: var(--c-bkg-card);
+          border-top: 1px solid var(--c-border);
+          padding: 15px;
+          z-index: 9998;
+          
+          input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid var(--c-border);
+            border-radius: 6px;
+            background: var(--c-bkg-card);
+            color: var(--c-text-base);
+            margin-top: 0;
+            
+            &::placeholder {
+              color: var(--c-text-muted);
+            }
+          }
+        }
+      }
+
+      .nav-right {
+        flex: 0 0 auto;
+        margin: 0;
+        
+        > li {
+          float: none;
+          display: inline-block;
+          
+          > a {
+            padding: 0 2px !important;
+            font-size: 12px !important;
+          }
+        }
+
+        // Minimal theme toggle
+        .theme-toggle {
+          padding: 0 1px !important;
+          
+          .form-check {
+            .form-check-label {
+              display: none !important;
+            }
+            
+            .form-check-input {
+              width: 1.2rem !important;
+              height: 0.7rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------
 // @Collapsed State
 // ---------------------------------------------------------
 
@@ -212,3 +451,5 @@
     }
   }
 }
+
+

@@ -1,0 +1,954 @@
+// Mobile Utility Classes and Fixes
+// This file contains mobile-specific utility classes and responsive fixes
+
+// Mobile text utilities - Only hide theme labels on very small screens
+@media (max-width: 480px) {
+  .theme-toggle .form-check-label {
+    display: none !important;
+  }
+  
+  .theme-toggle {
+    padding: 0 6px !important;
+    height: 60px !important; // Match header height
+    justify-content: center !important;
+    min-height: 60px !important;
+    
+    .form-check {
+      height: 100% !important;
+      
+      .form-check-label {
+        font-size: 11px !important; // Slightly smaller for very small screens
+        font-weight: 500 !important;
+        
+        i {
+          font-size: 14px !important; // Still reasonable for tiny screens
+        }
+      }
+      
+      .form-check-input {
+        margin: 0 6px !important;
+        width: 38px !important; // Bigger than before but not huge for tiny screens
+        height: 22px !important; // Bigger than before but not huge for tiny screens  
+        border-radius: 11px !important;
+        border-width: 2px !important;
+      }
+    }
+  }
+  
+  // Very small screen adjustments
+  .d-none-xs {
+    display: none !important;
+  }
+  
+  .fs-xs {
+    font-size: 10px !important;
+  }
+  
+  .p-xs {
+    padding: 5px !important;
+  }
+  
+  .m-xs {
+    margin: 5px !important;
+  }
+}
+
+// Mobile dropdown improvements
+@media (max-width: 767px) {
+  .dropdown-menu {
+    // Ensure all dropdowns are mobile-friendly
+    &.show {
+      position: fixed !important;
+      top: 65px !important;
+      left: 5px !important;
+      right: 5px !important;
+      width: auto !important;
+      transform: none !important;
+      z-index: 1050;
+      max-height: calc(100vh - 85px);
+      overflow-y: auto;
+    }
+  }
+  
+  // Mobile notification improvements
+  .notifications .dropdown-menu {
+    .scrollable {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  }
+}
+
+// Mobile header compact mode
+@media (max-width: 991px) {
+  .header .nav-right > li > a {
+    padding: 0 6px !important;
+  }
+  
+  .header .nav-left > li > a {
+    padding: 0 8px !important;
+  }
+}
+
+// Ultra-compact mode for very small screens
+@media (max-width: 480px) {
+  .header .nav-right > li > a {
+    padding: 0 4px !important;
+    font-size: 14px !important;
+  }
+  
+  .header .nav-left > li > a {
+    padding: 0 6px !important;
+  }
+  
+  // Hide search on very small screens when not active
+  .search-box:not(.active) {
+    display: none !important;
+  }
+}
+
+// Mobile-specific spacing utilities
+.mobile-compact {
+  @media (max-width: 767px) {
+    padding: 5px !important;
+    margin: 2px !important;
+  }
+}
+
+.mobile-hidden {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none !important;
+  
+  @media (max-width: 767px) {
+    display: block !important;
+  }
+}
+
+// Prevent horizontal scroll on mobile
+.mobile-no-scroll {
+  @media (max-width: 767px) {
+    overflow-x: hidden !important;
+  }
+}
+
+// COMPREHENSIVE Mobile Header Fixes
+// Better layout, bigger icons, full-width search, and desktop fixes
+
+// =============================================================================
+// DESKTOP FIXES - Remove top spacing issue
+// =============================================================================
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin-top: 0 !important;
+    top: 0 !important;
+  }
+  
+  .page-container {
+    padding-top: 61px !important; // Standard header height + 1px border
+  }
+  
+  .main-content {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+  }
+  
+  // DESKTOP THEME TOGGLE - Make sure it's fully visible
+  .theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    height: 65px !important;
+    padding: 0 15px !important;
+
+    .form-check {
+      margin: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      
+      .form-check-label {
+        color: var(--c-text-muted) !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        display: inline !important;
+        
+        i {
+          font-size: 12px !important;
+        }
+      }
+
+      .form-check-input {
+        width: 2.5rem !important;
+        height: 1.25rem !important;
+        background-color: var(--c-border) !important;
+        border: 1px solid var(--c-border) !important;
+        cursor: pointer !important;
+        margin: 0 8px !important;
+        
+        &:checked {
+          background-color: var(--c-primary) !important;
+          border-color: var(--c-primary) !important;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--c-primary) 25%, transparent) !important;
+          border-color: var(--c-primary) !important;
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// HEADER NAVIGATION MOBILE FIXES - ENHANCED LAYOUT
+// =============================================================================
+
+// Mobile header fixes with improved spacing and layout
+@media screen and (max-width: 767px) {
+  
+  // Force header to be fixed and proper height
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 60px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important; // Ensure no top margin on mobile
+  }
+
+  // Header container - IMPROVED EDGE-TO-EDGE LAYOUT
+  .header .header-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding: 8px 8px !important; // Reduced side padding for more space
+    height: auto !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    overflow: visible !important;
+    gap: 12px !important; // Larger gap to push items apart
+  }
+
+  // LEFT SECTION: Logo + Hamburger + Search - PUSHED MORE LEFT
+  .header .nav-left {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    max-width: 65% !important; // Increased width
+    gap: 4px !important; // Tighter spacing between left items
+    justify-content: flex-start !important; // Push to left edge
+    
+    // Logo first - positioned at far left
+    &::before {
+      content: "A" !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 32px !important;
+      height: 32px !important;
+      background: #007bff !important;
+      color: white !important;
+      border-radius: 6px !important;
+      font-weight: bold !important;
+      font-size: 18px !important;
+      flex-shrink: 0 !important;
+      order: -1 !important;
+      margin-right: 6px !important; // Small margin to separate from hamburger
+    }
+    
+    > li {
+      display: inline-flex !important;
+      align-items: center !important;
+      margin: 0 !important;
+      float: none !important;
+      
+      > a {
+        padding: 8px 6px !important; // Reduced padding for tighter spacing
+        margin: 0 !important;
+        min-height: auto !important;
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        border-radius: 4px !important;
+        
+        i {
+          font-size: 20px !important;
+          margin: 0 !important;
+        }
+        
+        // Hover state for better UX
+        &:hover {
+          background: rgba(0, 0, 0, 0.05) !important;
+        }
+      }
+      
+      // Sidebar toggle (hamburger)
+      &:first-child > a {
+        padding: 8px 6px !important;
+        
+        i {
+          font-size: 22px !important;
+        }
+      }
+      
+      // Search toggle
+      &.search-box > a {
+        padding: 8px 6px !important;
+        
+        i {
+          font-size: 20px !important;
+        }
+      }
+    }
+    
+    // FULL-WIDTH SEARCH BAR - CLEANER DESIGN
+    .search-input {
+      display: none !important; // Hidden by default
+      position: fixed !important; // Fixed positioning for full control
+      top: 60px !important; // Right below header
+      left: 0 !important;
+      right: 0 !important;
+      background: var(--c-bkg-card) !important;
+      border-bottom: 1px solid var(--c-border) !important;
+      padding: 15px 20px !important; // More padding for better appearance
+      z-index: 9999 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; // Subtle shadow
+      
+      &.active {
+        display: block !important;
+      }
+      
+      input {
+        width: 100% !important;
+        padding: 12px 16px !important; // Better padding
+        font-size: 16px !important;
+        border: 1px solid var(--c-border) !important;
+        border-radius: 8px !important; // Rounded corners
+        background: var(--c-bkg-body) !important;
+        color: var(--c-text-base) !important;
+        margin: 0 !important;
+        outline: none !important;
+        
+        &::placeholder {
+          color: var(--c-text-muted) !important;
+        }
+        
+        &:focus {
+          outline: none !important;
+          border-color: var(--c-primary) !important;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+        }
+      }
+    }
+  }
+
+  // RIGHT SECTION: Notifications + Messages + Theme Toggle + Profile - PERFECT ALIGNMENT
+  .header .nav-right {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important; // Consistent spacing
+    justify-content: flex-end !important; // Push to right edge
+    height: 60px !important; // Match header height exactly
+    
+    > li {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      float: none !important;
+      flex: 0 0 auto !important;
+      position: relative !important;
+      height: 60px !important; // Force exact height for all items
+      min-height: 60px !important; // Ensure minimum height
+      
+      > a {
+        padding: 0 !important; // NO padding for perfect alignment
+        margin: 0 !important;
+        width: 44px !important; // Fixed width for all nav items
+        height: 44px !important; // Fixed height for all nav items
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important; // Perfect vertical centering
+        justify-content: center !important; // Perfect horizontal centering
+        position: relative !important;
+        border-radius: 50% !important; // Circular touch targets
+        background: transparent !important;
+        transition: all 0.2s ease !important; // Smooth transitions
+        
+        i {
+          font-size: 20px !important; // Consistent icon size for all nav items
+          margin: 0 !important;
+          display: block !important;
+          line-height: 1 !important;
+          text-align: center !important;
+        }
+        
+        // Hide text content, keep only icons
+        span:not(.counter) {
+          display: none !important;
+        }
+        
+        // Hide user avatar text
+        .peer:last-child {
+          display: none !important;
+        }
+        
+        // Hover state - subtle and theme-consistent
+        &:hover {
+          background: var(--c-grey-100) !important;
+          transform: scale(1.05) !important;
+          transition: all 0.2s ease !important;
+        }
+      }
+      
+      // User dropdown - special styling for avatar
+      &:last-child > a {
+        .peer {
+          &:first-child {
+            margin-right: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          
+          img {
+            width: 36px !important;
+            height: 36px !important;
+            max-width: 36px !important;
+            max-height: 36px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+          }
+        }
+      }
+    }
+    
+    // NOTIFICATION COUNTERS - CORRECTLY ANCHORED
+    > li {
+      position: relative !important; // This is the anchor
+
+      .counter {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        z-index: 10 !important;
+        
+        // The design of the counter itself is inherited
+      }
+    }
+    
+    // Theme toggle - perfectly aligned with other nav icons
+    .theme-toggle {
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 60px !important; // Match header height exactly
+      min-height: 60px !important; // Force exact height
+      width: 44px !important; // Same width as other nav items
+      
+      .form-check {
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex !important;
+        height: 44px !important; // Same height as other nav items
+        width: 44px !important; // Same width as other nav items
+        border-radius: 50% !important; // Match other nav items
+        position: relative !important;
+        
+        .form-check-label {
+          display: none !important; // Hide labels on mobile for consistency
+        }
+        
+        .form-check-input {
+          width: 28px !important; // Smaller switch to fit in circular area
+          height: 16px !important; // Smaller switch to fit in circular area  
+          margin: 0 !important; // No margin for perfect centering
+          flex-shrink: 0 !important;
+          border-radius: 8px !important; // Proportional border radius
+          border-width: 1px !important; // Standard border
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important; // Perfect centering
+        }
+        
+        // Hover state to match other nav items
+        &:hover {
+          background: var(--c-grey-100) !important;
+          transform: scale(1.05) !important;
+          transition: all 0.2s ease !important;
+        }
+      }
+    }
+  }
+
+  // Full-screen mobile dropdowns
+  .header .nav-right .dropdown-menu {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 60px) !important;
+    max-width: none !important;
+    min-width: auto !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    z-index: 9999 !important;
+    overflow-y: auto !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    // Mobile close button
+    &::before {
+      content: "✕ Close" !important;
+      position: sticky !important;
+      top: 0 !important;
+      display: block !important;
+      background: var(--c-primary) !important;
+      color: white !important;
+      text-align: center !important;
+      padding: 15px !important;
+      cursor: pointer !important;
+      font-weight: bold !important;
+      z-index: 10000 !important;
+      font-size: 16px !important;
+    }
+    
+    // UNIFIED EMAIL/NOTIFICATION MOBILE LAYOUT
+    .peers {
+      padding: 15px 20px !important;
+      flex-wrap: wrap !important;
+      align-items: flex-start !important;
+      
+      .peer {
+        max-width: 100% !important;
+        
+        img {
+          width: 40px !important;
+          height: 40px !important;
+          margin-right: 12px !important;
+          flex-shrink: 0 !important;
+        }
+        
+        &.peer-greed {
+          flex: 1 !important;
+          min-width: 0 !important;
+          
+          // NOTIFICATIONS STYLE - Direct content (span > fw-500 + c-grey-600, then p > small)
+          > span {
+            display: block !important;
+            margin-bottom: 4px !important;
+            
+            .fw-500 {
+              font-size: 14px !important;
+              font-weight: 600 !important;
+              margin: 0 !important;
+              color: var(--c-text-base) !important;
+              display: inline !important;
+            }
+            
+            .c-grey-600 {
+              font-size: 13px !important;
+              color: var(--c-text-muted) !important;
+              line-height: 1.4 !important;
+              display: inline !important;
+            }
+          }
+          
+          > p {
+            margin: 0 !important;
+            
+            small {
+              font-size: 12px !important;
+              color: var(--c-text-muted) !important;
+            }
+          }
+          
+          // EMAILS STYLE - Match notifications exactly 
+          > div {
+            // Completely restructure emails to match notification layout
+            display: block !important;
+            
+            .peers {
+              display: inline !important; // Make name and action on same line
+              margin: 0 !important;
+              
+              .peer {
+                &:first-child {
+                  // Name section
+                  p {
+                    font-size: 14px !important;
+                    font-weight: 600 !important;
+                    margin: 0 !important;
+                    color: var(--c-text-base) !important;
+                    display: inline !important;
+                  }
+                  
+                  // Add action text after name
+                  &::after {
+                    content: " sent you a message" !important;
+                    font-size: 13px !important;
+                    color: var(--c-text-muted) !important;
+                    font-weight: normal !important;
+                  }
+                }
+                
+                &:last-child {
+                  // Move timestamp to its own line below (like notifications)
+                  display: block !important;
+                  margin-top: 2px !important;
+                  
+                  small {
+                    font-size: 12px !important;
+                    color: var(--c-text-muted) !important;
+                    display: block !important;
+                  }
+                }
+              }
+            }
+            
+            // Hide the email preview text completely to match notifications
+            > .c-grey-600,
+            .c-grey-600.fsz-sm {
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+    
+    // Header items in dropdown
+    .pX-20 {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      
+      .fw-600 {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+      }
+    }
+    
+    // Footer links in dropdown
+    .ta-c {
+      padding: 15px 20px !important;
+      
+      a {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+      }
+    }
+  }
+}
+
+// Extra small screens - refined adjustments
+@media screen and (max-width: 479px) {
+  .header .header-container {
+    padding: 8px 5px !important; // Even less padding for tiny screens
+    gap: 8px !important;
+  }
+  
+  .header .nav-left {
+    max-width: 60% !important;
+    gap: 2px !important; // Even tighter spacing
+    
+    &::before {
+      width: 28px !important;
+      height: 28px !important;
+      font-size: 16px !important;
+      margin-right: 4px !important;
+    }
+    
+    > li > a {
+      padding: 8px 4px !important;
+      
+      i {
+        font-size: 18px !important;
+      }
+    }
+  }
+  
+  .header .nav-right {
+    gap: 1px !important; // Minimal spacing
+    
+    > li > a {
+      padding: 8px 4px !important;
+      
+      i {
+        font-size: 18px !important; // Slightly smaller for tiny screens
+      }
+    }
+    
+    .theme-toggle .form-check-input {
+      width: 28px !important;
+      height: 16px !important;
+    }
+  }
+  
+  // Full-width search bar on tiny screens
+  .header .nav-left .search-input {
+    padding: 12px 15px !important;
+    
+    input {
+      padding: 10px 12px !important;
+      font-size: 16px !important; // Prevent zoom on iOS
+    }
+  }
+}
+
+// =============================================================================
+// FOOTER OVERLAP FIXES - MAINTAINING PREVIOUS FIXES
+// =============================================================================
+
+// Global layout fixes
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+// Page container - force flexbox layout
+.page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding-top: 60px !important;
+}
+
+// Main content - flexible
+.main-content {
+  flex: 1 0 auto !important;
+  padding: 20px 10px 40px !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  overflow-x: hidden !important;
+}
+
+// Footer - fixed to bottom
+footer {
+  flex: 0 0 auto !important;
+  margin-top: auto !important;
+  padding: 15px 10px !important;
+  background: var(--c-bkg-card) !important;
+  border-top: 1px solid var(--c-border) !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  z-index: 10 !important;
+  position: relative !important;
+  width: 100% !important;
+  clear: both !important;
+  
+  // CRITICAL: Override lh-0 class that causes overlap
+  &.lh-0 {
+    line-height: 1.3 !important; // Force proper line height
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page-container {
+    padding-left: 0 !important;
+    min-height: 100vh !important; // Ensure full height
+    position: relative !important; // Ensure positioning context
+  }
+  
+  .main-content {
+    padding: 15px 8px 60px !important; // Increased bottom padding for footer space
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+      footer {
+      position: relative !important; // Ensure footer stays in flow
+      width: 100% !important;
+      padding: 15px 10px !important; // Increased padding for better spacing
+      font-size: 11px !important; // Slightly larger for readability
+      line-height: 1.4 !important; // Better line height for mobile
+      background: var(--c-bkg-card) !important;
+      border-top: 1px solid var(--c-border) !important;
+      margin-top: auto !important;
+      box-sizing: border-box !important;
+      
+      // CRITICAL MOBILE FIXES: Override all conflicting utility classes
+      &.lh-0 {
+        line-height: 1.4 !important; // Override line-height: 0 that causes overlap
+      }
+      
+      &.p-30 {
+        padding: 15px 10px !important; // Override desktop padding
+      }
+      
+      &.fsz-sm {
+        font-size: 11px !important; // Ensure readable font size on mobile
+      }
+    
+    span {
+      display: block !important; // Force block for better wrapping
+      word-wrap: break-word !important;
+      max-width: 100% !important;
+      text-align: center !important;
+      line-height: 1.4 !important;
+      
+      // Handle long text better
+      hyphens: auto !important;
+      word-break: break-word !important;
+      
+      a {
+        color: var(--c-primary) !important;
+        text-decoration: none !important;
+        display: inline !important; // Keep link inline within text
+        
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .main-content {
+    padding: 10px 8px 50px !important; // Adequate bottom space for footer
+  }
+  
+      footer {
+      padding: 12px 8px !important;
+      font-size: 10px !important;
+      line-height: 1.5 !important; // Better readability on small screens
+      
+      // Override utility classes for small screens
+      &.lh-0 {
+        line-height: 1.5 !important; // Override line-height: 0
+      }
+      
+      &.p-30 {
+        padding: 12px 8px !important; // Override desktop padding
+      }
+      
+      &.fsz-sm {
+        font-size: 10px !important; // Ensure readable font size
+      }
+      
+      span {
+        display: block !important;
+        margin: 0 !important; // Remove extra margins
+        padding: 0 !important;
+        text-align: center !important;
+        
+        // Split long copyright text into multiple lines if needed
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+        
+        // Ensure links are readable
+        a {
+          display: inline !important;
+          white-space: nowrap !important; // Keep "Colorlib" as one word
+        }
+      }
+    }
+}
+
+// Additional mobile footer fixes
+@media screen and (max-width: 360px) {
+  footer {
+    font-size: 9px !important;
+    padding: 10px 5px !important;
+    
+    // Override utility classes for extra small screens  
+    &.lh-0 {
+      line-height: 1.6 !important; // Even better line height for tiny screens
+    }
+    
+    &.p-30 {
+      padding: 10px 5px !important; // Override desktop padding
+    }
+    
+    &.fsz-sm {
+      font-size: 9px !important; // Readable font size for tiny screens
+    }
+    
+    span {
+      line-height: 1.6 !important; // Ensure good readability
+      
+      // For very small screens, ensure text doesn't overlap
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      
+      // Ensure links are readable
+      a {
+        font-weight: bold !important;
+        color: var(--c-primary) !important;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// UTILITY CLASSES FOR MOBILE
+// =============================================================================
+
+// Prevent body scroll when mobile menus are open
+body.mobile-menu-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+// Emergency fixes for any remaining issues
+@media screen and (max-width: 767px) {
+  // Ensure dropdowns don't break layout
+  .dropdown-menu.show {
+    position: fixed !important;
+  }
+  
+  // Prevent content overflow
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  [class*="col-"] {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  
+  // Hide on mobile utility
+  .d-none-mobile {
+    display: none !important;
+  }
+  
+  // Force no horizontal scroll
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+} 

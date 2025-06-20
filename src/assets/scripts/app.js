@@ -1,6 +1,6 @@
 /**
  * Modern Adminator Application
- * Main application entry point - replaces jQuery-based initialization
+ * Main application entry point with enhanced mobile support
  */
 
 import bootstrap from 'bootstrap';
@@ -24,7 +24,6 @@ import './vectorMaps';
 import './chat';
 import './email';
 import './googleMaps';
-import './utils';
 
 class AdminatorApp {
   constructor() {
@@ -43,7 +42,7 @@ class AdminatorApp {
   init() {
     if (this.isInitialized) return;
     
-    console.log('🚀 Initializing Adminator App (Modern Version)');
+    console.log('🚀 Initializing Adminator App (Mobile Optimized)');
     
     try {
       // Initialize core components
@@ -52,6 +51,7 @@ class AdminatorApp {
       this.initDataTables();
       this.initDatePickers();
       this.initTheme();
+      this.initMobileEnhancements();
       
       // Setup global event listeners
       this.setupGlobalEvents();
@@ -201,97 +201,107 @@ class AdminatorApp {
               try {
                 picker.showPicker();
               } catch (e) {
-                // Fallback for browsers that don't support showPicker
                 console.log('📅 Date picker opened via icon click');
               }
             }
           });
-          
-          // Also make the entire icon container clickable
-          const iconContainer = inputGroup.querySelector('.input-group-text');
-          if (iconContainer) {
-            iconContainer.style.cursor = 'pointer';
-            DOM.on(iconContainer, 'click', (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              picker.focus();
-              if (picker.showPicker && typeof picker.showPicker === 'function') {
-                try {
-                  picker.showPicker();
-                } catch (e) {
-                  console.log('📅 Date picker opened via icon container click');
-                }
-              }
-            });
-          }
         }
       }
-    });
-    
-    // Add date validation
-    [...startDatePickers, ...endDatePickers].forEach(picker => {
-      DOM.on(picker, 'change', (event) => {
-        const isValid = DateUtils.form.validateDateInput(event.target.value);
-        if (!isValid) {
-          event.target.classList.add('is-invalid');
-          console.warn('Invalid date format:', event.target.value);
-        } else {
-          event.target.classList.remove('is-invalid');
-          console.log('Valid date selected:', DateUtils.formatters.shortDate(event.target.value));
-        }
-      });
-      
-      // Add focus/blur handlers for better UX
-      DOM.on(picker, 'focus', () => {
-        picker.classList.add('focus');
-      });
-      
-      DOM.on(picker, 'blur', () => {
-        picker.classList.remove('focus');
-      });
     });
   }
 
   /**
-   * Initialize theme
+   * Initialize theme system with toggle
    */
   initTheme() {
+    console.log('🌙 Initializing theme system');
+    
+    // Initialize theme system first
     Theme.init();
-
-    // inject toggle switch if missing
-    const navRight = document.querySelector('.nav-right');
-    if (navRight && !document.getElementById('theme-toggle')) {
+    
+    // Inject theme toggle if missing - with retry mechanism
+    setTimeout(() => {
+      const navRight = DOM.select('.nav-right');
+      console.log('🔍 nav-right found:', !!navRight);
+      console.log('🔍 navRight element:', navRight);
+      console.log('🔍 theme-toggle exists:', DOM.exists('#theme-toggle'));
+      console.log('🔍 All nav-right li elements:', navRight ? navRight.querySelectorAll('li').length : 0);
+      
+      // Debug the DOM structure
+      if (navRight) {
+        console.log('🔍 navRight children:', Array.from(navRight.children).map(child => ({
+          tagName: child.tagName,
+          className: child.className,
+          id: child.id
+        })));
+      }
+      
+      if (navRight && !DOM.exists('#theme-toggle')) {
       const li = document.createElement('li');
       li.className = 'theme-toggle d-flex ai-c';
       li.innerHTML = `
         <div class="form-check form-switch d-flex ai-c" style="margin: 0; padding: 0;">
           <label class="form-check-label me-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-right: 8px;">
-            <i class="ti-sun" style="margin-right: 4px;"></i>Light
+            <i class="ti-sun" style="margin-right: 4px;"></i><span class="theme-label">Light</span>
           </label>
           <input class="form-check-input" type="checkbox" id="theme-toggle" style="margin: 0;">
           <label class="form-check-label ms-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-left: 8px;">
-            Dark<i class="ti-moon" style="margin-left: 4px;"></i>
+            <span class="theme-label">Dark</span><i class="ti-moon" style="margin-left: 4px;"></i>
           </label>
         </div>
       `;
-      navRight.insertBefore(li, navRight.firstElementChild);
+      
+      // Insert before user dropdown (last item) - safer approach
+      const lastItem = navRight.querySelector('li:last-child');
+      console.log('🔍 lastItem found:', !!lastItem);
+      console.log('🔍 lastItem parent:', lastItem ? lastItem.parentNode : null);
+      console.log('🔍 navRight:', navRight);
+      
+      if (lastItem && lastItem.parentNode === navRight) {
+        navRight.insertBefore(li, lastItem);
+        console.log('✅ Theme toggle inserted before last item');
+      } else {
+        navRight.appendChild(li);
+        console.log('✅ Theme toggle appended to nav-right (safer approach)');
+      }
+      
+      // Add toggle functionality
+      const toggle = DOM.select('#theme-toggle');
+      if (toggle) {
+        // Set initial state
+        const currentTheme = Theme.current();
+        toggle.checked = currentTheme === 'dark';
+        
+        DOM.on(toggle, 'change', () => {
+          Theme.apply(toggle.checked ? 'dark' : 'light');
+        });
+        
+        // Listen for theme changes from other sources
+        window.addEventListener('adminator:themeChanged', (event) => {
+          toggle.checked = event.detail.theme === 'dark';
+          
+          // Update charts when theme changes
+          const charts = this.components.get('charts');
+          if (charts) charts.redrawCharts();
+        });
+      }
+      } else {
+        console.log('❌ No nav-right found or theme-toggle already exists');
+      }
+    }, 100); // Wait 100ms for DOM to be fully ready
+  }
 
-      const toggleInput = li.querySelector('#theme-toggle');
-
-      const updateSwitch = () => {
-        toggleInput.checked = Theme.current() === 'dark';
-      };
-      updateSwitch();
-
-      toggleInput.addEventListener('change', (e) => {
-        Theme.apply(e.target.checked ? 'dark' : 'light');
-      });
-
-      window.addEventListener('adminator:themeChanged', () => {
-        updateSwitch();
-        const charts = this.components.get('charts');
-        if (charts) charts.redrawCharts();
-      });
+  /**
+   * Initialize mobile-specific enhancements
+   */
+  initMobileEnhancements() {
+    console.log('📱 Initializing mobile enhancements');
+    this.enhanceMobileDropdowns();
+    this.enhanceMobileSearch();
+    
+    // Prevent horizontal scroll on mobile
+    if (this.isMobile()) {
+      document.body.style.overflowX = 'hidden';
     }
   }
 
@@ -299,55 +309,312 @@ class AdminatorApp {
    * Setup global event listeners
    */
   setupGlobalEvents() {
-    // Global resize handler
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        this.handleResize();
-      }, 150);
+    // Global click handler
+    DOM.on(document, 'click', (event) => this.handleGlobalClick(event));
+    
+    // Window resize handler with debouncing
+    let resizeTimeout;
+    DOM.on(window, 'resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => this.handleResize(), 250);
     });
-
-    // Global click handler for dynamic content
-    document.addEventListener('click', (e) => {
-      this.handleGlobalClick(e);
-    });
-
-    // Custom event for masonry recalculation
-    window.EVENT = new Event('resize');
+    
+    console.log('🌐 Global event listeners set up');
   }
 
   /**
-   * Handle window resize
+   * Handle window resize events
    */
   handleResize() {
-    // Notify charts to resize
-    const charts = this.components.get('charts');
-    if (charts) {
-      charts.redrawCharts();
+    console.log('📐 Window resized, updating mobile features');
+    
+    // Close all mobile-specific overlays when switching to desktop
+    if (!this.isMobile()) {
+      document.body.style.overflow = '';
+      document.body.style.overflowX = '';
+      
+      // Close dropdowns
+      const dropdowns = DOM.selectAll('.nav-right .dropdown');
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('show');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+      });
+      
+      // Close search
+      const searchBox = DOM.select('.search-box');
+      const searchInput = DOM.select('.search-input');
+      if (searchBox && searchInput) {
+        searchBox.classList.remove('active');
+        searchInput.classList.remove('active');
+      }
+    } else {
+      // Re-enable mobile overflow protection
+      document.body.style.overflowX = 'hidden';
     }
-
-    // Dispatch resize event for other components
-    window.dispatchEvent(new CustomEvent('adminator:resize'));
+    
+    // Re-apply mobile enhancements
+    this.enhanceMobileDropdowns();
+    this.enhanceMobileSearch();
   }
 
   /**
-   * Handle global clicks
+   * Handle global click events
    */
   handleGlobalClick(event) {
-    // Handle any global click events here
-    // This can be used for analytics, debugging, etc.
+    // Close mobile dropdowns when clicking outside
+    if (!event.target.closest('.dropdown')) {
+      const dropdowns = DOM.selectAll('.nav-right .dropdown');
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('show');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+      });
+      document.body.style.overflow = '';
+    }
+
+    // Close search when clicking outside
+    if (!event.target.closest('.search-box') && !event.target.closest('.search-input')) {
+      const searchBox = DOM.select('.search-box');
+      const searchInput = DOM.select('.search-input');
+      if (searchBox && searchInput) {
+        searchBox.classList.remove('active');
+        searchInput.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.classList.remove('mobile-menu-open');
+      }
+    }
   }
 
   /**
-   * Get component instance
+   * Check if we're on a mobile device
+   */
+  isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  /**
+   * Enhanced mobile dropdown handling with improved email layout
+   */
+  enhanceMobileDropdowns() {
+    if (!this.isMobile()) return;
+
+    const dropdowns = DOM.selectAll('.nav-right .dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      
+      if (toggle && menu) {
+        // Remove existing listeners to prevent duplicates
+        const newToggle = toggle.cloneNode(true);
+        toggle.replaceWith(newToggle);
+        
+        // Add click functionality for mobile dropdowns
+        DOM.on(newToggle, 'click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close search if open
+          const searchBox = DOM.select('.search-box');
+          const searchInput = DOM.select('.search-input');
+          if (searchBox && searchInput) {
+            searchBox.classList.remove('active');
+            searchInput.classList.remove('active');
+          }
+          
+          // Close other dropdowns first
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('show');
+              const otherMenu = otherDropdown.querySelector('.dropdown-menu');
+              if (otherMenu) otherMenu.classList.remove('show');
+            }
+          });
+          
+          // Toggle current dropdown
+          const isOpen = dropdown.classList.contains('show');
+          if (isOpen) {
+            dropdown.classList.remove('show');
+            menu.classList.remove('show');
+            document.body.style.overflow = '';
+            document.body.classList.remove('mobile-menu-open');
+          } else {
+            dropdown.classList.add('show');
+            menu.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            document.body.classList.add('mobile-menu-open');
+          }
+        });
+
+        // Enhanced mobile close button functionality
+        DOM.on(menu, 'click', (e) => {
+          // Check if clicked on the close area (::before pseudo-element area)
+          const rect = menu.getBoundingClientRect();
+          const clickY = e.clientY - rect.top;
+          
+          // If clicked in top 50px (close button area)
+          if (clickY <= 50) {
+            dropdown.classList.remove('show');
+            menu.classList.remove('show');
+            document.body.style.overflow = '';
+            document.body.classList.remove('mobile-menu-open');
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      }
+    });
+
+    // Close dropdowns on escape key
+    DOM.on(document, 'keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('show');
+          const menu = dropdown.querySelector('.dropdown-menu');
+          if (menu) menu.classList.remove('show');
+        });
+        document.body.style.overflow = '';
+        document.body.classList.remove('mobile-menu-open');
+      }
+    });
+  }
+
+      /**
+     * Enhanced mobile search handling - Full-width search bar
+     */
+    enhanceMobileSearch() {
+      const searchBox = DOM.select('.search-box');
+      const searchInput = DOM.select('.search-input');
+      
+      if (searchBox && searchInput) {
+        const searchToggle = searchBox.querySelector('a');
+        const searchField = searchInput.querySelector('input');
+        
+        if (searchToggle && searchField) {
+          console.log('🔍 Setting up full-width search functionality');
+          
+          // Remove existing listeners to prevent duplication
+          const newSearchToggle = searchToggle.cloneNode(true);
+          searchToggle.replaceWith(newSearchToggle);
+          
+          DOM.on(newSearchToggle, 'click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('🔍 Full-width search toggle clicked');
+            
+            // Close any open dropdowns first
+            const dropdowns = DOM.selectAll('.nav-right .dropdown');
+            dropdowns.forEach(dropdown => {
+              dropdown.classList.remove('show');
+              const menu = dropdown.querySelector('.dropdown-menu');
+              if (menu) menu.classList.remove('show');
+            });
+            
+            // Toggle search state
+            const isActive = searchInput.classList.contains('active');
+            const searchIcon = newSearchToggle.querySelector('i');
+            
+            if (isActive) {
+              // Close search
+              searchInput.classList.remove('active');
+              document.body.classList.remove('search-open');
+              
+              // Change icon back to search
+              if (searchIcon) {
+                searchIcon.className = 'ti-search';
+              }
+              
+              // Clear input
+              if (searchField) {
+                searchField.value = '';
+                searchField.blur();
+              }
+              
+              console.log('🔍 Full-width search closed');
+            } else {
+              // Open search
+              searchInput.classList.add('active');
+              document.body.classList.add('search-open');
+              
+              // Change icon to close
+              if (searchIcon) {
+                searchIcon.className = 'ti-close';
+              }
+              
+              // Focus the input after a short delay
+              setTimeout(() => {
+                if (searchField) {
+                  searchField.focus();
+                  console.log('🔍 Search field focused');
+                }
+              }, 100);
+              
+              console.log('🔍 Full-width search opened');
+            }
+          });
+          
+          // Close search on escape
+          DOM.on(document, 'keydown', (e) => {
+            if (e.key === 'Escape' && searchInput.classList.contains('active')) {
+              searchInput.classList.remove('active');
+              document.body.classList.remove('search-open');
+              
+              // Reset icon
+              const searchIcon = newSearchToggle.querySelector('i');
+              if (searchIcon) {
+                searchIcon.className = 'ti-search';
+              }
+              
+              // Clear input
+              if (searchField) {
+                searchField.value = '';
+                searchField.blur();
+              }
+              
+              console.log('🔍 Full-width search closed via escape');
+            }
+          });
+          
+          // Handle search input
+          DOM.on(searchField, 'keypress', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              const query = searchField.value.trim();
+              if (query) {
+                console.log('🔍 Search query:', query);
+                // Implement your search logic here
+                
+                // For demo, close search after "searching"
+                searchInput.classList.remove('active');
+                document.body.classList.remove('search-open');
+                
+                const searchIcon = newSearchToggle.querySelector('i');
+                if (searchIcon) {
+                  searchIcon.className = 'ti-search';
+                }
+                
+                searchField.value = '';
+                searchField.blur();
+              }
+            }
+          });
+          
+          console.log('🔍 Full-width search functionality initialized');
+        }
+      }
+    }
+
+  /**
+   * Get a component by name
    */
   getComponent(name) {
     return this.components.get(name);
   }
 
   /**
-   * Check if app is initialized
+   * Check if app is ready
    */
   isReady() {
     return this.isInitialized;
@@ -357,45 +624,42 @@ class AdminatorApp {
    * Destroy the application
    */
   destroy() {
+    console.log('🗑️ Destroying Adminator App');
+    
     // Destroy all components
     this.components.forEach((component, name) => {
       if (typeof component.destroy === 'function') {
         component.destroy();
       }
+      console.log(`🗑️ ${name} component destroyed`);
     });
     
     this.components.clear();
     this.isInitialized = false;
-    
-    console.log('🧹 Adminator App destroyed');
   }
 
   /**
-   * Refresh all components (useful for dynamic content)
+   * Refresh/reinitialize the application
    */
   refresh() {
     console.log('🔄 Refreshing Adminator App');
     
-    // Refresh sidebar active links
-    const sidebar = this.components.get('sidebar');
-    if (sidebar) {
-      sidebar.refreshActiveLink();
+    if (this.isInitialized) {
+      this.destroy();
     }
-
-    // Reinitialize charts if needed
-    const charts = this.components.get('charts');
-    if (charts) {
-      charts.redrawCharts();
-    }
+    
+    setTimeout(() => {
+      this.init();
+    }, 100);
   }
-
-
 }
 
-// Create global app instance
+// Initialize the application
+console.log('📱 Starting Adminator (Mobile Optimized)');
 const app = new AdminatorApp();
 
-// Export for external access
+// Make app globally available for debugging
 window.AdminatorApp = app;
 
+// Export for module usage
 export default app; 

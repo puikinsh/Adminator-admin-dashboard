@@ -4,6 +4,7 @@
 @use 'spec/index' as *;
 @use 'vendor/index' as *;
 @import "utils/theme.css";
+@import "utils/mobile.scss";
 
 body {
   background: var(--c-bkg-body);
@@ -80,6 +81,118 @@ body {
         &:focus {
           box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--c-primary) 25%, transparent);
           border-color: var(--c-primary);
+        }
+      }
+    }
+
+    // Mobile theme toggle adjustments
+    @media (max-width: 991px) {
+      padding: 0 6px;
+      height: 65px;
+
+      .form-check {
+        .form-check-label {
+          font-size: 10px;
+          
+          &:first-child {
+            margin-right: 4px;
+          }
+          
+          &:last-child {
+            margin-left: 4px;
+          }
+        }
+
+        .form-check-input {
+          width: 2rem;
+          height: 1rem;
+        }
+      }
+    }
+
+    // Very small mobile adjustments
+    @media (max-width: 480px) {
+      padding: 0 4px;
+
+      .form-check {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        .form-check-label {
+          font-size: 8px;
+          margin: 1px 0;
+          white-space: nowrap;
+          
+          i {
+            margin: 0 2px;
+          }
+        }
+
+        .form-check-input {
+          width: 1.5rem;
+          height: 0.8rem;
+          margin: 2px 0;
+        }
+      }
+    }
+  }
+}
+
+// Mobile dropdown menu improvements
+@media (max-width: 767px) {
+  .header {
+    .nav-right {
+      .dropdown-menu {
+        position: fixed !important;
+        top: 65px !important;
+        left: 5px !important;
+        right: 5px !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: auto !important;
+        transform: none !important;
+        z-index: 1050;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        max-height: calc(100vh - 85px);
+        overflow-y: auto;
+      }
+
+      .notifications .dropdown-menu {
+        max-height: calc(100vh - 85px);
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+// Mobile search input overlay
+@media (max-width: 480px) {
+  .header {
+    .search-input {
+      &.active {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: var(--c-bkg-card);
+        border-top: 1px solid var(--c-border);
+        padding: 10px;
+        z-index: 999;
+
+        input {
+          margin-top: 0;
+          width: 100%;
+          padding: 10px;
+          border: 1px solid var(--c-border);
+          border-radius: 4px;
+          background: var(--c-bkg-card);
+          color: var(--c-text-base);
+
+          &::placeholder {
+            color: var(--c-text-muted);
+          }
         }
       }
     }

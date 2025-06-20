@@ -10,15 +10,20 @@
 // + @Main Content
 // + @Full Container
 // + @Collapsed State
+// + @Mobile Layout Fixes
 
 // ---------------------------------------------------------
-// @Page Container
+// @Page Container - MODERN LAYOUT APPROACH
 // ---------------------------------------------------------
 
 .page-container {
   min-height: 100vh;
   padding-left: $offscreen-size;
   transition: all 0.2s ease;
+  
+  // Modern flexbox layout to prevent footer overlap
+  display: flex;
+  flex-direction: column;
 
   @include between($breakpoint-md, $breakpoint-xl) {
     padding-left: $collapsed-size;
@@ -30,15 +35,29 @@
 }
 
 // ---------------------------------------------------------
-// @Main Content
+// @Main Content - FLEXIBLE LAYOUT
 // ---------------------------------------------------------
 
 .main-content {
   padding: 85px 20px 20px;
-  min-height: calc(100vh - 61px);
+  
+  // Flex-grow to push footer to bottom
+  flex: 1 0 auto;
+  min-height: 0; // Allow flex shrinking
+  
+  // Ensure content doesn't overflow
+  overflow-x: hidden;
 
   @include to($breakpoint-md) {
     padding: 85px 5px 5px;
+  }
+
+  @include to($breakpoint-sm) {
+    padding: 85px 10px 30px; // Extra bottom padding on mobile
+  }
+  
+  @include to(400px) {
+    padding: 85px 5px 40px; // Even more bottom padding on tiny screens
   }
 }
 
@@ -65,6 +84,142 @@
 
   @include to($breakpoint-md) {
     left: 0;
+  }
+}
+
+// ---------------------------------------------------------
+// @Mobile Layout Fixes - AGGRESSIVE FOOTER SOLUTION
+// ---------------------------------------------------------
+
+// Footer - completely redesigned for mobile
+footer {
+  // Flex-shrink: 0 to prevent compression
+  flex: 0 0 auto;
+  
+  // Positioning
+  position: relative;
+  z-index: 1;
+  
+  // Styling
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--c-border);
+  background: var(--c-bkg-card);
+  color: var(--c-text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  
+  // Prevent any potential overflow
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  // Tablet footer adjustments
+  @include to($breakpoint-md) {
+    padding: 18px 15px;
+    font-size: 11px;
+  }
+
+  // Mobile footer adjustments
+  @include to($breakpoint-sm) {
+    padding: 15px 10px;
+    font-size: 10px;
+    line-height: 1.3;
+    
+    span {
+      display: inline-block;
+      max-width: 100%;
+      
+      a {
+        color: var(--c-primary);
+        text-decoration: none;
+        word-break: break-word;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Tiny screen footer adjustments
+  @include to(400px) {
+    padding: 12px 8px;
+    font-size: 9px;
+    line-height: 1.2;
+    
+    span {
+      display: block;
+      
+      // Break long text on new lines for readability
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+      }
+    }
+  }
+}
+
+// Ensure body and html take full height for flex layout
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// Global mobile overflow prevention
+@include to($breakpoint-sm) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  // Prevent any element from causing horizontal scroll
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+// Additional mobile content spacing
+@include to($breakpoint-sm) {
+  .page-container {
+    .main-content {
+      // Extra margin-bottom to ensure footer never overlaps
+      margin-bottom: 20px;
+      
+      // Responsive content adjustments
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .col-md-6, .col-md-3, .col-md-12 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+// Emergency footer overlap prevention
+@include to(480px) {
+  .page-container {
+    // Force minimum height that accounts for content
+    min-height: calc(100vh - 80px);
+    
+    .main-content {
+      // Ensure there's always space for footer
+      padding-bottom: 60px !important;
+      margin-bottom: 20px !important;
+    }
+  }
+  
+  footer {
+    // Stick to bottom on very small screens
+    position: relative;
+    margin-top: auto;
+    clear: both;
   }
 }
 
