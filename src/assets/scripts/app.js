@@ -3,7 +3,8 @@
  * Main application entry point with enhanced mobile support
  */
 
-import bootstrap from 'bootstrap';
+// Note: Bootstrap 5 CSS is still available via SCSS imports
+// Bootstrap JS components removed to eliminate jQuery dependency
 import DOM from './utils/dom';
 import DateUtils from './utils/date';
 import Theme from './utils/theme';
@@ -24,6 +25,7 @@ import './vectorMaps';
 import './chat';
 import './email';
 import './googleMaps';
+import './ui';
 
 class AdminatorApp {
   constructor() {
@@ -42,7 +44,6 @@ class AdminatorApp {
   init() {
     if (this.isInitialized) return;
     
-    console.log('🚀 Initializing Adminator App (Mobile Optimized)');
     
     try {
       // Initialize core components
@@ -57,15 +58,14 @@ class AdminatorApp {
       this.setupGlobalEvents();
       
       this.isInitialized = true;
-      console.log('✅ Adminator App initialized successfully');
       
       // Dispatch custom event for other scripts
       window.dispatchEvent(new CustomEvent('adminator:ready', {
-        detail: { app: this }
+        detail: { app: this },
       }));
       
-    } catch (error) {
-      console.error('❌ Error initializing Adminator App:', error);
+    } catch {
+      // Error initializing Adminator App
     }
   }
 
@@ -76,7 +76,6 @@ class AdminatorApp {
     if (DOM.exists('.sidebar')) {
       const sidebar = new Sidebar();
       this.components.set('sidebar', sidebar);
-      console.log('📁 Sidebar component initialized');
     }
   }
 
@@ -101,7 +100,6 @@ class AdminatorApp {
     if (hasCharts) {
       const charts = new ChartComponent();
       this.components.set('charts', charts);
-      console.log('📊 Chart components initialized');
     }
   }
 
@@ -114,7 +112,6 @@ class AdminatorApp {
       // For now, use a lightweight approach
       // In future iterations, we can replace with a modern table library
       this.initBasicDataTable(dataTableElement);
-      console.log('📋 DataTable initialized');
     }
   }
 
@@ -131,7 +128,6 @@ class AdminatorApp {
         header.style.userSelect = 'none';
         
         DOM.on(header, 'click', () => {
-          console.log('Sorting by:', header.textContent);
           // Basic sort functionality can be added here
           // For now, we'll keep the existing DataTables library
         });
@@ -168,7 +164,7 @@ class AdminatorApp {
         picker.style.minHeight = '38px';
         picker.style.lineHeight = '1.5';
         
-        console.log('📅 Date picker converted to HTML5 with Day.js support');
+        // Date picker converted to HTML5 with Day.js support
       }
     });
     
@@ -181,9 +177,8 @@ class AdminatorApp {
         if (event.target.showPicker && typeof event.target.showPicker === 'function') {
           try {
             event.target.showPicker();
-          } catch (e) {
+          } catch {
             // Fallback if showPicker is not supported
-            console.log('📅 Date picker opened via field click');
           }
         }
       });
@@ -200,8 +195,8 @@ class AdminatorApp {
             if (picker.showPicker && typeof picker.showPicker === 'function') {
               try {
                 picker.showPicker();
-              } catch (e) {
-                console.log('📅 Date picker opened via icon click');
+              } catch {
+                // Date picker opened via icon click
               }
             }
           });
@@ -214,7 +209,7 @@ class AdminatorApp {
    * Initialize theme system with toggle
    */
   initTheme() {
-    console.log('🌙 Initializing theme system');
+    // Initializing theme system
     
     // Initialize theme system first
     Theme.init();
@@ -222,24 +217,12 @@ class AdminatorApp {
     // Inject theme toggle if missing - with retry mechanism
     setTimeout(() => {
       const navRight = DOM.select('.nav-right');
-      console.log('🔍 nav-right found:', !!navRight);
-      console.log('🔍 navRight element:', navRight);
-      console.log('🔍 theme-toggle exists:', DOM.exists('#theme-toggle'));
-      console.log('🔍 All nav-right li elements:', navRight ? navRight.querySelectorAll('li').length : 0);
-      
-      // Debug the DOM structure
-      if (navRight) {
-        console.log('🔍 navRight children:', Array.from(navRight.children).map(child => ({
-          tagName: child.tagName,
-          className: child.className,
-          id: child.id
-        })));
-      }
+      // Check for nav-right and theme-toggle existence
       
       if (navRight && !DOM.exists('#theme-toggle')) {
-      const li = document.createElement('li');
-      li.className = 'theme-toggle d-flex ai-c';
-      li.innerHTML = `
+        const li = document.createElement('li');
+        li.className = 'theme-toggle d-flex ai-c';
+        li.innerHTML = `
         <div class="form-check form-switch d-flex ai-c" style="margin: 0; padding: 0;">
           <label class="form-check-label me-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-right: 8px;">
             <i class="ti-sun" style="margin-right: 4px;"></i><span class="theme-label">Light</span>
@@ -251,42 +234,39 @@ class AdminatorApp {
         </div>
       `;
       
-      // Insert before user dropdown (last item) - safer approach
-      const lastItem = navRight.querySelector('li:last-child');
-      console.log('🔍 lastItem found:', !!lastItem);
-      console.log('🔍 lastItem parent:', lastItem ? lastItem.parentNode : null);
-      console.log('🔍 navRight:', navRight);
+        // Insert before user dropdown (last item) - safer approach
+        const lastItem = navRight.querySelector('li:last-child');
       
-      if (lastItem && lastItem.parentNode === navRight) {
-        navRight.insertBefore(li, lastItem);
-        console.log('✅ Theme toggle inserted before last item');
-      } else {
-        navRight.appendChild(li);
-        console.log('✅ Theme toggle appended to nav-right (safer approach)');
-      }
+        if (lastItem && lastItem.parentNode === navRight) {
+          navRight.insertBefore(li, lastItem);
+        // Theme toggle inserted before last item
+        } else {
+          navRight.appendChild(li);
+        // Theme toggle appended to nav-right (safer approach)
+        }
       
-      // Add toggle functionality
-      const toggle = DOM.select('#theme-toggle');
-      if (toggle) {
+        // Add toggle functionality
+        const toggle = DOM.select('#theme-toggle');
+        if (toggle) {
         // Set initial state
-        const currentTheme = Theme.current();
-        toggle.checked = currentTheme === 'dark';
+          const currentTheme = Theme.current();
+          toggle.checked = currentTheme === 'dark';
         
-        DOM.on(toggle, 'change', () => {
-          Theme.apply(toggle.checked ? 'dark' : 'light');
-        });
+          DOM.on(toggle, 'change', () => {
+            Theme.apply(toggle.checked ? 'dark' : 'light');
+          });
         
-        // Listen for theme changes from other sources
-        window.addEventListener('adminator:themeChanged', (event) => {
-          toggle.checked = event.detail.theme === 'dark';
+          // Listen for theme changes from other sources
+          window.addEventListener('adminator:themeChanged', (event) => {
+            toggle.checked = event.detail.theme === 'dark';
           
-          // Update charts when theme changes
-          const charts = this.components.get('charts');
-          if (charts) charts.redrawCharts();
-        });
-      }
+            // Update charts when theme changes
+            const charts = this.components.get('charts');
+            if (charts) charts.redrawCharts();
+          });
+        }
       } else {
-        console.log('❌ No nav-right found or theme-toggle already exists');
+        // No nav-right found or theme-toggle already exists
       }
     }, 100); // Wait 100ms for DOM to be fully ready
   }
@@ -295,7 +275,7 @@ class AdminatorApp {
    * Initialize mobile-specific enhancements
    */
   initMobileEnhancements() {
-    console.log('📱 Initializing mobile enhancements');
+    // Initializing mobile enhancements
     this.enhanceMobileDropdowns();
     this.enhanceMobileSearch();
     
@@ -319,14 +299,14 @@ class AdminatorApp {
       resizeTimeout = setTimeout(() => this.handleResize(), 250);
     });
     
-    console.log('🌐 Global event listeners set up');
+    // Global event listeners set up
   }
 
   /**
    * Handle window resize events
    */
   handleResize() {
-    console.log('📐 Window resized, updating mobile features');
+    // Window resized, updating mobile features
     
     // Close all mobile-specific overlays when switching to desktop
     if (!this.isMobile()) {
@@ -480,131 +460,131 @@ class AdminatorApp {
     });
   }
 
-      /**
+  /**
      * Enhanced mobile search handling - Full-width search bar
      */
-    enhanceMobileSearch() {
-      const searchBox = DOM.select('.search-box');
-      const searchInput = DOM.select('.search-input');
+  enhanceMobileSearch() {
+    const searchBox = DOM.select('.search-box');
+    const searchInput = DOM.select('.search-input');
       
-      if (searchBox && searchInput) {
-        const searchToggle = searchBox.querySelector('a');
-        const searchField = searchInput.querySelector('input');
+    if (searchBox && searchInput) {
+      const searchToggle = searchBox.querySelector('a');
+      const searchField = searchInput.querySelector('input');
         
-        if (searchToggle && searchField) {
-          console.log('🔍 Setting up full-width search functionality');
+      if (searchToggle && searchField) {
+        // Setting up full-width search functionality
           
-          // Remove existing listeners to prevent duplication
-          const newSearchToggle = searchToggle.cloneNode(true);
-          searchToggle.replaceWith(newSearchToggle);
+        // Remove existing listeners to prevent duplication
+        const newSearchToggle = searchToggle.cloneNode(true);
+        searchToggle.replaceWith(newSearchToggle);
           
-          DOM.on(newSearchToggle, 'click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+        DOM.on(newSearchToggle, 'click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
             
-            console.log('🔍 Full-width search toggle clicked');
+          // Full-width search toggle clicked
             
-            // Close any open dropdowns first
-            const dropdowns = DOM.selectAll('.nav-right .dropdown');
-            dropdowns.forEach(dropdown => {
-              dropdown.classList.remove('show');
-              const menu = dropdown.querySelector('.dropdown-menu');
-              if (menu) menu.classList.remove('show');
-            });
-            
-            // Toggle search state
-            const isActive = searchInput.classList.contains('active');
-            const searchIcon = newSearchToggle.querySelector('i');
-            
-            if (isActive) {
-              // Close search
-              searchInput.classList.remove('active');
-              document.body.classList.remove('search-open');
-              
-              // Change icon back to search
-              if (searchIcon) {
-                searchIcon.className = 'ti-search';
-              }
-              
-              // Clear input
-              if (searchField) {
-                searchField.value = '';
-                searchField.blur();
-              }
-              
-              console.log('🔍 Full-width search closed');
-            } else {
-              // Open search
-              searchInput.classList.add('active');
-              document.body.classList.add('search-open');
-              
-              // Change icon to close
-              if (searchIcon) {
-                searchIcon.className = 'ti-close';
-              }
-              
-              // Focus the input after a short delay
-              setTimeout(() => {
-                if (searchField) {
-                  searchField.focus();
-                  console.log('🔍 Search field focused');
-                }
-              }, 100);
-              
-              console.log('🔍 Full-width search opened');
-            }
+          // Close any open dropdowns first
+          const dropdowns = DOM.selectAll('.nav-right .dropdown');
+          dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
           });
+            
+          // Toggle search state
+          const isActive = searchInput.classList.contains('active');
+          const searchIcon = newSearchToggle.querySelector('i');
+            
+          if (isActive) {
+            // Close search
+            searchInput.classList.remove('active');
+            document.body.classList.remove('search-open');
+              
+            // Change icon back to search
+            if (searchIcon) {
+              searchIcon.className = 'ti-search';
+            }
+              
+            // Clear input
+            if (searchField) {
+              searchField.value = '';
+              searchField.blur();
+            }
+              
+            // Full-width search closed
+          } else {
+            // Open search
+            searchInput.classList.add('active');
+            document.body.classList.add('search-open');
+              
+            // Change icon to close
+            if (searchIcon) {
+              searchIcon.className = 'ti-close';
+            }
+              
+            // Focus the input after a short delay
+            setTimeout(() => {
+              if (searchField) {
+                searchField.focus();
+                // Search field focused
+              }
+            }, 100);
+              
+            // Full-width search opened
+          }
+        });
           
-          // Close search on escape
-          DOM.on(document, 'keydown', (e) => {
-            if (e.key === 'Escape' && searchInput.classList.contains('active')) {
+        // Close search on escape
+        DOM.on(document, 'keydown', (e) => {
+          if (e.key === 'Escape' && searchInput.classList.contains('active')) {
+            searchInput.classList.remove('active');
+            document.body.classList.remove('search-open');
+              
+            // Reset icon
+            const searchIcon = newSearchToggle.querySelector('i');
+            if (searchIcon) {
+              searchIcon.className = 'ti-search';
+            }
+              
+            // Clear input
+            if (searchField) {
+              searchField.value = '';
+              searchField.blur();
+            }
+              
+            // Full-width search closed via escape
+          }
+        });
+          
+        // Handle search input
+        DOM.on(searchField, 'keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = searchField.value.trim();
+            if (query) {
+              // Search query submitted
+              // Implement your search logic here
+                
+              // For demo, close search after "searching"
               searchInput.classList.remove('active');
               document.body.classList.remove('search-open');
-              
-              // Reset icon
+                
               const searchIcon = newSearchToggle.querySelector('i');
               if (searchIcon) {
                 searchIcon.className = 'ti-search';
               }
-              
-              // Clear input
-              if (searchField) {
-                searchField.value = '';
-                searchField.blur();
-              }
-              
-              console.log('🔍 Full-width search closed via escape');
+                
+              searchField.value = '';
+              searchField.blur();
             }
-          });
+          }
+        });
           
-          // Handle search input
-          DOM.on(searchField, 'keypress', (e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              const query = searchField.value.trim();
-              if (query) {
-                console.log('🔍 Search query:', query);
-                // Implement your search logic here
-                
-                // For demo, close search after "searching"
-                searchInput.classList.remove('active');
-                document.body.classList.remove('search-open');
-                
-                const searchIcon = newSearchToggle.querySelector('i');
-                if (searchIcon) {
-                  searchIcon.className = 'ti-search';
-                }
-                
-                searchField.value = '';
-                searchField.blur();
-              }
-            }
-          });
-          
-          console.log('🔍 Full-width search functionality initialized');
-        }
+        // Full-width search functionality initialized
       }
     }
+  }
 
   /**
    * Get a component by name
@@ -624,14 +604,14 @@ class AdminatorApp {
    * Destroy the application
    */
   destroy() {
-    console.log('🗑️ Destroying Adminator App');
+    // Destroying Adminator App
     
     // Destroy all components
-    this.components.forEach((component, name) => {
+    this.components.forEach((component) => {
       if (typeof component.destroy === 'function') {
         component.destroy();
       }
-      console.log(`🗑️ ${name} component destroyed`);
+      // Component destroyed
     });
     
     this.components.clear();
@@ -642,7 +622,7 @@ class AdminatorApp {
    * Refresh/reinitialize the application
    */
   refresh() {
-    console.log('🔄 Refreshing Adminator App');
+    // Refreshing Adminator App
     
     if (this.isInitialized) {
       this.destroy();
@@ -655,7 +635,6 @@ class AdminatorApp {
 }
 
 // Initialize the application
-console.log('📱 Starting Adminator (Mobile Optimized)');
 const app = new AdminatorApp();
 
 // Make app globally available for debugging

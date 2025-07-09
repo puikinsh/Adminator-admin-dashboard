@@ -1,5 +1,3 @@
-import * as $ from 'jquery';
-
 export default (function () {
   // ------------------------------------------------------
   // @Window Resize
@@ -26,11 +24,15 @@ export default (function () {
   // ------------------------------------------------------
 
   // Open external links in new window
-  $('a')
-    .filter('[href^="http"], [href^="//"]')
-    .not(`[href*="${window.location.host}"]`)
-    .attr('rel', 'noopener noreferrer')
-    .attr('target', '_blank');
+  const externalLinks = document.querySelectorAll('a[href^="http"], a[href^="//"]');
+  
+  externalLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.includes(window.location.host)) {
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.setAttribute('target', '_blank');
+    }
+  });
 
   // ------------------------------------------------------
   // @Resize Trigger

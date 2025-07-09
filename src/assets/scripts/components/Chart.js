@@ -32,7 +32,6 @@ class ChartComponent {
     // Only create sparklines if we're on a page that has them
     const sparklineExists = document.getElementById('sparklinedash');
     if (!sparklineExists) {
-      console.log('Skipping sparklines - not on dashboard page');
       return;
     }
 
@@ -40,23 +39,23 @@ class ChartComponent {
       {
         id: 'sparklinedash',
         data: [0, 5, 6, 10, 9, 12, 4, 9],
-        color: '#4caf50'
+        color: '#4caf50',
       },
       {
         id: 'sparklinedash2',
         data: [0, 5, 6, 10, 9, 12, 4, 9],
-        color: '#9675ce'
+        color: '#9675ce',
       },
       {
         id: 'sparklinedash3',
         data: [0, 5, 6, 10, 9, 12, 4, 9],
-        color: '#03a9f3'
+        color: '#03a9f3',
       },
       {
         id: 'sparklinedash4',
         data: [0, 5, 6, 10, 9, 12, 4, 9],
-        color: '#f96262'
-      }
+        color: '#f96262',
+      },
     ];
 
     sparklineConfigs.forEach(config => {
@@ -75,7 +74,6 @@ class ChartComponent {
     
     // Only proceed if we have a valid target element
     if (!canvas) {
-      console.log(`Skipping chart ${id} - target element not found`);
       return;
     }
     
@@ -83,7 +81,6 @@ class ChartComponent {
     if (canvas.tagName !== 'CANVAS') {
       const parent = canvas.parentNode;
       if (!parent) {
-        console.log(`Skipping chart ${id} - no parent element`);
         return;
       }
       
@@ -113,13 +110,13 @@ class ChartComponent {
       data: {
         labels: data.map((_, i) => i),
         datasets: [{
-          data: data,
+          data,
           backgroundColor: color,
           borderColor: color,
           borderWidth: 0,
           barPercentage: 0.6,
-          categoryPercentage: 0.8
-        }]
+          categoryPercentage: 0.8,
+        }],
       },
       options: {
         responsive: false,
@@ -129,26 +126,26 @@ class ChartComponent {
         onResize: null,
         scales: {
           x: {
-            display: false
+            display: false,
           },
           y: {
-            display: false
-          }
+            display: false,
+          },
         },
         plugins: {
           legend: {
-            display: false
+            display: false,
           },
           tooltip: {
-            enabled: false
-          }
+            enabled: false,
+          },
         },
         elements: {
           bar: {
-            borderRadius: 1
-          }
-        }
-      }
+            borderRadius: 1,
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -219,7 +216,7 @@ class ChartComponent {
             pointBorderColor: '#ffffff',
             pointBorderWidth: 2,
             tension: 0.4,
-            fill: false
+            fill: false,
           },
           {
             label: 'Profit ($K)',
@@ -233,9 +230,9 @@ class ChartComponent {
             pointBorderColor: '#ffffff',
             pointBorderWidth: 2,
             tension: 0.4,
-            fill: false
-          }
-        ]
+            fill: false,
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -248,9 +245,9 @@ class ChartComponent {
               padding: 20,
               font: {
                 size: 12,
-                weight: '600'
-              }
-            }
+                weight: '600',
+              },
+            },
           },
           tooltip: {
             enabled: true,
@@ -259,43 +256,43 @@ class ChartComponent {
             intersect: false,
             mode: 'index',
             callbacks: {
-              label: function(context) {
-                return context.dataset.label + ': $' + context.parsed.y + 'K';
-              }
-            }
-          }
+              label(context) {
+                return `${context.dataset.label  }: $${  context.parsed.y  }K`;
+              },
+            },
+          },
         },
         scales: {
           x: {
             grid: {
-              display: false
+              display: false,
             },
             ticks: {
               font: {
-                size: 11
-              }
-            }
+                size: 11,
+              },
+            },
           },
           y: {
             beginAtZero: true,
             grid: {
-              borderDash: [5, 5]
+              borderDash: [5, 5],
             },
             ticks: {
               font: {
-                size: 11
+                size: 11,
               },
-              callback: function(value) {
-                return '$' + value + 'K';
-              }
-            }
-          }
+              callback(value) {
+                return `$${  value  }K`;
+              },
+            },
+          },
         },
         interaction: {
           intersect: false,
-          mode: 'index'
-        }
-      }
+          mode: 'index',
+        },
+      },
     });
 
     this.charts.set('line-chart', chart);
@@ -309,7 +306,6 @@ class ChartComponent {
     
     // Only proceed if target element exists
     if (!canvas) {
-      console.log(`Skipping line chart ${id} - target element not found`);
       return;
     }
     
@@ -317,7 +313,6 @@ class ChartComponent {
     if (canvas.tagName !== 'CANVAS') {
       const parent = canvas.parentNode;
       if (!parent) {
-        console.log(`Skipping line chart ${id} - no parent element`);
         return;
       }
       
@@ -346,13 +341,13 @@ class ChartComponent {
       data: {
         labels: data.map((_, i) => i),
         datasets: [{
-          data: data,
+          data,
           borderColor: COLORS['blue-500'],
           backgroundColor: 'transparent',
           borderWidth: 1,
           pointRadius: 0,
-          tension: 0.4
-        }]
+          tension: 0.4,
+        }],
       },
       options: {
         responsive: false,
@@ -362,13 +357,13 @@ class ChartComponent {
         onResize: null,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
-          tooltip: { enabled: false }
-        }
-      }
+          tooltip: { enabled: false },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -382,7 +377,6 @@ class ChartComponent {
     
     // Only proceed if target element exists
     if (!canvas) {
-      console.log(`Skipping composite chart ${id} - target element not found`);
       return;
     }
     
@@ -390,7 +384,6 @@ class ChartComponent {
     if (canvas.tagName !== 'CANVAS') {
       const parent = canvas.parentNode;
       if (!parent) {
-        console.log(`Skipping composite chart ${id} - no parent element`);
         return;
       }
       
@@ -421,21 +414,21 @@ class ChartComponent {
         datasets: [
           {
             type: 'bar',
-            data: data,
+            data,
             backgroundColor: '#aaf',
             borderColor: '#aaf',
-            borderWidth: 0
+            borderWidth: 0,
           },
           {
             type: 'line',
-            data: data,
+            data,
             borderColor: 'red',
             backgroundColor: 'transparent',
             borderWidth: 1,
             pointRadius: 0,
-            tension: 0.4
-          }
-        ]
+            tension: 0.4,
+          },
+        ],
       },
       options: {
         responsive: false,
@@ -445,13 +438,13 @@ class ChartComponent {
         onResize: null,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
-          tooltip: { enabled: false }
-        }
-      }
+          tooltip: { enabled: false },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -472,7 +465,6 @@ class ChartComponent {
     if (sparklineElements.length === 0 && sparkbarElements.length === 0 && 
         sparktriElements.length === 0 && sparkdiscElements.length === 0 &&
         sparkbullElements.length === 0 && sparkboxElements.length === 0) {
-      console.log('Skipping custom sparklines - no sparkline elements found');
       return;
     }
     
@@ -526,14 +518,14 @@ class ChartComponent {
       data: {
         labels: data.map((_, i) => i),
         datasets: [{
-          data: data,
+          data,
           borderColor: COLORS['red-500'],
           backgroundColor: 'transparent',
           borderWidth: 2,
           pointRadius: 3,
           pointBackgroundColor: COLORS['red-500'],
-          tension: 0.4
-        }]
+          tension: 0.4,
+        }],
       },
       options: {
         responsive: false,
@@ -543,13 +535,13 @@ class ChartComponent {
         onResize: null, // Explicitly disable resize callback
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
-          tooltip: { enabled: false } // Disable tooltip to prevent events
-        }
-      }
+          tooltip: { enabled: false }, // Disable tooltip to prevent events
+        },
+      },
     });
 
 
@@ -579,30 +571,30 @@ class ChartComponent {
       data: {
         labels: data.map((_, i) => i),
         datasets: [{
-          data: data,
+          data,
           backgroundColor: data.map(val => val < 0 ? COLORS['deep-purple-500'] : '#39f'),
           borderColor: data.map(val => val < 0 ? COLORS['deep-purple-500'] : '#39f'),
           borderWidth: 1,
-          barPercentage: 0.8
-        }]
+          barPercentage: 0.8,
+        }],
       },
       options: {
         responsive: false,
         maintainAspectRatio: false,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
           tooltip: {
             enabled: true,
             callbacks: {
-              label: (context) => `${context.parsed.y}°Celsius`
-            }
-          }
-        }
-      }
+              label: (context) => `${context.parsed.y}°Celsius`,
+            },
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -641,7 +633,7 @@ class ChartComponent {
   redrawLargeChartsOnly() {
     const largeChartIds = [
       'line-chart', 'area-chart', 'scatter-chart', 'bar-chart',
-      'doughnut-chart', 'polar-chart', 'radar-chart', 'mixed-chart', 'bubble-chart'
+      'doughnut-chart', 'polar-chart', 'radar-chart', 'mixed-chart', 'bubble-chart',
     ];
     
     largeChartIds.forEach(id => {
@@ -656,7 +648,7 @@ class ChartComponent {
    * Redraw all charts (used sparingly)
    */
   redrawCharts() {
-    this.charts.forEach((chart, id) => {
+    this.charts.forEach((chart) => {
       if (chart.options.responsive) {
         chart.resize();
       }
@@ -686,8 +678,8 @@ class ChartComponent {
         data: [65, 59, 80, 81, 56, 55, 40],
         borderColor: 'rgb(75, 192, 192)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        tension: 0.4
-      }]
+        tension: 0.4,
+      }],
     });
 
     // Area Chart
@@ -699,8 +691,8 @@ class ChartComponent {
         borderColor: 'rgb(54, 162, 235)',
         backgroundColor: 'rgba(54, 162, 235, 0.4)',
         fill: true,
-        tension: 0.4
-      }]
+        tension: 0.4,
+      }],
     });
 
     // Scatter Chart with more data points
@@ -712,22 +704,22 @@ class ChartComponent {
           {x: -2, y: 7}, {x: 0, y: 10}, {x: 3, y: 18}, {x: 6, y: 5},
           {x: 9, y: 22}, {x: 12, y: 8}, {x: 15, y: 14}, {x: 18, y: 19},
           {x: -10, y: 0}, {x: 10, y: 5}, {x: 0.5, y: 5.5}, {x: 7, y: 12},
-          {x: -7, y: 17}, {x: 4, y: 9}, {x: 11, y: 16}, {x: -3, y: 11}
+          {x: -7, y: 17}, {x: 4, y: 9}, {x: 11, y: 16}, {x: -3, y: 11},
         ],
         backgroundColor: 'rgba(255, 99, 132, 0.7)',
         borderColor: 'rgb(255, 99, 132)',
-        borderWidth: 1
+        borderWidth: 1,
       }, {
         label: 'Dataset 2',
         data: [
           {x: -13, y: 4}, {x: -9, y: 8}, {x: -6, y: 13}, {x: -1, y: 6},
           {x: 2, y: 11}, {x: 5, y: 15}, {x: 8, y: 2}, {x: 13, y: 17},
-          {x: 16, y: 9}, {x: -4, y: 14}, {x: 1, y: 20}, {x: 14, y: 4}
+          {x: 16, y: 9}, {x: -4, y: 14}, {x: 1, y: 20}, {x: 14, y: 4},
         ],
         backgroundColor: 'rgba(54, 162, 235, 0.7)',
         borderColor: 'rgb(54, 162, 235)',
-        borderWidth: 1
-      }]
+        borderWidth: 1,
+      }],
     });
 
     // Bar Chart
@@ -742,7 +734,7 @@ class ChartComponent {
           'rgba(255, 205, 86, 0.6)',
           'rgba(75, 192, 192, 0.6)',
           'rgba(153, 102, 255, 0.6)',
-          'rgba(255, 159, 64, 0.6)'
+          'rgba(255, 159, 64, 0.6)',
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
@@ -750,10 +742,10 @@ class ChartComponent {
           'rgba(255, 205, 86, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
+          'rgba(255, 159, 64, 1)',
         ],
-        borderWidth: 1
-      }]
+        borderWidth: 1,
+      }],
     });
 
     // Doughnut Chart
@@ -768,7 +760,7 @@ class ChartComponent {
           'rgba(255, 205, 86, 0.8)',
           'rgba(75, 192, 192, 0.8)',
           'rgba(153, 102, 255, 0.8)',
-          'rgba(255, 159, 64, 0.8)'
+          'rgba(255, 159, 64, 0.8)',
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
@@ -776,11 +768,11 @@ class ChartComponent {
           'rgba(255, 205, 86, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
+          'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 2,
-        hoverOffset: 10
-      }]
+        hoverOffset: 10,
+      }],
     });
 
     // Polar Area Chart
@@ -794,17 +786,17 @@ class ChartComponent {
           'rgba(75, 192, 192, 0.7)',
           'rgba(255, 205, 86, 0.7)',
           'rgba(201, 203, 207, 0.7)',
-          'rgba(54, 162, 235, 0.7)'
+          'rgba(54, 162, 235, 0.7)',
         ],
         borderColor: [
           'rgb(255, 99, 132)',
           'rgb(75, 192, 192)',
           'rgb(255, 205, 86)',
           'rgb(201, 203, 207)',
-          'rgb(54, 162, 235)'
+          'rgb(54, 162, 235)',
         ],
-        borderWidth: 2
-      }]
+        borderWidth: 2,
+      }],
     });
 
     // Radar Chart
@@ -820,7 +812,7 @@ class ChartComponent {
         pointBackgroundColor: 'rgb(54, 162, 235)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(54, 162, 235)'
+        pointHoverBorderColor: 'rgb(54, 162, 235)',
       }, {
         label: 'Product B',
         data: [28, 48, 40, 95, 86, 27],
@@ -831,8 +823,8 @@ class ChartComponent {
         pointBackgroundColor: 'rgb(255, 99, 132)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(255, 99, 132)'
-      }]
+        pointHoverBorderColor: 'rgb(255, 99, 132)',
+      }],
     });
 
     // Mixed Chart (Bar + Line)
@@ -844,7 +836,7 @@ class ChartComponent {
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: 'rgba(54, 162, 235, 0.7)',
         borderColor: 'rgb(54, 162, 235)',
-        borderWidth: 1
+        borderWidth: 1,
       }, {
         type: 'line',
         label: 'Revenue',
@@ -855,8 +847,8 @@ class ChartComponent {
         borderWidth: 3,
         tension: 0.4,
         pointRadius: 5,
-        pointHoverRadius: 7
-      }]
+        pointHoverRadius: 7,
+      }],
     });
 
     // Bubble Chart
@@ -870,11 +862,11 @@ class ChartComponent {
           {x: 50, y: 35, r: 12},
           {x: 10, y: 50, r: 8},
           {x: 60, y: 20, r: 18},
-          {x: 25, y: 25, r: 14}
+          {x: 25, y: 25, r: 14},
         ],
         backgroundColor: 'rgba(54, 162, 235, 0.6)',
         borderColor: 'rgb(54, 162, 235)',
-        borderWidth: 2
+        borderWidth: 2,
       }, {
         label: 'Second Dataset',
         data: [
@@ -882,12 +874,12 @@ class ChartComponent {
           {x: 35, y: 15, r: 16},
           {x: 45, y: 25, r: 9},
           {x: 55, y: 45, r: 14},
-          {x: 25, y: 35, r: 11}
+          {x: 25, y: 35, r: 11},
         ],
         backgroundColor: 'rgba(255, 99, 132, 0.6)',
         borderColor: 'rgb(255, 99, 132)',
-        borderWidth: 2
-      }]
+        borderWidth: 2,
+      }],
     });
   }
 
@@ -904,9 +896,9 @@ class ChartComponent {
     const chartOptions = this.getChartOptions(type);
     
     const chart = new Chart(ctx, {
-      type: type,
-      data: data,
-      options: chartOptions
+      type,
+      data,
+      options: chartOptions,
     });
 
     this.charts.set(id, chart);
@@ -927,177 +919,177 @@ class ChartComponent {
             padding: 20,
             font: {
               size: 12,
-              weight: '600'
+              weight: '600',
             },
-          }
+          },
         },
         tooltip: {
           enabled: true,
           cornerRadius: 8,
-          displayColors: true
-        }
-      }
+          displayColors: true,
+        },
+      },
     };
 
     // Chart type specific configurations
     switch (type) {
-      case 'doughnut':
-      case 'pie':
-        return {
-          ...baseOptions,
-          plugins: {
-            ...baseOptions.plugins,
-            legend: {
-              ...baseOptions.plugins.legend,
-              position: 'right'
-            }
+    case 'doughnut':
+    case 'pie':
+      return {
+        ...baseOptions,
+        plugins: {
+          ...baseOptions.plugins,
+          legend: {
+            ...baseOptions.plugins.legend,
+            position: 'right',
           },
-          interaction: {
-            intersect: false
-          }
-        };
+        },
+        interaction: {
+          intersect: false,
+        },
+      };
 
-      case 'polarArea':
-        return {
-          ...baseOptions,
-          scales: {
-            r: {
-              pointLabels: {
-                display: true,
-                centerPointLabels: true,
-                font: {
-                  size: 10
-                }
+    case 'polarArea':
+      return {
+        ...baseOptions,
+        scales: {
+          r: {
+            pointLabels: {
+              display: true,
+              centerPointLabels: true,
+              font: {
+                size: 10,
               },
-              grid: {
-              }
-            }
-          }
-        };
-
-      case 'radar':
-        return {
-          ...baseOptions,
-          scales: {
-            r: {
-              angleLines: {
-                display: true
-              },
-              grid: {
-              },
-              pointLabels: {
-                font: {
-                  size: 11
-                }
-              },
-              ticks: {
-                display: true,
-                font: {
-                  size: 10
-                }
-              }
-            }
-          }
-        };
-
-      case 'bubble':
-        return {
-          ...baseOptions,
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom',
-              grid: {
-                borderDash: [5, 5]
-              },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
             },
-            y: {
-              beginAtZero: true,
-              grid: {
-                borderDash: [5, 5]
-              },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
-            }
+            grid: {
+            },
           },
-          plugins: {
-            ...baseOptions.plugins,
-            tooltip: {
-              ...baseOptions.plugins.tooltip,
-              callbacks: {
-                label: function(context) {
-                  return `${context.dataset.label}: (${context.parsed.x}, ${context.parsed.y}), Size: ${context.parsed._custom}`;
-                }
-              }
-            }
-          }
-        };
+        },
+      };
 
-      case 'scatter':
-        return {
-          ...baseOptions,
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom',
-              grid: {
-                borderDash: [5, 5]
-              },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
+    case 'radar':
+      return {
+        ...baseOptions,
+        scales: {
+          r: {
+            angleLines: {
+              display: true,
             },
-            y: {
-              grid: {
-                borderDash: [5, 5]
+            grid: {
+            },
+            pointLabels: {
+              font: {
+                size: 11,
               },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
-            }
-          }
-        };
+            },
+            ticks: {
+              display: true,
+              font: {
+                size: 10,
+              },
+            },
+          },
+        },
+      };
 
-      default:
-        // For line, bar, area, mixed charts
-        return {
-          ...baseOptions,
-          scales: {
-            x: {
-              grid: {
-                borderDash: [5, 5]
-              },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
+    case 'bubble':
+      return {
+        ...baseOptions,
+        scales: {
+          x: {
+            type: 'linear',
+            position: 'bottom',
+            grid: {
+              borderDash: [5, 5],
             },
-            y: {
-              beginAtZero: true,
-              grid: {
-                borderDash: [5, 5]
+            ticks: {
+              font: {
+                size: 11,
               },
-              ticks: {
-                font: {
-                  size: 11
-                }
-              }
-            }
-          }
-        };
+            },
+          },
+          y: {
+            beginAtZero: true,
+            grid: {
+              borderDash: [5, 5],
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+            },
+          },
+        },
+        plugins: {
+          ...baseOptions.plugins,
+          tooltip: {
+            ...baseOptions.plugins.tooltip,
+            callbacks: {
+              label(context) {
+                return `${context.dataset.label}: (${context.parsed.x}, ${context.parsed.y}), Size: ${context.parsed._custom}`;
+              },
+            },
+          },
+        },
+      };
+
+    case 'scatter':
+      return {
+        ...baseOptions,
+        scales: {
+          x: {
+            type: 'linear',
+            position: 'bottom',
+            grid: {
+              borderDash: [5, 5],
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+            },
+          },
+          y: {
+            grid: {
+              borderDash: [5, 5],
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+            },
+          },
+        },
+      };
+
+    default:
+      // For line, bar, area, mixed charts
+      return {
+        ...baseOptions,
+        scales: {
+          x: {
+            grid: {
+              borderDash: [5, 5],
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+            },
+          },
+          y: {
+            beginAtZero: true,
+            grid: {
+              borderDash: [5, 5],
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+            },
+          },
+        },
+      };
     }
   }
 
@@ -1134,26 +1126,26 @@ class ChartComponent {
             return '#000';
           }),
           borderWidth: 1,
-          barPercentage: 0.8
-        }]
+          barPercentage: 0.8,
+        }],
       },
       options: {
         responsive: false,
         maintainAspectRatio: false,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
           tooltip: {
             enabled: true,
             callbacks: {
-              label: (context) => `${context.parsed.y}°Celsius`
-            }
-          }
-        }
-      }
+              label: (context) => `${context.parsed.y}°Celsius`,
+            },
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -1183,26 +1175,26 @@ class ChartComponent {
           backgroundColor: '#9f0',
           borderColor: '#9f0',
           pointRadius: 2,
-          showLine: false
-        }]
+          showLine: false,
+        }],
       },
       options: {
         responsive: false,
         maintainAspectRatio: false,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
           tooltip: {
             enabled: true,
             callbacks: {
-              label: (context) => `${context.parsed.y}°Celsius`
-            }
-          }
-        }
-      }
+              label: (context) => `${context.parsed.y}°Celsius`,
+            },
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -1234,8 +1226,8 @@ class ChartComponent {
           backgroundColor: COLORS['amber-500'],
           borderColor: COLORS['amber-500'],
           borderWidth: 1,
-          barPercentage: 0.6
-        }]
+          barPercentage: 0.6,
+        }],
       },
       options: {
         responsive: false,
@@ -1243,18 +1235,18 @@ class ChartComponent {
         indexAxis: 'y',
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
           tooltip: {
             enabled: true,
             callbacks: {
-              label: (context) => `${context.parsed.x}°Celsius`
-            }
-          }
-        }
-      }
+              label: (context) => `${context.parsed.x}°Celsius`,
+            },
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -1291,26 +1283,26 @@ class ChartComponent {
           backgroundColor: '#9f0',
           borderColor: '#9f0',
           borderWidth: 1,
-          barPercentage: 0.8
-        }]
+          barPercentage: 0.8,
+        }],
       },
       options: {
         responsive: false,
         maintainAspectRatio: false,
         scales: {
           x: { display: false },
-          y: { display: false }
+          y: { display: false },
         },
         plugins: {
           legend: { display: false },
           tooltip: {
             enabled: true,
             callbacks: {
-              label: (context) => `${context.parsed.y}°Celsius`
-            }
-          }
-        }
-      }
+              label: (context) => `${context.parsed.y}°Celsius`,
+            },
+          },
+        },
+      },
     });
 
     this.charts.set(id, chart);
@@ -1339,7 +1331,7 @@ class ChartComponent {
       }
 
       // Create percentage display
-      let percentDisplay = element.querySelector('span');
+      const percentDisplay = element.querySelector('span');
       if (percentDisplay) {
         percentDisplay.textContent = `${percent}%`;
         percentDisplay.style.position = 'absolute';
@@ -1363,17 +1355,17 @@ class ChartComponent {
             data: [percent, 100 - percent],
             backgroundColor: [barColor, '#f0f0f0'],
             borderWidth: 0,
-            cutout: '70%'
-          }]
+            cutout: '70%',
+          }],
         },
         options: {
           responsive: false,
           maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
-            tooltip: { enabled: false }
-          }
-        }
+            tooltip: { enabled: false },
+          },
+        },
       });
 
       this.charts.set(`easy-pie-${index}`, chart);

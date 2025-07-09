@@ -77,7 +77,7 @@ const Theme = {
       scaleStart: this.getCSSVar('--vmap-scale-start'),
       scaleEnd: this.getCSSVar('--vmap-scale-end'),
       scaleLight: this.getCSSVar('--vmap-scale-light'),
-      scaleDark: this.getCSSVar('--vmap-scale-dark')
+      scaleDark: this.getCSSVar('--vmap-scale-dark'),
     };
   },
   getSparklineColors() {
@@ -86,7 +86,7 @@ const Theme = {
       purple: this.getCSSVar('--sparkline-purple'),
       info: this.getCSSVar('--sparkline-info'),
       danger: this.getCSSVar('--sparkline-danger'),
-      light: this.getCSSVar('--sparkline-light')
+      light: this.getCSSVar('--sparkline-light'),
     };
   },
   getChartColors() {
@@ -96,9 +96,9 @@ const Theme = {
       mutedColor: isDark ? '#D1D5DB' : '#6C757D',
       borderColor: isDark ? '#374151' : '#E2E5E8',
       gridColor: isDark ? 'rgba(209, 213, 219, 0.15)' : 'rgba(0, 0, 0, 0.05)',
-      tooltipBg: isDark ? '#1F2937' : 'rgba(255, 255, 255, 0.95)'
+      tooltipBg: isDark ? '#1F2937' : 'rgba(255, 255, 255, 0.95)',
     };
-  }
+  },
 };
 
 export default Theme; 

@@ -16,7 +16,6 @@ class Sidebar {
 
   init() {
     if (!this.sidebar || !this.sidebarMenu) {
-      console.warn('Sidebar elements not found');
       return;
     }
 
@@ -70,10 +69,10 @@ class Sidebar {
     // Animate to full height
     dropdownMenu.animate([
       { height: '0px' },
-      { height: `${height}px` }
+      { height: `${height}px` },
     ], {
       duration: 200,
-      easing: 'ease-out'
+      easing: 'ease-out',
     }).onfinish = () => {
       dropdownMenu.style.height = 'auto';
       dropdownMenu.style.overflow = 'visible';
@@ -91,10 +90,10 @@ class Sidebar {
     
     dropdownMenu.animate([
       { height: `${height}px` },
-      { height: '0px' }
+      { height: '0px' },
     ], {
       duration: 200,
-      easing: 'ease-in'
+      easing: 'ease-in',
     }).onfinish = () => {
       listItem.classList.remove('open');
       dropdownMenu.style.display = 'none';
@@ -129,7 +128,6 @@ class Sidebar {
       if (link && this.app) {
         link.addEventListener('click', (e) => {
           e.preventDefault();
-          console.log('Mobile sidebar toggle clicked');
           this.toggleSidebar();
         });
       }
@@ -139,7 +137,6 @@ class Sidebar {
     if (this.sidebarToggleById && this.app) {
       this.sidebarToggleById.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('Main sidebar toggle clicked');
         this.toggleSidebar();
       });
     }
@@ -155,7 +152,7 @@ class Sidebar {
     setTimeout(() => {
       // Dispatch a custom event instead of generic resize to avoid chart issues
       window.dispatchEvent(new CustomEvent('sidebar:toggle', {
-        detail: { collapsed: this.app.classList.contains('is-collapsed') }
+        detail: { collapsed: this.app.classList.contains('is-collapsed') },
       }));
       
       // Still trigger resize for masonry but with a specific check
@@ -182,7 +179,6 @@ class Sidebar {
     const currentPath = window.location.pathname;
     const currentPage = currentPath.split('/').pop() || 'index.html';
     
-    let activeItemFound = false;
     
     // Find and activate the correct nav item
     const allLinks = this.sidebar.querySelectorAll('a[href]');
@@ -198,7 +194,6 @@ class Sidebar {
         const navItem = link.closest('.nav-item');
         if (navItem) {
           navItem.classList.add('actived');
-          activeItemFound = true;
           
           // If this is inside a dropdown, handle parent dropdown specially
           const parentDropdown = navItem.closest('.dropdown-menu');
@@ -211,20 +206,12 @@ class Sidebar {
               
               // Add special styling to indicate parent has active child
               parentDropdownItem.classList.add('has-active-child');
-              
-              console.log('Active dropdown child set for:', currentPage);
             }
-          } else {
-            console.log('Active navigation set for:', currentPage);
           }
         }
       }
     });
     
-    // If no specific item was found, log it for debugging
-    if (!activeItemFound) {
-      console.log('No matching navigation item found for:', currentPage);
-    }
   }
 
   /**

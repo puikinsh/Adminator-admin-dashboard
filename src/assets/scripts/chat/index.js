@@ -1,8 +1,11 @@
-import * as $ from 'jquery';
-
 export default (function () {
-  $('#chat-sidebar-toggle').on('click', e => {
-    $('#chat-sidebar').toggleClass('open');
-    e.preventDefault();
-  });
+  const chatSidebarToggle = document.getElementById('chat-sidebar-toggle');
+  const chatSidebar = document.getElementById('chat-sidebar');
+  
+  if (chatSidebarToggle && chatSidebar) {
+    chatSidebarToggle.addEventListener('click', e => {
+      chatSidebar.classList.toggle('open');
+      e.preventDefault();
+    });
+  }
 }())

@@ -1,10 +1,10 @@
-# Adminator Bootstrap 5 Admin Template v2.6.0
+# Adminator Bootstrap 5 Admin Template v2.7.0
 
 **Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. 
 
-✨ **Latest Update (v2.6.0)**: Complete **Dark Mode System** with smart theme switching, OS preference detection, and seamless component integration.
+🚀 **Latest Update (v2.7.0)**: **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB bundle reduction) with modern vanilla JavaScript implementation.
 
-🌙 **Dark Mode Features**: Automatic theme detection, persistent user preferences, theme-aware components (charts, calendars, maps), and a beautiful toggle switch.
+⚡ **Performance Benefits**: Faster load times, smaller bundle size, modern ES6+ code, and zero jQuery overhead.
 
 📚 **[Complete Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Detailed setup guides, API reference, and examples
 
@@ -23,7 +23,7 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
-- [What's New in v2.6.0](#whats-new-in-v260)
+- [What's New in v2.7.0](#whats-new-in-v270)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
@@ -35,9 +35,32 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Authors](#authors)
 - [License](#license)
 
-## What's New in v2.6.0
+## What's New in v2.7.0
 
-🌙 **Dark Mode Release** - Complete dark mode system with seamless theme switching:
+🚀 **jQuery-Free Release** - Complete removal of jQuery dependency with modern vanilla JavaScript:
+
+### 💥 Major Performance Improvements
+- **⚡ ~600KB Bundle Reduction**: Eliminated jQuery and all jQuery-dependent plugins
+- **🚀 Faster Load Times**: Native DOM manipulation for optimal performance
+- **📦 Smaller Bundle Size**: Significantly reduced JavaScript payload
+- **🌟 Modern ES6+ Code**: Class-based architecture with modern JavaScript features
+
+### 🔄 jQuery Replacements (Zero Breaking Changes)
+- **📊 Chart.js**: Replaced jQuery Sparkline with Chart.js mini charts
+- **📅 HTML5 Date Pickers**: Enhanced native date inputs with Day.js support
+- **📋 Vanilla DataTables**: Custom table component with sorting and pagination
+- **🎨 SVG Pie Charts**: Pure JavaScript circular progress indicators
+- **🗺️ Vector Maps**: JavaScript-based world map with markers and interactions
+- **💬 Vanilla Popovers**: Lightweight alternatives to Bootstrap JS components
+
+### 🛠️ Technical Achievements
+- **🎯 100% Vanilla JavaScript**: No jQuery dependency anywhere in the codebase
+- **♻️ Component Architecture**: Modern class-based components (Sidebar, Charts, etc.)
+- **🔧 Enhanced DOM Utilities**: jQuery-like functionality using native JavaScript
+- **📱 Mobile Optimized**: Touch-friendly interactions and responsive behavior
+- **🌙 Theme Integration**: All new components fully support dark/light mode switching
+
+### 🌙 Previous Updates (v2.6.0 - Dark Mode System)
 
 ### 🎨 Dark Mode Features
 - **🌗 Smart Theme Toggle**: Bootstrap-based switch with sun/moon icons and intuitive labels
@@ -297,12 +320,12 @@ The built files will be available in the `dist/` directory.
 - [Perfect Scrollbar 1.5.6](https://github.com/utatti/perfect-scrollbar) - Custom scrollbars
 
 ### JavaScript Libraries
-- [jQuery 3.7.1](https://jquery.com/) - DOM manipulation library
+- **[Chart.js 4.5.0](http://www.chartjs.org/)** - Modern charting library (replaces jQuery Sparkline)
+- **[jsvectormap 1.6.0](https://github.com/themustafaomar/jsvectormap)** - Interactive vector maps (replaces jVectorMap)
 - [Lodash 4.17.21](https://lodash.com/) - Utility library
 - [Day.js 1.11.13](https://day.js.org/) - Modern 2KB date library (replaces Moment.js)
 - [Masonry 4.2.2](https://masonry.desandro.com/) - Grid layouts
-- [jQuery Sparkline](https://omnipotent.net/jquery.sparkline/) - Inline charts
-- [jVectorMap](http://jvectormap.com/) - Interactive vector maps
+- **100% Vanilla JavaScript** - No jQuery dependency
 
 ### Icons & Fonts
 - [Font Awesome](http://fontawesome.io/) - Icon library
@@ -310,7 +333,7 @@ The built files will be available in the `dist/` directory.
 - [Roboto Font](https://fonts.google.com/specimen/Roboto) - Google Fonts
 
 ### Additional Plugins
-- [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/) - Date selection
+- **HTML5 Date Inputs** - Enhanced native date pickers (replaces Bootstrap Datepicker)
 - [Skycons](https://darkskyapp.github.io/skycons/) - Animated weather icons
 - [Load Google Maps API](https://github.com/yuanqing/load-google-maps-api) - Maps integration
 
@@ -320,14 +343,17 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
 
-#### Latest Release: V 2.6.0 (2025-01-19)
-- **🌙 Complete Dark Mode System** with intelligent theme switching
-- **🎨 CSS Variables Architecture** for comprehensive theming
-- **📊 Component Integration** - Charts, calendars, and maps are theme-aware
-- **⚡ Smart Toggle** with OS preference detection
-- **💾 Persistent Storage** remembers user theme choice
+#### Latest Release: V 2.7.0 (2025-07-09)
+- **🚀 100% jQuery-Free** - Complete removal of jQuery dependency (~600KB reduction)
+- **⚡ Modern Vanilla JavaScript** - Class-based architecture with ES6+ features  
+- **📊 Chart.js Integration** - Replaced jQuery Sparkline with Chart.js
+- **📅 HTML5 Date Pickers** - Enhanced native inputs with Day.js support
+- **🗺️ SVG Vector Maps** - Pure JavaScript world maps with theme support
+- **🎯 Zero Breaking Changes** - All functionality preserved with better performance
 
-#### Previous Releases
+#### Previous Releases  
+- **V 2.6.0**: Complete Dark Mode System with theme switching
+- **V 2.5.0**: Updated all dependencies, ESLint 9.x, zero vulnerabilities
 - **V 2.1.0**: Upgraded all dependencies
 - **V 2.0.0**: Upgrade to Bootstrap 5
 - **V 1.1.0**: Upgrade to webpack 5

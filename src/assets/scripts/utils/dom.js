@@ -221,10 +221,10 @@ export const DOM = {
       
       element.animate([
         { height: `${height}px` },
-        { height: '0px' }
+        { height: '0px' },
       ], {
         duration,
-        easing: 'ease-in-out'
+        easing: 'ease-in-out',
       }).onfinish = () => {
         element.style.display = 'none';
         element.style.height = '';
@@ -252,10 +252,10 @@ export const DOM = {
       
       element.animate([
         { height: '0px' },
-        { height: `${height}px` }
+        { height: `${height}px` },
       ], {
         duration,
-        easing: 'ease-in-out'
+        easing: 'ease-in-out',
       }).onfinish = () => {
         element.style.height = 'auto';
         element.style.overflow = 'visible';
@@ -279,10 +279,10 @@ export const DOM = {
       
       element.animate([
         { opacity: 0 },
-        { opacity: 1 }
+        { opacity: 1 },
       ], {
         duration,
-        easing: 'ease-in-out'
+        easing: 'ease-in-out',
       }).onfinish = () => {
         element.style.opacity = '';
         resolve();
@@ -302,10 +302,10 @@ export const DOM = {
     return new Promise((resolve) => {
       element.animate([
         { opacity: 1 },
-        { opacity: 0 }
+        { opacity: 0 },
       ], {
         duration,
-        easing: 'ease-in-out'
+        easing: 'ease-in-out',
       }).onfinish = () => {
         element.style.display = 'none';
         element.style.opacity = '';
@@ -330,7 +330,7 @@ export const DOM = {
       top: rect.top,
       left: rect.left,
       bottom: rect.bottom,
-      right: rect.right
+      right: rect.right,
     };
   },
 
@@ -343,7 +343,7 @@ export const DOM = {
     } else {
       callback();
     }
-  }
+  },
 };
 
 export default DOM; 

@@ -1,9 +1,15 @@
-import * as $ from 'jquery';
-
 export default (function () {
-  $('.search-toggle').on('click', e => {
-    $('.search-box, .search-input').toggleClass('active');
-    $('.search-input input').focus();
-    e.preventDefault();
-  });
+  const searchToggle = document.querySelector('.search-toggle');
+  const searchBox = document.querySelector('.search-box');
+  const searchInput = document.querySelector('.search-input');
+  const searchInputField = document.querySelector('.search-input input');
+  
+  if (searchToggle && searchBox && searchInput && searchInputField) {
+    searchToggle.addEventListener('click', e => {
+      searchBox.classList.toggle('active');
+      searchInput.classList.toggle('active');
+      searchInputField.focus();
+      e.preventDefault();
+    });
+  }
 }());

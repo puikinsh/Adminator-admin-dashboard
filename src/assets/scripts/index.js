@@ -16,4 +16,3 @@ import './datatable';
 // - charts (now ChartComponent using Chart.js instead of jQuery Sparkline)
 // - Basic DOM utilities (now DOM utils)
 
-console.log('📦 Adminator Template Loaded (Modern Version - Phase 2)');

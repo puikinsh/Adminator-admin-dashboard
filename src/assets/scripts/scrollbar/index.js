@@ -1,10 +1,9 @@
-import * as $ from 'jquery';
 import PerfectScrollbar from 'perfect-scrollbar';
 
 export default (function () {
-  const scrollables = $('.scrollable');
+  const scrollables = document.querySelectorAll('.scrollable');
   if (scrollables.length > 0) {
-    scrollables.each((index, el) => {
+    scrollables.forEach(el => {
       new PerfectScrollbar(el);
     });
   }

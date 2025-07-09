@@ -73,7 +73,7 @@ export const DateUtils = {
       if (diffDays > 1 && diffDays < 7) return `${diffDays} days ago`;
       if (diffDays < -1 && diffDays > -7) return `In ${Math.abs(diffDays)} days`;
       return target.format('MMM DD, YYYY');
-    }
+    },
   },
 
   /**
@@ -128,7 +128,7 @@ export const DateUtils = {
           day: current.date(),
           isCurrentMonth: current.isSame(target, 'month'),
           isToday: current.isSame(dayjs(), 'day'),
-          dayjs: current.clone()
+          dayjs: current.clone(),
         });
         current = current.add(1, 'day');
       }
@@ -137,7 +137,7 @@ export const DateUtils = {
         month: target.format('MMMM YYYY'),
         year: target.year(),
         monthIndex: target.month(),
-        days: days
+        days,
       };
     },
 
@@ -157,7 +157,7 @@ export const DateUtils = {
           dayName: current.format('dddd'),
           shortDayName: current.format('ddd'),
           isToday: current.isSame(dayjs(), 'day'),
-          dayjs: current.clone()
+          dayjs: current.clone(),
         });
         current = current.add(1, 'day');
       }
@@ -165,9 +165,9 @@ export const DateUtils = {
       return {
         weekStart: startOfWeek.format('MMM DD'),
         weekEnd: endOfWeek.format('MMM DD, YYYY'),
-        days: days
+        days,
       };
-    }
+    },
   },
 
   /**
@@ -185,7 +185,7 @@ export const DateUtils = {
     validateDateInput: (value) => {
       const parsed = dayjs(value);
       return parsed.isValid() && value.length >= 8; // Basic validation
-    }
+    },
   },
 
   /**
@@ -203,7 +203,7 @@ export const DateUtils = {
           date: current.format('YYYY-MM-DD'),
           label: current.format('MMM DD'),
           value: current.toISOString(),
-          dayjs: current.clone()
+          dayjs: current.clone(),
         });
         current = current.add(1, interval);
       }
@@ -216,23 +216,23 @@ export const DateUtils = {
       const now = dayjs();
       
       switch (period) {
-        case 'week':
-          return Array.from({ length: 7 }, (_, i) => 
-            now.subtract(6 - i, 'day').format('ddd')
-          );
-        case 'month':
-          return Array.from({ length: 30 }, (_, i) => 
-            now.subtract(29 - i, 'day').format('DD')
-          );
-        case 'year':
-          return Array.from({ length: 12 }, (_, i) => 
-            now.subtract(11 - i, 'month').format('MMM')
-          );
-        default:
-          return [];
+      case 'week':
+        return Array.from({ length: 7 }, (_, i) => 
+          now.subtract(6 - i, 'day').format('ddd')
+        );
+      case 'month':
+        return Array.from({ length: 30 }, (_, i) => 
+          now.subtract(29 - i, 'day').format('DD')
+        );
+      case 'year':
+        return Array.from({ length: 12 }, (_, i) => 
+          now.subtract(11 - i, 'month').format('MMM')
+        );
+      default:
+        return [];
       }
-    }
-  }
+    },
+  },
 };
 
 // Export dayjs instance for direct use when needed
