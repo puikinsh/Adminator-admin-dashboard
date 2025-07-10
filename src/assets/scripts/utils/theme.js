@@ -1,3 +1,4 @@
+/* global Chart */
 const THEME_KEY = 'adminator-theme';
 
 const Theme = {

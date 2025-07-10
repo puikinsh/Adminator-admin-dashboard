@@ -5,11 +5,11 @@
 
 // Note: Bootstrap 5 CSS is still available via SCSS imports
 // Bootstrap JS components removed to eliminate jQuery dependency
-import DOM from './utils/dom';
+import { DOM } from './utils/dom';
 import DateUtils from './utils/date';
-import Theme from './utils/theme';
-import Sidebar from './components/Sidebar';
-import ChartComponent from './components/Chart';
+import { ThemeManager } from './utils/theme';
+import { Sidebar } from './components/Sidebar';
+import { ChartComponent } from './components/Chart';
 
 // Import styles
 import '../styles/index.scss';
@@ -31,6 +31,7 @@ class AdminatorApp {
   constructor() {
     this.components = new Map();
     this.isInitialized = false;
+    this.themeManager = ThemeManager;
     
     // Initialize when DOM is ready
     DOM.ready(() => {
@@ -212,7 +213,7 @@ class AdminatorApp {
     // Initializing theme system
     
     // Initialize theme system first
-    Theme.init();
+    this.themeManager.init();
     
     // Inject theme toggle if missing - with retry mechanism
     setTimeout(() => {
@@ -249,11 +250,11 @@ class AdminatorApp {
         const toggle = DOM.select('#theme-toggle');
         if (toggle) {
         // Set initial state
-          const currentTheme = Theme.current();
+          const currentTheme = this.themeManager.current();
           toggle.checked = currentTheme === 'dark';
         
           DOM.on(toggle, 'change', () => {
-            Theme.apply(toggle.checked ? 'dark' : 'light');
+            this.themeManager.apply(toggle.checked ? 'dark' : 'light');
           });
         
           // Listen for theme changes from other sources

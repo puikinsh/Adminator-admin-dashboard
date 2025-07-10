@@ -277,22 +277,22 @@ export default (function () {
       const rect = this.element.getBoundingClientRect();
       
       switch (placement) {
-        case 'top':
-          this.tooltip.style.left = `${rect.left + (rect.width / 2) - (this.tooltip.offsetWidth / 2)}px`;
-          this.tooltip.style.top = `${rect.top - this.tooltip.offsetHeight - 5}px`;
-          break;
-        case 'bottom':
-          this.tooltip.style.left = `${rect.left + (rect.width / 2) - (this.tooltip.offsetWidth / 2)}px`;
-          this.tooltip.style.top = `${rect.bottom + 5}px`;
-          break;
-        case 'left':
-          this.tooltip.style.left = `${rect.left - this.tooltip.offsetWidth - 5}px`;
-          this.tooltip.style.top = `${rect.top + (rect.height / 2) - (this.tooltip.offsetHeight / 2)}px`;
-          break;
-        case 'right':
-          this.tooltip.style.left = `${rect.right + 5}px`;
-          this.tooltip.style.top = `${rect.top + (rect.height / 2) - (this.tooltip.offsetHeight / 2)}px`;
-          break;
+      case 'top':
+        this.tooltip.style.left = `${rect.left + (rect.width / 2) - (this.tooltip.offsetWidth / 2)}px`;
+        this.tooltip.style.top = `${rect.top - this.tooltip.offsetHeight - 5}px`;
+        break;
+      case 'bottom':
+        this.tooltip.style.left = `${rect.left + (rect.width / 2) - (this.tooltip.offsetWidth / 2)}px`;
+        this.tooltip.style.top = `${rect.bottom + 5}px`;
+        break;
+      case 'left':
+        this.tooltip.style.left = `${rect.left - this.tooltip.offsetWidth - 5}px`;
+        this.tooltip.style.top = `${rect.top + (rect.height / 2) - (this.tooltip.offsetHeight / 2)}px`;
+        break;
+      case 'right':
+        this.tooltip.style.left = `${rect.right + 5}px`;
+        this.tooltip.style.top = `${rect.top + (rect.height / 2) - (this.tooltip.offsetHeight / 2)}px`;
+        break;
       }
     }
     
@@ -407,6 +407,6 @@ export default (function () {
     Dropdown: VanillaDropdown,
     Popover: VanillaPopover,
     Tooltip: VanillaTooltip,
-    Accordion: VanillaAccordion
+    Accordion: VanillaAccordion,
   };
 }());

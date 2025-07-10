@@ -1,0 +1,44 @@
+# Development files
+node_modules/
+.git/
+.gitignore
+.eslintrc.js
+.stylelintrc.json
+
+# Build artifacts that aren't needed
+webpack.config.js
+babel.config.js
+
+# Documentation that's not essential for npm users
+.github/
+docs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary folders
+tmp/
+temp/

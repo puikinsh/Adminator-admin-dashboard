@@ -39,11 +39,17 @@ const
 // ---------------
 
 const resolve = {
-  extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js'],
+  extensions: ['.tsx', '.ts', '.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
   modules: [
     path.join(__dirname, '../node_modules'),
     path.join(manifest.paths.src, ''),
   ],
+  alias: {
+    '@': path.join(manifest.paths.src),
+    '@/components': path.join(manifest.paths.src, 'assets', 'scripts', 'components'),
+    '@/utils': path.join(manifest.paths.src, 'assets', 'scripts', 'utils'),
+    '@/constants': path.join(manifest.paths.src, 'assets', 'scripts', 'constants'),
+  },
 };
 
 const optimization = {

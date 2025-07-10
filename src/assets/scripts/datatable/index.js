@@ -1,4 +1,4 @@
-import Theme from '../utils/theme.js';
+// DataTable implementation
 
 export default (function () {
   

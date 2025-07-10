@@ -1,5 +1,4 @@
 import DateUtils from '../utils/date.js';
-import Theme from '../utils/theme.js';
 
 export default (function () {
   
@@ -163,7 +162,7 @@ export default (function () {
     
     bindEvents() {
       // Handle click events
-      this.element.addEventListener('click', (e) => {
+      this.element.addEventListener('click', () => {
         this.openPicker();
       });
       
@@ -180,7 +179,7 @@ export default (function () {
       });
       
       // Handle focus events
-      this.element.addEventListener('focus', (e) => {
+      this.element.addEventListener('focus', () => {
         this.element.classList.add('datepicker-animation');
         setTimeout(() => {
           this.element.classList.remove('datepicker-animation');
@@ -195,7 +194,7 @@ export default (function () {
       if (this.element.showPicker && typeof this.element.showPicker === 'function') {
         try {
           this.element.showPicker();
-        } catch (e) {
+        } catch {
           // Fallback for browsers that don't support showPicker
         }
       }
