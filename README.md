@@ -1,12 +1,12 @@
-# Adminator Bootstrap 5 Admin Template v2.7.0
+# Adminator Bootstrap 5 Admin Template v2.7.1
 
 **Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. 
 
-🚀 **Latest Update (v2.7.0)**: **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB bundle reduction) with modern vanilla JavaScript implementation.
+**Latest Update (v2.7.1)**: **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB bundle reduction) with modern vanilla JavaScript implementation.
 
-⚡ **Performance Benefits**: Faster load times, smaller bundle size, modern ES6+ code, and zero jQuery overhead.
+**Performance Benefits**: Faster load times, smaller bundle size, modern ES6+ code, and zero jQuery overhead.
 
-📚 **[Complete Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Detailed setup guides, API reference, and examples
+**[Complete Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Detailed setup guides, API reference, and examples
 
 Preview of this awesome admin template available here: https://colorlib.com/polygon/adminator/index.html
 
@@ -35,48 +35,48 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Authors](#authors)
 - [License](#license)
 
-## What's New in v2.7.0
+## What's New in v2.7.1
 
-🚀 **jQuery-Free Release** - Complete removal of jQuery dependency with modern vanilla JavaScript:
+**jQuery-Free Release** - Complete removal of jQuery dependency with modern vanilla JavaScript:
 
-### 💥 Major Performance Improvements
-- **⚡ ~600KB Bundle Reduction**: Eliminated jQuery and all jQuery-dependent plugins
-- **🚀 Faster Load Times**: Native DOM manipulation for optimal performance
-- **📦 Smaller Bundle Size**: Significantly reduced JavaScript payload
-- **🌟 Modern ES6+ Code**: Class-based architecture with modern JavaScript features
+### Major Performance Improvements
+- **~600KB Bundle Reduction**: Eliminated jQuery and all jQuery-dependent plugins
+- **Faster Load Times**: Native DOM manipulation for optimal performance
+- **Smaller Bundle Size**: Significantly reduced JavaScript payload
+- **Modern ES6+ Code**: Class-based architecture with modern JavaScript features
 
-### 🔄 jQuery Replacements (Zero Breaking Changes)
-- **📊 Chart.js**: Replaced jQuery Sparkline with Chart.js mini charts
-- **📅 HTML5 Date Pickers**: Enhanced native date inputs with Day.js support
-- **📋 Vanilla DataTables**: Custom table component with sorting and pagination
-- **🎨 SVG Pie Charts**: Pure JavaScript circular progress indicators
-- **🗺️ Vector Maps**: JavaScript-based world map with markers and interactions
-- **💬 Vanilla Popovers**: Lightweight alternatives to Bootstrap JS components
+### jQuery Replacements (Zero Breaking Changes)
+- **Chart.js**: Replaced jQuery Sparkline with Chart.js mini charts
+- **HTML5 Date Pickers**: Enhanced native date inputs with Day.js support
+- **Vanilla DataTables**: Custom table component with sorting and pagination
+- **SVG Pie Charts**: Pure JavaScript circular progress indicators
+- **Vector Maps**: JavaScript-based world map with markers and interactions
+- **Vanilla Popovers**: Lightweight alternatives to Bootstrap JS components
 
-### 🛠️ Technical Achievements
-- **🎯 100% Vanilla JavaScript**: No jQuery dependency anywhere in the codebase
-- **♻️ Component Architecture**: Modern class-based components (Sidebar, Charts, etc.)
-- **🔧 Enhanced DOM Utilities**: jQuery-like functionality using native JavaScript
-- **📱 Mobile Optimized**: Touch-friendly interactions and responsive behavior
-- **🌙 Theme Integration**: All new components fully support dark/light mode switching
+### Technical Achievements
+- **100% Vanilla JavaScript**: No jQuery dependency anywhere in the codebase
+- **Component Architecture**: Modern class-based components (Sidebar, Charts, etc.)
+- **Enhanced DOM Utilities**: jQuery-like functionality using native JavaScript
+- **Mobile Optimized**: Touch-friendly interactions and responsive behavior
+- **Theme Integration**: All new components fully support dark/light mode switching
 
-### 🌙 Previous Updates (v2.6.0 - Dark Mode System)
+### Previous Updates (v2.6.0 - Dark Mode System)
 
-### 🎨 Dark Mode Features
-- **🌗 Smart Theme Toggle**: Bootstrap-based switch with sun/moon icons and intuitive labels
-- **🔄 OS Preference Detection**: Automatically detects and applies your preferred color scheme  
-- **💾 Persistent Storage**: Remembers your theme choice across browser sessions
-- **⚡ Instant Switching**: Real-time theme updates without page reload
-- **🎯 Component Integration**: All charts, calendars, maps, and UI elements are theme-aware
+### Dark Mode Features
+- **Smart Theme Toggle**: Bootstrap-based switch with sun/moon icons and intuitive labels
+- **OS Preference Detection**: Automatically detects and applies your preferred color scheme  
+- **Persistent Storage**: Remembers your theme choice across browser sessions
+- **Instant Switching**: Real-time theme updates without page reload
+- **Component Integration**: All charts, calendars, maps, and UI elements are theme-aware
 
-### 🛠️ Technical Implementation
-- **🎨 CSS Variables Architecture**: Comprehensive color system with semantic naming
-- **📊 Chart.js Integration**: Dynamic color schemes for all chart types
-- **🗓️ FullCalendar Support**: Dark-mode aware calendar with proper contrast
-- **🗺️ Vector Maps**: Custom color palettes for both light and dark themes
-- **🎪 Component Compatibility**: Theme support across all interactive elements
+### Technical Implementation
+- **CSS Variables Architecture**: Comprehensive color system with semantic naming
+- **Chart.js Integration**: Dynamic color schemes for all chart types
+- **FullCalendar Support**: Dark-mode aware calendar with proper contrast
+- **Vector Maps**: Custom color palettes for both light and dark themes
+- **Component Compatibility**: Theme support across all interactive elements
 
-### 🚀 Previous Updates (v2.5.0)
+### Previous Updates (v2.5.0)
 - **Latest Dependencies**: All 22+ dependencies updated to latest versions  
 - **Modern Build Tools**: webpack 5.99.9, webpack-dev-server 5.2.2
 - **ESLint 9.x**: Migrated to modern flat config format
@@ -86,7 +86,48 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 
 ## Getting Started
 
-In order to run **Adminator** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below. Prebuilt static assets can be found under [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases).
+You can use **Adminator** in several ways:
+
+### NPM Package Installation (Recommended)
+
+Install the complete template as an npm package:
+
+```bash
+# Install via npm
+npm install adminator-admin-dashboard
+
+# Or install via yarn
+yarn add adminator-admin-dashboard
+```
+
+**Package Information:**
+- **Package Name**: `adminator-admin-dashboard`
+- **Version**: 2.7.1 (jQuery-free release)
+- **Size**: 5.7 MB (includes source + built assets)
+- **Registry**: https://www.npmjs.com/package/adminator-admin-dashboard
+
+**Usage after npm install:**
+```bash
+# Navigate to the package directory
+cd node_modules/adminator-admin-dashboard
+
+# Install development dependencies (if you want to customize)
+npm install
+
+# Start development server
+npm start
+```
+
+**What's included in the npm package:**
+- Complete source code (`src/` directory)
+- Pre-built production assets (`dist/` directory)
+- All dependencies and development tools
+- Documentation (CLAUDE.md, CHANGELOG.md)
+- Ready-to-use HTML templates
+
+### Local Development Setup
+
+For development and customization, clone the repository:
 
 #### Prerequisites
   - **Node.js 18.12.0 or higher** (tested with Node.js 23.11.0)
@@ -94,8 +135,6 @@ In order to run **Adminator** on your local machine all what you need to do is t
   - **Git**
 
 #### Installing & Local Development
-
-Start by typing the following commands in your terminal in order to get **Adminator** full package on your machine and starting a local development server with live reload feature.
 
 ```bash
 # Clone the repository
@@ -113,6 +152,12 @@ npm start
 # Alternative: Start with webpack dashboard
 npm run dev
 ```
+
+### Quick Start Options
+
+1. **Fastest**: Use prebuilt static assets from [releases](https://github.com/puikinsh/Adminator-admin-dashboard/releases)
+2. **Recommended**: Install via npm package for easy updates
+3. **Development**: Clone repository for full customization
 
 #### Development Commands
 
@@ -145,23 +190,23 @@ npm run lint:scss
 npm run lint
 ```
 
-## 🌙 Dark Mode Usage
+## Dark Mode Usage
 
 Adminator now includes a comprehensive dark mode system that works out of the box:
 
-### **Automatic Setup**
+### Automatic Setup
 - Dark mode is automatically initialized on page load
 - Detects your OS preference (light/dark) on first visit
 - Remembers your choice across browser sessions
 
-### **Theme Toggle**
+### Theme Toggle
 - Look for the **Light/Dark** toggle switch in the header navigation
 - Click to instantly switch between light and dark themes
-- Visual feedback with sun ☀️ and moon 🌙 icons
+- Visual feedback with sun and moon icons
 
-### **For Developers**
+### For Developers
 
-📚 **[Complete Theme API Documentation →](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)**
+**[Complete Theme API Documentation →](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)**
 
 **Using the Theme API:**
 ```javascript
@@ -197,17 +242,17 @@ window.addEventListener('adminator:themeChanged', (event) => {
 - `--c-border` - Border colors
 - `--c-primary` - Primary brand color
 
-📖 **[View Complete CSS Variables Reference →](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)**
+**[View Complete CSS Variables Reference →](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)**
 
 ## Documentation
 
-📚 **[Complete Documentation Site](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Comprehensive guides and API reference
+**[Complete Documentation Site](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Comprehensive guides and API reference
 
 ### Quick Links:
-- 🚀 **[Installation Guide](https://puikinsh.github.io/Adminator-admin-dashboard/getting-started/installation)** - Complete setup instructions
-- 🌙 **[Theme System](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)** - Dark mode and theming
-- 🔧 **[API Reference](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)** - JavaScript API documentation
-- 💡 **[Examples](https://puikinsh.github.io/Adminator-admin-dashboard/examples/theme-integration)** - Integration examples
+- **[Installation Guide](https://puikinsh.github.io/Adminator-admin-dashboard/getting-started/installation)** - Complete setup instructions
+- **[Theme System](https://puikinsh.github.io/Adminator-admin-dashboard/customization/theme-system)** - Dark mode and theming
+- **[API Reference](https://puikinsh.github.io/Adminator-admin-dashboard/api/theme-api)** - JavaScript API documentation
+- **[Examples](https://puikinsh.github.io/Adminator-admin-dashboard/examples/theme-integration)** - Integration examples
 
 ## Adminator for other platforms and frameworks
 * [Adminator right to left](https://github.com/mortezakarimi/Adminator-admin-dashboard-rtl) - Adminator modified to work with right to left languages like Persian and Arabic
@@ -343,13 +388,13 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
 
-#### Latest Release: V 2.7.0 (2025-07-09)
-- **🚀 100% jQuery-Free** - Complete removal of jQuery dependency (~600KB reduction)
-- **⚡ Modern Vanilla JavaScript** - Class-based architecture with ES6+ features  
-- **📊 Chart.js Integration** - Replaced jQuery Sparkline with Chart.js
-- **📅 HTML5 Date Pickers** - Enhanced native inputs with Day.js support
-- **🗺️ SVG Vector Maps** - Pure JavaScript world maps with theme support
-- **🎯 Zero Breaking Changes** - All functionality preserved with better performance
+#### Latest Release: V 2.7.1 (2025-07-10)
+- **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB reduction)
+- **Modern Vanilla JavaScript** - Class-based architecture with ES6+ features  
+- **Chart.js Integration** - Replaced jQuery Sparkline with Chart.js
+- **HTML5 Date Pickers** - Enhanced native inputs with Day.js support
+- **SVG Vector Maps** - Pure JavaScript world maps with theme support
+- **Zero Breaking Changes** - All functionality preserved with better performance
 
 #### Previous Releases  
 - **V 2.6.0**: Complete Dark Mode System with theme switching

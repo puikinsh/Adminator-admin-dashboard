@@ -1,9 +1,49 @@
 {
-  "name": "adminator",
-  "version": "2.7.0",
-  "private": true,
-  "description": "HTML Admin Template with Dark Mode",
+  "name": "adminator-admin-dashboard",
+  "version": "2.7.1",
+  "private": false,
+  "description": "Modern jQuery-free Bootstrap 5 Admin Dashboard Template with Dark Mode",
+  "main": "dist/index.html",
+  "keywords": [
+    "admin",
+    "dashboard",
+    "template",
+    "bootstrap",
+    "bootstrap5",
+    "jquery-free",
+    "vanilla-js",
+    "dark-mode",
+    "responsive",
+    "mobile-first",
+    "scss",
+    "webpack",
+    "modern",
+    "ui-kit",
+    "admin-panel",
+    "charts",
+    "datatable"
+  ],
+  "author": "Aigars Silkalns <hello@colorlib.com> (https://colorlib.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puikinsh/Adminator-admin-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/puikinsh/Adminator-admin-dashboard/issues"
+  },
   "homepage": "https://puikinsh.github.io/Adminator-admin-dashboard/",
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "webpack.config.js",
+    "CLAUDE.md",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "start": "webpack server",
     "dev": "webpack-dashboard -t 'Project' -- webpack server",
@@ -12,9 +52,15 @@
     "release:minified": "npm run clean && NODE_ENV=production MINIFY=true cross-env webpack",
     "release:unminified": "npm run clean && NODE_ENV=production MINIFY=false cross-env webpack",
     "preview": "cross-env webpack server",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "build:types": "tsc --emitDeclarationOnly --outDir types",
     "lint:js": "eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
+    "lint:ts": "eslint ./src ./webpack ./*.ts -f table --ext .ts --ext .tsx",
     "lint:scss": "stylelint ./src/**/*.scss",
-    "lint": "npm run lint:js && npm run lint:scss"
+    "lint": "npm run lint:js && npm run lint:ts && npm run lint:scss",
+    "prepublishOnly": "npm run type-check && npm run build",
+    "postpublish": "echo 'Package published successfully! View at: https://www.npmjs.com/package/adminator-admin-dashboard'"
   },
   "devDependencies": {
     "@babel/core": "^7.27.4",
@@ -23,6 +69,11 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/runtime": "^7.27.6",
     "@eslint/js": "^9.29.0",
+    "@types/lodash": "^4.17.20",
+    "@types/masonry-layout": "^4.2.8",
+    "@types/node": "^24.0.12",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
     "babel-loader": "^10.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "copy-webpack-plugin": "^13.0.0",
@@ -43,6 +94,8 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dashboard": "^3.3.8",
