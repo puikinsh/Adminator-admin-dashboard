@@ -1,5 +1,55 @@
 # Changelog
 
+## [2.8.0] - 2025-08-11
+
+### Dependency Modernization & Security Updates
+
+This release focuses on modernizing the build system, updating dependencies to their latest stable versions, and removing deprecated packages to ensure better security and performance.
+
+### Key Improvements
+
+#### Build System Enhancements
+- **Replaced deprecated file-loader with Webpack 5 native asset modules** - Modernized asset handling using Webpack 5's built-in capabilities
+- **Moved @babel/runtime to production dependencies** - Properly configured runtime dependencies for production builds
+- **Fixed all import/export warnings** - Resolved module resolution issues for cleaner builds
+
+#### Major Dependency Updates
+- **Upgraded cross-env from v7 to v10** - Latest version with ESM support and TypeScript improvements
+- **Updated all Babel packages to v7.28.0** - Latest stable Babel 7 release
+- **Updated TypeScript to v5.9.2** - Latest TypeScript with improved type checking
+- **Updated Webpack to v5.101.0** - Latest Webpack 5 with performance improvements
+- **Updated ESLint to v9.33.0** - Latest ESLint with new rules and fixes
+
+#### Security & Maintenance
+- Updated all FullCalendar components to v6.1.19
+- Updated all development dependencies to latest stable versions
+- Removed non-existent test.html reference from build configuration
+- Fixed stylelint configuration compatibility issues
+
+### Technical Details
+
+**Removed Deprecated Packages:**
+- `file-loader` - Replaced with Webpack 5 asset/resource modules
+
+**Updated Dependencies:**
+- @babel/core: 7.27.4 → 7.28.0
+- @babel/runtime: 7.27.6 → 7.28.2 (moved to production dependencies)
+- @eslint/js: 9.29.0 → 9.33.0
+- @typescript-eslint/eslint-plugin: 8.36.0 → 8.39.0
+- @typescript-eslint/parser: 8.36.0 → 8.39.0
+- @fullcalendar/*: 6.1.17 → 6.1.19 (all packages)
+- cross-env: 7.0.3 → 10.0.0
+- eslint: 9.29.0 → 9.33.0
+- typescript: 5.8.3 → 5.9.2
+- webpack: 5.99.9 → 5.101.0
+- And various other minor updates
+
+### Build Status
+- Zero build errors
+- Zero build warnings
+- All linting rules pass successfully
+- Production build size remains optimized
+
 ## [2.7.1] - 2025-07-10
 
 ### Bug Fixes & Improvements

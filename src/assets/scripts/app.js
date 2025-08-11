@@ -7,9 +7,9 @@
 // Bootstrap JS components removed to eliminate jQuery dependency
 import { DOM } from './utils/dom';
 import DateUtils from './utils/date';
-import { ThemeManager } from './utils/theme';
-import { Sidebar } from './components/Sidebar';
-import { ChartComponent } from './components/Chart';
+import ThemeManager from './utils/theme';
+import Sidebar from './components/Sidebar';
+import ChartComponent from './components/Chart';
 
 // Import styles
 import '../styles/index.scss';

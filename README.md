@@ -1,8 +1,10 @@
-# Adminator Bootstrap 5 Admin Template v2.7.1
+# Adminator Bootstrap 5 Admin Template v2.8.0
 
-**Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets. 
+**Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets.
 
-**Latest Update (v2.7.1)**: **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB bundle reduction) with modern vanilla JavaScript implementation.
+**Latest Update (v2.8.0)**: Dependency modernization with Webpack 5 native asset modules, updated build tools, and comprehensive security updates ensuring optimal performance and maintainability.
+
+**Looking for more premium admin templates?** Visit **[DashboardPack.com](https://dashboardpack.com/)** for a curated collection of high-quality admin dashboard templates for various frameworks and technologies.
 
 **Performance Benefits**: Faster load times, smaller bundle size, modern ES6+ code, and zero jQuery overhead.
 
@@ -34,6 +36,22 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Changelog](#changelog)
 - [Authors](#authors)
 - [License](#license)
+
+## What's New in v2.8.0
+
+### Dependency Modernization & Build System Enhancements
+- **Webpack 5 Native Asset Modules**: Replaced deprecated file-loader with modern Webpack 5 asset handling
+- **Updated Build Tools**: All build dependencies updated to latest stable versions
+- **Cross-env v10**: Upgraded to latest version with ESM support and TypeScript improvements
+- **Zero Build Warnings**: Fixed all import/export issues for cleaner builds
+- **Security Updates**: Comprehensive dependency updates addressing all known vulnerabilities
+
+### Technical Improvements
+- Moved @babel/runtime to production dependencies for proper runtime support
+- Updated TypeScript to v5.9.2 for enhanced type checking
+- Updated ESLint to v9.33.0 with latest rules and fixes
+- All FullCalendar components updated to v6.1.19
+- Webpack updated to v5.101.0 with performance improvements
 
 ## What's New in v2.7.1
 
@@ -388,15 +406,16 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
 
-#### Latest Release: V 2.7.1 (2025-07-10)
-- **100% jQuery-Free** - Complete removal of jQuery dependency (~600KB reduction)
-- **Modern Vanilla JavaScript** - Class-based architecture with ES6+ features  
-- **Chart.js Integration** - Replaced jQuery Sparkline with Chart.js
-- **HTML5 Date Pickers** - Enhanced native inputs with Day.js support
-- **SVG Vector Maps** - Pure JavaScript world maps with theme support
-- **Zero Breaking Changes** - All functionality preserved with better performance
+#### Latest Release: V 2.8.0 (2025-08-11)
+- **Webpack 5 Asset Modules** - Replaced deprecated file-loader with native Webpack 5 capabilities
+- **Dependency Modernization** - Updated all build tools and dependencies to latest stable versions
+- **Zero Build Warnings** - Fixed all import/export issues for cleaner production builds
+- **Security Updates** - Comprehensive dependency updates addressing all known vulnerabilities
+- **Cross-env v10** - Upgraded to latest version with ESM support
+- **TypeScript 5.9.2** - Latest TypeScript with enhanced type checking
 
-#### Previous Releases  
+#### Previous Releases
+- **V 2.7.1**: 100% jQuery-Free with modern vanilla JavaScript
 - **V 2.6.0**: Complete Dark Mode System with theme switching
 - **V 2.5.0**: Updated all dependencies, ESLint 9.x, zero vulnerabilities
 - **V 2.1.0**: Upgraded all dependencies
@@ -407,7 +426,16 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 ## Authors
 [Colorlib](https://colorlib.com)
 
-## More info
+## Looking for More Admin Templates?
+
+**Visit [DashboardPack.com](https://dashboardpack.com/)** - Your premier destination for high-quality admin dashboard templates:
+- Premium and free admin templates for all major frameworks
+- React, Vue, Angular, Bootstrap, and vanilla JavaScript templates
+- Modern designs with dark mode support
+- Comprehensive documentation and support
+- Regular updates and new releases
+
+## More Resources from Colorlib
 - [Bootstrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
 - [Bootstrap Templates](https://colorlib.com/wp/free-bootstrap-templates/)
 - [HTML Templates](https://colorlib.com/wp/free-html-website-templates/)

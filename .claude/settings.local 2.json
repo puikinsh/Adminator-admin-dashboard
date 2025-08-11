@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(npm run lint)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "Bash(npm start)",
+      "Bash(grep:*)",
+      "Bash(sudo rm:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npm run lint:*)",
+      "Bash(gh release create:*)",
+      "Bash(npm search:*)",
+      "Bash(npm pack:*)",
+      "Bash(npm:*)",
+      "WebFetch(domain:keenthemes.com)"
+    ],
+    "deny": []
+  }
+}
