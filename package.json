@@ -109,6 +109,7 @@
     "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "perfect-scrollbar": "^1.5.6",
-    "skycons": "^1.0.0"
+    "skycons": "^1.0.0",
+    "ts-api-utils": "^2.1.0"
   }
 }
