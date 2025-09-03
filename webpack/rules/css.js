@@ -45,7 +45,7 @@ if (manifest.IS_PRODUCTION) {
   rule = {
     test: /\.css$/,
     use: [{
-        loader: ExtractTextPlugin.loader,
+      loader: ExtractTextPlugin.loader,
     }].concat(loaders),
   };
 }

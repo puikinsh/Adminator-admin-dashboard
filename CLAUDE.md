@@ -23,9 +23,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Architecture
 
 ### Technology Stack
-- **Build System**: Webpack 5.99.9 with modern configuration
+- **Build System**: Webpack 5.101.3 with modern configuration
 - **JavaScript**: ES6+ with Babel transpilation, ESLint 9.x flat config
-- **CSS**: Sass/SCSS with PostCSS processing, Bootstrap 5.3.7
+- **CSS**: Sass/SCSS with PostCSS processing, Bootstrap 5.3.8
 - **Frontend Framework**: **100% jQuery-free** vanilla JavaScript with modern class-based architecture
 - **Theme System**: CSS variables-based dark/light mode system
 
@@ -137,10 +137,10 @@ src/
 5. Preview production build with `npm run preview`
 
 ### Key Dependencies
-- **Bootstrap 5.3.7**: UI framework and CSS components (JS components replaced with vanilla alternatives)
+- **Bootstrap 5.3.8**: UI framework and CSS components (JS components replaced with vanilla alternatives)
 - **Chart.js 4.5.0**: Interactive charts with theme support (replaces jQuery Sparkline)
 - **FullCalendar 6.1.17**: Calendar component with dark mode
-- **Day.js 1.11.13**: Lightweight date manipulation
+- **Day.js 1.11.18**: Lightweight date manipulation
 - **Perfect Scrollbar 1.5.6**: Custom scrollbar implementation
 - **Masonry Layout 4.2.2**: Grid layouts (vanilla JS compatible)
 
@@ -151,7 +151,7 @@ src/
 - ❌ `bootstrap-datepicker` (1.10.0) - Replaced with HTML5 date inputs + vanilla JS
 - ❌ `datatables` (1.10.18) - Replaced with vanilla JS table component
 - ❌ `easy-pie-chart` (2.1.7) - Replaced with vanilla JS SVG pie charts
-- ❌ `jvectormap` (2.0.4) - Replaced with vanilla JS SVG world map
+- ❌ `jvectormap` (2.0.4) - Replaced with jsvectormap 1.7.0 vanilla JS SVG world map
 
 ### Modern Vanilla JS Implementations
 - **Sparkline Charts**: Chart.js-based mini charts with theme support

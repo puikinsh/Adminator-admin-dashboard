@@ -82,5 +82,5 @@ module.exports = {
   NODE_ENV,
   IS_DEVELOPMENT,
   IS_PRODUCTION,
-  MINIFY
+  MINIFY,
 };

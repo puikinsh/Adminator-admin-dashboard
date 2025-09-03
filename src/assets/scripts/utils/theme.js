@@ -40,7 +40,9 @@ const Theme = {
     }
     try {
       localStorage.setItem(THEME_KEY, theme);
-    } catch (_) {}
+    } catch {
+      // Ignore errors
+    }
     window.dispatchEvent(new CustomEvent('adminator:themeChanged', { detail: { theme } }));
   },
   toggle() {
@@ -50,7 +52,7 @@ const Theme = {
   current() {
     try {
       return localStorage.getItem(THEME_KEY) || 'light';
-    } catch (_) {
+    } catch {
       return 'light';
     }
   },

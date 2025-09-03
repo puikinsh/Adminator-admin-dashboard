@@ -49,6 +49,6 @@ module.exports = Object.keys(titles).map(title => {
     path: manifest.paths.build,
     filename: `${title}.html`,
     inject: true,
-    minify: minify
+    minify,
   });
 });

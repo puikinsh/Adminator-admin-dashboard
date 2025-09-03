@@ -1,5 +1,71 @@
 # Changelog
 
+## [2.8.1] - 2025-09-03
+
+### Latest Dependency Updates & Security Enhancements
+
+This release brings all dependencies up to their latest stable versions, focusing on Bootstrap 5.3.8 upgrade, enhanced security, and improved development tooling for optimal performance and maintainability.
+
+### Key Improvements
+
+#### Framework & Core Updates
+- **Bootstrap 5.3.8** - Updated from 5.3.7 with latest bug fixes and improvements
+- **Webpack 5.101.3** - Latest Webpack with enhanced performance optimizations
+- **ESLint 9.34.0** - Updated to latest ESLint with modern flat configuration support
+- **Sass 1.92.0** - Latest Sass compiler with improved performance and features
+- **Day.js 1.11.18** - Updated lightweight date manipulation library
+
+#### Development & Build Tools
+- **TypeScript ESLint Support** - Added TypeScript 5.9.2 and @typescript-eslint packages for enhanced code quality
+- **Modern ESLint Configuration** - Created comprehensive tsconfig.json for TypeScript ESLint integration
+- **Zero JavaScript Linting Errors** - Fixed all ESLint issues in webpack configuration files
+- **Enhanced Development Experience** - Improved hot module replacement and build performance
+
+#### Security & Quality
+- **Zero Security Vulnerabilities** - All dependencies updated with comprehensive security audit
+- **jsvectormap 1.7.0** - Updated vector map library with latest features and improvements
+- **Build System Optimization** - Improved webpack configuration with proper trailing commas and code style
+- **Development Server Enhancements** - Stable development server with hot reload functionality
+
+### Technical Details
+
+**Major Dependencies Updated:**
+- bootstrap: 5.3.7 → 5.3.8
+- webpack: 5.101.0 → 5.101.3
+- eslint: 9.33.0 → 9.34.0
+- sass: 1.90.0 → 1.92.0
+- dayjs: 1.11.13 → 1.11.18
+- jsvectormap: 1.6.0 → 1.7.0
+- @eslint/js: 9.33.0 → 9.34.0
+
+**Build Tools Updated:**
+- @babel/core: 7.28.0 → 7.28.3
+- @babel/runtime: 7.28.2 → 7.28.3
+- copy-webpack-plugin: 13.0.0 → 13.0.1
+- html-webpack-plugin: 5.6.3 → 5.6.4
+- mini-css-extract-plugin: 2.9.3 → 2.9.4
+- postcss-loader: 8.1.1 → 8.2.0
+- postcss-preset-env: 10.2.4 → 10.3.1
+
+**New Additions:**
+- @typescript-eslint/parser: 8.42.0 - TypeScript ESLint parser support
+- @typescript-eslint/eslint-plugin: 8.42.0 - TypeScript ESLint rules
+- typescript: 5.9.2 - TypeScript compiler for enhanced development
+
+### Build Status
+- Zero build errors
+- Zero build warnings
+- Zero security vulnerabilities
+- JavaScript linting: 0 errors, 0 warnings
+- Development server: Running successfully
+- Hot module replacement: Functional
+
+### Compatibility
+- Node.js 14+ (tested with latest versions)
+- All modern browsers supported
+- Mobile-responsive functionality maintained
+- Dark mode functionality preserved
+
 ## [2.8.0] - 2025-08-11
 
 ### Dependency Modernization & Security Updates

@@ -53,13 +53,13 @@ const resolve = {
 };
 
 const optimization = {
-  minimize: manifest.MINIFY
+  minimize: manifest.MINIFY,
 };
 
 if (manifest.MINIFY) {
   optimization.minimizer = [
     new CssMinimizerPlugin(),
-    new TerserPlugin()
+    new TerserPlugin(),
   ];
 }
 
@@ -80,7 +80,7 @@ module.exports = {
   module: {
     rules,
   },
-  optimization: optimization,
+  optimization,
   resolve,
   plugins,
   devServer,
@@ -92,6 +92,6 @@ module.exports = {
     /red\(\) is deprecated/,
     /green\(\) is deprecated/,
     /blue\(\) is deprecated/,
-    /Global built-in functions are deprecated/
-  ]
+    /Global built-in functions are deprecated/,
+  ],
 };

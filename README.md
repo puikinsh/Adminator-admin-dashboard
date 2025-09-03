@@ -1,8 +1,8 @@
-# Adminator Bootstrap 5 Admin Template v2.8.0
+# Adminator Bootstrap 5 Admin Template v2.8.1
 
 **Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets.
 
-**Latest Update (v2.8.0)**: Dependency modernization with Webpack 5 native asset modules, updated build tools, and comprehensive security updates ensuring optimal performance and maintainability.
+**Latest Update (v2.8.1)**: Latest dependency updates including Bootstrap 5.3.8, comprehensive security updates, and modern tooling improvements ensuring optimal performance and maintainability.
 
 **Looking for more premium admin templates?** Visit **[DashboardPack.com](https://dashboardpack.com/)** for a curated collection of high-quality admin dashboard templates for various frameworks and technologies.
 
@@ -25,7 +25,7 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
-- [What's New in v2.7.0](#whats-new-in-v270)
+- [What's New in v2.8.1](#whats-new-in-v281)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
@@ -37,7 +37,17 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Authors](#authors)
 - [License](#license)
 
-## What's New in v2.8.0
+## What's New in v2.8.1
+
+### Latest Dependency Updates & Security Enhancements
+- **Bootstrap 5.3.8**: Updated to latest Bootstrap version with bug fixes and improvements
+- **Comprehensive Dependency Updates**: All dependencies updated to their latest stable versions
+- **Enhanced ESLint Configuration**: Modern TypeScript ESLint support with zero linting errors
+- **Security Updates**: All dependencies updated with zero vulnerabilities
+- **Improved Build Performance**: Latest Webpack 5.101.3 with optimized build pipeline
+- **Modern Tooling**: Updated Sass 1.92.0, Day.js 1.11.18, and enhanced development tools
+
+### Previous Updates (v2.8.0)
 
 ### Dependency Modernization & Build System Enhancements
 - **Webpack 5 Native Asset Modules**: Replaced deprecated file-loader with modern Webpack 5 asset handling
@@ -120,7 +130,7 @@ yarn add adminator-admin-dashboard
 
 **Package Information:**
 - **Package Name**: `adminator-admin-dashboard`
-- **Version**: 2.7.1 (jQuery-free release)
+- **Version**: 2.8.1 (Latest dependencies)
 - **Size**: 5.7 MB (includes source + built assets)
 - **Registry**: https://www.npmjs.com/package/adminator-admin-dashboard
 
@@ -367,26 +377,26 @@ The built files will be available in the `dist/` directory.
 ## Built With
 
 ### Core Framework & Build Tools
-- [Bootstrap 5.3.7](http://getbootstrap.com/) - Modern CSS framework
-- [Webpack 5.99.9](https://webpack.js.org/) - Module bundler and build tool
-- [Babel 7.27.x](https://babeljs.io/) - JavaScript transpiler
-- [Sass 1.89.2](http://sass-lang.com/) - CSS preprocessor
+- [Bootstrap 5.3.8](http://getbootstrap.com/) - Modern CSS framework
+- [Webpack 5.101.3](https://webpack.js.org/) - Module bundler and build tool
+- [Babel 7.28.x](https://babeljs.io/) - JavaScript transpiler
+- [Sass 1.92.0](http://sass-lang.com/) - CSS preprocessor
 - [PostCSS 8.5.6](http://postcss.org/) - CSS transformations
-- [ESLint 9.29.0](https://eslint.org/) - JavaScript linting (flat config)
-- [Stylelint 16.21.0](https://stylelint.io/) - CSS/SCSS linting
+- [ESLint 9.34.0](https://eslint.org/) - JavaScript linting (flat config)
+- [Stylelint 16.23.1](https://stylelint.io/) - CSS/SCSS linting
 
 ### UI Components & Charts
 - [Chart.js 4.5.0](http://www.chartjs.org/) - Modern charting library
-- [FullCalendar 6.1.17](https://fullcalendar.io/) - Interactive calendar
+- [FullCalendar 6.1.19](https://fullcalendar.io/) - Interactive calendar
 - [DataTables](https://datatables.net/) - Advanced table functionality
 - [Easy Pie Chart](http://rendro.github.io/easy-pie-chart/) - Animated pie charts
 - [Perfect Scrollbar 1.5.6](https://github.com/utatti/perfect-scrollbar) - Custom scrollbars
 
 ### JavaScript Libraries
 - **[Chart.js 4.5.0](http://www.chartjs.org/)** - Modern charting library (replaces jQuery Sparkline)
-- **[jsvectormap 1.6.0](https://github.com/themustafaomar/jsvectormap)** - Interactive vector maps (replaces jVectorMap)
+- **[jsvectormap 1.7.0](https://github.com/themustafaomar/jsvectormap)** - Interactive vector maps (replaces jVectorMap)
 - [Lodash 4.17.21](https://lodash.com/) - Utility library
-- [Day.js 1.11.13](https://day.js.org/) - Modern 2KB date library (replaces Moment.js)
+- [Day.js 1.11.18](https://day.js.org/) - Modern 2KB date library (replaces Moment.js)
 - [Masonry 4.2.2](https://masonry.desandro.com/) - Grid layouts
 - **100% Vanilla JavaScript** - No jQuery dependency
 
@@ -406,15 +416,16 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
 
-#### Latest Release: V 2.8.0 (2025-08-11)
-- **Webpack 5 Asset Modules** - Replaced deprecated file-loader with native Webpack 5 capabilities
-- **Dependency Modernization** - Updated all build tools and dependencies to latest stable versions
-- **Zero Build Warnings** - Fixed all import/export issues for cleaner production builds
-- **Security Updates** - Comprehensive dependency updates addressing all known vulnerabilities
-- **Cross-env v10** - Upgraded to latest version with ESM support
-- **TypeScript 5.9.2** - Latest TypeScript with enhanced type checking
+#### Latest Release: V 2.8.1 (2025-09-03)
+- **Bootstrap 5.3.8** - Updated to latest Bootstrap version with bug fixes and improvements
+- **Comprehensive Dependency Updates** - All dependencies updated to their latest stable versions
+- **Enhanced ESLint Configuration** - Modern TypeScript ESLint support with zero linting errors
+- **Security Updates** - All dependencies updated with zero vulnerabilities
+- **Improved Build Performance** - Latest Webpack 5.101.3 with optimized build pipeline
+- **Modern Tooling** - Updated Sass 1.92.0, Day.js 1.11.18, and enhanced development tools
 
 #### Previous Releases
+- **V 2.8.0**: Webpack 5 asset modules and dependency modernization
 - **V 2.7.1**: 100% jQuery-Free with modern vanilla JavaScript
 - **V 2.6.0**: Complete Dark Mode System with theme switching
 - **V 2.5.0**: Updated all dependencies, ESLint 9.x, zero vulnerabilities

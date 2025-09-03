@@ -24,7 +24,7 @@ export default (function () {
     if (mapInstance) {
       try {
         mapInstance.destroy();
-      } catch (e) {
+      } catch {
         // Map instance cleanup
       }
       mapInstance = null;
@@ -166,7 +166,7 @@ export default (function () {
           tooltip.text(`${regionName}${value ? `: ${  value}` : ''}`);
         },
         
-        onLoaded(map) {
+        onLoaded() {
           // Map loaded successfully
         },
       });
@@ -174,7 +174,7 @@ export default (function () {
       // Store instance for theme updates
       worldMapContainer.mapInstance = mapInstance;
       
-    } catch (error) {
+    } catch {
       // Error initializing JSVectorMap
       
       // Fallback: show a simple message
@@ -238,7 +238,7 @@ export default (function () {
           container.style.backgroundColor = colors.backgroundColor;
         }
         
-      } catch (error) {
+      } catch {
         // Theme update failed, reinitializing map
         vectorMapInit();
       }
@@ -261,7 +261,7 @@ export default (function () {
     if (mapInstance) {
       try {
         mapInstance.destroy();
-      } catch (e) {
+      } catch {
         // Map cleanup on unload
       }
       mapInstance = null;
