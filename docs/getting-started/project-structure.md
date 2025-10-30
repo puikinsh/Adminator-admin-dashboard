@@ -308,10 +308,12 @@ import Sidebar from '@/components/Sidebar';
 
 ## Next Steps
 
-- **[Development Workflow](development.md)** - Learn the development process
-- **[Build & Deployment](build-deployment.md)** - Deploy your application
-- **[Theme System](../customization/theme-system.md)** - Customize themes and colors
-- **[API Reference](../api/theme-api.md)** - JavaScript API documentation
+Now that you understand the project structure:
+
+1. **[Development Workflow](development.md)** - Learn the development process
+2. **[Customize Themes](../customization/theme-system.md)** - Set up dark mode and theming
+3. **[Build for Production](build-deployment.md)** - Deploy your application
+4. **[API Reference](../api/theme-api.md)** - JavaScript API documentation
 
 ---
 
