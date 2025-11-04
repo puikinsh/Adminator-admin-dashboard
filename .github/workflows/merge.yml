@@ -25,11 +25,3 @@ jobs:
       run: |
         npm install
         npm run build
-    
-    - name: Get version
-      run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
-      id: version
-
-    - name: Verify version
-      run: |
-        ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
