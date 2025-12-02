@@ -1,5 +1,82 @@
 # Changelog
 
+## [2.9.0] - 2025-12-02
+
+### Comprehensive Dependency Updates & Linting Modernization
+
+This release brings all dependencies to their absolute latest versions with enhanced SCSS linting support and zero security vulnerabilities.
+
+### Key Improvements
+
+#### All Dependencies Updated to Latest
+- **Webpack 5.103.0** - Latest Webpack with performance improvements
+- **ESLint 9.39.1** - Latest ESLint with modern flat configuration
+- **Sass 1.94.2** - Latest Sass compiler with improved features
+- **TypeScript 5.9.3** - Latest TypeScript compiler
+- **Stylelint 16.26.1** - Latest SCSS/CSS linting
+- **Chart.js 4.5.1** - Latest charting library with bug fixes
+- **Day.js 1.11.19** - Latest date manipulation library
+
+#### Enhanced SCSS Linting
+- **Added stylelint-config-standard-scss** - Proper SCSS-specific linting support
+- **Updated .stylelintrc.json** - Configured for SCSS syntax compatibility
+- **Zero Linting Errors** - Both JavaScript and SCSS pass all checks
+
+#### Security & Quality
+- **Zero Security Vulnerabilities** - All dependencies audited and secure
+- **Fixed node-forge vulnerabilities** - Updated to v1.3.2 (ASN.1 fixes)
+- **Fixed js-yaml vulnerabilities** - Updated to v4.1.1/v3.14.2 (prototype pollution fixes)
+- **Clean Build Output** - No errors or warnings in production build
+
+### Technical Details
+
+**Major Dependencies Updated:**
+- @babel/core: 7.28.3 → 7.28.5
+- @babel/eslint-parser: 7.28.0 → 7.28.5
+- @babel/preset-env: 7.28.3 → 7.28.5
+- @babel/runtime: 7.28.3 → 7.28.4
+- @eslint/js: 9.34.0 → 9.39.1
+- @typescript-eslint/eslint-plugin: 8.42.0 → 8.48.1
+- @typescript-eslint/parser: 8.42.0 → 8.48.1
+- chart.js: 4.5.0 → 4.5.1
+- cross-env: 10.0.0 → 10.1.0
+- dayjs: 1.11.18 → 1.11.19
+- eslint: 9.34.0 → 9.39.1
+- globals: 16.3.0 → 16.5.0
+- html-webpack-plugin: 5.6.4 → 5.6.5
+- jsvectormap: 1.6.0 → 1.7.0
+- postcss-preset-env: 10.3.1 → 10.4.0
+- sass: 1.92.0 → 1.94.2
+- sass-loader: 16.0.5 → 16.0.6
+- stylelint: 16.23.1 → 16.26.1
+- stylelint-config-standard: 38.0.0 → 39.0.1
+- typescript: 5.9.2 → 5.9.3
+- webpack: 5.101.3 → 5.103.0
+
+**New Dependencies:**
+- stylelint-config-standard-scss: 16.0.0 - SCSS-specific linting rules
+
+**Build Tools Updated:**
+- copy-webpack-plugin: 13.0.0 → 13.0.1
+- mini-css-extract-plugin: 2.9.3 → 2.9.4
+- postcss-loader: 8.1.1 → 8.2.0
+
+### Build Status
+- Zero build errors
+- Zero build warnings
+- Zero security vulnerabilities
+- JavaScript linting: 0 errors, 0 warnings
+- SCSS linting: 0 errors, 0 warnings
+- Production build: Compiled successfully
+
+### Compatibility
+- Node.js 14+ (tested with latest versions)
+- All modern browsers supported
+- Mobile-responsive functionality maintained
+- Dark mode functionality preserved
+
+---
+
 ## [2.8.1] - 2025-09-03
 
 ### Latest Dependency Updates & Security Enhancements
