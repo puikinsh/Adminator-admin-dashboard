@@ -1,8 +1,9 @@
-name: NodeJS with Webpack
+name: Build and Release
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   build:
@@ -10,41 +11,50 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
-    
+        node-version: [22.x]
+
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: Build
-      run: |
-        npm install
-        npm run release:minified
-        zip -r -j static_minified.zip dist/*
-        npm run release:unminified
-        zip -r -j static_unminified.zip dist/*
-    
-    - name: Get version
-      run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
-      id: version
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Verify version
-      run: |
-        ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
+      - name: Run linting
+        run: npm run lint
 
-    # Verify changelog has entry with new version
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ steps.version.outputs.version }}
-        files: |
-          static_minified.zip
-          static_unminified.zip
-        fail_on_unmatched_files: true
-        prerelease: false
-        draft: false
+      - name: Build minified release
+        run: |
+          npm run release:minified
+          zip -r -j static_minified.zip dist/*
+
+      - name: Build unminified release
+        run: |
+          npm run release:unminified
+          zip -r -j static_unminified.zip dist/*
+
+      - name: Get version
+        id: version
+        run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
+
+      - name: Verify version
+        run: ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.version.outputs.version }}
+          files: |
+            static_minified.zip
+            static_unminified.zip
+          fail_on_unmatched_files: true
+          prerelease: false
+          draft: false
+          generate_release_notes: true

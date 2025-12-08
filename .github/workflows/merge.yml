@@ -1,6 +1,6 @@
 name: Merge checks
 
-on:  
+on:
   pull_request:
     branches:
       - master
@@ -11,25 +11,30 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
-    
+        node-version: [22.x]
+
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: Build
-      run: |
-        npm install
-        npm run build
-    
-    - name: Get version
-      run: echo "::set-output name=version::v$(./ci/getVersion.sh)"
-      id: version
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Verify version
-      run: |
-        ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Get version
+        id: version
+        run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
+
+      - name: Verify version
+        run: ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
