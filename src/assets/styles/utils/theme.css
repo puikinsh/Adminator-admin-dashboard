@@ -1,17 +1,45 @@
 :root {
-  --c-bkg-body: #f8f9fa;
+  /* Modern light theme - soft blue-gray tones */
+  --c-bkg-body: #f0f4f8;
   --c-bkg-card: #ffffff;
   --c-bkg-sidebar: #ffffff;
+  --c-bkg-hover: #f8fafc;
 
-  --c-text-base: #212529;
-  --c-text-muted: #6c757d;
+  --c-text-base: #1e293b;
+  --c-text-muted: #64748b;
+  --c-text-light: #94a3b8;
 
-  --c-border: #e2e5e8;
+  /* Icon colors - modern muted tones */
+  --c-icon: #64748b;
+  --c-icon-hover: #6366f1;
+  --c-icon-active: #4f46e5;
+  --c-icon-muted: #94a3b8;
 
-  --c-primary: #4b7cf3;
-  --c-success: #2ecc71;
-  --c-danger: #e74c3c;
-  
+  /* Modern border with subtle blue tint */
+  --c-border: #e2e8f0;
+  --c-border-light: #f1f5f9;
+
+  /* Refined brand colors - modern indigo */
+  --c-primary: #6366f1;
+  --c-primary-light: #818cf8;
+  --c-primary-dark: #4f46e5;
+  --c-success: #10b981;
+  --c-warning: #f59e0b;
+  --c-danger: #ef4444;
+  --c-info: #0ea5e9;
+
+  /* Modern shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
   /* Vector map colors */
   --vmap-bg-color: #ffffff;
   --vmap-border-color: #ffffff;
@@ -24,21 +52,21 @@
   --vmap-scale-end: #02a7f1;
   --vmap-scale-light: #b6d6ff;
   --vmap-scale-dark: #005ace;
-  
+
   /* Skycons */
   --skycons-color: #ff6849;
-  
-  /* Sparkline colors */
-  --sparkline-success: #4caf50;
-  --sparkline-purple: #9675ce;
-  --sparkline-info: #03a9f3;
-  --sparkline-danger: #f96262;
-  --sparkline-light: #aaf;
-  
+
+  /* Sparkline colors - more vibrant */
+  --sparkline-success: #10b981;
+  --sparkline-purple: #8b5cf6;
+  --sparkline-info: #0ea5e9;
+  --sparkline-danger: #ef4444;
+  --sparkline-light: #a5b4fc;
+
   /* Loader */
   --loader-bg: #ffffff;
   --spinner-bg: #333333;
-  
+
   /* Google Maps */
   --gmap-landscape-hue: #FFBB00;
   --gmap-highway-hue: #FFC200;
@@ -48,50 +76,71 @@
 }
 
 [data-theme="dark"] {
-  --c-bkg-body: #181a1f;
-  --c-bkg-card: #20232a;
-  --c-bkg-sidebar: #20232a;
+  /* Modern dark theme - refined dark slate */
+  --c-bkg-body: #0f172a;
+  --c-bkg-card: #1e293b;
+  --c-bkg-sidebar: #1e293b;
+  --c-bkg-hover: #334155;
 
-  --c-text-base: #e8eaed;
-  --c-text-muted: #9ca3af;
+  --c-text-base: #f1f5f9;
+  --c-text-muted: #94a3b8;
+  --c-text-light: #64748b;
 
-  --c-border: #2b2f36;
+  /* Icon colors - dark theme */
+  --c-icon: #94a3b8;
+  --c-icon-hover: #a5b4fc;
+  --c-icon-active: #818cf8;
+  --c-icon-muted: #64748b;
 
-  --c-primary: #4b7cf3;
-  --c-success: #32d48e;
-  --c-danger: #ff6b6b;
-  
+  --c-border: #334155;
+  --c-border-light: #475569;
+
+  /* Same primary for consistency, adjusted for dark */
+  --c-primary: #818cf8;
+  --c-primary-light: #a5b4fc;
+  --c-primary-dark: #6366f1;
+  --c-success: #34d399;
+  --c-warning: #fbbf24;
+  --c-danger: #f87171;
+  --c-info: #38bdf8;
+
+  /* Dark mode shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+
   /* Vector map colors - dark theme */
-  --vmap-bg-color: #20232a;
-  --vmap-border-color: #2b2f36;
-  --vmap-region-color: #2b2f36;
-  --vmap-marker-fill: #e8eaed;
-  --vmap-marker-stroke: #9ca3af;
-  --vmap-hover-color: #181a1f;
-  --vmap-selected-color: #4b5563;
-  --vmap-scale-start: #3b82f6;
-  --vmap-scale-end: #1d4ed8;
-  --vmap-scale-light: #1e40af;
-  --vmap-scale-dark: #60a5fa;
-  
+  --vmap-bg-color: #1e293b;
+  --vmap-border-color: #334155;
+  --vmap-region-color: #334155;
+  --vmap-marker-fill: #f1f5f9;
+  --vmap-marker-stroke: #94a3b8;
+  --vmap-hover-color: #0f172a;
+  --vmap-selected-color: #475569;
+  --vmap-scale-start: #6366f1;
+  --vmap-scale-end: #4f46e5;
+  --vmap-scale-light: #4338ca;
+  --vmap-scale-dark: #a5b4fc;
+
   /* Skycons - dark theme */
-  --skycons-color: #f97316;
-  
+  --skycons-color: #fb923c;
+
   /* Sparkline colors - dark theme */
-  --sparkline-success: #10b981;
-  --sparkline-purple: #a855f7;
-  --sparkline-info: #3b82f6;
-  --sparkline-danger: #ef4444;
-  --sparkline-light: #60a5fa;
-  
+  --sparkline-success: #34d399;
+  --sparkline-purple: #a78bfa;
+  --sparkline-info: #38bdf8;
+  --sparkline-danger: #f87171;
+  --sparkline-light: #a5b4fc;
+
   /* Loader - dark theme */
-  --loader-bg: #181a1f;
-  --spinner-bg: #e8eaed;
-  
+  --loader-bg: #0f172a;
+  --spinner-bg: #f1f5f9;
+
   /* Google Maps - dark theme */
   --gmap-landscape-hue: #D4AC0D;
   --gmap-highway-hue: #E6AC00;
   --gmap-road-hue: #CC2900;
   --gmap-water-hue: #1B4F72;
   --gmap-poi-hue: #148F77;
-} 
+}

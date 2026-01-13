@@ -17,8 +17,9 @@
 // ---------------------------------------------------------
 
 .header {
-  background-color: $default-white;
-  border-bottom: 1px solid $border-color;
+  background-color: var(--c-bkg-card);
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: var(--shadow-sm);
   display: block;
   margin-bottom: 0;
   padding: 0;
@@ -51,7 +52,7 @@
         float: left;
 
         > a {
-          color: $default-text-color;
+          color: var(--c-icon);
           display: block;
           line-height: $header-height;
           min-height: $header-height;
@@ -60,12 +61,17 @@
 
           i {
             font-size: 17px;
+            color: var(--c-icon);
           }
 
           &:hover,
           &:focus {
-            color: $default-dark;
+            color: var(--c-icon-hover);
             text-decoration: none;
+
+            i {
+              color: var(--c-icon-hover);
+            }
           }
 
           @include to($breakpoint-md) {
@@ -452,4 +458,91 @@
   }
 }
 
+// ---------------------------------------------------------
+// @Dark Mode Topbar
+// ---------------------------------------------------------
 
+[data-theme="dark"] {
+  .header {
+    background-color: var(--c-bkg-card);
+    border-bottom-color: var(--c-border);
+
+    .header-container {
+      .nav-left,
+      .nav-right {
+        > li {
+          > a {
+            color: var(--c-icon);
+
+            i {
+              color: var(--c-icon);
+            }
+
+            &:hover,
+            &:focus {
+              color: var(--c-icon-hover);
+
+              i {
+                color: var(--c-icon-hover);
+              }
+            }
+
+            // Active state for hamburger/search when clicked
+            &:active,
+            &.active {
+              color: var(--c-text-base);
+
+              i {
+                color: var(--c-text-base);
+              }
+            }
+          }
+        }
+      }
+
+      // Search box active state
+      .search-box {
+        &.active {
+          a {
+            color: var(--c-icon-hover);
+
+            i {
+              color: var(--c-icon-hover);
+            }
+          }
+        }
+      }
+
+      // Dropdown menu dark mode
+      .dropdown-menu {
+        background-color: var(--c-bkg-card);
+        border-color: var(--c-border);
+
+        .divider {
+          border-bottom-color: var(--c-border);
+        }
+
+        > li > a {
+          color: var(--c-text-muted);
+
+          &:hover,
+          &:focus {
+            color: var(--c-text-base);
+            background-color: var(--c-bkg-hover);
+          }
+        }
+      }
+    }
+
+    // Search input dark mode
+    .search-input {
+      input {
+        color: var(--c-text-base);
+
+        &::placeholder {
+          color: var(--c-text-muted);
+        }
+      }
+    }
+  }
+}

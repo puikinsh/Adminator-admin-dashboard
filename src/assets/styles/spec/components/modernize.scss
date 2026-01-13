@@ -1,0 +1,570 @@
+// ---------------------------------------------------------
+// @Modern Design Enhancements
+// Subtle improvements for a contemporary look
+// ---------------------------------------------------------
+
+// ---------------------------------------------------------
+// @Body & Background
+// ---------------------------------------------------------
+
+body {
+  background-color: var(--c-bkg-body);
+  // Subtle dot pattern for depth
+  background-image: radial-gradient(circle at 1px 1px, var(--c-border) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+// ---------------------------------------------------------
+// @Cards - Modern styling
+// ---------------------------------------------------------
+
+.card {
+  background: var(--c-bkg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--c-border-light);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--c-text-base);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-footer {
+  background: var(--c-bkg-hover);
+  border-top: 1px solid var(--c-border-light);
+  padding: 0.875rem 1.25rem;
+}
+
+// ---------------------------------------------------------
+// @Stat Cards - Dashboard widgets
+// ---------------------------------------------------------
+
+.peers {
+  &.ai-c {
+    .peer {
+      &:first-child {
+        // Icon container styling
+        .layers {
+          border-radius: var(--radius-md);
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Stat value styling
+.fw-500 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+// ---------------------------------------------------------
+// @Tables - Modern look
+// ---------------------------------------------------------
+
+.table {
+  --bs-table-bg: var(--c-bkg-card);
+
+  thead {
+    th {
+      background: var(--c-bkg-hover);
+      border-bottom: 2px solid var(--c-border);
+      color: var(--c-text-base);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.875rem 1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: var(--c-bkg-hover);
+      }
+
+      td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--c-border-light);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.table-bordered {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  th,
+  td {
+    border-color: var(--c-border-light);
+  }
+}
+
+// ---------------------------------------------------------
+// @Buttons - Refined styling
+// ---------------------------------------------------------
+
+.btn {
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  border: none;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgb(99 102 241 / 0.25);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-dark) 100%);
+
+  &:hover {
+    background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-primary) 100%);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--c-success) 0%, #059669 100%);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--c-danger) 0%, #dc2626 100%);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.btn-outline-primary {
+  border: 1.5px solid var(--c-primary);
+  color: var(--c-primary);
+  background: transparent;
+
+  &:hover {
+    background: var(--c-primary);
+    color: white;
+    transform: translateY(-1px);
+  }
+}
+
+// ---------------------------------------------------------
+// @Form Controls - Modern inputs
+// ---------------------------------------------------------
+
+.form-control,
+.form-select {
+  background-color: var(--c-bkg-card);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  color: var(--c-text-base);
+  padding: 0.625rem 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 3px rgb(99 102 241 / 0.15);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--c-text-light);
+  }
+}
+
+.form-label {
+  color: var(--c-text-base);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+// ---------------------------------------------------------
+// @Badges - Modern pills
+// ---------------------------------------------------------
+
+.badge {
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.35em 0.75em;
+  letter-spacing: 0.02em;
+}
+
+.bg-primary {
+  background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-dark) 100%) !important;
+}
+
+.bg-success {
+  background: linear-gradient(135deg, var(--c-success) 0%, #059669 100%) !important;
+}
+
+.bg-danger {
+  background: linear-gradient(135deg, var(--c-danger) 0%, #dc2626 100%) !important;
+}
+
+.bg-warning {
+  background: linear-gradient(135deg, var(--c-warning) 0%, #d97706 100%) !important;
+  color: #1e293b !important;
+}
+
+.bg-info {
+  background: linear-gradient(135deg, var(--c-info) 0%, #0284c7 100%) !important;
+}
+
+// ---------------------------------------------------------
+// @Dropdowns - Refined menus
+// ---------------------------------------------------------
+
+.dropdown-menu {
+  background: var(--c-bkg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+
+  .dropdown-item {
+    border-radius: var(--radius-sm);
+    color: var(--c-text-base);
+    padding: 0.5rem 0.875rem;
+    transition: background-color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      background-color: var(--c-bkg-hover);
+      color: var(--c-primary);
+    }
+
+    &.active,
+    &:active {
+      background-color: var(--c-primary);
+      color: white;
+    }
+  }
+
+  .dropdown-divider {
+    border-top-color: var(--c-border-light);
+    margin: 0.5rem 0;
+  }
+}
+
+// ---------------------------------------------------------
+// @Progress Bars - Modern look
+// ---------------------------------------------------------
+
+.progress {
+  background-color: var(--c-border-light);
+  border-radius: 50px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
+}
+
+// ---------------------------------------------------------
+// @Alerts - Soft backgrounds
+// ---------------------------------------------------------
+
+.alert {
+  border: none;
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+}
+
+.alert-primary {
+  background-color: rgb(99 102 241 / 0.1);
+  border-left-color: var(--c-primary);
+  color: var(--c-primary-dark);
+}
+
+.alert-success {
+  background-color: rgb(16 185 129 / 0.1);
+  border-left-color: var(--c-success);
+  color: #047857;
+}
+
+.alert-danger {
+  background-color: rgb(239 68 68 / 0.1);
+  border-left-color: var(--c-danger);
+  color: #b91c1c;
+}
+
+.alert-warning {
+  background-color: rgb(245 158 11 / 0.1);
+  border-left-color: var(--c-warning);
+  color: #92400e;
+}
+
+.alert-info {
+  background-color: rgb(14 165 233 / 0.1);
+  border-left-color: var(--c-info);
+  color: #0369a1;
+}
+
+// ---------------------------------------------------------
+// @Nav Tabs - Modern tabs
+// ---------------------------------------------------------
+
+.nav-tabs {
+  border-bottom: 2px solid var(--c-border-light);
+  gap: 0.25rem;
+
+  .nav-link {
+    border: none;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    color: var(--c-text-muted);
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.2s ease;
+    position: relative;
+
+    &:hover {
+      color: var(--c-primary);
+      background-color: var(--c-bkg-hover);
+    }
+
+    &.active {
+      color: var(--c-primary);
+      background-color: var(--c-bkg-card);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--c-primary);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// @Pagination - Modern style
+// ---------------------------------------------------------
+
+.pagination {
+  gap: 0.25rem;
+
+  .page-link {
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--c-text-base);
+    font-weight: 500;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--c-bkg-hover);
+      color: var(--c-primary);
+    }
+  }
+
+  .page-item {
+    &.active .page-link {
+      background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-dark) 100%);
+      color: white;
+    }
+
+    &.disabled .page-link {
+      color: var(--c-text-light);
+      background: transparent;
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// @List Groups - Refined lists
+// ---------------------------------------------------------
+
+.list-group {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.list-group-item {
+  background-color: var(--c-bkg-card);
+  border: none;
+  border-bottom: 1px solid var(--c-border-light);
+  padding: 1rem 1.25rem;
+  transition: background-color 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--c-bkg-hover);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-dark) 100%);
+    border-color: transparent;
+    color: white;
+  }
+}
+
+// ---------------------------------------------------------
+// @Tooltips & Popovers
+// ---------------------------------------------------------
+
+.tooltip-inner {
+  background-color: var(--c-text-base);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.popover {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+// ---------------------------------------------------------
+// @Modals - Modern dialogs
+// ---------------------------------------------------------
+
+.modal-content {
+  background: var(--c-bkg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--c-border-light);
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--c-border-light);
+  padding: 1rem 1.5rem;
+}
+
+// ---------------------------------------------------------
+// @Scrollbar - Custom styling
+// ---------------------------------------------------------
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bkg-body);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--c-text-light);
+  }
+}
+
+// ---------------------------------------------------------
+// @Dark Mode Refinements
+// ---------------------------------------------------------
+
+[data-theme="dark"] {
+  body {
+    background-image: radial-gradient(circle at 1px 1px, var(--c-border) 0.5px, transparent 0);
+  }
+
+  .card {
+    border-color: var(--c-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  .table {
+    --bs-table-bg: var(--c-bkg-card);
+    --bs-table-hover-bg: var(--c-bkg-hover);
+  }
+
+  .form-control,
+  .form-select {
+    background-color: var(--c-bkg-body);
+    border-color: var(--c-border);
+
+    &:focus {
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 3px rgb(129 140 248 / 0.2);
+    }
+  }
+
+  .alert-primary {
+    background-color: rgb(129 140 248 / 0.15);
+    color: var(--c-primary-light);
+  }
+
+  .alert-success {
+    background-color: rgb(52 211 153 / 0.15);
+    color: var(--c-success);
+  }
+
+  .alert-danger {
+    background-color: rgb(248 113 113 / 0.15);
+    color: var(--c-danger);
+  }
+
+  .alert-warning {
+    background-color: rgb(251 191 36 / 0.15);
+    color: var(--c-warning);
+  }
+
+  .alert-info {
+    background-color: rgb(56 189 248 / 0.15);
+    color: var(--c-info);
+  }
+}

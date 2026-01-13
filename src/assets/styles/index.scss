@@ -332,17 +332,8 @@ input::placeholder {
 }
 
 // Logo colours ------------------------------------------
-.logo img,
-.logo-auth {
-  // Light mode: invert the "A" to make it white (if default is dark)
-  filter: invert(1) hue-rotate(180deg) brightness(1.2);
-}
-
-[data-theme="dark"] .logo img,
-[data-theme="dark"] .logo-auth {
-  // Dark mode: keep original colors (dark "A" on blue background)
-  filter: brightness(1) contrast(1);
-}
+// Logo SVG has white "A" on primary indigo background (#6366f1)
+// No CSS manipulation needed - colors are baked into the SVG
 
 .logo-text {
   color: var(--c-text-base);

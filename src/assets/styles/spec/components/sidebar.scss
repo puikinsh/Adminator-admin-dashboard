@@ -19,7 +19,8 @@
 // ---------------------------------------------------------
 
 .sidebar {
-  background-color: $default-white;
+  background-color: var(--c-bkg-sidebar);
+  border-right: 1px solid var(--c-border);
   bottom: 0;
   overflow: hidden;
   position: fixed;
@@ -131,11 +132,11 @@
 // ---------------------------------------------------------
 
 .sidebar-logo {
-  border-bottom: 1px solid $border-color;
-  border-right: 1px solid $border-color;
+  border-bottom: 1px solid var(--c-border);
   line-height: 0;
   padding: 0 20px;
   transition: all 0.2s ease;
+  background: var(--c-bkg-card);
 
   a {
     display: inline-block;
@@ -157,7 +158,7 @@
     }
 
     .logo-text {
-      color: $grey-900;
+      color: var(--c-text-base);
     }
   }
 
@@ -168,7 +169,11 @@
     line-height: calc(#{$header-height} - 1px);
 
     a {
-      color: $default-text-color;
+      color: var(--c-icon);
+
+      &:hover {
+        color: var(--c-icon-hover);
+      }
     }
 
     @include to($breakpoint-md) {
@@ -187,12 +192,11 @@
 
 .sidebar-menu {
   @include clearfix;
-  border-right: 1px solid $border-color;
   height: calc(100vh - #{$header-height});
   list-style: none;
   margin: 0;
   overflow: auto;
-  padding: 0;
+  padding: 0.75rem 0;
   position: relative;
 
   .dropdown-toggle::after {
@@ -231,10 +235,10 @@
 
       &.open {
         > a {
-          color: $default-dark;
+          color: var(--c-text-base);
 
           .icon-holder {
-            color: $default-info;
+            color: var(--c-icon-hover);
           }
 
           > .arrow {
@@ -257,16 +261,16 @@
     }
 
     a {
-      color: $default-text-color;
+      color: var(--c-text-muted);
       transition: all 0.3s ease;
 
       &:hover,
       &:focus {
-        color: $default-dark;
+        color: var(--c-text-base);
         text-decoration: none;
 
         .icon-holder {
-          color: $default-info;
+          color: var(--c-icon-hover);
         }
       }
     }
@@ -294,13 +298,13 @@
               &:hover,
               &:focus {
                 background-color: transparent;
-                color: $default-dark;
+                color: var(--c-text-base);
               }
             }
 
             &.actived {
               a {
-                color: $default-dark;
+                color: var(--c-text-base);
               }
             }
           }
@@ -318,6 +322,7 @@
 
       .icon-holder {
         border-radius: 6px;
+        color: var(--c-icon);
         display: inline-block;
         font-size: 17px;
         height: 35px;
@@ -459,7 +464,7 @@
   }
 }
 
-// Dark mode sidebar improvements - proper active states for both themes
+// Dark mode sidebar improvements - subtle, cohesive dark theme
 [data-theme="dark"] {
   .sidebar {
     background-color: var(--c-bkg-card);
@@ -469,16 +474,19 @@
 
       li {
         a {
-          color: var(--c-text-base);
+          color: var(--c-text-muted);
+
+          .icon-holder {
+            color: var(--c-icon);
+          }
 
           &:hover,
           &:focus {
             color: var(--c-text-base);
-            background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+            background-color: var(--c-bkg-hover);
 
             .icon-holder {
-              color: var(--c-primary);
-              background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
+              color: var(--c-icon-hover);
             }
           }
         }
@@ -487,38 +495,39 @@
           &.open {
             > a {
               color: var(--c-text-base);
-              background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+              background-color: var(--c-bkg-hover);
 
               .icon-holder {
-                color: var(--c-primary);
-                background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
+                color: var(--c-icon-hover);
               }
             }
           }
         }
 
-        // Active menu item styling for dark mode - lighter shade approach
+        // Active menu item styling for dark mode - subtle left border accent
         &.actived {
           > a {
             color: var(--c-text-base) !important;
-            background-color: color-mix(in srgb, var(--c-bkg-card) 92%, #ffffff) !important;
+            background-color: var(--c-bkg-hover) !important;
+            border-left: 3px solid var(--c-primary) !important;
+            margin-left: -3px;
 
             .icon-holder {
-              color: var(--c-text-base) !important;
-              background-color: color-mix(in srgb, var(--c-bkg-card) 85%, #ffffff) !important;
+              color: var(--c-primary) !important;
             }
           }
         }
 
-        // Styling for dropdown parent when it has an active child - lighter shade approach
+        // Styling for dropdown parent when it has an active child
         &.dropdown.has-active-child {
           > a {
             color: var(--c-text-base) !important;
-            background-color: color-mix(in srgb, var(--c-bkg-card) 95%, #ffffff) !important;
+            background-color: transparent !important;
+            border-left: 3px solid var(--c-primary) !important;
+            margin-left: -3px;
 
             .icon-holder {
-              color: var(--c-text-base) !important;
-              background-color: color-mix(in srgb, var(--c-bkg-card) 90%, #ffffff) !important;
+              color: var(--c-primary) !important;
             }
           }
         }
@@ -535,14 +544,15 @@
                 &:hover,
                 &:focus {
                   color: var(--c-text-base);
-                  background-color: color-mix(in srgb, var(--c-bkg-card) 90%, var(--c-primary));
+                  background-color: var(--c-bkg-hover);
                 }
               }
 
               &.actived {
                 a {
-                  color: var(--c-text-base) !important;
-                  background-color: color-mix(in srgb, var(--c-bkg-card) 92%, #ffffff) !important;
+                  color: var(--c-primary) !important;
+                  background-color: transparent !important;
+                  font-weight: 500;
                 }
               }
             }
@@ -564,7 +574,11 @@
 
     .mobile-toggle {
       a {
-        color: var(--c-text-base);
+        color: var(--c-icon);
+
+        &:hover {
+          color: var(--c-icon-hover);
+        }
       }
     }
   }
