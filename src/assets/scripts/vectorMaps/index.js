@@ -1,8 +1,8 @@
 import jsVectorMap from 'jsvectormap';
 import 'jsvectormap/dist/jsvectormap.css';
 import 'jsvectormap/dist/maps/world.js';
-import { debounce } from 'lodash';
 import Theme from '../utils/theme.js';
+import { Events } from '../utils';
 
 export default (function () {
   
@@ -251,10 +251,10 @@ export default (function () {
   vectorMapInit();
   
   // Reinitialize on window resize
-  window.addEventListener('resize', debounce(vectorMapInit, 300));
-  
+  window.addEventListener('resize', Events.debounce(vectorMapInit, 300));
+
   // Listen for theme changes
-  window.addEventListener('adminator:themeChanged', debounce(updateMapTheme, 150));
+  window.addEventListener('adminator:themeChanged', Events.debounce(updateMapTheme, 150));
   
   // Cleanup on page unload
   window.addEventListener('beforeunload', () => {

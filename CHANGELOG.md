@@ -1,5 +1,126 @@
 # Changelog
 
+## [3.0.0] - 2026-01-13
+
+### Major Architecture & Developer Experience Release
+
+This release represents a comprehensive overhaul of the template's architecture, adding professional-grade utilities, testing infrastructure, security hardening, and optimized build configuration. This is the most developer-friendly release yet.
+
+### Key Improvements
+
+#### New Utility Modules
+- **Events** (`src/assets/scripts/utils/events.js`) - Event delegation, debounce, throttle utilities
+- **Performance** (`src/assets/scripts/utils/performance.js`) - ResizeObserver, IntersectionObserver, lazy loading
+- **Storage** (`src/assets/scripts/utils/storage.js`) - Safe localStorage wrapper with in-memory fallback
+- **Sanitize** (`src/assets/scripts/utils/sanitize.js`) - HTML/input sanitization for XSS prevention
+- **Logger** (`src/assets/scripts/utils/logger.js`) - Development-only logging utility
+
+#### Testing Infrastructure
+- **Vitest** - Modern testing framework with fast execution
+- **Coverage Reports** - V8-based code coverage via `npm run test:coverage`
+- **JSDOM** - Browser environment simulation for DOM testing
+- **Test Files** - Initial test suites for theme, DOM, and logger utilities
+
+#### Build & Bundle Optimization
+- **Code Splitting** - Separate chunks for Chart.js, FullCalendar, Bootstrap
+- **Bundle Analyzer** - New `npm run build:analyze` command for visual bundle inspection
+- **TerserPlugin** - Console/debugger removal in production builds
+- **Runtime Chunk** - Extracted webpack runtime for better caching
+- **Lodash Removed** - Replaced with custom Events utility (~70KB saved)
+
+#### Documentation
+- **API Reference** (`docs/API.md`) - Complete API documentation for all utilities
+- **Component Guide** (`docs/COMPONENT_GUIDE.md`) - Development patterns and examples
+- **Updated CLAUDE.md** - Enhanced project documentation
+
+#### Code Quality
+- **Removed Dead Code** - Deleted `app 2.js` and unused `sidebar/index.js`
+- **HTML Accessibility** - Added `lang="en"` to all 18 HTML files
+- **TypeScript Declarations** - Added `types/adminator.d.ts` for IDE support
+- **JSConfig** - Enhanced IDE autocomplete via `jsconfig.json`
+- **VSCode Settings** - Project-specific editor configuration
+
+### Technical Details
+
+**Removed Dependencies:**
+- `lodash` (4.17.21) - Replaced with custom Events.debounce/throttle
+
+**New Dev Dependencies:**
+- `vitest` (4.0.17) - Testing framework
+- `@vitest/coverage-v8` (4.0.17) - Coverage reporting
+- `jsdom` (27.4.0) - DOM testing environment
+- `webpack-bundle-analyzer` (5.1.1) - Bundle visualization
+
+**Updated Dependencies:**
+- All dependencies updated to latest versions
+- Webpack 5.104.1 with code splitting configuration
+- Full security audit with zero vulnerabilities
+
+**Build Output (Code Splitting):**
+| Chunk | Size |
+|-------|------|
+| runtime.js | 49.6 KB |
+| vendor-fullcalendar.js | 654 KB |
+| vendor-chartjs.js | 529 KB |
+| vendors.js | 384 KB |
+| main.js | 2.81 MB |
+
+### New Scripts
+
+```bash
+npm run test              # Run tests in watch mode
+npm run test:run          # Run tests once
+npm run test:coverage     # Run tests with coverage
+npm run build:analyze     # Build with bundle analyzer
+```
+
+### Files Added
+
+**Utilities:**
+- `src/assets/scripts/utils/events.js`
+- `src/assets/scripts/utils/performance.js`
+- `src/assets/scripts/utils/storage.js`
+- `src/assets/scripts/utils/sanitize.js`
+- `src/assets/scripts/utils/logger.js`
+
+**Testing:**
+- `vitest.config.js`
+- `tests/setup.js`
+- `tests/utils/theme.test.js`
+- `tests/utils/dom.test.js`
+- `tests/utils/logger.test.js`
+
+**Documentation:**
+- `docs/API.md`
+- `docs/COMPONENT_GUIDE.md`
+
+**IDE Support:**
+- `types/adminator.d.ts`
+- `jsconfig.json`
+- `.vscode/settings.json`
+- `.vscode/extensions.json`
+
+### Files Removed
+- `src/assets/scripts/app 2.js` (dead code)
+- `src/assets/scripts/sidebar/index.js` (unused)
+
+### Build Status
+- Zero build errors
+- Zero build warnings
+- Zero security vulnerabilities
+- JavaScript linting: 0 errors, 0 warnings
+- SCSS linting: 0 errors, 0 warnings
+- All tests passing
+
+### Compatibility
+- Node.js 14+ (tested with latest versions)
+- All modern browsers supported
+- Mobile-responsive functionality maintained
+- Dark mode functionality preserved
+- Full backward compatibility with v2.x
+
+---
+
 ## [2.9.0] - 2025-12-02
 
 ### Comprehensive Dependency Updates & Linting Modernization

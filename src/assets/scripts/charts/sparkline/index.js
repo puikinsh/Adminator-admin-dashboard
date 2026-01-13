@@ -1,7 +1,7 @@
 import { Chart, registerables } from 'chart.js';
-import { debounce } from 'lodash';
 import { COLORS } from '../../constants/colors';
 import Theme from '../../utils/theme.js';
+import { Events } from '../../utils';
 
 // Register Chart.js components
 Chart.register(...registerables);
@@ -178,10 +178,10 @@ export default (function () {
   initializeSparklines();
 
   // Redraw sparklines on window resize
-  window.addEventListener('resize', debounce(initializeSparklines, 150));
-  
+  window.addEventListener('resize', Events.debounce(initializeSparklines, 150));
+
   // Listen for theme changes
-  window.addEventListener('adminator:themeChanged', debounce(initializeSparklines, 150));
+  window.addEventListener('adminator:themeChanged', Events.debounce(initializeSparklines, 150));
 
   // Cleanup function for chart instances
   window.addEventListener('beforeunload', () => {

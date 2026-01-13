@@ -16,6 +16,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run lint` - Run all linters (JavaScript + SCSS)
 - `npm run lint:js` - Lint JavaScript files using ESLint 9.x flat config
 - `npm run lint:scss` - Lint SCSS files using Stylelint
+- `npm run test` - Run tests in watch mode
+- `npm run test:run` - Run tests once
+- `npm run test:coverage` - Run tests with coverage report
+
+### Build Analysis
+
+- `npm run build:analyze` - Build with bundle analyzer (opens interactive report)
 
 ### Utility Commands
 - `npm run clean` - Clean the dist directory
@@ -45,6 +52,11 @@ The application follows a modular class-based architecture:
 **Utility Modules**:
 - `DOM` (`src/assets/scripts/utils/dom.js`) - DOM manipulation helpers
 - `DateUtils` (`src/assets/scripts/utils/date.js`) - Date handling with Day.js integration
+- `Events` (`src/assets/scripts/utils/events.js`) - Event delegation, debounce, throttle
+- `Performance` (`src/assets/scripts/utils/performance.js`) - ResizeObserver, IntersectionObserver utilities
+- `Storage` (`src/assets/scripts/utils/storage.js`) - Safe localStorage wrapper with fallback
+- `Sanitize` (`src/assets/scripts/utils/sanitize.js`) - HTML/input sanitization for security
+- `Logger` (`src/assets/scripts/utils/logger.js`) - Development-only logging
 
 ### Dark Mode System
 The project features a comprehensive dark mode implementation:
@@ -98,12 +110,15 @@ src/
 ```
 
 ### Build Configuration
+
 **Webpack Setup**:
 - Modern flat ESLint configuration
 - Sass compilation with PostCSS processing
 - Source map generation for development
-- Production optimization with minification
+- Production optimization with minification and tree-shaking
 - Hot module replacement for development
+- Code splitting for vendor libraries (Chart.js, FullCalendar, Bootstrap)
+- Bundle analyzer available via `npm run build:analyze`
 
 **Development Server**:
 - Webpack dev server on port 4000
@@ -144,7 +159,8 @@ src/
 - **Perfect Scrollbar 1.5.6**: Custom scrollbar implementation
 - **Masonry Layout 4.2.2**: Grid layouts (vanilla JS compatible)
 
-### Removed jQuery Dependencies
+### Removed Dependencies
+
 **Successfully removed all jQuery dependencies (~600KB bundle reduction):**
 - ❌ `jquery` (3.7.1) - Replaced with vanilla JS DOM manipulation
 - ❌ `jquery-sparkline` (2.4.0) - Replaced with Chart.js mini charts
@@ -152,6 +168,7 @@ src/
 - ❌ `datatables` (1.10.18) - Replaced with vanilla JS table component
 - ❌ `easy-pie-chart` (2.1.7) - Replaced with vanilla JS SVG pie charts
 - ❌ `jvectormap` (2.0.4) - Replaced with jsvectormap 1.7.0 vanilla JS SVG world map
+- ❌ `lodash` (4.17.21) - Replaced with custom Events utility (debounce/throttle)
 
 ### Modern Vanilla JS Implementations
 - **Sparkline Charts**: Chart.js-based mini charts with theme support

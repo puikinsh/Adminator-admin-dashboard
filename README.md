@@ -1,12 +1,12 @@
-# Adminator Bootstrap 5 Admin Template v2.9.0
+# Adminator Bootstrap 5 Admin Template v3.0.0
 
 **Adminator** is a responsive Bootstrap 5 Admin Template built with modern development tools. It provides you with a collection of ready to use code snippets and utilities, custom pages, a collection of applications and some useful widgets.
 
-**Latest Update (v2.9.0)**: Comprehensive dependency updates with all packages at their absolute latest versions, enhanced SCSS linting with stylelint-config-standard-scss, security vulnerability fixes, and zero linting errors.
+**Latest Update (v3.0.0)**: Major architecture release with new utility modules (Events, Performance, Storage, Sanitize, Logger), testing infrastructure (Vitest), code splitting, bundle analyzer, and comprehensive documentation. Zero jQuery, zero lodash - pure vanilla JavaScript.
 
 **Looking for more premium admin templates?** Visit **[DashboardPack.com](https://dashboardpack.com/)** for a curated collection of high-quality admin dashboard templates for various frameworks and technologies.
 
-**Performance Benefits**: Faster load times, smaller bundle size, modern ES6+ code, and zero jQuery overhead.
+**Performance Benefits**: Faster load times, optimized code splitting, modern ES6+ utilities, and zero external library overhead.
 
 **[Complete Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** - Detailed setup guides, API reference, and examples
 
@@ -25,7 +25,7 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
 ## TOC
-- [What's New in v2.9.0](#whats-new-in-v290)
+- [What's New in v3.0.0](#whats-new-in-v300)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing & Local Development](#installing--local-development)
@@ -37,35 +37,45 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 - [Authors](#authors)
 - [License](#license)
 
-## What's New in v2.9.0
+## What's New in v3.0.0
 
-### Comprehensive Dependency Updates & Linting Modernization
-- **All Dependencies Updated**: Every package updated to absolute latest versions
-- **Webpack 5.103.0**: Latest Webpack with performance improvements
-- **ESLint 9.39.1**: Latest ESLint with modern flat configuration
-- **Sass 1.94.2**: Latest Sass compiler with improved features
-- **Stylelint 16.26.1**: Latest SCSS/CSS linting with new SCSS-specific config
-- **Chart.js 4.5.1**: Latest charting library with bug fixes
-- **Day.js 1.11.19**: Latest date manipulation library
+### Major Architecture & Developer Experience Release
 
-### Enhanced SCSS Linting
-- **Added stylelint-config-standard-scss**: Proper SCSS-specific linting support
-- **Updated .stylelintrc.json**: Configured for SCSS syntax compatibility
-- **Zero Linting Errors**: Both JavaScript and SCSS pass all checks
+This release represents a comprehensive overhaul adding professional-grade utilities, testing, security, and optimized builds.
 
-### Security Fixes
-- **Fixed node-forge vulnerabilities**: ASN.1 Validator Desynchronization and OID Integer Truncation
-- **Fixed js-yaml vulnerabilities**: Prototype pollution in merge
-- **Zero Security Vulnerabilities**: All dependencies audited and secure
+### New Utility Modules
+- **Events** - Event delegation, debounce, throttle (replaces lodash)
+- **Performance** - ResizeObserver, IntersectionObserver, lazy loading utilities
+- **Storage** - Safe localStorage wrapper with in-memory fallback
+- **Sanitize** - HTML/input sanitization for XSS prevention
+- **Logger** - Development-only logging utility
 
-### Previous Updates (v2.8.x)
+### Testing Infrastructure
+- **Vitest** - Modern, fast testing framework
+- **Coverage Reports** - V8-based code coverage via `npm run test:coverage`
+- **Test Suites** - Initial tests for theme, DOM, and logger utilities
 
-### Dependency Modernization & Build System Enhancements
-- **Webpack 5 Native Asset Modules**: Replaced deprecated file-loader with modern Webpack 5 asset handling
-- **Updated Build Tools**: All build dependencies updated to latest stable versions
-- **Cross-env v10**: Upgraded to latest version with ESM support and TypeScript improvements
-- **Zero Build Warnings**: Fixed all import/export issues for cleaner builds
-- **Security Updates**: Comprehensive dependency updates addressing all known vulnerabilities
+### Build & Bundle Optimization
+- **Code Splitting** - Separate chunks for Chart.js (529KB), FullCalendar (654KB), Bootstrap
+- **Bundle Analyzer** - New `npm run build:analyze` for visual inspection
+- **Console Removal** - TerserPlugin drops console/debugger in production
+- **Lodash Removed** - Custom Events utility saves ~70KB
+
+### Documentation & DX
+- **API Reference** - Complete docs in `docs/API.md`
+- **Component Guide** - Development patterns in `docs/COMPONENT_GUIDE.md`
+- **TypeScript Declarations** - IDE support via `types/adminator.d.ts`
+- **VSCode Settings** - Project-specific editor configuration
+
+### Code Quality
+- **Dead Code Removed** - Cleaned up unused files
+- **HTML Accessibility** - Added `lang="en"` to all 18 HTML pages
+- **Zero Vulnerabilities** - Full security audit passed
+
+### Previous Updates (v2.9.x)
+- Comprehensive dependency updates to latest versions
+- Enhanced SCSS linting with stylelint-config-standard-scss
+- Security vulnerability fixes (node-forge, js-yaml)
 
 ## What's New in v2.7.1
 
@@ -134,7 +144,7 @@ yarn add adminator-admin-dashboard
 
 **Package Information:**
 - **Package Name**: `adminator-admin-dashboard`
-- **Version**: 2.9.0 (Latest dependencies)
+- **Version**: 3.0.0 (Architecture release)
 - **Size**: 5.7 MB (includes source + built assets)
 - **Registry**: https://www.npmjs.com/package/adminator-admin-dashboard
 
@@ -215,11 +225,20 @@ npm run preview
 # Lint JavaScript files
 npm run lint:js
 
-# Lint SCSS files  
+# Lint SCSS files
 npm run lint:scss
 
 # Run all linters
 npm run lint
+
+# Run tests
+npm run test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Analyze bundle size
+npm run build:analyze
 ```
 
 ## Dark Mode Usage
@@ -399,10 +418,9 @@ The built files will be available in the `dist/` directory.
 ### JavaScript Libraries
 - **[Chart.js 4.5.1](http://www.chartjs.org/)** - Modern charting library (replaces jQuery Sparkline)
 - **[jsvectormap 1.7.0](https://github.com/themustafaomar/jsvectormap)** - Interactive vector maps (replaces jVectorMap)
-- [Lodash 4.17.21](https://lodash.com/) - Utility library
 - [Day.js 1.11.19](https://day.js.org/) - Modern 2KB date library (replaces Moment.js)
 - [Masonry 4.2.2](https://masonry.desandro.com/) - Grid layouts
-- **100% Vanilla JavaScript** - No jQuery dependency
+- **100% Vanilla JavaScript** - No jQuery or lodash dependencies
 
 ### Icons & Fonts
 - [Font Awesome](http://fontawesome.io/) - Icon library
@@ -420,15 +438,17 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 📚 **[Online Documentation](https://puikinsh.github.io/Adminator-admin-dashboard/)** includes comprehensive guides for all features.
 
-#### Latest Release: V 2.9.0 (2025-12-02)
-- **All Dependencies Updated** - Every package updated to absolute latest versions
-- **Enhanced SCSS Linting** - Added stylelint-config-standard-scss for proper SCSS support
-- **Security Fixes** - Fixed node-forge and js-yaml vulnerabilities
-- **Zero Linting Errors** - Both JavaScript and SCSS pass all checks
-- **Webpack 5.103.0** - Latest Webpack with performance improvements
-- **Modern Tooling** - Updated Sass 1.94.2, ESLint 9.39.1, Stylelint 16.26.1
+#### Latest Release: V 3.0.0 (2026-01-13)
+- **New Utility Modules** - Events, Performance, Storage, Sanitize, Logger
+- **Testing Infrastructure** - Vitest with coverage reporting
+- **Code Splitting** - Separate chunks for Chart.js, FullCalendar, Bootstrap
+- **Bundle Analyzer** - Visual bundle inspection via `npm run build:analyze`
+- **Lodash Removed** - Custom Events utility replaces lodash (~70KB saved)
+- **Documentation** - API reference and component development guide
+- **TypeScript Declarations** - IDE support with type definitions
 
 #### Previous Releases
+- **V 2.9.0**: Comprehensive dependency updates, SCSS linting improvements
 - **V 2.8.1**: Bootstrap 5.3.8, security updates, and enhanced tooling
 - **V 2.8.0**: Webpack 5 asset modules and dependency modernization
 - **V 2.7.1**: 100% jQuery-Free with modern vanilla JavaScript

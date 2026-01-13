@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@components/*": ["assets/scripts/components/*"],
+      "@utils/*": ["assets/scripts/utils/*"],
+      "@charts/*": ["assets/scripts/charts/*"],
+      "@styles/*": ["assets/styles/*"]
+    },
+    "checkJs": true,
+    "strict": false,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "include": [
+    "src/**/*.js",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

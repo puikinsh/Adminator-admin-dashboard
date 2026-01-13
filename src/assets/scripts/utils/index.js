@@ -1,3 +1,21 @@
+/**
+ * Adminator Utilities Index
+ * Re-exports all utility modules for convenient importing
+ *
+ * @module utils
+ */
+
+// Re-export all utilities
+export { default as DOM } from './dom';
+export { default as Theme } from './theme';
+export { default as DateUtils } from './date';
+export { default as Logger } from './logger';
+export { default as Events } from './events';
+export { default as Performance } from './performance';
+export { default as Storage } from './storage';
+export { default as Sanitize } from './sanitize';
+
+// Legacy initialization code
 export default (function () {
   // ------------------------------------------------------
   // @Window Resize
@@ -25,7 +43,7 @@ export default (function () {
 
   // Open external links in new window
   const externalLinks = document.querySelectorAll('a[href^="http"], a[href^="//"]');
-  
+
   externalLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href && !href.includes(window.location.host)) {

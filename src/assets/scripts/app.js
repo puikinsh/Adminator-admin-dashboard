@@ -1,6 +1,9 @@
 /**
  * Modern Adminator Application
  * Main application entry point with enhanced mobile support
+ *
+ * @module app
+ * @version 2.9.0
  */
 
 // Note: Bootstrap 5 CSS is still available via SCSS imports
@@ -8,6 +11,9 @@
 import { DOM } from './utils/dom';
 import DateUtils from './utils/date';
 import ThemeManager from './utils/theme';
+import Events from './utils/events';
+import Performance from './utils/performance';
+import Logger from './utils/logger';
 import Sidebar from './components/Sidebar';
 import ChartComponent from './components/Chart';
 
@@ -32,7 +38,8 @@ class AdminatorApp {
     this.components = new Map();
     this.isInitialized = false;
     this.themeManager = ThemeManager;
-    
+    this.cleanupFunctions = [];
+
     // Initialize when DOM is ready
     DOM.ready(() => {
       this.init();
@@ -44,8 +51,9 @@ class AdminatorApp {
    */
   init() {
     if (this.isInitialized) return;
-    
-    
+
+    Logger.time('Adminator Init');
+
     try {
       // Initialize core components
       this.initSidebar();
@@ -54,19 +62,20 @@ class AdminatorApp {
       this.initDatePickers();
       this.initTheme();
       this.initMobileEnhancements();
-      
-      // Setup global event listeners
+
+      // Setup global event listeners using event delegation
       this.setupGlobalEvents();
-      
+
       this.isInitialized = true;
-      
+
+      Logger.timeEnd('Adminator Init');
+      Logger.info('Application initialized successfully');
+
       // Dispatch custom event for other scripts
-      window.dispatchEvent(new CustomEvent('adminator:ready', {
-        detail: { app: this },
-      }));
-      
-    } catch {
-      // Error initializing Adminator App
+      Events.emit(window, 'adminator:ready', { app: this });
+
+    } catch (error) {
+      Logger.error('Error initializing Adminator App', error);
     }
   }
 
@@ -223,14 +232,21 @@ class AdminatorApp {
       if (navRight && !DOM.exists('#theme-toggle')) {
         const li = document.createElement('li');
         li.className = 'theme-toggle d-flex ai-c';
+        const currentTheme = this.themeManager.current();
+        const isDark = currentTheme === 'dark';
         li.innerHTML = `
-        <div class="form-check form-switch d-flex ai-c" style="margin: 0; padding: 0;">
+        <div class="form-check form-switch d-flex ai-c" style="margin: 0; padding: 0;" role="group" aria-label="Theme switcher">
           <label class="form-check-label me-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-right: 8px;">
-            <i class="ti-sun" style="margin-right: 4px;"></i><span class="theme-label">Light</span>
+            <i class="ti-sun" aria-hidden="true" style="margin-right: 4px;"></i><span class="theme-label">Light</span>
           </label>
-          <input class="form-check-input" type="checkbox" id="theme-toggle" style="margin: 0;">
+          <input class="form-check-input" type="checkbox" id="theme-toggle"
+                 role="switch"
+                 aria-checked="${isDark}"
+                 aria-label="Toggle dark mode"
+                 ${isDark ? 'checked' : ''}
+                 style="margin: 0;">
           <label class="form-check-label ms-2 text-nowrap c-grey-700" for="theme-toggle" style="font-size: 12px; margin-left: 8px;">
-            <span class="theme-label">Dark</span><i class="ti-moon" style="margin-left: 4px;"></i>
+            <span class="theme-label">Dark</span><i class="ti-moon" aria-hidden="true" style="margin-left: 4px;"></i>
           </label>
         </div>
       `;
@@ -249,18 +265,18 @@ class AdminatorApp {
         // Add toggle functionality
         const toggle = DOM.select('#theme-toggle');
         if (toggle) {
-        // Set initial state
-          const currentTheme = this.themeManager.current();
-          toggle.checked = currentTheme === 'dark';
-        
           DOM.on(toggle, 'change', () => {
-            this.themeManager.apply(toggle.checked ? 'dark' : 'light');
+            const newTheme = toggle.checked ? 'dark' : 'light';
+            toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+            this.themeManager.apply(newTheme);
           });
-        
+
           // Listen for theme changes from other sources
           window.addEventListener('adminator:themeChanged', (event) => {
-            toggle.checked = event.detail.theme === 'dark';
-          
+            const isDark = event.detail.theme === 'dark';
+            toggle.checked = isDark;
+            toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+
             // Update charts when theme changes
             const charts = this.components.get('charts');
             if (charts) charts.redrawCharts();
@@ -287,20 +303,115 @@ class AdminatorApp {
   }
 
   /**
-   * Setup global event listeners
+   * Setup global event listeners using event delegation for performance
    */
   setupGlobalEvents() {
-    // Global click handler
-    DOM.on(document, 'click', (event) => this.handleGlobalClick(event));
-    
-    // Window resize handler with debouncing
-    let resizeTimeout;
-    DOM.on(window, 'resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => this.handleResize(), 250);
+    // Use event delegation for dropdown clicks (single listener instead of many)
+    const dropdownCleanup = Events.delegate(
+      document,
+      'click',
+      '.nav-right .dropdown-toggle',
+      (e, toggle) => this.handleDropdownClick(e, toggle)
+    );
+    this.cleanupFunctions.push(dropdownCleanup);
+
+    // Global click handler for closing dropdowns/search
+    const globalClickCleanup = Events.on(document, 'click', (event) => {
+      this.handleGlobalClick(event);
     });
-    
-    // Global event listeners set up
+    this.cleanupFunctions.push(globalClickCleanup);
+
+    // Window resize handler with debouncing using Events utility
+    const debouncedResize = Events.debounce(() => this.handleResize(), 250);
+    const resizeCleanup = Events.on(window, 'resize', debouncedResize);
+    this.cleanupFunctions.push(resizeCleanup);
+
+    // Escape key handler using delegation
+    const escapeCleanup = Events.on(document, 'keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeAllOverlays();
+      }
+    });
+    this.cleanupFunctions.push(escapeCleanup);
+
+    Logger.debug('Global event listeners set up with delegation');
+  }
+
+  /**
+   * Handle dropdown toggle clicks
+   * @param {Event} e - Click event
+   * @param {Element} toggle - The clicked toggle element
+   */
+  handleDropdownClick(e, toggle) {
+    if (!this.isMobile()) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const dropdown = toggle.closest('.dropdown');
+    const menu = dropdown?.querySelector('.dropdown-menu');
+    if (!dropdown || !menu) return;
+
+    // Close search if open
+    this.closeSearch();
+
+    // Close other dropdowns
+    DOM.selectAll('.nav-right .dropdown').forEach(d => {
+      if (d !== dropdown) {
+        d.classList.remove('show');
+        d.querySelector('.dropdown-menu')?.classList.remove('show');
+      }
+    });
+
+    // Toggle current dropdown
+    const isOpen = dropdown.classList.contains('show');
+    dropdown.classList.toggle('show', !isOpen);
+    menu.classList.toggle('show', !isOpen);
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+    document.body.classList.toggle('mobile-menu-open', !isOpen);
+  }
+
+  /**
+   * Close all overlays (dropdowns, search)
+   */
+  closeAllOverlays() {
+    // Close dropdowns
+    DOM.selectAll('.nav-right .dropdown').forEach(dropdown => {
+      dropdown.classList.remove('show');
+      dropdown.querySelector('.dropdown-menu')?.classList.remove('show');
+    });
+
+    // Close search
+    this.closeSearch();
+
+    document.body.style.overflow = '';
+    document.body.classList.remove('mobile-menu-open');
+  }
+
+  /**
+   * Close the search overlay
+   */
+  closeSearch() {
+    const searchBox = DOM.select('.search-box');
+    const searchInput = DOM.select('.search-input');
+    if (searchBox && searchInput) {
+      searchBox.classList.remove('active');
+      searchInput.classList.remove('active');
+      document.body.classList.remove('search-open');
+
+      // Reset icon
+      const searchIcon = searchBox.querySelector('i');
+      if (searchIcon) {
+        searchIcon.className = 'ti-search';
+      }
+
+      // Clear input
+      const field = searchInput.querySelector('input');
+      if (field) {
+        field.value = '';
+        field.blur();
+      }
+    }
   }
 
   /**
@@ -602,33 +713,46 @@ class AdminatorApp {
   }
 
   /**
-   * Destroy the application
+   * Destroy the application and clean up all resources
    */
   destroy() {
-    // Destroying Adminator App
-    
+    Logger.info('Destroying Adminator App');
+
+    // Clean up all event listeners
+    this.cleanupFunctions.forEach(cleanup => {
+      if (typeof cleanup === 'function') {
+        cleanup();
+      }
+    });
+    this.cleanupFunctions = [];
+
     // Destroy all components
-    this.components.forEach((component) => {
+    this.components.forEach((component, name) => {
       if (typeof component.destroy === 'function') {
         component.destroy();
+        Logger.debug(`Component destroyed: ${name}`);
       }
-      // Component destroyed
     });
-    
+
     this.components.clear();
+
+    // Cleanup performance observers
+    Performance.cleanup();
+
     this.isInitialized = false;
+    Logger.info('Adminator App destroyed');
   }
 
   /**
    * Refresh/reinitialize the application
    */
   refresh() {
-    // Refreshing Adminator App
-    
+    Logger.info('Refreshing Adminator App');
+
     if (this.isInitialized) {
       this.destroy();
     }
-    
+
     setTimeout(() => {
       this.init();
     }, 100);

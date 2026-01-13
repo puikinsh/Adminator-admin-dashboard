@@ -54,12 +54,63 @@ const resolve = {
 
 const optimization = {
   minimize: manifest.MINIFY,
+  // Code splitting for better caching and smaller initial bundle
+  splitChunks: {
+    chunks: 'all',
+    maxInitialRequests: 25,
+    minSize: 20000,
+    cacheGroups: {
+      // Vendor chunks
+      chartjs: {
+        test: /[\\/]node_modules[\\/]chart\.js[\\/]/,
+        name: 'vendor-chartjs',
+        priority: 30,
+      },
+      fullcalendar: {
+        test: /[\\/]node_modules[\\/]@fullcalendar[\\/]/,
+        name: 'vendor-fullcalendar',
+        priority: 30,
+      },
+      bootstrap: {
+        test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
+        name: 'vendor-bootstrap',
+        priority: 20,
+      },
+      // Other node_modules
+      vendors: {
+        test: /[\\/]node_modules[\\/]/,
+        name: 'vendors',
+        priority: 10,
+        reuseExistingChunk: true,
+      },
+      // Common code shared between entry points
+      common: {
+        name: 'common',
+        minChunks: 2,
+        priority: 5,
+        reuseExistingChunk: true,
+      },
+    },
+  },
+  // Extract webpack runtime into separate chunk
+  runtimeChunk: 'single',
 };
 
 if (manifest.MINIFY) {
   optimization.minimizer = [
     new CssMinimizerPlugin(),
-    new TerserPlugin(),
+    new TerserPlugin({
+      terserOptions: {
+        compress: {
+          drop_console: manifest.IS_PRODUCTION,
+          drop_debugger: manifest.IS_PRODUCTION,
+        },
+        output: {
+          comments: false,
+        },
+      },
+      extractComments: false,
+    }),
   ];
 }
 
