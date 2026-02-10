@@ -24,6 +24,77 @@ Preview of this awesome admin template available here: https://colorlib.com/poly
 
 ### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
+## Upgrade to a Premium Dashboard
+
+Need advanced features, dedicated support, and production-ready code? Explore our handpicked collection of professional admin templates on [DashboardPack](https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=adminator).
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/tailpanel.png" alt="TailPanel — modern React and Tailwind CSS admin panel" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>TailPanel</strong></a>
+      <br>
+      <sub>React + TypeScript + Tailwind CSS + Vite. 9 dashboard designs, dark and light themes.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/admindek.png" alt="Admindek — feature-rich Bootstrap 5 dashboard with dark mode" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>Admindek</strong></a>
+      <br>
+      <sub>Bootstrap 5 + vanilla JS. 100+ components, dark/light modes, RTL support, 10 color presets.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/adminty.png" alt="Adminty — Bootstrap 5 admin template with 160+ pages" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>Adminty</strong></a>
+      <br>
+      <sub>Bootstrap 5. 160+ ready-made pages, full UI component library for rapid development.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/architectui.png" alt="ArchitectUI — modular Bootstrap admin with 250+ widgets" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>ArchitectUI</strong></a>
+      <br>
+      <sub>Bootstrap 5. 250+ components, modular architecture, 9 unique dashboard layouts.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/kero.png" alt="Kero — Bootstrap 5 dashboard with horizontal and sidebar layouts" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>Kero</strong></a>
+      <br>
+      <sub>Bootstrap 5 + Webpack. Dual layout system (horizontal + sidebar), SASS theming.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=adminator">
+        <img src="screenshots/cryptocurrency.png" alt="Cryptocurrency Dashboard — ICO and Bitcoin admin panel" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>Cryptocurrency Dashboard</strong></a>
+      <br>
+      <sub>Bootstrap. Built specifically for ICO platforms, Bitcoin tracking, and crypto portfolios.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=adminator"><strong>View All Premium Templates</strong></a>
+</p>
+
 ## TOC
 - [What's New in v3.0.0](#whats-new-in-v300)
 - [Getting Started](#getting-started)
@@ -461,15 +532,6 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ## Authors
 [Colorlib](https://colorlib.com)
-
-## Looking for More Admin Templates?
-
-**Visit [DashboardPack.com](https://dashboardpack.com/)** - Your premier destination for high-quality admin dashboard templates:
-- Premium and free admin templates for all major frameworks
-- React, Vue, Angular, Bootstrap, and vanilla JavaScript templates
-- Modern designs with dark mode support
-- Comprehensive documentation and support
-- Regular updates and new releases
 
 ## More Resources from Colorlib
 - [Bootstrap Dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
