@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.1.3] - 2026-05-20
+
+### Sidebar submenu fix at rail widths (721–1100px)
+
+Parent nav items with children (Pages, Tables, Maps) didn't expand when the sidebar collapsed to its 72px icon rail. The responsive rule was hiding `.nav-submenu` entirely with `display: none`, so clicking the parent toggled `is-open` on an unreachable element. The chevron was hidden too, removing any affordance for the behavior.
+
+The submenu now renders as a click-triggered flyout anchored to the right of the rail icon (200px wide, card background, dismisses on outside click, only one open at a time). Desktop inline expansion (>1100px) and the mobile drawer (≤720px) are unchanged.
+
+Closes [#346](https://github.com/puikinsh/Adminator-admin-dashboard/issues/346).
+
+### Dependency updates
+
+- `eslint` family held at 9.x — `@babel/eslint-parser` doesn't yet support ESLint 10
+- Bumped: `@babel/preset-env`, `@vitest/coverage-v8`, `globals`, `jsdom`, `playwright`, `postcss`, `postcss-preset-env`, `sass-loader` (16→17), `stylelint`, `vitest`, `webpack` 5.106→5.107
+- Resolved 5 security advisories via `npm audit fix`:
+  - `fast-uri` <3.1.1 — path traversal + host confusion (GHSA-q3j6-qgpj-74h6, GHSA-v39h-62p7-jpjc)
+  - `ws` 8.0.0–8.20.0 — uninitialized memory disclosure (GHSA-58qx-3vcg-4xpx)
+- 0 vulnerabilities reported by `npm audit`
+
 ## [4.1.2] - 2026-04-29
 
 ### Mobile layout fixes
