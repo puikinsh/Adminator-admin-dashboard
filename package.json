@@ -98,7 +98,7 @@
     "webpack-bundle-analyzer": "^5.3.0",
     "webpack-cli": "^7.0.2",
     "webpack-dashboard": "^3.3.8",
-    "webpack-dev-server": "^5.2.3"
+    "webpack-dev-server": "^5.2.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.29.2",
