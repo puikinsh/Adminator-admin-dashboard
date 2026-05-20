@@ -44,11 +44,29 @@ function initHeroDate() {
 }
 
 function initNavGroups() {
+  // Rail mode (sidebar collapsed to 72px) renders the submenu as a flyout,
+  // so only one should be open at a time and outside-clicks should dismiss it.
+  const railMQ = window.matchMedia('(min-width: 721px) and (max-width: 1100px)');
+
   document.querySelectorAll('[data-nav-toggle]').forEach((a) => {
-    a.addEventListener('click', () => {
+    a.addEventListener('click', (e) => {
       const group = a.closest('[data-nav-group]');
-      if (group) group.classList.toggle('is-open');
+      if (!group) return;
+      e.stopPropagation();
+      const willOpen = !group.classList.contains('is-open');
+      if (railMQ.matches) {
+        document.querySelectorAll('[data-nav-group].is-open').forEach((g) => {
+          if (g !== group) g.classList.remove('is-open');
+        });
+      }
+      group.classList.toggle('is-open', willOpen);
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!railMQ.matches) return;
+    if (e.target.closest('[data-nav-group]')) return;
+    document.querySelectorAll('[data-nav-group].is-open').forEach((g) => g.classList.remove('is-open'));
   });
 }
 
