@@ -4,7 +4,7 @@
 
 > **Heads up — v4.0.0 is a ground-up rewrite.** New design system, new shell architecture, Bootstrap removed. If you prefer the previous design, the v3 codebase lives on the [`legacy-v3`](https://github.com/puikinsh/Adminator-admin-dashboard/tree/legacy-v3) branch and will continue to receive security updates.
 
-**[adminator.colorlib.com →](https://adminator.colorlib.com/)** · **[Live Demo →](https://preview.colorlib.com/theme/adminator/index.html)** · **[Looking for premium templates? Visit DashboardPack →](https://dashboardpack.com/)**
+**[adminator.colorlib.com →](https://adminator.colorlib.com/)** · **[Live Demo →](https://preview.colorlib.com/theme/adminator/index.html)** · **[Documentation →](https://adminator.colorlib.com/docs/)** · **[Looking for premium templates? Visit DashboardPack →](https://dashboardpack.com/)**
 
 ## Preview
 
