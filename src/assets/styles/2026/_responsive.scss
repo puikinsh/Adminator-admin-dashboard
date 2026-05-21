@@ -90,12 +90,43 @@
 
     /* Restore full-width nav (override the 1100px collapse) */
     padding: 22px 16px 18px;
+    overflow-y: auto;             /* override 1100px rail-mode 'visible' so long menus scroll */
+    overscroll-behavior: contain;
   }
   .brand-text, .brand-tag, .nav-label, .nav-link > span:not(.nav-badge), .nav-link .nav-badge,
   .workspace-text, .workspace-chev, .nav-submenu, .nav-link .chev { display: revert; }
   .brand { justify-content: flex-start; padding: 4px 10px 20px; }
   .nav-link { justify-content: flex-start; padding: 9px 12px; }
   .workspace { justify-content: flex-start; padding: 6px 10px; }
+
+  /* Revert rail-mode flyout submenu back to inline-accordion (desktop) behavior.
+     Without this, the absolute-positioned flyout from the 1100px block leaks
+     into mobile and the submenu pops out as a floating card next to the drawer. */
+  .nav-item-group { position: static; }
+  .nav-submenu {
+    position: static;
+    left: auto; top: auto;
+    width: auto;
+    margin-left: 20px;
+    padding: 0 0 0 14px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    max-height: 0;
+    transition: max-height 280ms cubic-bezier(.4,0,.2,1);
+  }
+  .nav-submenu::before { display: block; }
+  .nav-item-group.is-open .nav-submenu {
+    max-height: 400px;
+    padding: 4px 0 6px 14px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-submenu a { margin: 0; padding: 7px 10px; font-size: 12.5px; border-radius: 6px; }
+  .nav-submenu a:hover { padding-left: 13px; }
 
   body.has-drawer-open .d-sidebar { transform: translateX(0); }
   body.has-drawer-open { overflow: hidden; }   /* lock scroll behind backdrop */

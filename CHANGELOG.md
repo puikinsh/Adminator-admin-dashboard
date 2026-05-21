@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.1.4] - 2026-05-21
+
+### Mobile sidebar drawer — submenu and scroll fixes
+
+Two issues at ≤720px viewports, both caused by the 1100px rail-mode rules leaking through to mobile without proper overrides.
+
+#### Submenu rendered as a right-hand flyout instead of expanding inline
+
+When a child page was active (e.g. Pages → Blank), opening the mobile drawer showed the submenu as a floating card positioned to the right of the parent — the same `position: absolute; left: calc(100% + 10px)` styling intended for the 72px rail mode. The ≤720px block did `display: revert` on `.nav-submenu` but didn't reset the absolute positioning, background, or shadow, so the rail flyout styling carried over.
+
+Fix: at ≤720px, reset `.nav-item-group` and `.nav-submenu` back to inline-accordion (static positioning, transparent background, no border/shadow, normal `margin-left: 20px`, max-height transition) — matching desktop behavior at ≥1101px.
+
+Closes [#348](https://github.com/puikinsh/Adminator-admin-dashboard/issues/348).
+
+#### Sidebar drawer couldn't scroll when content exceeded viewport
+
+The rail-mode block sets `.d-sidebar { overflow-y: visible }` so flyout submenus can escape the sidebar bounds. The ≤720px block didn't restore `overflow-y: auto`, so on phones the drawer was a fixed-height non-scrolling container — bottom nav items (workspace footer, last sidebar entries) were unreachable when the screen was shorter than the menu.
+
+Fix: at ≤720px, restore `overflow-y: auto` plus `overscroll-behavior: contain` so the drawer scrolls independently without bleeding scroll events into the locked page behind it.
+
+Closes [#349](https://github.com/puikinsh/Adminator-admin-dashboard/issues/349).
+
 ## [4.1.3] - 2026-05-20
 
 ### Sidebar submenu fix at rail widths (721–1100px)
