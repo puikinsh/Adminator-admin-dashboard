@@ -46,7 +46,23 @@ function initHeroDate() {
 function initNavGroups() {
   // Rail mode (sidebar collapsed to 72px) renders the submenu as a flyout,
   // so only one should be open at a time and outside-clicks should dismiss it.
+  // The flyout is position:fixed (see _responsive.scss) — we position it here
+  // via getBoundingClientRect so it survives a scrolling sidebar and clamps to
+  // the viewport bottom on short screens (e.g. 750×590).
   const railMQ = window.matchMedia('(min-width: 721px) and (max-width: 1100px)');
+
+  const positionFlyout = (group) => {
+    const trigger = group.querySelector('[data-nav-toggle]');
+    const submenu = group.querySelector('.nav-submenu');
+    if (!trigger || !submenu) return;
+    const r = trigger.getBoundingClientRect();
+    const h = submenu.offsetHeight;            // natural content height (max-height: 400 clamp)
+    let top = Math.round(r.top);
+    const maxTop = window.innerHeight - h - 8;
+    if (top > maxTop) top = Math.max(8, maxTop);
+    submenu.style.left = `${Math.round(r.right + 10)}px`;
+    submenu.style.top = `${top}px`;
+  };
 
   document.querySelectorAll('[data-nav-toggle]').forEach((a) => {
     a.addEventListener('click', (e) => {
@@ -60,6 +76,7 @@ function initNavGroups() {
         });
       }
       group.classList.toggle('is-open', willOpen);
+      if (willOpen && railMQ.matches) positionFlyout(group);
     });
   });
 
@@ -68,6 +85,15 @@ function initNavGroups() {
     if (e.target.closest('[data-nav-group]')) return;
     document.querySelectorAll('[data-nav-group].is-open').forEach((g) => g.classList.remove('is-open'));
   });
+
+  // Keep the open flyout pinned to its trigger when the sidebar scrolls or the viewport resizes.
+  const reposition = () => {
+    if (!railMQ.matches) return;
+    document.querySelectorAll('[data-nav-group].is-open').forEach(positionFlyout);
+  };
+  const sidebar = document.querySelector('.d-sidebar');
+  if (sidebar) sidebar.addEventListener('scroll', reposition, { passive: true });
+  window.addEventListener('resize', reposition);
 }
 
 function initDropdowns() {

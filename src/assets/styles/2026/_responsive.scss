@@ -26,9 +26,9 @@
   .shell { grid-template-columns: 72px 1fr; }
   .d-sidebar {
     padding: 20px 10px;
-    overflow-y: visible;
-    overflow-x: visible;
-    z-index: 20;   /* lift above .content so flyout submenus aren't covered */
+    overflow-y: auto;   /* allow scroll on short viewports (e.g. 750×590) */
+    overflow-x: hidden;
+    z-index: 20;
   }
   .brand-text, .brand-tag, .nav-label, .nav-link > span:not(.nav-badge), .nav-link .nav-badge,
   .workspace-text, .workspace-chev, .nav-link .chev { display: none; }
@@ -38,12 +38,12 @@
   .workspace { justify-content: center; padding: 6px; }
   .col-6 { grid-column: span 12; }
 
-  /* Rail-mode flyout submenu: clicking a parent (e.g. Pages) toggles is-open,
-     and the submenu pops out to the right of the 72px rail. */
-  .nav-item-group { position: relative; }
+  /* Rail-mode flyout submenu: positioned via JS as position:fixed so the
+     sidebar can scroll (overflow-y: auto above) without clipping the flyout,
+     and so it can be shifted up to fit when opened near the viewport bottom. */
   .nav-submenu {
-    position: absolute;
-    left: calc(100% + 10px);
+    position: fixed;
+    left: 82px;          /* fallback; JS overwrites with trigger's getBoundingClientRect */
     top: 0;
     width: 200px;
     max-height: 0;
