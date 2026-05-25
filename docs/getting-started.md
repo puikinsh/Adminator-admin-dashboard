@@ -1,6 +1,7 @@
 ---
 title: "Getting Started — moved"
 redirect_to: https://adminator.colorlib.com/docs/getting-started/
+permalink: /getting-started/
 nav_exclude: true
 search_exclude: true
 sitemap: false

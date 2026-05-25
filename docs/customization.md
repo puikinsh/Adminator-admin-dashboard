@@ -1,6 +1,7 @@
 ---
 title: "Customization — moved"
 redirect_to: https://adminator.colorlib.com/docs/theming/
+permalink: /customization/
 nav_exclude: true
 search_exclude: true
 sitemap: false

@@ -1,6 +1,7 @@
 ---
 title: "Adminator Documentation — moved"
 redirect_to: https://adminator.colorlib.com/docs/getting-started/
+permalink: /
 nav_exclude: true
 search_exclude: true
 sitemap: false

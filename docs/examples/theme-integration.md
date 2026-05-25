@@ -1,6 +1,7 @@
 ---
 title: "Theme integration — moved"
 redirect_to: https://adminator.colorlib.com/docs/theming/
+permalink: /examples/theme-integration/
 nav_exclude: true
 search_exclude: true
 sitemap: false

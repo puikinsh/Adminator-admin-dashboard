@@ -1,6 +1,7 @@
 ---
 title: "Migrating from v3 — moved"
 redirect_to: https://adminator.colorlib.com/docs/migrating-from-v3/
+permalink: /migration/
 nav_exclude: true
 search_exclude: true
 sitemap: false

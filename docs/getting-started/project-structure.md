@@ -1,6 +1,7 @@
 ---
 title: "Project structure — moved"
 redirect_to: https://adminator.colorlib.com/docs/architecture/
+permalink: /getting-started/project-structure/
 nav_exclude: true
 search_exclude: true
 sitemap: false

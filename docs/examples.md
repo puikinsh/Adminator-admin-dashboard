@@ -1,6 +1,7 @@
 ---
 title: "Examples — moved"
 redirect_to: https://adminator.colorlib.com/docs/getting-started/
+permalink: /examples/
 nav_exclude: true
 search_exclude: true
 sitemap: false

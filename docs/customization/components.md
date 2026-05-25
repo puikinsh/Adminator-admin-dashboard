@@ -1,6 +1,7 @@
 ---
 title: "Components — moved"
 redirect_to: https://adminator.colorlib.com/docs/architecture/
+permalink: /customization/components/
 nav_exclude: true
 search_exclude: true
 sitemap: false

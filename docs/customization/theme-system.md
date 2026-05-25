@@ -1,6 +1,7 @@
 ---
 title: "Theme system — moved"
 redirect_to: https://adminator.colorlib.com/docs/theming/
+permalink: /customization/theme-system/
 nav_exclude: true
 search_exclude: true
 sitemap: false

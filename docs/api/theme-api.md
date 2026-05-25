@@ -1,6 +1,7 @@
 ---
 title: "Theme API — moved"
 redirect_to: https://adminator.colorlib.com/docs/theming/
+permalink: /api/theme-api/
 nav_exclude: true
 search_exclude: true
 sitemap: false

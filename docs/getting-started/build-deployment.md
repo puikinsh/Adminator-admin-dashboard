@@ -1,6 +1,7 @@
 ---
 title: "Build & deployment — moved"
 redirect_to: https://adminator.colorlib.com/docs/deployment/
+permalink: /getting-started/build-deployment/
 nav_exclude: true
 search_exclude: true
 sitemap: false

@@ -1,6 +1,7 @@
 ---
 title: "Adding a page — moved"
 redirect_to: https://adminator.colorlib.com/docs/adding-pages/
+permalink: /adding-a-page/
 nav_exclude: true
 search_exclude: true
 sitemap: false
