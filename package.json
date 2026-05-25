@@ -1,6 +1,6 @@
 {
   "name": "adminator-admin-dashboard",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "private": false,
   "description": "Adminator 2026 — vanilla-JS admin dashboard with a token-driven design system, dark mode, Chart.js, FullCalendar, and jsvectormap. No jQuery, no Bootstrap.",
   "main": "dist/index.html",

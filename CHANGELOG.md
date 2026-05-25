@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.1.5] - 2026-05-22
+
+### Sidebar scroll + submenu clipping fix at rail widths
+
+Follow-up to v4.1.4. At rail mode (721–1100px viewports), short-but-tall sidebars (e.g. 750×590) had two issues:
+
+- The sidebar didn't scroll, so users on short viewports couldn't reach the lower nav items
+- Submenu flyouts (Pages, Tables, Maps) were clipped when opened near the bottom of the viewport because the flyout was `position: absolute` inside an `overflow-y: visible` sidebar
+
+Fix: switched the sidebar to `overflow-y: auto` at the 1100px breakpoint, and re-anchored the rail-mode submenu flyouts to `position: fixed` so they can escape the sidebar's scroll container and be shifted up by JS when opened near the viewport bottom.
+
+### Docs site live
+
+The new documentation site at [adminator.colorlib.com/docs/](https://adminator.colorlib.com/docs/) is now linked from the README's header row. Eight pages covering architecture, theming, charts, calendar/maps, page authoring, deployment, and migrating from v3.
+
+### NPM publish
+
+This is the first npm publish on the v4 line. Previous npm versions (2.7.x – 2.9.0) point to legacy code; do not install with `@^2` or `@^3` if you want the 2026 redesign. Always use `npm install adminator-admin-dashboard` (no version pin) or `npm install adminator-admin-dashboard@latest`.
+
 ## [4.1.4] - 2026-05-21
 
 ### Mobile sidebar drawer — submenu and scroll fixes

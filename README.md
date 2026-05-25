@@ -185,11 +185,23 @@ npm run clean
 
 ### Install via npm
 
+The current v4 line is published as [`adminator-admin-dashboard`](https://www.npmjs.com/package/adminator-admin-dashboard) on npm:
+
 ```bash
 npm install adminator-admin-dashboard
 ```
 
-The package ships both `src/` and a pre-built `dist/`.
+The package ships both `src/` and a pre-built `dist/`. Use it directly:
+
+```js
+// In your bundler / app
+import 'adminator-admin-dashboard/dist/style.css';
+// dist/index.html + 17 other prebuilt pages are also in node_modules
+```
+
+Or copy the prebuilt files out of `node_modules/adminator-admin-dashboard/dist/` and serve them statically.
+
+> **⚠️ Don't pin to `@^2` or `@^3`.** Older majors on npm (2.7.x – 2.9.0) point to legacy code from before the 2026 redesign — they predate the token-driven design system, dark mode, and the new shell architecture. The latest `4.x` is what corresponds to this repository.
 
 ## Pages Included
 
