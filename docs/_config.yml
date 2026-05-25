@@ -16,6 +16,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from   # 2026-05: docs migrated to adminator.colorlib.com/docs/ — every page redirects.
 
 # Just the Docs theme configuration
 color_scheme: nil

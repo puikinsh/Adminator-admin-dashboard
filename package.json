@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/puikinsh/Adminator-admin-dashboard/issues"
   },
-  "homepage": "https://puikinsh.github.io/Adminator-admin-dashboard/",
+  "homepage": "https://adminator.colorlib.com/",
   "files": [
     "dist/**/*",
     "src/**/*",

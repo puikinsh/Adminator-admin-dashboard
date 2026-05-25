@@ -1,18 +1,14 @@
 ---
-layout: default
-title: Getting started
-nav_order: 2
-has_children: true
-permalink: /getting-started/
+title: "Getting Started — moved"
+redirect_to: https://adminator.colorlib.com/docs/getting-started/
+nav_exclude: true
+search_exclude: true
+sitemap: false
 ---
 
-# Getting started
+This page has moved to **[https://adminator.colorlib.com/docs/getting-started/](https://adminator.colorlib.com/docs/getting-started/)**.
 
-Four pages, in order:
+You'll be redirected automatically. If the browser doesn't redirect, click the link above.
 
-1. **[Installation](installation)** — clone the repo, install dependencies, run the dev server.
-2. **[Project structure](project-structure)** — what every folder is and why.
-3. **[Development](development)** — npm scripts, hot reload, linting, testing.
-4. **[Production build](build-deployment)** — minified vs unminified output, what gets emitted to `dist/`.
+The full Adminator documentation now lives at [adminator.colorlib.com/docs/](https://adminator.colorlib.com/docs/getting-started/).
 
-If you're brand-new to the project, do them in that order. If you're already familiar, jump to [Project structure](project-structure) for the v4 src layout.

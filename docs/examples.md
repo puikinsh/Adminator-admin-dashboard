@@ -1,15 +1,14 @@
 ---
-layout: default
-title: Examples
-nav_order: 6
-has_children: true
-permalink: /examples/
+title: "Examples — moved"
+redirect_to: https://adminator.colorlib.com/docs/getting-started/
+nav_exclude: true
+search_exclude: true
+sitemap: false
 ---
 
-# Examples
+This page has moved to **[https://adminator.colorlib.com/docs/getting-started/](https://adminator.colorlib.com/docs/getting-started/)**.
 
-Concrete recipes for the things people actually do.
+You'll be redirected automatically. If the browser doesn't redirect, click the link above.
 
-## Pages in this section
+The full Adminator documentation now lives at [adminator.colorlib.com/docs/](https://adminator.colorlib.com/docs/getting-started/).
 
-- **[Practical recipes](theme-integration)** — adding pages, sidebar items, charts, calendar events, custom alerts; reacting to theme changes; building custom layouts with the existing grid
