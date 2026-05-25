@@ -25,6 +25,8 @@ export const NAV = [
     items: [
       { key: 'dashboard', text: 'Dashboard', href: 'index.html',
         icon: '<path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/>' },
+      { key: 'docs', text: 'Documentation', href: 'https://adminator.colorlib.com/docs/', badge: { kind: 'new', text: 'DOCS' },
+        icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
       { key: 'pro', text: 'Go Pro', href: '#', badge: { kind: 'pro', text: 'PRO' },
         icon: '<path d="M12 2 15 8l6.5 1-4.8 4.6L18 20l-6-3-6 3 1.3-6.4L2.5 9 9 8z"/>' },
     ],
@@ -92,8 +94,9 @@ function renderNavLink(item, activeKey) {
   const badge = item.badge
     ? `<span class="nav-badge ${item.badge.kind}">${item.badge.text}</span>`
     : '';
+  const external = /^https?:\/\//.test(item.href) ? ' target="_blank" rel="noopener noreferrer"' : '';
   return `
-    <a class="nav-link${active}" href="${item.href}">
+    <a class="nav-link${active}" href="${item.href}"${external}>
       <svg viewBox="0 0 24 24">${item.icon}</svg>
       <span>${item.text}</span>
       ${badge}
