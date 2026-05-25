@@ -366,12 +366,11 @@ For a smoother path, **stay on v3** — see below.
 If you've built on v3 and prefer the old design, the v3 codebase lives on the [`legacy-v3`](https://github.com/puikinsh/Adminator-admin-dashboard/tree/legacy-v3) branch and will continue to receive **security updates** for at least 12 months.
 
 ```bash
-# Clone v3 directly
+# Get v3 from the legacy-v3 git branch
 git clone -b legacy-v3 https://github.com/puikinsh/Adminator-admin-dashboard.git adminator-v3
-
-# Or pin v3 from npm
-npm install adminator-admin-dashboard@^3
 ```
+
+> **Note on npm and v3.** v3 was never published to npm. The published versions are 2.7.x–2.9.0 (the older line) and 4.1.5+ (the 2026 redesign — current `latest`). If you specifically need v3, clone the branch above. If you need the older legacy code that predates v3 too, `npm install adminator-admin-dashboard@^2` lands you on 2.9.0.
 
 ## Browser Support
 
