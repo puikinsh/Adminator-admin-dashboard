@@ -197,9 +197,32 @@
   .mail-rail { display: none; }
   .mail-hero { flex-direction: column; align-items: flex-start; gap: 16px; }
 
-  /* ---- Chat ---- */
-  .chat-shell { grid-template-columns: 1fr; height: auto; }
-  .chat-rail { display: none; }
+  /* ---- Chat ----
+     Drop the fixed-viewport layout on mobile — let the whole page scroll
+     instead of a nested overflow-y on .chat-thread (touch scrolling inside
+     a clipped flex parent is fiddly on iOS Safari). Restore the rail as a
+     capped, stacked section above the thread so users can still see who
+     they're chatting with. */
+  .chat-shell {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  .chat-rail {
+    display: flex;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-soft);
+    max-height: 260px;
+  }
+  .chat-pane { overflow: visible; }
+  .chat-pane-head { padding: 12px 16px; }
+  .chat-thread {
+    flex: 0 0 auto;
+    overflow: visible;
+    padding: 16px;
+  }
+  .chat-composer { padding: 12px 16px 16px; }
 
   /* ---- Calendar ---- */
   .cal-shell { grid-template-columns: 1fr; }
