@@ -122,4 +122,12 @@ module.exports = {
   resolve,
   plugins,
   devServer,
+  output: {
+    path: manifest.paths.build,
+    /* Content-hashed names in production so the CDN's immutable cache
+       headers stop biting users post-deploy. HtmlWebpackPlugin rewrites
+       the <script> tags to the hashed filenames automatically. */
+    filename: manifest.IS_PRODUCTION ? '[name].[contenthash:8].js' : '[name].js',
+    chunkFilename: manifest.IS_PRODUCTION ? '[name].[contenthash:8].js' : '[name].js',
+  },
 };
