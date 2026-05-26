@@ -27,7 +27,7 @@ export const NAV = [
         icon: '<path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/>' },
       { key: 'docs', text: 'Documentation', href: 'https://adminator.colorlib.com/docs/', badge: { kind: 'new', text: 'DOCS' },
         icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
-      { key: 'pro', text: 'Go Pro', href: '#', badge: { kind: 'pro', text: 'PRO' },
+      { key: 'pro', text: 'Go Pro', href: 'https://dashboardpack.com/?utm_source=colorlib&utm_medium=adminator-demo&utm_campaign=sidebar-go-pro', badge: { kind: 'pro', text: 'PRO' },
         icon: '<path d="M12 2 15 8l6.5 1-4.8 4.6L18 20l-6-3-6 3 1.3-6.4L2.5 9 9 8z"/>' },
     ],
   },
