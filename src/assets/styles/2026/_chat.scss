@@ -25,6 +25,8 @@
   border-right: 1px solid var(--border-soft);
   background: var(--bg-card);
   min-width: 0;
+  min-height: 0;     /* let the rail honour the shell's row height in CSS Grid */
+  overflow: hidden;  /* mirrors .chat-pane — needed so .chat-list-scroll's overflow-y: auto actually engages instead of growing past the rail */
 }
 .chat-rail-head {
   padding: 14px 16px;
