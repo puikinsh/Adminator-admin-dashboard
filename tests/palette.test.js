@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { initPalette, open, close, isOpen } from '../src/assets/scripts/2026/palette.js';
+import { initShellBehaviors } from '../src/assets/scripts/2026/init.js';
 
 describe('palette.js', () => {
   beforeEach(() => {
@@ -152,6 +153,20 @@ describe('palette.js', () => {
   });
 
   describe('actions', () => {
+    it('toggles exactly once when the shell theme button is present', () => {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.body.insertAdjacentHTML('beforeend', '<button id="themeToggle"></button>');
+      initShellBehaviors();
+      open();
+      const input = document.querySelector('.palette-input');
+      input.value = 'toggle theme';
+      input.dispatchEvent(new Event('input'));
+      document.querySelector('.palette-result').click();
+      expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+      expect(localStorage.getItem('dash26-theme')).toBe('dark');
+      expect(document.getElementById('themeToggle').innerHTML).toContain('circle cx="12"');
+    });
+
     it('clicking a result with an external link opens window', () => {
       const spy = vi.spyOn(window, 'open').mockImplementation(() => null);
       open();

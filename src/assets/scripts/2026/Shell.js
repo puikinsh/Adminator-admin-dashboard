@@ -19,6 +19,8 @@
  * NAV is the single source of truth — adding a page is one entry here.
  */
 
+import packageInfo from '../../../../package.json';
+
 export const NAV = [
   {
     label: 'Workspace',
@@ -138,7 +140,7 @@ function renderSidebar(activeKey) {
         <div class="brand-logo">${BRAND_LOGO}</div>
         <div class="brand-text">
           <div class="brand-name">Adminator</div>
-          <div class="brand-tag">v4.3.0 · preview</div>
+          <div class="brand-tag">v${packageInfo.version} · preview</div>
         </div>
       </div>
       ${sections}
@@ -294,7 +296,7 @@ function renderFooter() {
     <footer class="d-footer">
       <div>© 2026 · Designed by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener noreferrer">Colorlib</a></div>
       <div class="d-footer-meta">
-        <span>v4.3.0</span>
+        <span>v${packageInfo.version}</span>
         <span>preview build</span>
       </div>
     </footer>`;

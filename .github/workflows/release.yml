@@ -5,76 +5,87 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+
+concurrency:
+  group: release-master
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22.x]
+    timeout-minutes: 20
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v7
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Get version
+        id: version
+        run: echo "version=v$(./ci/getVersion.sh)" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether this version is already released
+        id: check
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          [[ "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] \
+            || { echo "::error::Invalid release version: $VERSION"; exit 1; }
+          if [ -n "$(git ls-remote --tags origin "refs/tags/$VERSION")" ]; then
+            echo "should_release=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::$VERSION is already released; validating without rebuilding archives."
+          else
+            echo "should_release=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run linting
-        run: npm run lint
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
 
-      - name: Run tests
-        run: npm run test:run
+      - name: Lint, test, and build minified assets
+        run: npm run check
 
-      # `zip -j` junks paths, which flattened assets/static/** to the archive
-      # root and broke every relative asset reference in the released zips.
-      # Zipping from inside dist/ preserves the directory structure.
-      - name: Build minified release
-        run: |
-          npm run release:minified
-          (cd dist && zip -r ../static_minified.zip .)
+      - name: Install Chromium
+        if: steps.check.outputs.should_release == 'true'
+        run: npx playwright install --with-deps chromium
 
-      - name: Build unminified release
+      - name: Verify production pages
+        if: steps.check.outputs.should_release == 'true'
+        run: npm run test:browser
+
+      - name: Archive minified release
+        if: steps.check.outputs.should_release == 'true'
+        run: (cd dist && zip -r ../static_minified.zip .)
+
+      - name: Build and archive unminified release
+        if: steps.check.outputs.should_release == 'true'
         run: |
           npm run release:unminified
           (cd dist && zip -r ../static_unminified.zip .)
 
-      - name: Verify release archive structure
+      - name: Verify release archives
+        if: steps.check.outputs.should_release == 'true'
         run: |
-          unzip -l static_minified.zip | grep -q 'assets/static/' \
-            || { echo "::error::Release zip lost its assets/static/ paths"; exit 1; }
-          unzip -l static_minified.zip | grep -q 'index.html' \
-            || { echo "::error::Release zip is missing index.html"; exit 1; }
+          for archive in static_minified.zip static_unminified.zip; do
+            unzip -t "$archive"
+            unzip -Z1 "$archive" | grep -x 'index.html' >/dev/null \
+              || { echo "::error::$archive is missing index.html"; exit 1; }
+          done
 
-      - name: Get version
-        id: version
-        run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
-
-      # Not every push to master is a release — docs and CI commits land here
-      # too. Skip rather than fail when the tag already exists, so infra
-      # commits don't leave red runs on master. merge.yml keeps the hard
-      # failure, so a PR that is meant to ship must still bump the version.
-      - name: Check whether this version is already released
-        id: check
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          case "$VERSION" in
-            v[0-9]*.[0-9]*.[0-9]*) ;;
-            *) echo "::error::'$VERSION' is not a vMAJOR.MINOR.PATCH tag."; exit 1 ;;
-          esac
-          if [ -n "$(git ls-remote --tags origin "$VERSION")" ]; then
-            echo "::notice::$VERSION is already released — skipping the release step."
-            echo "should_release=false" >> $GITHUB_OUTPUT
-          else
-            echo "::notice::$VERSION is new — cutting a release."
-            echo "should_release=true" >> $GITHUB_OUTPUT
-          fi
+      - name: Prepare documented release notes
+        if: steps.check.outputs.should_release == 'true'
+        run: node scripts/release-notes.mjs > release-notes.md
 
       - name: Create GitHub Release
         if: steps.check.outputs.should_release == 'true'
@@ -82,10 +93,12 @@ jobs:
         with:
           name: ${{ steps.version.outputs.version }}
           tag_name: ${{ steps.version.outputs.version }}
+          target_commitish: ${{ github.sha }}
           files: |
             static_minified.zip
             static_unminified.zip
           fail_on_unmatched_files: true
           prerelease: false
           draft: false
+          body_path: release-notes.md
           generate_release_notes: true

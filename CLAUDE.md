@@ -56,9 +56,11 @@ docs/                            # Jekyll (just-the-docs) site — redirects to 
 scripts/                         # Playwright screenshot + publishing helpers (not part of the build)
 ```
 
+webpack uses a filesystem cache separated by build mode and minification setting. Modern Sass options are `style` and `loadPaths`. Chart.js registration lives in `vendor-chartjs.js`; add components there when introducing new chart types.
+
 The 2026 webpack entry produces two **initial** chunks — `runtime.js` and `2026.js` — which HtmlWebpackPlugin injects into every page, plus three **async** chunks fetched on demand: `vendor-chartjs.js`, `vendor-fullcalendar.js`, `vendor-jsvectormap.js` (+ its small CSS). In production, JS and CSS filenames get an 8-char contenthash; dev keeps plain names for readable source maps and HMR.
 
-**Dead weight, knowingly retained:** `grep -rn "assets/static" src/` returns zero hits. The FontAwesome and Themify icon fonts (1.5 MB), `bg.jpg`, `500.png`, `404.png`, `logo.png` and even `logo.svg` are all leftovers from the pre-2026 template — the brand mark is inline SVG in `Shell.js` and every icon is an inline `<svg>`. CopyWebpackPlugin still copies the whole tree into `dist/` on every build, which is ~2.2 MB of the 3.1 MB output and rides along in both release zips. Deleting `src/assets/static/` (and the `copyPlugin` + `fonts` rule with it) is a one-line win whenever you decide to take it.
+**Dead weight, knowingly retained:** `grep -rn "assets/static" src/` returns zero hits. The FontAwesome and Themify icon fonts (1.5 MB), `bg.jpg`, `500.png`, `404.png`, `logo.png` and even `logo.svg` are all leftovers from the pre-2026 template — the brand mark is inline SVG in `Shell.js` and every icon is an inline `<svg>`. These assets are retained in source but are no longer copied to `dist/`. Imported images/fonts are emitted by webpack asset rules when used. The unused copy plugin has been removed.
 
 `splitChunks` deliberately defines almost no cacheGroups and sets `defaultVendors: false`. Each library is reached through exactly one `import()` carrying a `webpackChunkName` comment, which already produces one chunk per library; a catch-all vendor group with a static `name` collapses them all back into a single chunk (that is how `calendar.html` used to download Chart.js). Don't re-add one.
 
@@ -169,17 +171,20 @@ Three things will trip you up:
 
 ## Commands
 
-- `npm start` — dev server at <http://localhost:4000> (HMR enabled). `npm run dev` is the same, wrapped in webpack-dashboard.
+- `npm start` — dev server at <http://localhost:4000> (HMR enabled). `npm run dev` is the same, an alias for `npm start`.
 - `npm run build` — production build to `dist/`, unminified with extracted CSS (identical to `release:unminified`; useful for reading the output). Every build script sets `NODE_ENV` through `cross-env` — the env vars must come *after* `cross-env`, or Windows breaks.
 - `npm run release:minified` / `npm run release:unminified` — the two artifacts the release workflow ships.
 - `npm run lint` — ESLint (`./src ./webpack ./*.js`) + Stylelint (`./src/**/*.scss`), must be 0/0. Also `lint:js` / `lint:scss` individually.
 - `npm run build:analyze` — bundle analyzer report.
-- `npm run clean` — wipe `dist/`.
+- `npm run clean` — wipe `dist/` with native Node.js.
+- `npm run check` — lint, unit tests, minified build, asset verification, and bundle budgets.
+- `npm run preview` — serve existing `dist/` on loopback port 3001 without webpack.
+- `npm run test:browser` — Playwright smoke checks; install Chromium first with `npx playwright install chromium`.
 - `npm run screenshots` — Playwright captures of the README shots; **requires `npm start` running in another terminal**. Override the target with `BASE_URL=...`.
 
 ### Tests
 
-Vitest + jsdom, config in `vitest.config.js`, suites in `tests/` (`shell.test.js`, `init.test.js`, `charts-seeds.test.js`, `palette.test.js`).
+Vitest + jsdom, config in `vitest.config.mjs`, suites in `tests/` (`shell.test.js`, `init.test.js`, `charts-seeds.test.js`, `palette.test.js`).
 
 ```bash
 npm test                                   # watch mode
@@ -189,17 +194,17 @@ npx vitest run tests/shell.test.js         # one file
 npx vitest run -t 'renders the sidebar'    # one test by name
 ```
 
-`tests/setup.js` wipes the DOM and `localStorage` before each test and stubs `localStorage` / `matchMedia`, which jsdom 29 doesn't provide. Tests import the 2026 modules directly — no build step needed.
+`tests/setup.js` wipes the DOM and `localStorage` before each test and stubs `localStorage` / `matchMedia`, which jsdom doesn't provide. Tests import the 2026 modules directly — no build step needed.
 
 ## CI / releasing
 
 `.github/workflows/merge.yml` runs lint, tests, `npm audit --omit=dev --audit-level=high`, and a build on PRs to `master`, across Node 22.x and 24.x. `release.yml` runs on push to `master`, builds both zips, verifies the archive structure, and cuts a GitHub release tagged `v<package.json version>`.
 
-The two workflows treat an already-released version differently, on purpose. `merge.yml` runs `ci/verifyVersion.sh`, which **fails** when the tag exists — so **bump `version` in `package.json` in any PR that should ship**. `release.yml` instead **skips** its release step, because docs and CI commits also land on `master` and shouldn't leave red runs there.
+Routine PRs do not require version bumps. For a release, bump `version` in `package.json`. `release.yml` checks for an existing tag before installation, validates every push, and builds archives only for unreleased versions. Both workflows audit production dependencies and enforce minified bundle budgets; Chromium checks cover all pages, both themes, and desktop/mobile viewports.
 
-The version string is also hard-coded twice in `Shell.js` (`.brand-tag` and the footer) — update those in the same commit or the UI drifts from the release.
+The shell reads its brand/footer version from `package.json`; bump that single field for a release.
 
-Release zips are built with `(cd dist && zip -r ../name.zip .)`. Do not switch to `zip -j`: it junks paths and flattens `assets/static/**` into the archive root.
+Release zips are built with `(cd dist && zip -r ../name.zip .)`. Do not switch to `zip -j`: it flattens any nested emitted assets into the archive root.
 
 **Node baseline is >= 22.22.2** (`engines`, `.nvmrc` pins 24) — jsdom 30 and webpack-dev-server 6 both refuse to run below that.
 
@@ -209,5 +214,5 @@ Release zips are built with `(cd dist && zip -r ../name.zip .)`. Do not switch t
 - **`is-active` / `is-open` / `is-done`** for state classes (BEM-ish modifiers).
 - **`data-` attributes drive JS**, never `id`s except for `themeToggle` and `heroDate`.
 - **Inline `<svg>` icons** (24×24 viewBox, `stroke-width: 1.75–2`, `fill: none`). Avoid icon-font dependencies.
-- **`'Inter'` for body, `'Inter Tight'` for display, `'JetBrains Mono'` for numerics/eyebrows.** Loaded once via the `index.scss` `@import url(...)` at the top.
+- **`'Inter'` for body, `'Inter Tight'` for display, `'JetBrains Mono'` for numerics/eyebrows.** Loaded via per-page `<head>` links, using preconnect and `display=swap`.
 - **Guard clauses everywhere.** Every init function returns early when its host element is missing, and `localStorage` access is always wrapped in `try/catch` — the bundle is shared by all 18 pages and must not throw on any of them.

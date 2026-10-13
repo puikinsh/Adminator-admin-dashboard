@@ -5,9 +5,17 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     strategy:
       fail-fast: false
@@ -21,7 +29,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -30,20 +38,23 @@ jobs:
         run: npm ci
 
       - name: Run linting
+        if: matrix.node-version == '24.x'
         run: npm run lint
 
       - name: Run tests
         run: npm run test:run
 
       - name: Audit production dependencies
+        if: matrix.node-version == '24.x'
         run: npm audit --omit=dev --audit-level=high
 
       - name: Build
-        run: npm run build
+        run: npm run release:minified
 
-      - name: Get version
-        id: version
-        run: echo "version=v$(./ci/getVersion.sh)" >> $GITHUB_OUTPUT
+      - name: Install Chromium
+        if: matrix.node-version == '24.x'
+        run: npx playwright install --with-deps chromium
 
-      - name: Verify version
-        run: ./ci/verifyVersion.sh ${{ steps.version.outputs.version }}
+      - name: Check pages and lazy widget loading
+        if: matrix.node-version == '24.x'
+        run: npm run test:browser

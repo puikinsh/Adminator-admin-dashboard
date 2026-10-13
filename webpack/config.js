@@ -109,6 +109,17 @@ module.exports = {
   context: manifest.paths.src,
   entry,
   mode: manifest.NODE_ENV,
+  cache: {
+    type: 'filesystem',
+    name: `${manifest.NODE_ENV}-${manifest.MINIFY ? 'minified' : 'unminified'}`,
+    buildDependencies: { config: [__filename, path.resolve(__dirname, '../package.json')] },
+  },
+  performance: {
+    // Budget initial downloads separately from intentionally lazy widgets.
+    maxEntrypointSize: 140 * 1024,
+    maxAssetSize: 320 * 1024,
+    hints: manifest.MINIFY ? 'error' : false,
+  },
   module: { rules },
   optimization,
   resolve,

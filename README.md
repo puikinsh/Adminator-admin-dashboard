@@ -167,8 +167,8 @@ See [CHANGELOG.md](CHANGELOG.md) for the full release notes, including the migra
 git clone https://github.com/puikinsh/Adminator-admin-dashboard.git adminator
 cd adminator
 
-# Install dependencies
-npm install
+# Install the locked dependencies (Node.js >= 22.22.2)
+npm ci
 
 # Start the dev server (http://localhost:4000)
 npm start
@@ -189,12 +189,34 @@ npm run build
 # Lint everything (JS + SCSS) — must be 0/0 to ship
 npm run lint
 
-# Bundle size analyzer
+# Verify lint, unit tests, production assets, and bundle budgets
+npm run check
+
+# Serve the existing production build without recompiling (port 3001)
+npm run preview
+
+# Browser checks: all 18 pages in both themes at desktop/mobile widths
+npx playwright install chromium
+npm run test:browser
+
+# Write dist/bundle-report.html without opening a browser
 npm run build:analyze
 
 # Wipe dist/
 npm run clean
 ```
+
+The development server binds to `127.0.0.1` by default. For deliberate LAN testing, run `npx cross-env HOST=0.0.0.0 npm start`. webpack caches compilations in `node_modules/.cache/webpack/`; minified, unminified, and development builds use separate caches.
+
+PR checks test Node 22/24, enforce production bundle budgets, and exercise Chromium on Node 24. Routine PRs do not require a version bump. Bump `package.json` for a release; pushes to `master` validate every change and create archives only for an unreleased version. Dependabot checks npm and GitHub Actions weekly.
+
+### Release and publication
+
+The canonical release history is [CHANGELOG.md](CHANGELOG.md), also published at [adminator.colorlib.com/docs/changelog/](https://adminator.colorlib.com/docs/changelog/). The release workflow extracts the current version's notes with `node scripts/release-notes.mjs` and includes them in the GitHub release alongside both ZIP variants.
+
+The product website and live documentation are maintained in the `ColorlibHQ/tailwind-templates` monorepo under `templates/adminator-landing/` and deployed to the existing `adminator-colorlib` Cloudflare Pages project. Demo files are served from the `colorlib-preview` R2 bucket at `theme/adminator/`; downloadable ZIPs live in `colorlib-downloads` at `theme/adminator.zip` and a versioned key.
+
+For publication, verify the release, upload hashed demo assets before HTML, preserve older hashed assets for cached pages, update both download keys, deploy the website/docs, and verify the live routes and files. npm publication is a separate authenticated step; check its current registry version before announcing an npm release.
 
 ### Install via npm
 
@@ -204,15 +226,15 @@ The current v4 line is published as [`adminator-admin-dashboard`](https://www.np
 npm install adminator-admin-dashboard
 ```
 
-The package ships both `src/` and a pre-built `dist/`. Use it directly:
+The package ships both `src/` and a pre-built `dist/`. Import the source stylesheet in a Sass-enabled bundler:
 
 ```js
-// In your bundler / app
-import 'adminator-admin-dashboard/dist/style.css';
+// In a Sass-enabled bundler / app
+import 'adminator-admin-dashboard/src/assets/styles/2026/index.scss';
 // dist/index.html + 17 other prebuilt pages are also in node_modules
 ```
 
-Or copy the prebuilt files out of `node_modules/adminator-admin-dashboard/dist/` and serve them statically.
+Or copy the prebuilt files out of `node_modules/adminator-admin-dashboard/dist/` and serve them statically. Built CSS/JS filenames contain content hashes; use the references in the generated HTML instead of assuming a fixed `dist/style.css` filename.
 
 > **⚠️ Don't pin to `@^2` or `@^3`.** Older majors on npm (2.7.x – 2.9.0) point to legacy code from before the 2026 redesign — they predate the token-driven design system, dark mode, and the new shell architecture. The latest `4.x` is what corresponds to this repository.
 
@@ -413,6 +435,8 @@ Modern evergreen browsers — Chrome, Firefox, Safari, Edge (last 2 versions). T
 See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 
 ### Latest releases
+
+- **v4.4.0** (2026-10-13) — Dependency refresh, smaller production output, faster cached builds, theme-toggle fixes, and browser verification. See [release notes](https://adminator.colorlib.com/docs/changelog/).
 
 - **v4.0.0** (2026-04-27) — The 2026 redesign. New design system, Bootstrap dropped, ~85% bundle reduction. [Details](CHANGELOG.md#400---2026-04-27).
 - **v3.0.0** (2026-01-13) — Architecture release. New utility modules, Vitest, code splitting, bundle analyzer.

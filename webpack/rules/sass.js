@@ -49,9 +49,9 @@ const loaders = [
       sourceMap: manifest.IS_DEVELOPMENT,
       api: 'modern-compiler',
       sassOptions: {
-        outputStyle: manifest.MINIFY ? 'compressed' : 'expanded',
-        includePaths: [
-          path.join('../../', 'node_modules'),
+        style: manifest.MINIFY ? 'compressed' : 'expanded',
+        loadPaths: [
+          path.resolve(__dirname, '../../node_modules'),
           path.join(manifest.paths.src, 'assets', 'styles'),
           path.join(manifest.paths.src, ''),
         ],

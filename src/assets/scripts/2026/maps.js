@@ -84,5 +84,5 @@ export function initVectorMaps() {
   const observer = new MutationObserver((records) => {
     if (records.some((r) => r.attributeName === 'data-theme')) buildAll();
   });
-  observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 }

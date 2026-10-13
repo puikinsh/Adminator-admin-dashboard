@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.4.0] - 2026-10-13
+
+- Update all retained direct dependencies to current stable releases, including Vitest/coverage 5.0.4, FullCalendar 7.1.2, webpack 5.111.1, and Playwright 1.64.0; refresh transitive dependencies and the lockfile.
+- Remove webpack-dashboard, its vulnerable dependency tree, the custom lint formatter, and shell-based cleaning. Use native Node.js helpers and rename the Vitest configuration to `.mjs`.
+- Stop copying unused legacy fonts/images into `dist/` while retaining their source files. Minified output falls from 3,176,906 to 936,685 bytes (70.5% smaller).
+- Register only the Chart.js components used by the template: chart JavaScript falls from 204,642 to 180,520 bytes (11.8% smaller; gzip falls from 68,559 to 61,503 bytes). Update existing charts without replaying animation on theme changes.
+- Fix the command palette's theme action toggling twice when the shell button is present; add regression tests for this interaction and chart reuse.
+- Correct modern Sass options and image matching; hash imported image filenames and avoid overlapping SVG/font rules. Cache webpack builds separately by mode and minification setting; a local warm compile measured 289 ms versus 2,267 ms cold.
+- Read the shell version from `package.json` to avoid manual version drift.
+- Serve preview assets directly from `dist/`, bind local servers to loopback by default, verify generated asset references, and enforce initial bundle limits of 140 KiB raw / 35 KiB gzip. Current initial JS/CSS is 128.4 KiB / 27.2 KiB gzip.
+- Add browser smoke checks covering all 18 pages in both themes at 1440px/390px, widget loading, calendar views, mobile drawers, and theme toggling. Add weekly Dependabot updates, refresh setup-node to v7, cancel superseded PR runs, and avoid rebuilding release archives for existing versions. Routine PRs no longer require version bumps.
+- Production dependency audit: zero advisories. The full audit drops from 48 to 13 findings; the remaining development-tool findings stem from [an unpatched braces stack-exhaustion advisory](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm), used by Stylelint and the dev server. No forced downgrades or advisory suppression.
+
 ## [4.3.0] - 2026-08-03
 
 ### FullCalendar 7

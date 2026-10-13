@@ -17,9 +17,8 @@ let Chart = null;
 
 async function loadChartJs() {
   if (Chart) return Chart;
-  const mod = await import(/* webpackChunkName: "vendor-chartjs" */ 'chart.js');
-  Chart = mod.Chart;
-  Chart.register(...mod.registerables);
+  const mod = await import(/* webpackChunkName: "vendor-chartjs" */ './vendor-chartjs.js');
+  Chart = mod.default;
   return Chart;
 }
 
@@ -255,8 +254,14 @@ async function buildAll() {
     const seed = SEEDS[key];
     if (!seed) return;
     const existing = instances.get(canvas);
-    if (existing) existing.destroy();
-    instances.set(canvas, new Chart(canvas, seed(t)));
+    const config = seed(t);
+    if (existing) {
+      existing.data.datasets.forEach((dataset, i) => Object.assign(dataset, config.data.datasets[i]));
+      existing.options = config.options;
+      existing.update('none');
+    } else {
+      instances.set(canvas, new Chart(canvas, config));
+    }
   });
 }
 
@@ -267,5 +272,5 @@ export function initCharts() {
   const observer = new MutationObserver((records) => {
     if (records.some((r) => r.attributeName === 'data-theme')) buildAll();
   });
-  observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 }

@@ -25,7 +25,6 @@ node_modules
 yarn.lock
 yarn-error.log*
 pnpm-lock.yaml
-package-lock.json
 
 # ----------------------------
 # Project Folders
@@ -33,6 +32,8 @@ package-lock.json
 
 build/
 dist/
+coverage/
+test-results/
 
 # ----------------------------
 # Development Files
@@ -79,3 +80,4 @@ scripts/social-preview.mjs
 
 # Release artifacts produced by build scripts
 static_minified.zip
+static_unminified.zip

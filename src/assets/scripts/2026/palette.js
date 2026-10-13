@@ -81,13 +81,15 @@ function buildItems() {
     label: 'Toggle theme (light / dark)',
     section: 'Action',
     action: () => {
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.click();
+        return;
+      }
       const root = document.documentElement;
       const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('dash26-theme', next); } catch { /* no localStorage */ }
-      // Update the toggle button icon if init.js wired one.
-      const toggle = document.getElementById('themeToggle');
-      if (toggle) toggle.click(); // no-op if already in the right state, or just nudge it
     },
     icon: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
   });

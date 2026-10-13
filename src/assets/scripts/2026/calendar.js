@@ -139,5 +139,5 @@ export function initCalendarPage() {
       if (calendar) calendar.render();
     }
   });
-  observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 }
