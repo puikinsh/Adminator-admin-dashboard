@@ -43,7 +43,6 @@
     "no-empty-source": null,
     "scss/dollar-variable-colon-space-after": null,
     "scss/double-slash-comment-whitespace-inside": null,
-    "selector-no-vendor-prefix": null,
-    "declaration-block-single-line-max-declarations": null
+    "selector-no-vendor-prefix": null
   }
 }
