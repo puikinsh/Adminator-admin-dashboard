@@ -249,4 +249,9 @@
   .form-actions .btn { width: 100%; justify-content: center; }
   .form-actions .spacer { display: none; }
   .social-row { grid-template-columns: 1fr; }
+
+  /* Static popover demos are centred on their trigger; keep the one that wraps
+     to the right edge inside the viewport. */
+  .popover-demo .pop { left: auto; right: 0; transform: none; }
+  .popover-demo .pop::after { left: auto; right: 16px; transform: none; }
 }

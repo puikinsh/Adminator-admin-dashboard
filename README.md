@@ -436,6 +436,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 
 ### Latest releases
 
+- **v4.4.1** (2026-11-16) — Dependency refresh (zero audit advisories, Stylelint 18, jsdom 31) and a mobile overflow fix on the UI page.
 - **v4.4.0** (2026-10-13) — Dependency refresh, smaller production output, faster cached builds, theme-toggle fixes, and browser verification. See [release notes](https://adminator.colorlib.com/docs/changelog/).
 
 - **v4.0.0** (2026-04-27) — The 2026 redesign. New design system, Bootstrap dropped, ~85% bundle reduction. [Details](CHANGELOG.md#400---2026-04-27).

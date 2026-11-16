@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.4.1] - 2026-11-16
+
+- Refresh all dependencies to current stable releases, including FullCalendar 7.1.5, Chart.js 4.6.1, webpack 5.112.2, Sass 1.108.2, Vitest 5.1.0, ESLint 10.15.0, and Playwright 1.65.1. Resolve the full dependency audit to zero advisories (body-parser, fast-uri, launch-editor, qs) with lockfile updates only.
+- Migrate to Stylelint 18 and `stylelint-config-standard-scss` 18; drop the now-removed `declaration-block-single-line-max-declarations` override. Move the unit-test environment to jsdom 31; all 77 tests pass unchanged.
+- Fix a 21px horizontal overflow on `ui.html` at phone widths caused by the third static popover demo overshooting the viewport.
+
 ## [4.4.0] - 2026-10-13
 
 - Update all retained direct dependencies to current stable releases, including Vitest/coverage 5.0.4, FullCalendar 7.1.2, webpack 5.111.1, and Playwright 1.64.0; refresh transitive dependencies and the lockfile.
